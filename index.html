@@ -14,7 +14,6 @@
     --sand: #E8DDD0;
     --terracotta: #C4724A;
     --deep: #1C1A17;
-    --moss: #4A5C3F;
     --gold: #B89B6A;
     --warm-white: #FAF8F4;
     --muted: #7A7068;
@@ -23,516 +22,217 @@
   }
 
   html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--deep); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
 
-  body {
-    background: var(--cream);
-    color: var(--deep);
-    font-family: var(--font-body);
-    font-weight: 300;
-    overflow-x: hidden;
+  /* ── NAV ── */
+  #main-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    transition: background 0.4s, border-color 0.4s;
   }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 4rem;
-    mix-blend-mode: normal;
-    transition: background 0.4s;
-  }
-  nav.scrolled {
-    background: rgba(245,240,232,0.95);
-    backdrop-filter: blur(8px);
+  #main-nav.scrolled {
+    background: rgba(245,240,232,0.96);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(180,160,130,0.2);
   }
-  .nav-logo img {
-    height: 52px;
-    filter: brightness(0) invert(1);
-    transition: filter 0.4s;
-  }
-  nav.scrolled .nav-logo img { filter: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-logo img { height: 50px; filter: brightness(0) invert(1); transition: filter 0.4s; }
+  #main-nav.scrolled .nav-logo img { filter: none; }
+  .nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+  .nav-links li { display: block; }
   .nav-links a {
-    color: rgba(255,255,255,0.9);
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 400;
-    transition: color 0.3s;
+    color: rgba(255,255,255,0.88); text-decoration: none;
+    font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 400; transition: color 0.3s; white-space: nowrap;
   }
-  nav.scrolled .nav-links a { color: var(--deep); }
+  #main-nav.scrolled .nav-links a { color: var(--deep); }
   .nav-links a:hover { color: var(--terracotta); }
-  .nav-cta {
-    background: var(--terracotta);
-    color: white !important;
-    padding: 0.6rem 1.4rem;
-    border-radius: 2px;
-  }
-  nav.scrolled .nav-cta { color: white !important; }
+  .nav-cta { background: var(--terracotta) !important; color: white !important; padding: 0.55rem 1.3rem !important; border-radius: 2px; }
 
-  /* HERO */
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 700px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
+  /* ── HERO ── */
+  .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; }
   .hero-bg {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920&q=85') center/cover no-repeat;
   }
   .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, rgba(28,26,23,0.65) 0%, rgba(28,26,23,0.3) 60%, transparent 100%);
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(120deg, rgba(28,26,23,0.68) 0%, rgba(28,26,23,0.3) 55%, transparent 100%);
   }
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 0 4rem;
-    max-width: 750px;
-    animation: fadeUp 1.2s ease both;
-  }
+  .hero-content { position: relative; z-index: 1; padding: 0 4rem; max-width: 760px; animation: fadeUp 1.2s ease both; }
   .hero-tag {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    border-left: 2px solid var(--terracotta);
-    padding-left: 0.8rem;
+    display: inline-block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-top: 5rem; margin-bottom: 1.8rem;
+    border-left: 2px solid var(--terracotta); padding-left: 0.8rem;
   }
-  .hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(3.2rem, 7vw, 6rem);
-    font-weight: 300;
-    color: white;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
-  }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(3.2rem, 7vw, 6rem); font-weight: 300; color: white; line-height: 1.05; margin-bottom: 1.5rem; }
   .hero h1 em { font-style: italic; color: var(--gold); }
-  .hero p {
-    color: rgba(255,255,255,0.8);
-    font-size: 1rem;
-    line-height: 1.7;
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-  }
+  .hero p { color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.7; max-width: 480px; margin-bottom: 2.5rem; }
   .btn-primary {
-    display: inline-block;
-    background: var(--terracotta);
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2.2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: background 0.3s, transform 0.2s;
-    border-radius: 2px;
+    display: inline-block; background: var(--terracotta); color: white; text-decoration: none;
+    padding: 1rem 2.2rem; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 500; transition: background 0.3s, transform 0.2s; border-radius: 2px;
   }
   .btn-primary:hover { background: #b35e38; transform: translateY(-1px); }
   .btn-outline {
-    display: inline-block;
-    border: 1px solid rgba(255,255,255,0.5);
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2.2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin-left: 1rem;
-    transition: border-color 0.3s, background 0.3s;
-    border-radius: 2px;
+    display: inline-block; border: 1px solid rgba(255,255,255,0.5); color: white; text-decoration: none;
+    padding: 1rem 2.2rem; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 400; margin-left: 1rem; transition: border-color 0.3s, background 0.3s; border-radius: 2px;
   }
   .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
   .hero-scroll {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    animation: scrollBounce 2s ease-in-out infinite;
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.55); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    animation: scrollBounce 2.2s ease-in-out infinite;
   }
-  .hero-scroll span { width: 1px; height: 40px; background: rgba(255,255,255,0.4); }
+  .hero-scroll span { width: 1px; height: 38px; background: rgba(255,255,255,0.35); }
 
-  /* SECTION SHARED */
+  /* ── SHARED ── */
   section { padding: 6rem 4rem; }
-  .section-tag {
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    margin-bottom: 1rem;
-    display: block;
-  }
-  h2.section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    color: var(--deep);
-  }
+  .section-tag { font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; display: block; }
+  h2.section-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; color: var(--deep); }
   h2.section-title em { font-style: italic; color: var(--terracotta); }
 
-  /* ABOUT */
-  .about {
-    background: var(--warm-white);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-  .about-text p {
-    color: var(--muted);
-    line-height: 1.8;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .about-pillars {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-  .pillar {
-    padding: 1.5rem;
-    border-top: 2px solid var(--terracotta);
-    background: var(--cream);
-  }
-  .pillar h4 {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-    color: var(--deep);
-  }
+  /* ── ABOUT ── */
+  .about { background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-text p { color: var(--muted); line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem; }
+  .about-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+  .pillar { padding: 1.5rem; border-top: 2px solid var(--terracotta); background: var(--cream); }
+  .pillar h4 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 400; margin-bottom: 0.5rem; }
   .pillar p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
-  .about-visual {
-    position: relative;
-    height: 520px;
-  }
-  .about-visual img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 2px;
-  }
+  .about-visual { position: relative; height: 520px; }
+  .about-visual img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
   .about-visual-badge {
-    position: absolute;
-    bottom: -2rem;
-    left: -2rem;
-    background: var(--deep);
-    color: white;
-    padding: 1.5rem 2rem;
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 300;
-    font-style: italic;
-    max-width: 220px;
-    line-height: 1.4;
-    border-radius: 2px;
+    position: absolute; bottom: -2rem; left: -2rem; background: var(--deep); color: white;
+    padding: 1.5rem 2rem; font-family: var(--font-display); font-size: 1.1rem;
+    font-weight: 300; font-style: italic; max-width: 220px; line-height: 1.4; border-radius: 2px;
   }
 
-  /* EXPERIENCES */
-  .experiences { background: var(--deep); color: white; }
+  /* ── EXPERIENCES ── */
+  .experiences { background: var(--deep); color: white; padding-bottom: 0; }
   .experiences .section-tag { color: var(--gold); }
   .experiences h2.section-title { color: white; }
   .experiences h2.section-title em { color: var(--gold); }
   .exp-intro { color: rgba(255,255,255,0.6); max-width: 500px; line-height: 1.7; margin-bottom: 4rem; }
-  .exp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-  }
-  .exp-card {
-    position: relative;
-    height: 520px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .exp-card img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
+  .exp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; }
+  .exp-card { position: relative; height: 520px; overflow: hidden; cursor: pointer; }
+  .exp-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
   .exp-card:hover img { transform: scale(1.06); }
   .exp-card-overlay {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(28,26,23,0.9) 0%, rgba(28,26,23,0.2) 50%, transparent 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2rem;
-    transition: background 0.4s;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; transition: background 0.4s;
   }
   .exp-card:hover .exp-card-overlay { background: linear-gradient(to top, rgba(28,26,23,0.95) 0%, rgba(28,26,23,0.4) 60%, transparent 100%); }
-  .exp-num {
-    font-family: var(--font-display);
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-  .exp-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: white;
-    line-height: 1.2;
-    margin-bottom: 0.8rem;
-  }
-  .exp-card p {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.6;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
+  .exp-num { font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.5rem; }
+  .exp-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; color: white; line-height: 1.2; margin-bottom: 0.8rem; }
+  .exp-card p { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .exp-card:hover p { max-height: 120px; }
 
-  /* ZONES */
-  .zones { background: var(--sand); }
-  .zones-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 3rem;
+  /* ── DESTINOS ── */
+  .destinos { background: var(--deep); color: white; padding-top: 5rem; }
+  .destinos .section-tag { color: var(--gold); }
+  .destinos-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; margin-top: 2rem; }
+  .destinos-left p { color: rgba(255,255,255,0.55); line-height: 1.8; font-size: 0.9rem; margin-bottom: 2rem; }
+  .destinos-tabs { display: flex; flex-direction: column; }
+  .dtab { border-top: 1px solid rgba(255,255,255,0.1); overflow: hidden; }
+  .dtab:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .dtab-header { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 0; cursor: pointer; gap: 1.5rem; }
+  .dtab-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.8); transition: color 0.3s; }
+  .dtab.open .dtab-title { color: var(--gold); }
+  .dtab-icon {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; color: rgba(255,255,255,0.5); transition: transform 0.3s, background 0.3s, border-color 0.3s;
   }
-  .zones-intro p { color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem; }
-  .zones-items { display: flex; flex-direction: column; gap: 0; }
-  .zone-item {
-    border-top: 1px solid rgba(28,26,23,0.15);
-    padding: 2rem 0;
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 2rem;
-    align-items: start;
-    transition: background 0.2s;
-  }
-  .zone-item:last-child { border-bottom: 1px solid rgba(28,26,23,0.15); }
-  .zone-name {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--terracotta);
-    font-style: italic;
-  }
-  .zone-desc { color: var(--muted); line-height: 1.7; font-size: 0.9rem; }
+  .dtab.open .dtab-icon { transform: rotate(45deg); background: var(--terracotta); border-color: var(--terracotta); color: white; }
+  .dtab-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+  .dtab.open .dtab-body { max-height: 400px; }
+  .dtab-content { padding-bottom: 1.8rem; }
+  .dtab-content ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .dtab-content ul li { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.7; padding-left: 1.4rem; position: relative; }
+  .dtab-content ul li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); }
 
-  /* HOW */
+  /* ── CÓMO FUNCIONA ── */
   .how { background: var(--cream); }
   .how-header { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 4rem; }
-  .how-visual { height: 400px; overflow: hidden; border-radius: 2px; }
+  .how-visual { height: 420px; overflow: hidden; border-radius: 2px; }
   .how-visual img { width: 100%; height: 100%; object-fit: cover; }
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem; }
-  .step {
-    position: relative;
-    padding: 2rem;
-    background: white;
-    border-radius: 2px;
-    border-top: 3px solid var(--sand);
-    transition: border-color 0.3s, transform 0.3s;
-  }
+  .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+  .step { padding: 2rem; background: white; border-radius: 2px; border-top: 3px solid var(--sand); transition: border-color 0.3s, transform 0.3s; }
   .step:hover { border-top-color: var(--terracotta); transform: translateY(-4px); }
-  .step-num {
-    font-family: var(--font-display);
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--sand);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-  .step-time {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    margin-bottom: 0.8rem;
-  }
-  .step h4 {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 0.6rem;
-  }
+  .step-num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--sand); line-height: 1; margin-bottom: 0.5rem; }
+  .step-time { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; }
+  .step h4 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 400; margin-bottom: 0.6rem; }
   .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 
-  /* FORM */
-  .contact {
-    background: var(--deep);
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
+  /* ── CONTACT ── */
+  .contact { background: var(--deep); color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
   .contact .section-tag { color: var(--gold); }
   .contact h2.section-title { color: white; }
   .contact h2.section-title em { color: var(--gold); }
   .contact-intro { color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1.5rem; }
-  .contact-promise {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  .promise-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
+  .contact-promise { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .promise-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.08); }
   .promise-icon { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
   .promise-text h5 { color: white; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.25rem; }
   .promise-text p { color: rgba(255,255,255,0.5); font-size: 0.8rem; line-height: 1.5; }
   form { display: flex; flex-direction: column; gap: 1rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
-  label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  label { font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
   input, select, textarea {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: white;
-    padding: 0.85rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-weight: 300;
-    border-radius: 2px;
-    transition: border-color 0.3s;
-    outline: none;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    color: white; padding: 0.85rem 1rem; font-family: var(--font-body);
+    font-size: 0.9rem; font-weight: 300; border-radius: 2px; transition: border-color 0.3s; outline: none;
   }
   input:focus, select:focus, textarea:focus { border-color: var(--gold); }
   select option { background: var(--deep); }
   textarea { resize: vertical; min-height: 100px; }
-  .form-submit { margin-top: 0.5rem; }
   .btn-form {
-    width: 100%;
-    background: var(--terracotta);
-    color: white;
-    border: none;
-    padding: 1.1rem;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-radius: 2px;
+    width: 100%; background: var(--terracotta); color: white; border: none;
+    padding: 1.1rem; font-family: var(--font-body); font-size: 0.78rem;
+    letter-spacing: 0.13em; text-transform: uppercase; font-weight: 500;
+    cursor: pointer; transition: background 0.3s; border-radius: 2px; margin-top: 0.5rem;
   }
   .btn-form:hover { background: #b35e38; }
 
-  /* FAQ */
+  /* ── FAQ ── */
   .faq { background: var(--warm-white); }
   .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 3rem; }
-  .faq-item {
-    border-top: 1px solid rgba(28,26,23,0.12);
-    padding: 0;
-  }
+  .faq-item { border-top: 1px solid rgba(28,26,23,0.12); padding: 0; }
   .faq-item:nth-child(odd) { padding-right: 3rem; }
   .faq-item:nth-child(even) { padding-left: 3rem; border-left: 1px solid rgba(28,26,23,0.12); }
-  .faq-q {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.5rem 0;
-    cursor: pointer;
-  }
-  .faq-q span {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.4;
-  }
+  .faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1.5rem 0; cursor: pointer; }
+  .faq-q span { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; line-height: 1.4; }
   .faq-toggle {
-    flex-shrink: 0;
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    border: 1px solid var(--terracotta);
-    color: var(--terracotta);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    transition: transform 0.3s, background 0.3s;
-    margin-top: 2px;
+    flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+    border: 1px solid var(--terracotta); color: var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; transition: transform 0.3s, background 0.3s; margin-top: 2px;
   }
   .faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--terracotta); color: white; }
-  .faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-a p { color: var(--muted); line-height: 1.7; font-size: 0.9rem; padding-bottom: 1.5rem; }
   .faq-item.open .faq-a { max-height: 200px; }
 
-  /* FOOTER */
-  footer {
-    background: var(--deep);
-    color: rgba(255,255,255,0.5);
-    padding: 3rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
+  /* ── FOOTER ── */
+  footer { background: var(--deep); color: rgba(255,255,255,0.5); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
   .footer-logo img { height: 40px; filter: brightness(0.6); }
-  footer nav a {
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    margin-left: 2rem;
-    transition: color 0.3s;
-  }
-  footer nav a:hover { color: white; }
+  .footer-nav a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; margin-left: 2rem; transition: color 0.3s; }
+  .footer-nav a:hover { color: white; }
   .footer-copy { font-size: 0.75rem; }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes scrollBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(6px); }
-  }
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+  @keyframes scrollBounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: none; }
 
-  /* RESPONSIVE */
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 1.2rem 2rem; }
+    #main-nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
     section { padding: 4rem 2rem; }
     .about, .contact { grid-template-columns: 1fr; }
@@ -541,15 +241,14 @@
     .about-visual-badge { display: none; }
     .exp-grid { grid-template-columns: 1fr; }
     .exp-card { height: 320px; }
-    .zones-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .destinos-inner { grid-template-columns: 1fr; gap: 2rem; }
     .how-header { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .faq-grid { grid-template-columns: 1fr; }
     .faq-item:nth-child(even) { padding-left: 0; border-left: none; }
     footer { flex-direction: column; text-align: center; }
-    footer nav { margin-top: 0.5rem; }
-    footer nav a { margin: 0 1rem; }
+    .footer-nav a { margin: 0 1rem; }
   }
 </style>
 </head>
@@ -579,13 +278,10 @@
     <a href="#contact" class="btn-primary">Diseña tu viaje</a>
     <a href="#about" class="btn-outline">Descubre más</a>
   </div>
-  <div class="hero-scroll">
-    Scroll
-    <span></span>
-  </div>
+  <div class="hero-scroll">Scroll<span></span></div>
 </section>
 
-<!-- ABOUT -->
+<!-- QUÉ ES BASSA -->
 <section class="about" id="about">
   <div class="about-text reveal">
     <span class="section-tag">Sobre nosotros</span>
@@ -593,34 +289,25 @@
     <p>Bassa Travels es una agencia boutique especializada en Indonesia y viajes de bienestar premium. Diseñamos itinerarios a medida, con ritmo slow, hoteles con criterio y soporte cercano en español antes y durante el viaje.</p>
     <p>Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.</p>
     <div class="about-pillars">
-      <div class="pillar">
-        <h4>Lujo<br>Personalizado</h4>
-        <p>Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p>
-      </div>
-      <div class="pillar">
-        <h4>Viajes<br>Revitalizantes</h4>
-        <p>Descanso, masajes, rituales locales y ritmo slow.</p>
-      </div>
-      <div class="pillar">
-        <h4>Experiencias<br>Únicas</h4>
-        <p>Proveedores de confianza y acompañamiento desde España.</p>
-      </div>
+      <div class="pillar"><h4>Lujo<br>Personalizado</h4><p>Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p></div>
+      <div class="pillar"><h4>Viajes<br>Revitalizantes</h4><p>Descanso, masajes, rituales locales y ritmo slow.</p></div>
+      <div class="pillar"><h4>Experiencias<br>Únicas</h4><p>Proveedores de confianza y acompañamiento desde España.</p></div>
     </div>
   </div>
-  <div class="about-visual reveal" style="transition-delay: 0.2s">
-    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=900&q=85" alt="Indonesia">
+  <div class="about-visual reveal" style="transition-delay:0.2s">
+    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85" alt="Villa premium Bali">
     <div class="about-visual-badge">"Cada viaje es tan único como la persona que lo vive"</div>
   </div>
 </section>
 
-<!-- EXPERIENCES -->
+<!-- EXPERIENCIAS -->
 <section class="experiences" id="experiences">
   <span class="section-tag reveal">Experiencias</span>
   <h2 class="section-title reveal">Momentos que<br><em>no se olvidan</em></h2>
   <p class="exp-intro reveal">Tres formas distintas de vivir Indonesia. Todas diseñadas con calma, privacidad y criterio.</p>
   <div class="exp-grid reveal">
     <div class="exp-card">
-      <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=900&q=85" alt="Spa selva Bali">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=85" alt="Villa Bali piscina">
       <div class="exp-card-overlay">
         <span class="exp-num">01</span>
         <h3>Reset profundo en la selva</h3>
@@ -628,7 +315,7 @@
       </div>
     </div>
     <div class="exp-card">
-      <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=900&q=85" alt="Raja Ampat islas">
+      <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=900&q=85" alt="Raja Ampat">
       <div class="exp-card-overlay">
         <span class="exp-num">02</span>
         <h3>Islas desiertas privadas</h3>
@@ -646,72 +333,101 @@
   </div>
 </section>
 
-<!-- ZONES -->
-<section class="zones" id="zones">
+<!-- DESTINOS — continuación de experiencias -->
+<section class="destinos" id="destinos">
   <span class="section-tag reveal">Destinos</span>
-  <h2 class="section-title reveal">Zonas<br><em>favoritas</em></h2>
-  <div class="zones-grid">
-    <div class="zones-intro reveal">
-      <p>Indonesia es enorme. Para un viaje BASSA, priorizamos calidad, calma y pocos cambios.</p>
-      <p>Priorizamos las zonas que mejor encajan con el ritmo slow y la experiencia premium que buscamos para ti.</p>
-      <a href="#contact" class="btn-primary" style="color:white">Cuéntanos tu viaje</a>
+  <h2 class="section-title reveal" style="color:white">Indonesia,<br><em>bien elegida</em></h2>
+  <div class="destinos-inner">
+    <div class="destinos-left reveal">
+      <p>Indonesia es enorme. Para un viaje BASSA priorizamos calidad, calma y pocos cambios. Te ayudamos a elegir las islas que mejor encajan con tu estilo y ritmo.</p>
+      <a href="#contact" class="btn-primary">Cuéntanos tu viaje</a>
     </div>
-    <div class="zones-items">
-      <div class="zone-item reveal">
-        <span class="zone-name">Bali</span>
-        <p class="zone-desc">Interior verde y costa tranquila. Spa, gastronomía excepcional, villas privadas. La opción más versátil y equilibrada para un primer viaje o para quienes buscan plenitud sensorial.</p>
+    <div class="destinos-tabs reveal" style="transition-delay:0.15s">
+
+      <div class="dtab open">
+        <div class="dtab-header">
+          <span class="dtab-title">Zonas favoritas</span>
+          <div class="dtab-icon">+</div>
+        </div>
+        <div class="dtab-body">
+          <div class="dtab-content">
+            <ul>
+              <li><strong style="color:rgba(255,255,255,0.8)">Bali</strong> — Interior verde y costa tranquila. Spa, gastronomía excepcional, villas privadas. La opción más versátil para un primer viaje o quienes buscan plenitud sensorial.</li>
+              <li><strong style="color:rgba(255,255,255,0.8)">Raja Ampat</strong> — Remoto y exclusivo. Snorkel y diving de primer nivel mundial, privacidad total y naturaleza pristina.</li>
+              <li><strong style="color:rgba(255,255,255,0.8)">Java</strong> — Cultura e historia icónica. Templos milenarios, volcanes activos. Perfecto para un bloque corto e intenso.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="zone-item reveal" style="transition-delay:0.1s">
-        <span class="zone-name">Raja Ampat</span>
-        <p class="zone-desc">Remoto y exclusivo. Snorkel y diving de primer nivel mundial, privacidad total y naturaleza pristina. Para quienes quieren desaparecer en un paraíso de verdad.</p>
+
+      <div class="dtab">
+        <div class="dtab-header">
+          <span class="dtab-title">Cuándo ir</span>
+          <div class="dtab-icon">+</div>
+        </div>
+        <div class="dtab-body">
+          <div class="dtab-content">
+            <ul>
+              <li>Para <strong style="color:rgba(255,255,255,0.8)">Bali y Java</strong> la referencia general es la estación seca, de abril a octubre. Menos lluvia, mejor luz y condiciones ideales.</li>
+              <li>Para <strong style="color:rgba(255,255,255,0.8)">Raja Ampat</strong> la mejor ventana suele ser entre octubre y abril, aunque con matices según el tipo de experiencia.</li>
+              <li>Ajustamos islas y experiencias para que el clima siempre juegue a tu favor.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="zone-item reveal" style="transition-delay:0.2s">
-        <span class="zone-name">Java</span>
-        <p class="zone-desc">Cultura e historia icónica. Templos milenarios, volcanes activos y ciudades llenas de vida. Perfecto para un bloque corto e intenso en cultura indonesia auténtica.</p>
+
+      <div class="dtab">
+        <div class="dtab-header">
+          <span class="dtab-title">Datos útiles</span>
+          <div class="dtab-icon">+</div>
+        </div>
+        <div class="dtab-body">
+          <div class="dtab-content">
+            <ul>
+              <li><strong style="color:rgba(255,255,255,0.8)">Visado</strong> — e-VOA a la llegada u online: tasa oficial IDR 500.000.</li>
+              <li><strong style="color:rgba(255,255,255,0.8)">Tasa turística Bali</strong> — IDR 150.000 por visitante (oficial Love Bali).</li>
+              <li><strong style="color:rgba(255,255,255,0.8)">Aduanas</strong> — Declaración online en la Indonesian Customs Declaration (e-CD).</li>
+              <li><strong style="color:rgba(255,255,255,0.8)">Recomendaciones</strong> — Consulta siempre el MAEC antes de viajar.</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- HOW -->
+<!-- CÓMO FUNCIONA -->
 <section class="how" id="how">
-  <span class="section-tag reveal">Proceso</span>
+  <span class="section-tag reveal">Cómo funciona</span>
   <h2 class="section-title reveal">Un proceso <em>simple</em><br>y acompañado</h2>
   <div class="how-header">
-    <p style="color:var(--muted); line-height:1.8" class="reveal">En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.</p>
+    <p style="color:var(--muted);line-height:1.8" class="reveal">En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.</p>
     <div class="how-visual reveal">
-      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=85" alt="Proceso viaje">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=85" alt="Cómo funciona Bassa">
     </div>
   </div>
   <div class="steps">
     <div class="step reveal">
-      <div class="step-num">01</div>
-      <div class="step-time">60 segundos</div>
-      <h4>Formulario</h4>
-      <p>Fechas, estilo y presupuesto orientativo. Lo justo para empezar.</p>
+      <div class="step-num">01</div><div class="step-time">60 segundos</div>
+      <h4>Formulario</h4><p>Fechas, estilo y presupuesto orientativo. Lo justo para empezar.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.1s">
-      <div class="step-num">02</div>
-      <div class="step-time">15–20 min</div>
-      <h4>Llamada breve</h4>
-      <p>Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.</p>
+      <div class="step-num">02</div><div class="step-time">15–20 min</div>
+      <h4>Llamada breve</h4><p>Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.2s">
-      <div class="step-num">03</div>
-      <div class="step-time">A medida</div>
-      <h4>Propuesta</h4>
-      <p>Itinerario claro, opciones premium, qué incluye y ajustes necesarios.</p>
+      <div class="step-num">03</div><div class="step-time">A medida</div>
+      <h4>Propuesta</h4><p>Itinerario claro, opciones premium, qué incluye y ajustes necesarios.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.3s">
-      <div class="step-num">04</div>
-      <div class="step-time">Nos encargamos</div>
-      <h4>Viaje definido</h4>
-      <p>Bloqueamos servicios y te acompañamos antes y durante el viaje.</p>
+      <div class="step-num">04</div><div class="step-time">Nos encargamos</div>
+      <h4>Viaje definido</h4><p>Bloqueamos servicios y te acompañamos antes y durante el viaje.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT FORM -->
+<!-- CONTACTO -->
 <section class="contact" id="contact">
   <div class="contact-left reveal">
     <span class="section-tag">Contacto</span>
@@ -720,24 +436,15 @@
     <div class="contact-promise">
       <div class="promise-item">
         <span class="promise-icon">✦</span>
-        <div class="promise-text">
-          <h5>Sin compromiso</h5>
-          <p>La consulta inicial es completamente gratuita y sin ningún tipo de compromiso.</p>
-        </div>
+        <div class="promise-text"><h5>Sin compromiso</h5><p>La consulta inicial es completamente gratuita y sin ningún tipo de compromiso.</p></div>
       </div>
       <div class="promise-item">
         <span class="promise-icon">✦</span>
-        <div class="promise-text">
-          <h5>Respuesta en 24h</h5>
-          <p>Te contactamos el siguiente día hábil para agendar vuestra llamada.</p>
-        </div>
+        <div class="promise-text"><h5>Respuesta en 24h</h5><p>Te contactamos el siguiente día hábil para agendar vuestra llamada.</p></div>
       </div>
       <div class="promise-item">
         <span class="promise-icon">✦</span>
-        <div class="promise-text">
-          <h5>En español, siempre</h5>
-          <p>Soporte completo en español antes, durante y después del viaje.</p>
-        </div>
+        <div class="promise-text"><h5>En español, siempre</h5><p>Soporte completo en español antes, durante y después del viaje.</p></div>
       </div>
     </div>
   </div>
@@ -746,11 +453,13 @@
       <div class="form-field">
         <label>¿Qué tipo de Indonesia quieres?</label>
         <select>
-          <option value="">Selecciona una opción</option>
-          <option>Wellness & Spa (Bali interior)</option>
-          <option>Naturaleza & Snorkel (Raja Ampat)</option>
-          <option>Cultura & Templos (Java)</option>
-          <option>Combinado a medida</option>
+          <option value="">Cuéntanos tu idea...</option>
+          <option>Bali en profundidad — slow, spa y naturaleza</option>
+          <option>Raja Ampat — snorkel y privacidad total</option>
+          <option>Java &amp; Bali — cultura y descanso</option>
+          <option>Bali &amp; Raja Ampat — lo mejor de dos mundos</option>
+          <option>Java, Bali &amp; Gili — circuito slow premium</option>
+          <option>Aún no lo tengo claro, me ayudáis</option>
         </select>
       </div>
       <div class="form-field">
@@ -767,11 +476,21 @@
       <div class="form-row">
         <div class="form-field">
           <label>Salida aproximada</label>
-          <input type="month" placeholder="MM/AAAA">
+          <input type="month">
         </div>
         <div class="form-field">
-          <label>Regreso aproximado</label>
-          <input type="month" placeholder="MM/AAAA">
+          <label>Días de viaje</label>
+          <select>
+            <option value="">¿Cuántos días?</option>
+            <option>7 días</option>
+            <option>10 días</option>
+            <option>12 días</option>
+            <option>14 días</option>
+            <option>16 días</option>
+            <option>18 días</option>
+            <option>21 días o más</option>
+            <option>Aún no lo sé, me ayudáis</option>
+          </select>
         </div>
       </div>
       <div class="form-row">
@@ -792,9 +511,7 @@
         <label>Imprescindibles / preferencias</label>
         <textarea placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
-      <div class="form-submit">
-        <button type="submit" class="btn-form">Enviar consulta →</button>
-      </div>
+      <button type="submit" class="btn-form">Enviar consulta →</button>
     </form>
   </div>
 </section>
@@ -814,7 +531,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>¿Con cuánta antelación conviene reservar?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>Para asegurar disponibilidad premium: 4–6 meses en temporada baja y 8–10 meses en temporada alta. Algunos alojamientos exclusivos pueden requerir más.</p></div>
+      <div class="faq-a"><p>Para asegurar disponibilidad premium: 4–6 meses en temporada baja y 8–10 meses en temporada alta. Algunos alojamientos exclusivos requieren más.</p></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span>¿Organizáis viajes en grupo?</span><div class="faq-toggle">+</div></div>
@@ -845,36 +562,44 @@
     <img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels">
   </a>
   <span class="footer-copy">© 2025 Bassa Travels · Agencia boutique de viajes wellness en Indonesia</span>
-  <nav>
+  <nav class="footer-nav">
     <a href="#about">Qué es Bassa</a>
     <a href="#experiences">Experiencias</a>
+    <a href="#how">Cómo funciona</a>
     <a href="#contact">Contacto</a>
   </nav>
 </footer>
 
 <script>
-// Nav scroll
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
+  // Nav scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.12 });
-reveals.forEach(el => observer.observe(el));
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// FAQ accordion
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.closest('.faq-item');
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
   });
-});
+
+  // Destinos accordion
+  document.querySelectorAll('.dtab-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const tab = header.closest('.dtab');
+      const wasOpen = tab.classList.contains('open');
+      document.querySelectorAll('.dtab').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) tab.classList.add('open');
+    });
+  });
 </script>
 </body>
 </html>
