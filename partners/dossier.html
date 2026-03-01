@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bassa Travels — Partner Dossier</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a14;
+    --cream: #f5f0e8;
+    --sand: #e8dcc8;
+    --gold: #b8965a;
+    --gold-light: #d4b07a;
+    --forest: #2d3d2e;
+    --moss: #4a5e3a;
+    --sage: #7a9268;
+    --white: #fdfcf8;
+    --muted: #6b6558;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .serif { font-family: 'Cormorant Garant', serif; }
+
+  h1, h2, h3, h4 { font-family: 'Cormorant Garant', serif; font-weight: 400; line-height: 1.15; }
+
+  .label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,150,90,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--forest);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── COVER ─── */
+  #cover {
+    min-height: 100vh;
+    background: var(--forest);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 6rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover-eyebrow {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cover-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .cover-h1 {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.08;
+    margin-bottom: 0.5rem;
+  }
+
+  .cover-h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .cover-sub {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .cover-desc {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.65);
+    max-width: 38ch;
+    line-height: 1.8;
+    margin-bottom: 3.5rem;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid rgba(184,150,90,0.4);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    width: fit-content;
+    margin-bottom: 5.5rem;
+  }
+
+  .cover-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    transform: scale(1.05);
+    transition: transform 8s ease;
+  }
+
+  .cover-right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--forest) 0%, transparent 40%);
+  }
+
+  .cover-ornament {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .cover-stat {
+    text-align: center;
+  }
+
+  .cover-stat-n {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .cover-stat-l {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-top: 0.25rem;
+  }
+
+  .cover-divider {
+    width: 1px;
+    height: 3rem;
+    background: rgba(184,150,90,0.3);
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { position: relative; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  /* ─── INTRO STRIP ─── */
+  #intro {
+    background: var(--gold);
+    padding: 2.5rem 3rem;
+  }
+
+  .intro-text {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--forest);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ─── WHO WE ARE ─── */
+  #who {
+    background: var(--white);
+    padding: 8rem 3rem;
+  }
+
+  .who-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .who-img {
+    position: relative;
+  }
+
+  .who-img img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .who-img-tag {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--forest);
+    color: var(--cream);
+    padding: 1.5rem 2rem;
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1rem;
+    font-style: italic;
+    max-width: 200px;
+    line-height: 1.4;
+  }
+
+  .who-content .label { margin-bottom: 1.5rem; display: block; }
+
+  .who-content h2 {
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    color: var(--forest);
+    margin-bottom: 2rem;
+  }
+
+  .who-content p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    max-width: 45ch;
+  }
+
+  .who-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .pillar {
+    border-left: 2px solid var(--gold);
+    padding-left: 1rem;
+  }
+
+  .pillar-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 0.4rem;
+  }
+
+  .pillar-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─── TRAVELER PROFILE ─── */
+  #profile {
+    background: var(--forest);
+    padding: 8rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #profile::before {
+    content: 'BASSA';
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Cormorant Garant', serif;
+    font-size: 18rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .profile-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+
+  .profile-header h2 {
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    color: var(--cream);
+  }
+
+  .profile-header h2 em { color: var(--gold-light); }
+
+  .profile-intro {
+    font-size: 0.9rem;
+    color: var(--sage);
+    max-width: 30ch;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  .profile-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(184,150,90,0.2);
+    border: 1px solid rgba(184,150,90,0.2);
+  }
+
+  .profile-card {
+    background: var(--forest);
+    padding: 2.5rem 1.75rem;
+    transition: background 0.3s;
+  }
+
+  .profile-card:hover { background: rgba(45,61,46,0.5); }
+
+  .profile-card-num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(184,150,90,0.3);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-card-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .profile-card p {
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.7;
+  }
+
+  /* ─── WHAT WE OFFER ─── */
+  #offer {
+    background: var(--cream);
+    padding: 8rem 3rem;
+  }
+
+  .offer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .offer-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .offer-header .label { margin-bottom: 1rem; display: block; }
+
+  .offer-header h2 {
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    color: var(--forest);
+  }
+
+  .offer-header h2 em { color: var(--gold); font-style: italic; }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--sand);
+  }
+
+  .offer-item {
+    padding: 3rem 2.5rem;
+    border-right: 1px solid var(--sand);
+    transition: background 0.3s;
+    position: relative;
+  }
+
+  .offer-item:last-child { border-right: none; }
+
+  .offer-item:hover { background: var(--white); }
+
+  .offer-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    transform-origin: left;
+  }
+
+  .offer-item:hover::before { transform: scaleX(1); }
+
+  .offer-num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .offer-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.5rem;
+    color: var(--forest);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .offer-item p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* ─── DESTINATIONS ─── */
+  #destinations {
+    background: var(--ink);
+    padding: 8rem 3rem;
+  }
+
+  .dest-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .dest-header {
+    margin-bottom: 4rem;
+  }
+
+  .dest-header .label { margin-bottom: 1rem; display: block; color: var(--gold); }
+
+  .dest-header h2 {
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    color: var(--cream);
+  }
+
+  .dest-header h2 em { color: var(--gold-light); }
+
+  .dest-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .dest-card {
+    position: relative;
+    overflow: hidden;
+    height: 420px;
+    cursor: pointer;
+  }
+
+  .dest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.6);
+  }
+
+  .dest-card:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.45);
+  }
+
+  .dest-card-body {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(10,12,8,0.85) 0%, transparent 60%);
+  }
+
+  .dest-card-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .dest-card h3 {
+    font-size: 1.8rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .dest-card p {
+    font-size: 0.82rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.65;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.4s ease;
+  }
+
+  .dest-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── HOW WE WORK ─── */
+  #how {
+    background: var(--white);
+    padding: 8rem 3rem;
+  }
+
+  .how-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .how-left .label { margin-bottom: 1rem; display: block; }
+
+  .how-left h2 {
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    color: var(--forest);
+    margin-bottom: 1.5rem;
+  }
+
+  .how-left h2 em { color: var(--gold); }
+
+  .how-left p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .how-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .how-step {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--sand);
+    position: relative;
+    transition: padding-left 0.3s;
+  }
+
+  .how-step:hover { padding-left: 0.5rem; }
+
+  .how-step-n {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    padding-top: 0.2rem;
+  }
+
+  .how-step-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.2rem;
+    color: var(--forest);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+
+  .how-step p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ─── WHY PARTNER ─── */
+  #why {
+    background: linear-gradient(135deg, var(--forest) 0%, #1e2e1f 100%);
+    padding: 8rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #why::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=60') center/cover;
+    opacity: 0.08;
+  }
+
+  .why-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .why-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .why-header .label { margin-bottom: 1rem; display: block; }
+
+  .why-header h2 {
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    color: var(--cream);
+  }
+
+  .why-header h2 em { color: var(--gold-light); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .why-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,90,0.2);
+    padding: 2.5rem;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .why-card:hover {
+    border-color: rgba(184,150,90,0.6);
+    background: rgba(255,255,255,0.07);
+  }
+
+  .why-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .why-card h3 {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.35rem;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .why-card p {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.75;
+  }
+
+  /* ─── TESTIMONIAL ─── */
+  #quote {
+    background: var(--gold);
+    padding: 6rem 3rem;
+  }
+
+  .quote-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .quote-mark {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 6rem;
+    line-height: 0.5;
+    color: var(--forest);
+    opacity: 0.3;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-style: italic;
+    color: var(--forest);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .quote-attr {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    opacity: 0.6;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--cream);
+    padding: 8rem 3rem;
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-left .label { margin-bottom: 1rem; display: block; }
+
+  .contact-left h2 {
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    color: var(--forest);
+    margin-bottom: 2rem;
+  }
+
+  .contact-left h2 em { color: var(--gold); }
+
+  .contact-left p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    max-width: 40ch;
+  }
+
+  .contact-data {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .contact-item-icon {
+    width: 2rem;
+    height: 2rem;
+    background: var(--forest);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    margin-top: 0.1rem;
+  }
+
+  .contact-item-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .contact-item-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-item-value {
+    color: var(--forest);
+    font-weight: 400;
+  }
+
+  .contact-right {
+    background: var(--forest);
+    padding: 3rem;
+  }
+
+  .contact-right h3 {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.6rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-right p {
+    font-size: 0.82rem;
+    color: var(--sage);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(184,150,90,0.25);
+    color: var(--cream);
+    padding: 0.8rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+  }
+
+  .form-input::placeholder, .form-textarea::placeholder {
+    color: rgba(245,240,232,0.25);
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-textarea { resize: vertical; min-height: 100px; }
+
+  .form-select {
+    cursor: pointer;
+    color: rgba(245,240,232,0.7);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23b8965a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .form-select option { background: var(--forest); color: var(--cream); }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--forest);
+    border: none;
+    padding: 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.2rem;
+    color: var(--cream);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 0.7rem;
+    color: rgba(245,240,232,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-tagline {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+  /* ─── PROGRESS BAR ─── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--gold);
+    z-index: 200;
+    transition: width 0.1s;
+  }
+
+  /* ─── MARKET ANALYSIS ─── */
+  #market {
+    background: var(--ink);
+    padding: 8rem 3rem;
+    overflow: hidden;
+  }
+
+  .market-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .market-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .market-header .label { margin-bottom: 1rem; display: block; }
+
+  .market-header h2 {
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    color: var(--cream);
+  }
+
+  .market-header h2 em { color: var(--gold-light); font-style: italic; }
+
+  .market-header p {
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.5);
+    margin-top: 1rem;
+    max-width: 55ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .market-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Chart Card */
+  .chart-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,90,0.2);
+    padding: 2.5rem;
+  }
+
+  .chart-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .chart-subtitle {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  /* Bar chart */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .bar-label {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.6);
+    width: 3.2rem;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 28px;
+    background: rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--moss), var(--gold));
+    width: 0%;
+    transition: width 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+  }
+
+  .bar-fill.animated { width: var(--target-width); }
+
+  .bar-value {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: var(--cream);
+    width: 3.5rem;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .chart-source {
+    font-size: 0.6rem;
+    color: rgba(245,240,232,0.25);
+    margin-top: 1.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* CAGR Dial */
+  .cagr-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,90,0.2);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cagr-big {
+    text-align: center;
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid rgba(184,150,90,0.15);
+  }
+
+  .cagr-num {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .cagr-unit {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+    margin-top: 0.5rem;
+  }
+
+  .cagr-label {
+    font-size: 0.8rem;
+    color: var(--sage);
+    margin-top: 0.25rem;
+  }
+
+  .stat-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.83rem;
+    color: rgba(245,240,232,0.6);
+    line-height: 1.6;
+  }
+
+  .stat-bullet::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.55rem;
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+  }
+
+  .stat-bullet strong { color: var(--cream); font-weight: 500; }
+
+  .stat-source {
+    font-size: 0.6rem;
+    color: rgba(184,150,90,0.55);
+    letter-spacing: 0.08em;
+    margin-top: 0.2rem;
+    font-style: italic;
+  }
+
+  /* Bottom insight strip */
+  .market-insights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(184,150,90,0.15);
+    border: 1px solid rgba(184,150,90,0.15);
+    margin-top: 3rem;
+  }
+
+  .insight-box {
+    background: var(--ink);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .insight-box:hover { background: rgba(45,61,46,0.4); }
+
+  .insight-n {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .insight-l {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+    margin-top: 0.5rem;
+    display: block;
+    line-height: 1.5;
+  }
+
+  /* ─── SPAIN–INDONESIA BRIDGE ─── */
+  #bridge {
+    background: var(--white);
+    padding: 8rem 3rem;
+    overflow: hidden;
+  }
+
+  .bridge-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .bridge-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .bridge-header .label { margin-bottom: 1rem; display: block; }
+
+  .bridge-header h2 {
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    color: var(--forest);
+  }
+
+  .bridge-header h2 em { color: var(--gold); }
+
+  .bridge-header p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    max-width: 55ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .bridge-map-area {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .map-country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    align-self: stretch;
+  }
+
+  .map-label {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.8rem;
+    color: var(--forest);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .map-sublabel {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .map-svg-wrap {
+    width: 100%;
+    max-width: 340px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-svg-wrap svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Bridge center */
+  .bridge-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0 1rem;
+    position: relative;
+    min-width: 200px;
+    align-self: center;
+  }
+
+  .bridge-arrow-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .bridge-arrow {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+    position: relative;
+  }
+
+  .arrow-pill {
+    background: var(--forest);
+    color: var(--cream);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.65rem 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    transition: background 0.2s;
+    box-sizing: border-box;
+  }
+
+  .arrow-pill:hover { background: var(--moss); }
+
+  .arrow-pill.gold-pill {
+    background: var(--gold);
+    color: var(--forest);
+    font-weight: 500;
+  }
+
+  .arrow-pill.gold-pill:hover { background: var(--gold-light); }
+
+  .arrow-line {
+    flex: 1;
+    height: 1px;
+    background: var(--sand);
+    position: relative;
+  }
+
+  .arrow-head-right {
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid var(--gold);
+    flex-shrink: 0;
+  }
+
+  .arrow-head-left {
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 8px solid var(--forest);
+    flex-shrink: 0;
+  }
+
+  .bassa-bridge-badge {
+    background: var(--gold);
+    color: var(--forest);
+    padding: 1.25rem 1.75rem;
+    text-align: center;
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 160px;
+    box-shadow: 0 8px 32px rgba(184,150,90,0.25);
+    margin: 0.5rem 0;
+  }
+
+  .bassa-bridge-badge span {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6rem;
+    font-style: normal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    opacity: 0.65;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Flow cards below */
+  /* Bridge country bullets */
+  .bridge-country-bullets {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0;
+    width: 100%;
+    border: 1px solid var(--sand);
+    margin-top: auto;
+  }
+
+  .bridge-bullet {
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid var(--sand);
+    font-size: 0.82rem;
+    color: var(--ink);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bridge-bullet:last-child { border-bottom: none; }
+
+  .bridge-bullet strong {
+    color: var(--forest);
+    font-weight: 500;
+    display: block;
+  }
+
+  .bridge-bullet span {
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  .bridge-flows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .flow-col {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr;
+    gap: 0;
+    background: var(--sand);
+    border: 1px solid var(--sand);
+  }
+
+  .flow-col-header {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 1rem 1.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .flow-col-header.gold-header {
+    background: var(--gold);
+    color: var(--forest);
+  }
+
+  .flow-col-header .flag { font-size: 1.1rem; }
+
+  .flow-item {
+    background: var(--white);
+    padding: 1.1rem 1.5rem;
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .flow-item:hover { background: #f9f6ef; }
+
+  .flow-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+
+  .flow-item strong { color: var(--ink); font-weight: 500; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #cover { grid-template-columns: 1fr; }
+    .cover-right { display: none; }
+    .cover-left { padding: 7rem 2rem 4rem; }
+    .who-grid, .how-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .profile-cards { grid-template-columns: 1fr 1fr; }
+    .offer-grid, .dest-cards, .why-grid { grid-template-columns: 1fr; }
+    .section-inner { padding: 0 1.5rem; }
+    #who, #profile, #offer, #destinations, #how, #why, #contact { padding: 5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#cover" class="nav-logo">BASSA<span>·</span>TRAVELS</a>
+  <ul class="nav-links">
+    <li><a href="#market">Market</a></li>
+    <li><a href="#bridge">The Bridge</a></li>
+    <li><a href="#who">About</a></li>
+    <li><a href="#profile">Our Clients</a></li>
+    <li><a href="#seek">What We Seek</a></li>
+    <li><a href="#contact">Partner With Us</a></li>
+  </ul>
+</nav>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="cover-left">
+    <div class="cover-eyebrow">Partner Dossier · 2026</div>
+    <h1 class="cover-h1">Indonesia.<br><em>Curated</em><br>for those<br>who seek.</h1>
+    <p class="cover-sub">Boutique Wellness Travel · Spain</p>
+    <p class="cover-desc">Bassa Travels is a premium Spanish boutique agency exclusively dedicated to Indonesia. We design slow, private, wellness-focused itineraries for discerning travellers — and we're looking for the right partners on the ground.</p>
+    <div class="cover-badge">
+      <span>✦</span> Exclusive Partnership Opportunity
+    </div>
+    <div class="cover-ornament">
+      <div class="cover-stat">
+        <div class="cover-stat-n">100%</div>
+        <div class="cover-stat-l">Custom itineraries</div>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-stat">
+        <div class="cover-stat-n">Premium</div>
+        <div class="cover-stat-l">Segment only</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-right">
+    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=85" alt="Bali rice terraces">
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<section id="intro">
+  <p class="intro-text">"Every journey is as unique as the person who lives it — and Indonesia deserves to be experienced that way."</p>
+</section>
+
+<!-- MARKET ANALYSIS -->
+<section id="market">
+  <div class="market-inner">
+    <div class="market-header fade-up">
+      <span class="label">Market Context</span>
+      <h2>Wellness travel is one of the fastest<br>growing <em>sectors in the world</em></h2>
+      <p>Understanding the market is the first step to understanding why a partnership with Bassa Travels is a strategic opportunity — not just a commercial one.</p>
+    </div>
+
+    <div class="market-grid fade-up">
+
+      <!-- Bar Chart: Market growth -->
+      <div class="chart-card">
+        <div class="chart-title">Global Wellness Tourism Market</div>
+        <div class="chart-subtitle">Market Size by Year (USD Billion)</div>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">2021</div>
+            <div class="bar-track"><div class="bar-fill" style="--target-width: 24%"></div></div>
+            <div class="bar-value">$497B</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">2023</div>
+            <div class="bar-track"><div class="bar-fill" style="--target-width: 44%"></div></div>
+            <div class="bar-value">$916B</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">2024</div>
+            <div class="bar-track"><div class="bar-fill" style="--target-width: 49%"></div></div>
+            <div class="bar-value">$954B</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label" style="color:var(--gold-light); font-weight:500">2025</div>
+            <div class="bar-track"><div class="bar-fill" style="--target-width: 53%; background: linear-gradient(to right, var(--moss), var(--gold))"></div></div>
+            <div class="bar-value" style="color:var(--gold-light)">$1.03T</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label" style="color:var(--gold-light)">2030<span style="font-size:0.5rem; display:block; opacity:0.7">proj.</span></div>
+            <div class="bar-track"><div class="bar-fill" style="--target-width: 100%; background: linear-gradient(to right, var(--gold), var(--gold-light))"></div></div>
+            <div class="bar-value" style="color:var(--gold-light)">$2.0T+</div>
+          </div>
+        </div>
+        <div class="chart-source">Sources: SkyQuest (2023 data) · Precedence Research (2024–2025) · Deep Market Insights forecast 2030 · CAGR ~13% (GMI)</div>
+      </div>
+
+      <!-- Stats panel: clean grid layout with sources -->
+      <div class="cagr-card">
+        <div class="cagr-big">
+          <div class="cagr-num">13<span style="font-size:2.5rem">%+</span></div>
+          <div class="cagr-unit">Annual Growth Rate — Wellness Tourism CAGR</div>
+          <div class="cagr-label">Growing 3× faster than general tourism · GWI 2025</div>
+        </div>
+        <div class="stat-bullets">
+          <div class="stat-bullet">
+            <div style="flex:1"><strong>Spain leads Europe</strong> — 29% of European wellness travellers are Spanish, ahead of Italy (26%) and Germany (24%)<div class="stat-source">Travellyze via AgentTravel.es</div></div>
+          </div>
+          <div class="stat-bullet">
+            <div style="flex:1"><strong>Post-pandemic acceleration</strong> — health, mental wellbeing and disconnection are now primary travel motivations for 1 in 4 Europeans<div class="stat-source">Global Wellness Institute, 2025</div></div>
+          </div>
+          <div class="stat-bullet">
+            <div style="flex:1"><strong>Wellness tourism grew 13.8%</strong> in 2023–24, one of the four largest year-over-year gainers globally<div class="stat-source">GWI Global Wellness Economy Monitor, Nov 2025</div></div>
+          </div>
+          <div class="stat-bullet">
+            <div style="flex:1"><strong>International wellness travellers</strong> spend 41% more per trip than average tourists<div class="stat-source">Global Wellness Institute, 2024</div></div>
+          </div>
+          <div class="stat-bullet">
+            <div style="flex:1"><strong>30% of wellness travellers</strong> rely on travel agency recommendations — expert guidance is a decisive factor<div class="stat-source">Randstad / Travellyze Spain Study</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insight Strip -->
+    <div class="market-insights fade-up">
+      <div class="insight-box">
+        <span class="insight-n">$1T+</span>
+        <span class="insight-l">Global wellness<br>market 2025</span>
+      </div>
+      <div class="insight-box">
+        <span class="insight-n">29%</span>
+        <span class="insight-l">Spanish share of<br>European wellness tourists</span>
+      </div>
+      <div class="insight-box">
+        <span class="insight-n">40%</span>
+        <span class="insight-l">Wellness travellers<br>aged 35–54</span>
+      </div>
+      <div class="insight-box">
+        <span class="insight-n">6,600</span>
+        <span class="insight-l">Spanish visitors at Indonesia's<br>stand at FITUR 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPAIN–INDONESIA BRIDGE -->
+<section id="bridge">
+  <div class="bridge-inner">
+    <div class="bridge-header fade-up">
+      <span class="label">The Strategic Connection</span>
+      <h2>Spain meets Indonesia —<br><em>Bassa is the bridge</em></h2>
+      <p>Two countries. One shared opportunity. Bassa Travels connects a high-intent, underserved Spanish traveller base with the world's most compelling wellness destination — creating mutual value for both sides of the equation.</p>
+    </div>
+
+    <!-- Map area: maps only, same height row -->
+    <div style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; margin-bottom:0; position:relative;">
+
+      <!-- Spain map only -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+        <div style="text-align:center">
+          <div class="map-sublabel" style="margin-bottom:0.4rem">Origin Market</div>
+          <div class="map-label">Spain</div>
+        </div>
+        <div style="width:100%; max-width:340px; height:220px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+            <rect width="480" height="320" fill="transparent"/>
+            <path d="M 60,68 L 85,52 L 115,40 L 152,34 L 195,30 L 240,28 L 285,30 L 325,36 L 358,46 L 382,58 L 402,74 L 418,94 L 428,116 L 432,140 L 430,162 L 424,182 L 414,200 L 408,218 L 400,238 L 390,255 L 374,268 L 354,276 L 330,274 L 308,266 L 290,258 L 272,254 L 254,258 L 236,268 L 214,276 L 192,278 L 168,272 L 148,260 L 130,250 L 110,246 L 88,242 L 66,234 L 48,220 L 36,200 L 30,178 L 30,154 L 36,130 L 46,108 Z" fill="rgba(74,94,58,0.18)" stroke="#b8965a" stroke-width="2.5" stroke-linejoin="round"/>
+            <ellipse cx="62" cy="298" rx="20" ry="10" fill="rgba(74,94,58,0.18)" stroke="#b8965a" stroke-width="2"/>
+            <ellipse cx="398" cy="192" rx="14" ry="7" fill="rgba(74,94,58,0.15)" stroke="#b8965a" stroke-width="1.8"/>
+            <circle cx="232" cy="174" r="12" fill="rgba(184,150,90,0.15)"/>
+            <circle cx="232" cy="174" r="6" fill="#b8965a"/>
+            <text x="248" y="179" font-size="13" fill="#2d3d2e" font-family="Jost,sans-serif" font-weight="500" letter-spacing="0.5">Madrid</text>
+            <circle cx="376" cy="112" r="5" fill="#b8965a" opacity="0.8"/>
+            <text x="386" y="116" font-size="11" fill="#4a5e3a" font-family="Jost,sans-serif" font-weight="300">Barcelona</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Bridge center: badge + arrows -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0; padding:0 1rem; min-width:210px;">
+        <div class="bassa-bridge-badge" style="margin-bottom:1.2rem;">
+          <span>The Bridge</span>
+          Bassa Travels
+        </div>
+        <div style="width:100%; display:flex; flex-direction:column; gap:0; align-items:stretch;">
+          <!-- Top arrow -->
+          <div style="display:flex; align-items:center; width:100%; margin-bottom:0.6rem;">
+            <div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-right:8px solid #2d3d2e;flex-shrink:0;"></div>
+            <div style="flex:1;height:1px;background:linear-gradient(to right,rgba(45,61,46,0.4),rgba(184,150,90,0.6));"></div>
+            <div style="width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #b8965a;flex-shrink:0;"></div>
+          </div>
+          <!-- Direction label Spain→Indonesia -->
+          <div style="font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);text-align:right;margin-bottom:0.3rem;">Spain → Indonesia</div>
+          <!-- Gold pills going right -->
+          <div class="arrow-pill gold-pill" style="text-align:right; margin-bottom:0.4rem;">Premium clients with high ticket &nbsp;→</div>
+          <div class="arrow-pill gold-pill" style="text-align:right; margin-bottom:0.6rem;">Respectful, culturally aware travellers &nbsp;→</div>
+          <!-- Direction label Indonesia→Spain -->
+          <div style="font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);text-align:left;margin-bottom:0.3rem;">Indonesia → Spain</div>
+          <!-- Dark pills going left -->
+          <div class="arrow-pill" style="text-align:left; margin-bottom:0.4rem;">←&nbsp; Authentic Indonesian experiences</div>
+          <div class="arrow-pill" style="text-align:left; margin-bottom:0.6rem;">←&nbsp; Expert local knowledge &amp; trust</div>
+        </div>
+      </div>
+
+      <!-- Indonesia map only -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+        <div style="text-align:center">
+          <div class="map-sublabel" style="margin-bottom:0.4rem">Destination</div>
+          <div class="map-label">Indonesia</div>
+        </div>
+        <div style="width:100%; max-width:340px; height:220px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 560 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+            <rect width="560" height="260" fill="transparent"/>
+            <path d="M 10,108 L 30,88 L 55,72 L 82,64 L 108,66 L 128,76 L 144,92 L 150,112 L 142,130 L 122,146 L 96,152 L 68,150 L 42,142 L 22,128 L 10,116 Z" fill="rgba(74,94,58,0.2)" stroke="#b8965a" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M 222,10 L 272,6 L 322,10 L 358,22 L 374,42 L 380,64 L 374,86 L 356,100 L 328,108 L 296,106 L 266,98 L 244,82 L 228,60 L 218,38 Z" fill="rgba(74,94,58,0.18)" stroke="#b8965a" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M 148,138 L 176,124 L 220,118 L 270,118 L 316,122 L 348,132 L 358,146 L 346,158 L 312,166 L 262,168 L 210,166 L 166,158 L 148,148 Z" fill="rgba(74,94,58,0.25)" stroke="#b8965a" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M 364,132 L 378,128 L 390,132 L 393,146 L 380,153 L 364,150 Z" fill="rgba(184,150,90,0.45)" stroke="#b8965a" stroke-width="2.2" stroke-linejoin="round"/>
+            <ellipse cx="410" cy="144" rx="14" ry="9" fill="rgba(74,94,58,0.2)" stroke="#b8965a" stroke-width="1.5"/>
+            <ellipse cx="448" cy="140" rx="20" ry="8" fill="rgba(74,94,58,0.2)" stroke="#b8965a" stroke-width="1.5"/>
+            <path d="M 430,52 L 446,40 L 460,44 L 466,60 L 462,82 L 450,96 L 436,104 L 422,96 L 416,76 L 420,58 Z" fill="rgba(74,94,58,0.18)" stroke="#b8965a" stroke-width="1.5" stroke-linejoin="round"/>
+            <ellipse cx="476" cy="148" rx="16" ry="7" fill="rgba(74,94,58,0.15)" stroke="#b8965a" stroke-width="1.3"/>
+            <circle cx="508" cy="72" r="9" fill="rgba(184,150,90,0.22)" stroke="#b8965a" stroke-width="1.8"/>
+            <ellipse cx="530" cy="82" rx="16" ry="12" fill="rgba(74,94,58,0.15)" stroke="#b8965a" stroke-width="1.4"/>
+            <text x="356" y="170" font-size="11" fill="#b8965a" font-family="Jost,sans-serif" font-weight="600" letter-spacing="1">Bali</text>
+            <text x="194" y="185" font-size="10" fill="#4a5e3a" font-family="Jost,sans-serif" font-weight="300" opacity="0.8">Java</text>
+            <text x="46" y="84" font-size="10" fill="#4a5e3a" font-family="Jost,sans-serif" font-weight="300" opacity="0.8">Sumatra</text>
+            <text x="478" y="68" font-size="9" fill="#4a5e3a" font-family="Jost,sans-serif" font-weight="300" opacity="0.7">Raja Ampat</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bullets row: below maps, aligned -->
+    <div style="display:grid; grid-template-columns:1fr auto 1fr; margin-bottom:4rem; margin-top:2.5rem;">
+      <!-- Spain bullets -->
+      <div class="bridge-country-bullets">
+        <div class="bridge-bullet"><strong>#1 European wellness market</strong><br><span>29% of all European wellness travellers are Spanish</span></div>
+        <div class="bridge-bullet"><strong>Bali = top long-haul destination</strong><br><span>for Spanish travellers seeking exotic experiences</span></div>
+        <div class="bridge-bullet"><strong>High-purchasing-power segment</strong><br><span>willing to invest in transformative, slow travel</span></div>
+        <div class="bridge-bullet"><strong>Underserved in Spanish</strong><br><span>almost no premium Indonesia specialist exists in Spanish</span></div>
+      </div>
+      <!-- Empty center spacer -->
+      <div style="min-width:210px; padding:0 1rem;"></div>
+      <!-- Indonesia bullets -->
+      <div class="bridge-country-bullets">
+        <div class="bridge-bullet"><strong>Strategic wellness destination</strong><br><span>Indonesian Ministry of Tourism declared wellness a national priority</span></div>
+        <div class="bridge-bullet"><strong>Quality-over-quantity shift</strong><br><span>Bali targets higher-spend, respectful travellers above all</span></div>
+        <div class="bridge-bullet"><strong>World-class wellness infrastructure</strong><br><span>spas, retreats, temples and nature across 17,000 islands</span></div>
+        <div class="bridge-bullet"><strong>Spanish market growing fast</strong><br><span>6,600+ Hispanic visitors at Indonesia's FITUR stand in days</span></div>
+      </div>
+    </div>
+    <!-- What Bassa brings -->
+    <div class="bridge-flows fade-up">
+      <div class="flow-col">
+        <div class="flow-col-header">
+          What Bassa brings to Spain
+        </div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>A trusted expert</strong> for a complex destination — in Spanish, with cultural sensitivity and full accompaniment</div></div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>Access to premium Indonesia</strong> — experiences and operators that Spanish travellers can't easily find on their own</div></div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>Peace of mind</strong> — end-to-end support before, during and after the trip, available 24/7 in Spanish</div></div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>Wellness-first curation</strong> — no generic packages; every trip designed around rest, renewal and authenticity</div></div>
+      </div>
+      <div class="flow-col">
+        <div class="flow-col-header gold-header">
+          What Bassa brings to Indonesia
+        </div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>Higher-ticket travellers</strong> — premium segment clients who spend more, stay longer and value quality over price</div></div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>Culturally prepared visitors</strong> — briefed, respectful, and genuinely interested in local culture and nature</div></div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>New Spanish-speaking market</strong> — an emerging, largely untapped segment for Indonesian tourism operators</div></div>
+        <div class="flow-item"><div class="flow-dot"></div><div><strong>Long-term partnership vision</strong> — stable, repeat business built on trust and shared values, not one-off bookings</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section id="who">
+  <div class="who-grid">
+    <div class="who-img fade-up">
+      <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=85" alt="Bali wellness retreat">
+      <div class="who-img-tag">Slow travel. Private. Purposeful.</div>
+    </div>
+    <div class="who-content">
+      <span class="label">Who We Are</span>
+      <h2>Not just another <em>travel agency</em></h2>
+      <p>Bassa Travels is a boutique agency based in Spain, exclusively focused on Indonesia. We don't open group tours. We don't sell packaged itineraries. We design private experiences from scratch — crafted around each traveller's pace, taste, and purpose.</p>
+      <p>Our philosophy is simple: fewer clients, better trips. Every traveller who books with us receives personalised attention, carefully selected accommodation, and end-to-end support in Spanish — before, during, and after their journey.</p>
+      <p>We operate in the premium wellness segment: couples, honeymooners, families, and solo travellers who are ready to invest in a truly transformative experience in Indonesia.</p>
+      <div class="who-pillars">
+        <div class="pillar">
+          <div class="pillar-title">Personalised Luxury</div>
+          <div class="pillar-text">100% bespoke itineraries, built around each client's rhythm and style.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Wellness-First</div>
+          <div class="pillar-text">Rest, spa rituals, local ceremonies, and slow-paced immersion.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Private & Exclusive</div>
+          <div class="pillar-text">No mass tours. No shared buses. Fully private, always.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Spanish-Speaking</div>
+          <div class="pillar-text">Full support in Spanish — a rare offering for Indonesia-bound travellers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVELER PROFILE -->
+<section id="profile">
+  <div class="profile-inner">
+    <div class="profile-header fade-up">
+      <h2>Our <em>traveller</em><br>profile</h2>
+      <p class="profile-intro">Understanding who we send helps you understand the quality of each partnership.</p>
+    </div>
+    <div class="profile-cards">
+      <div class="profile-card fade-up">
+        <div class="profile-card-num">01</div>
+        <div class="profile-card-title">Demographics</div>
+        <p>Spanish-speaking adults, primarily from Spain and Latin America. Ages 30–60. High purchasing power, experienced travellers who have already "done" the usual destinations.</p>
+      </div>
+      <div class="profile-card fade-up">
+        <div class="profile-card-num">02</div>
+        <div class="profile-card-title">Travel Style</div>
+        <p>They seek privacy, calm, and authenticity. Slow itineraries. Quality over quantity. Willing to spend significantly for exceptional experiences that feel personal and curated.</p>
+      </div>
+      <div class="profile-card fade-up">
+        <div class="profile-card-num">03</div>
+        <div class="profile-card-title">Spend Profile</div>
+        <p>Premium segment. Mid-to-high-end villas and boutique hotels, private transfers, private guides, exclusive experiences. Average stays of 10–21 nights in Indonesia.</p>
+      </div>
+      <div class="profile-card fade-up">
+        <div class="profile-card-num">04</div>
+        <div class="profile-card-title">Motivation</div>
+        <p>Wellness, nature, culture and meaningful connection. They come to Indonesia intentionally — not by chance. They return home as advocates for the destination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE OFFER PARTNERS -->
+<section id="offer">
+  <div class="offer-inner">
+    <div class="offer-header fade-up">
+      <span class="label">Partnership Value</span>
+      <h2>What we bring to<br>our <em>partners</em></h2>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-item fade-up">
+        <div class="offer-num">01 —</div>
+        <div class="offer-title">High-Value, Qualified Clients</div>
+        <p>Every client we send has been personally vetted and briefed. They arrive knowing what to expect, respectful of local culture, and ready to engage with premium services without price resistance.</p>
+      </div>
+      <div class="offer-item fade-up">
+        <div class="offer-num">02 —</div>
+        <div class="offer-title">Long-Term Collaboration</div>
+        <p>We're not looking for one-off bookings. We seek stable, trust-based relationships with local operators who share our commitment to quality and care. Repeat business built on genuine partnership.</p>
+      </div>
+      <div class="offer-item fade-up">
+        <div class="offer-num">03 —</div>
+        <div class="offer-title">Clear Communication</div>
+        <p>We provide complete client briefs before each trip: preferences, dietary needs, pace, accommodation expectations. Our goal is to make every handover seamless and your delivery effortless.</p>
+      </div>
+      <div class="offer-item fade-up">
+        <div class="offer-num">04 —</div>
+        <div class="offer-title">Premium Accommodation Focus</div>
+        <p>We work exclusively with boutique villas, private retreats, and carefully selected hotels. We actively seek partners who can recommend and access exceptional properties not found in standard catalogues.</p>
+      </div>
+      <div class="offer-item fade-up">
+        <div class="offer-num">05 —</div>
+        <div class="offer-title">Flexible & Adaptive Planning</div>
+        <p>No rigid packages. We tailor every trip — which means we need local partners who can adapt, suggest alternatives, and think creatively when plans evolve. Flexibility is a core value for us.</p>
+      </div>
+      <div class="offer-item fade-up">
+        <div class="offer-num">06 —</div>
+        <div class="offer-title">Growing Demand Pipeline</div>
+        <p>The Spanish-speaking market for premium Indonesia travel is largely untapped. We are actively building this segment — meaning partner volume will grow as our brand scales throughout 2026 and beyond.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT WE SEEK -->
+<section id="seek" style="background:var(--ink); padding:8rem 3rem; position:relative; overflow:hidden;">
+  <div style="max-width:1100px; margin:0 auto; position:relative; z-index:2;">
+    <div class="fade-up" style="text-align:center; margin-bottom:5rem;">
+      <span class="label">Partner Profile</span>
+      <h2 style="font-size:clamp(2.5rem,4vw,3.8rem); color:var(--cream); margin-top:1rem;">What we look for<br>in a <em style="color:var(--gold-light)">partner</em></h2>
+      <p style="font-size:0.9rem; color:rgba(245,240,232,0.5); max-width:55ch; margin:1.5rem auto 0; line-height:1.8;">We are selective by design. Every partner we work with becomes an extension of the Bassa experience. These are the qualities we seek and value above all else.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
+
+      <div class="fade-up" style="background:rgba(255,255,255,0.04); border:1px solid rgba(184,150,90,0.2); padding:2.5rem; transition:border-color 0.3s, background 0.3s;" onmouseover="this.style.borderColor='rgba(184,150,90,0.6)';this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.borderColor='rgba(184,150,90,0.2)';this.style.background='rgba(255,255,255,0.04)'">
+        <div style="font-size:1.5rem; margin-bottom:1.5rem;">🏡</div>
+        <h3 style="font-family:'Cormorant Garant',serif; font-size:1.35rem; color:var(--cream); margin-bottom:1rem; font-weight:400;">Experience with Premium Travellers</h3>
+        <p style="font-size:0.85rem; color:rgba(245,240,232,0.55); line-height:1.75;">We bring clients who expect a high standard of service, discretion, and attention to detail. Our ideal partner understands what it means to host a premium guest — and anticipates their needs before they are expressed.</p>
+      </div>
+
+      <div class="fade-up" style="background:rgba(255,255,255,0.04); border:1px solid rgba(184,150,90,0.2); padding:2.5rem; transition:border-color 0.3s, background 0.3s;" onmouseover="this.style.borderColor='rgba(184,150,90,0.6)';this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.borderColor='rgba(184,150,90,0.2)';this.style.background='rgba(255,255,255,0.04)'">
+        <div style="font-size:1.5rem; margin-bottom:1.5rem;">🌿</div>
+        <h3 style="font-family:'Cormorant Garant',serif; font-size:1.35rem; color:var(--cream); margin-bottom:1rem; font-weight:400;">Access to Boutique & Wellness Properties</h3>
+        <p style="font-size:0.85rem; color:rgba(245,240,232,0.55); line-height:1.75;">Villas with private pools, boutique wellness resorts, spa retreats off the beaten path — properties with character and care. We avoid generic chain hotels and seek partners who can unlock access to the most exceptional places in Indonesia.</p>
+      </div>
+
+      <div class="fade-up" style="background:rgba(255,255,255,0.04); border:1px solid rgba(184,150,90,0.2); padding:2.5rem; transition:border-color 0.3s, background 0.3s;" onmouseover="this.style.borderColor='rgba(184,150,90,0.6)';this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.borderColor='rgba(184,150,90,0.2)';this.style.background='rgba(255,255,255,0.04)'">
+        <div style="font-size:1.5rem; margin-bottom:1.5rem;">🤝</div>
+        <h3 style="font-family:'Cormorant Garant',serif; font-size:1.35rem; color:var(--cream); margin-bottom:1rem; font-weight:400;">Reliability & Proactive Communication</h3>
+        <p style="font-size:0.85rem; color:rgba(245,240,232,0.55); line-height:1.75;">We operate from Spain and trust our partners on the ground implicitly. We need partners who communicate clearly and promptly, confirm details in advance, and flag any issues before they become problems for the client.</p>
+      </div>
+
+      <div class="fade-up" style="background:rgba(255,255,255,0.04); border:1px solid rgba(184,150,90,0.2); padding:2.5rem; transition:border-color 0.3s, background 0.3s;" onmouseover="this.style.borderColor='rgba(184,150,90,0.6)';this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.borderColor='rgba(184,150,90,0.2)';this.style.background='rgba(255,255,255,0.04)'">
+        <div style="font-size:1.5rem; margin-bottom:1.5rem;">✦</div>
+        <h3 style="font-family:'Cormorant Garant',serif; font-size:1.35rem; color:var(--cream); margin-bottom:1rem; font-weight:400;">Curated Local Experiences</h3>
+        <p style="font-size:0.85rem; color:rgba(245,240,232,0.55); line-height:1.75;">Our clients are looking for more than logistics — they want private guides who speak with knowledge, intimate ceremonies handled with respect, slow-paced cooking classes, sunrise excursions, and nature encounters that money alone cannot buy.</p>
+      </div>
+
+      <div class="fade-up" style="background:rgba(255,255,255,0.04); border:1px solid rgba(184,150,90,0.2); padding:2.5rem; transition:border-color 0.3s, background 0.3s;" onmouseover="this.style.borderColor='rgba(184,150,90,0.6)';this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.borderColor='rgba(184,150,90,0.2)';this.style.background='rgba(255,255,255,0.04)'">
+        <div style="font-size:1.5rem; margin-bottom:1.5rem;">🧘</div>
+        <h3 style="font-family:'Cormorant Garant',serif; font-size:1.35rem; color:var(--cream); margin-bottom:1rem; font-weight:400;">Wellness & Spa Expertise</h3>
+        <p style="font-size:0.85rem; color:rgba(245,240,232,0.55); line-height:1.75;">Whether through a partner resort, an affiliated treatment centre, or a curated network of therapists, we seek partners with genuine knowledge of Indonesia's wellness traditions — Balinese massage, jamu, floral baths, energy rituals — and the ability to deliver them with authenticity.</p>
+      </div>
+
+      <div class="fade-up" style="background:rgba(255,255,255,0.04); border:1px solid rgba(184,150,90,0.2); padding:2.5rem; transition:border-color 0.3s, background 0.3s;" onmouseover="this.style.borderColor='rgba(184,150,90,0.6)';this.style.background='rgba(255,255,255,0.07)'" onmouseover="this.style.borderColor='rgba(184,150,90,0.6)';this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.borderColor='rgba(184,150,90,0.2)';this.style.background='rgba(255,255,255,0.04)'">
+        <div style="font-size:1.5rem; margin-bottom:1.5rem;">🌏</div>
+        <h3 style="font-family:'Cormorant Garant',serif; font-size:1.35rem; color:var(--cream); margin-bottom:1rem; font-weight:400;">Shared Values: Respect & Sustainability</h3>
+        <p style="font-size:0.85rem; color:rgba(245,240,232,0.55); line-height:1.75;">We are deeply respectful of Indonesian culture, nature, and communities. We look for partners who share this commitment — who operate responsibly, who support local economies, and who believe tourism done right enriches both host and guest.</p>
+      </div>
+
+    </div>
+
+    <!-- Seek note -->
+    <div class="fade-up" style="margin-top:3rem; background:rgba(184,150,90,0.08); border:1px solid rgba(184,150,90,0.25); padding:2rem 2.5rem; display:flex; gap:1.5rem; align-items:flex-start;">
+      <div style="font-size:1.5rem; flex-shrink:0;">📋</div>
+      <div>
+        <div style="font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Types of Partners We Are Actively Seeking</div>
+        <p style="font-size:0.88rem; color:rgba(245,240,232,0.65); line-height:1.75;">Receptive operators & DMCs with Indonesia expertise · Boutique hotels & wellness resorts (Bali, Java, Raja Ampat) · Independent villa managers & concierge services · Private guides & cultural experiences specialists · Spa & wellness centres · Tourism agencies & embassies interested in promoting Indonesia to the Spanish-speaking market</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section id="quote">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Indonesia is not a destination you visit once. It's a world you return to — and we want our partners to be the reason why.</p>
+    <div class="quote-attr">Bassa Travels · Philosophy</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left fade-up">
+      <span class="label">Let's Connect</span>
+      <h2>Ready to explore a<br><em>partnership?</em></h2>
+      <p>Whether you are a local receptive operator, a DMC, a tourism agency, an embassy, or an accommodation provider — if you share our commitment to premium, private, wellness-focused travel, we'd love to hear from you.</p>
+      <p>Fill in the form and a member of the Bassa team will be in touch within 48 hours to arrange an introductory call.</p>
+      <div class="contact-data">
+        <div class="contact-item">
+          <div class="contact-item-icon">🌐</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">Website</span>
+            <span class="contact-item-value">www.bassatravels.com</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">Based in</span>
+            <span class="contact-item-value">Spain · Serving Spanish-speaking travellers globally</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✈️</div>
+          <div class="contact-item-text">
+            <span class="contact-item-label">Specialisation</span>
+            <span class="contact-item-value">Premium wellness travel · Indonesia exclusively</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right fade-up">
+      <h3>Partner Inquiry</h3>
+      <p>Tell us about your business and what kind of collaboration you have in mind.</p>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Company / Organisation</label>
+          <input type="text" class="form-input" placeholder="Your company name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Contact Name</label>
+          <input type="text" class="form-input" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Type of Partner</label>
+          <select class="form-select">
+            <option value="" disabled selected>Select your category</option>
+            <option>Receptive / Incoming DMC</option>
+            <option>Local Tourism Agency</option>
+            <option>Boutique Hotel / Villa</option>
+            <option>Wellness & Spa Resort</option>
+            <option>Embassy / Consulate</option>
+            <option>Tourism Board</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell us about your services and how you'd like to collaborate..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Inquiry →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">BASSA<span>·</span>TRAVELS</div>
+  <div class="footer-copy">© 2026 Bassa Travels · All rights reserved</div>
+  <div class="footer-tagline">Wellness in Indonesia · Designed for you</div>
+</footer>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    document.getElementById('progressBar').style.width = progress + '%';
+  });
+
+  // Bar chart animation on scroll
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.bar-fill').forEach((bar, i) => {
+          setTimeout(() => bar.classList.add('animated'), i * 180);
+        });
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const barChart = document.querySelector('.bar-chart');
+  if (barChart) barObserver.observe(barChart);
+
+  // Intersection Observer for fade-up
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Cover image slow zoom
+  const coverImg = document.querySelector('.cover-right img');
+  if (coverImg) {
+    setTimeout(() => { coverImg.style.transform = 'scale(1)'; }, 100);
+  }
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-submit');
+    btn.textContent = '✓ Inquiry Sent — We\'ll be in touch';
+    btn.style.background = '#4a5e3a';
+    btn.style.color = '#f5f0e8';
+    btn.disabled = true;
+  }
+
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 100) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
