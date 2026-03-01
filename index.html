@@ -230,25 +230,114 @@
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: none; }
 
+  /* ── HAMBURGER ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px; height: 36px;
+    cursor: pointer; background: none; border: none; padding: 4px; z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block; height: 1.5px; background: white; border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.35s ease, background 0.35s;
+    transform-origin: center;
+  }
+  #main-nav.scrolled .nav-hamburger span { background: var(--deep); }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ── DRAWER ── */
+  .nav-drawer {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(320px, 85vw);
+    background: var(--deep); z-index: 150;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    display: flex; flex-direction: column;
+    padding: 6rem 2.5rem 3rem; gap: 0;
+  }
+  .nav-drawer.open { transform: translateX(0); }
+  .nav-drawer-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 140;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s;
+  }
+  .nav-drawer-overlay.open { opacity: 1; pointer-events: all; }
+  .nav-drawer a {
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 400; padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: color 0.2s; display: block;
+  }
+  .nav-drawer a:hover { color: white; }
+  .nav-drawer .drawer-cta {
+    margin-top: 2rem; background: var(--terracotta); color: white !important;
+    text-align: center; padding: 1rem !important; border-bottom: none !important;
+    border-radius: 2px; font-weight: 500;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    #main-nav { padding: 1.2rem 2rem; }
+    #main-nav { padding: 1.1rem 1.5rem; }
     .nav-links { display: none; }
-    section { padding: 4rem 2rem; }
-    .about, .contact { grid-template-columns: 1fr; }
-    .about-pillars { grid-template-columns: 1fr; }
-    .about-visual { height: 320px; }
+    .nav-hamburger { display: flex; }
+    section { padding: 3.5rem 1.5rem; }
+
+    /* Hero */
+    .hero { min-height: 100svh; align-items: flex-end; padding-bottom: 5rem; }
+    .hero-content { padding: 0 1.5rem; max-width: 100%; }
+    .hero-tag { margin-top: 0; margin-bottom: 1.2rem; font-size: 0.62rem; }
+    .hero h1 { font-size: clamp(2.4rem, 11vw, 3.5rem); margin-bottom: 1rem; }
+    .hero p { font-size: 0.9rem; margin-bottom: 2rem; max-width: 100%; }
+    .btn-primary, .btn-outline { padding: 0.85rem 1.6rem; font-size: 0.72rem; }
+    .btn-outline { margin-left: 0.6rem; }
+    .hero-scroll { display: none; }
+    .hero-bg { background-position: 65% center; }
+
+    /* About */
+    .about { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-pillars { grid-template-columns: 1fr; gap: 1rem; }
+    .about-visual { height: 280px; }
     .about-visual-badge { display: none; }
-    .exp-grid { grid-template-columns: 1fr; }
-    .exp-card { height: 320px; }
+
+    /* Experiences */
+    .experiences { padding-bottom: 0; }
+    .exp-grid { grid-template-columns: 1fr; gap: 2px; }
+    .exp-card { height: 260px; }
+    .exp-card p { max-height: 120px; }
+    .exp-card-overlay { background: linear-gradient(to top, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.35) 55%, transparent 100%); }
+
+    /* Destinos */
     .destinos-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .how-header { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr 1fr; }
+
+    /* How */
+    .how-header { grid-template-columns: 1fr; gap: 2rem; }
+    .how-visual { height: 240px; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .step { padding: 1.4rem; }
+    .step-num { font-size: 2.2rem; }
+
+    /* Contact */
+    .contact { grid-template-columns: 1fr; gap: 3rem; }
     .form-row { grid-template-columns: 1fr; }
+
+    /* FAQ */
     .faq-grid { grid-template-columns: 1fr; }
+    .faq-item:nth-child(odd) { padding-right: 0; }
     .faq-item:nth-child(even) { padding-left: 0; border-left: none; }
-    footer { flex-direction: column; text-align: center; }
-    .footer-nav a { margin: 0 1rem; }
+
+    /* Footer */
+    footer { flex-direction: column; text-align: center; padding: 2.5rem 1.5rem; }
+    .footer-nav a { margin: 0 0.8rem; }
+  }
+
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+    .hero h1 { font-size: clamp(2.2rem, 12vw, 3rem); }
+    .btn-outline { display: none; }
   }
 </style>
 </head>
@@ -266,7 +355,20 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Diseña tu viaje</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer-overlay" id="drawer-overlay"></div>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="#about" class="drawer-link">Qué es Bassa</a>
+  <a href="#experiences" class="drawer-link">Experiencias</a>
+  <a href="#how" class="drawer-link">Cómo funciona</a>
+  <a href="#faq" class="drawer-link">FAQ</a>
+  <a href="#contact" class="drawer-cta">Diseña tu viaje</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -574,6 +676,16 @@
   // Nav scroll
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Hamburger / drawer
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  const overlay = document.getElementById('drawer-overlay');
+  function openDrawer() { drawer.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
+  hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+  overlay.addEventListener('click', closeDrawer);
+  document.querySelectorAll('.nav-drawer a').forEach(a => a.addEventListener('click', closeDrawer));
 
   // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
