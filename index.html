@@ -786,10 +786,10 @@
     };
 
     try {
-      await fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams(data)
+      const params = new URLSearchParams(data);
+      await fetch(SCRIPT_URL + '?' + params.toString(), {
+        method: 'GET',
+        mode: 'no-cors'
       });
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
