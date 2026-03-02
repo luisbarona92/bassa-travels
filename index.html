@@ -590,10 +590,10 @@
     </div>
   </div>
   <div class="contact-form reveal" style="transition-delay:0.2s">
-    <form>
+    <form id="bassa-form">
       <div class="form-field">
         <label>¿Qué tipo de Indonesia quieres?</label>
-        <select>
+        <select name="tipo_viaje">
           <option value="">Cuéntanos tu idea...</option>
           <option>Bali en profundidad — slow, spa y naturaleza</option>
           <option>Raja Ampat — snorkel y privacidad total</option>
@@ -605,7 +605,7 @@
       </div>
       <div class="form-field">
         <label>¿Con quién viajas?</label>
-        <select>
+        <select name="companion">
           <option value="">Selecciona una opción</option>
           <option>En pareja</option>
           <option>Luna de miel</option>
@@ -617,11 +617,11 @@
       <div class="form-row">
         <div class="form-field">
           <label>Salida aproximada</label>
-          <input type="month">
+          <input type="month" name="salida">
         </div>
         <div class="form-field">
           <label>Días de viaje</label>
-          <select>
+          <select name="dias">
             <option value="">¿Cuántos días?</option>
             <option>7 días</option>
             <option>10 días</option>
@@ -637,23 +637,27 @@
       <div class="form-row">
         <div class="form-field">
           <label>Nombre</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
         </div>
         <div class="form-field">
           <label>Email</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" name="email" placeholder="tu@email.com" required>
         </div>
       </div>
       <div class="form-field">
         <label>WhatsApp</label>
-        <input type="tel" placeholder="+34 600 000 000">
+        <input type="tel" name="whatsapp" placeholder="+34 600 000 000">
       </div>
       <div class="form-field">
         <label>Imprescindibles / preferencias</label>
-        <textarea placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
+        <textarea name="imprescindibles" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
-      <button type="submit" class="btn-form">Enviar consulta →</button>
+      <button type="submit" class="btn-form" id="btn-submit">Enviar consulta →</button>
     </form>
+    <div id="form-success" style="display:none; padding: 2.5rem; text-align:center;">
+      <p style="font-family: var(--font-display); font-size: 1.8rem; font-weight:300; color: var(--deep); margin-bottom: 0.8rem;">✓ Recibido</p>
+      <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.7;">Te contactamos antes de 24h para agendar una llamada breve.<br>Revisa también tu bandeja de spam por si acaso.</p>
+    </div>
   </div>
 </section>
 
@@ -757,6 +761,43 @@
       document.querySelectorAll('.dtab').forEach(t => t.classList.remove('open'));
       if (!wasOpen) tab.classList.add('open');
     });
+  });
+
+  // FORMULARIO -> GOOGLE SHEETS
+  const SCRIPT_URL = "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT";
+
+  document.getElementById('bassa-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('btn-submit');
+
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    const data = {
+      tipo_viaje:      form.tipo_viaje.value,
+      companion:       form.companion.value,
+      salida:          form.salida.value,
+      dias:            form.dias.value,
+      nombre:          form.nombre.value,
+      email:           form.email.value,
+      whatsapp:        form.whatsapp.value,
+      imprescindibles: form.imprescindibles.value
+    };
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } catch (err) {
+      btn.textContent = 'Error al enviar, intentalo de nuevo';
+      btn.disabled = false;
+    }
   });
 </script>
 </body>
