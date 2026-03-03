@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bassa Travels — Tu Propuesta de Indonesia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --sand: #E8DDD0;
+    --terracotta: #C4724A;
+    --deep: #1C1A17;
+    --gold: #B89B6A;
+    --warm-white: #FAF8F4;
+    --muted: #7A7068;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--deep); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; height: 100vh; min-height: 680px;
+    display: flex; align-items: flex-end; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920&q=85') center 40%/cover no-repeat;
+  }
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.4) 50%, rgba(28,26,23,0.15) 100%);
+  }
+  .hero-nav {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.8rem 4rem;
+  }
+  .hero-logo img {
+    height: 44px;
+    filter: brightness(0) invert(1);
+  }
+  .hero-ref {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: white;
+    background: rgba(28,26,23,0.45);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 0.4rem 0.9rem;
+    backdrop-filter: blur(6px);
+  }
+  .hero-content {
+    position: relative; z-index: 1;
+    padding: 0 4rem 4rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    gap: 3rem;
+  }
+  .hero-left {}
+  .hero-tag {
+    display: inline-block; font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: white;
+    border-left: 3px solid var(--terracotta); padding-left: 0.9rem;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+    font-weight: 400;
+  }
+  .hero h1 {
+    font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.5rem);
+    font-weight: 300; color: white; line-height: 1.0; margin-bottom: 1.8rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-meta {
+    display: flex; gap: 2.5rem; flex-wrap: wrap;
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-item span:first-child {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4);
+  }
+  .hero-meta-item span:last-child {
+    font-size: 0.9rem; color: white; font-weight: 300;
+  }
+  .hero-right {
+    text-align: right;
+  }
+  .hero-price-label {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); display: block; margin-bottom: 6px;
+  }
+  .hero-price-val {
+    font-family: var(--font-display); font-size: 3.2rem; font-weight: 300;
+    color: white; line-height: 1; display: block;
+  }
+  .hero-price-sub {
+    font-size: 0.75rem; color: rgba(255,255,255,0.5); display: block; margin-top: 4px;
+  }
+
+  /* ── INTRO PERSONAL ── */
+  .intro-personal {
+    background: var(--warm-white);
+    padding: 5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .intro-personal-text .eyebrow {
+    font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 1rem; display: block;
+  }
+  .intro-personal-text h2 {
+    font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem;
+  }
+  .intro-personal-text h2 em { font-style: italic; color: var(--terracotta); }
+  .intro-personal-text p {
+    color: var(--muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.2rem;
+  }
+  .intro-stats {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--sand);
+  }
+  .stat-box {
+    background: var(--cream); padding: 2.5rem; text-align: center;
+  }
+  .stat-num {
+    font-family: var(--font-display); font-size: 3.2rem; font-weight: 300;
+    color: var(--terracotta); display: block; line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); margin-top: 8px; display: block;
+  }
+
+  /* ── ITINERARY ── */
+  .itinerary { padding: 5rem 4rem; background: var(--cream); }
+  .section-eyebrow {
+    font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 1rem; display: block;
+  }
+  .section-heading {
+    font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.1; margin-bottom: 3rem;
+  }
+  .section-heading em { font-style: italic; color: var(--terracotta); }
+  .days-list { display: flex; flex-direction: column; gap: 2px; }
+  .day-row {
+    display: grid; grid-template-columns: 80px 1fr;
+    background: var(--warm-white);
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s;
+    cursor: pointer;
+  }
+  .day-row:hover, .day-row.open { border-left-color: var(--terracotta); }
+  .day-num-col {
+    padding: 2rem 1rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    border-right: 1px solid var(--sand);
+  }
+  .day-num-text {
+    font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.12em;
+    color: var(--terracotta); writing-mode: vertical-rl;
+    text-orientation: mixed; transform: rotate(180deg);
+    text-transform: uppercase;
+  }
+  .day-body { padding: 2rem 2.5rem; }
+  .day-location {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 0.4rem;
+  }
+  .day-title {
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 400;
+    margin-bottom: 0.8rem;
+  }
+  .day-desc {
+    font-size: 0.88rem; line-height: 1.75; color: var(--muted);
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+  }
+  .day-row.open .day-desc { max-height: 200px; }
+  .day-tags {
+    display: flex; gap: 8px; margin-top: 1rem; flex-wrap: wrap;
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+  }
+  .day-row.open .day-tags { max-height: 60px; }
+  .tag {
+    font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 4px 10px; border: 1px solid var(--sand); color: var(--muted);
+  }
+  .day-toggle {
+    margin-left: auto; font-size: 1.2rem; color: var(--muted);
+    transition: transform 0.3s; line-height: 1;
+  }
+  .day-row.open .day-toggle { transform: rotate(45deg); color: var(--terracotta); }
+  .day-header-row {
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  /* ── CHOICES SECTION ── */
+  .choices { background: var(--deep); padding: 5rem 4rem; color: white; }
+  .choices .section-eyebrow { color: var(--gold); }
+  .choices .section-heading { color: white; }
+  .choices .section-heading em { color: var(--gold); }
+  .choices-subtitle {
+    color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.7;
+    max-width: 520px; margin-bottom: 3.5rem; font-weight: 300;
+  }
+
+  /* Hotel choice */
+  .choice-group { margin-bottom: 3.5rem; }
+  .choice-group-label {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 1.5rem; display: block;
+  }
+  .hotel-options {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;
+  }
+  .hotel-card {
+    background: rgba(255,255,255,0.04); padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer; transition: all 0.25s; position: relative;
+  }
+  .hotel-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(184,155,106,0.4); }
+  .hotel-card.selected { border-color: var(--gold); background: rgba(184,155,106,0.08); }
+  .hotel-card.selected::after {
+    content: '✓';
+    position: absolute; top: 14px; right: 14px;
+    width: 20px; height: 20px; background: var(--gold); color: var(--deep);
+    border-radius: 50%; font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; line-height: 20px; text-align: center;
+  }
+  .hotel-tier {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .hotel-name {
+    font-family: var(--font-display); font-size: 1.4rem; font-weight: 400;
+    color: white; margin-bottom: 0.4rem;
+  }
+  .hotel-location {
+    font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 0.8rem;
+  }
+  .hotel-desc {
+    font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 1rem;
+  }
+  .hotel-price {
+    font-size: 0.82rem; color: white;
+  }
+  .hotel-price strong { color: var(--gold); font-weight: 400; }
+
+  /* Activity toggles */
+  .activity-list { display: flex; flex-direction: column; }
+  .activity-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer; gap: 2rem;
+  }
+  .activity-row:last-child { border-bottom: none; }
+  .activity-info h4 {
+    font-family: var(--font-display); font-size: 1.2rem; font-weight: 400;
+    color: white; margin-bottom: 0.3rem;
+  }
+  .activity-info p { font-size: 0.8rem; color: rgba(255,255,255,0.45); font-weight: 300; }
+  .activity-right-col { display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0; }
+  .activity-price-tag { font-size: 0.82rem; color: var(--gold); white-space: nowrap; }
+  .switch {
+    width: 42px; height: 23px; background: rgba(255,255,255,0.1);
+    border-radius: 12px; position: relative; transition: background 0.3s; flex-shrink: 0;
+  }
+  .switch.on { background: var(--terracotta); }
+  .switch-knob {
+    position: absolute; top: 3px; left: 3px;
+    width: 17px; height: 17px; background: white; border-radius: 50%; transition: transform 0.3s;
+  }
+  .switch.on .switch-knob { transform: translateX(19px); }
+
+  /* ── PRICE SUMMARY ── */
+  .price-section { background: var(--warm-white); padding: 5rem 4rem; }
+  .price-grid {
+    display: grid; grid-template-columns: 1fr 360px; gap: 5rem; align-items: start;
+    max-width: 1100px;
+  }
+  .price-breakdown h3 {
+    font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin-bottom: 2rem;
+  }
+  .price-line {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 1rem 0; border-bottom: 1px solid var(--sand);
+    font-size: 0.88rem; font-weight: 300;
+  }
+  .price-line .lbl { color: var(--muted); }
+  .price-line .amt { color: var(--deep); font-weight: 400; }
+  .price-line.highlight .lbl { color: var(--terracotta); }
+  .price-line.highlight .amt { color: var(--terracotta); }
+  .price-total {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 1.5rem; margin-top: 0.5rem;
+  }
+  .price-total .lbl {
+    font-family: var(--font-display); font-size: 1.4rem; font-weight: 300;
+  }
+  .price-total .amt {
+    font-family: var(--font-display); font-size: 2.8rem; font-weight: 300;
+    color: var(--terracotta);
+  }
+
+  /* CTA BOX */
+  .cta-box {
+    background: var(--deep); padding: 2.8rem;
+    position: sticky; top: 24px;
+  }
+  .cta-eyebrow {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem; display: block;
+  }
+  .cta-title {
+    font-family: var(--font-display); font-size: 1.8rem; font-weight: 300;
+    color: white; line-height: 1.15; margin-bottom: 0.5rem;
+  }
+  .cta-price {
+    font-family: var(--font-display); font-size: 3rem; font-weight: 300;
+    color: var(--gold); line-height: 1; margin: 1.2rem 0;
+  }
+  .cta-price span { font-family: var(--font-body); font-size: 0.8rem; color: var(--muted); }
+  .cta-note {
+    font-size: 0.8rem; color: rgba(255,255,255,0.4); line-height: 1.6;
+    margin-bottom: 2rem; font-weight: 300;
+  }
+  .btn-cta-primary {
+    display: block; width: 100%; padding: 1.1rem;
+    background: var(--terracotta); color: white; border: none;
+    font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 500; cursor: pointer;
+    transition: background 0.3s; margin-bottom: 10px; text-decoration: none;
+    text-align: center;
+  }
+  .btn-cta-primary:hover { background: #b35e38; }
+  .btn-cta-secondary {
+    display: block; width: 100%; padding: 1.1rem;
+    background: transparent; color: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.3s;
+    text-decoration: none; text-align: center;
+  }
+  .btn-cta-secondary:hover { color: white; border-color: rgba(255,255,255,0.4); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep); padding: 2.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo img { height: 36px; filter: brightness(0) invert(1); opacity: 0.7; }
+  .footer-note { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+  /* ── MODAL ── */
+  .modal-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(28,26,23,0.88); align-items: center; justify-content: center;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal-box {
+    background: var(--warm-white); padding: 3.5rem; max-width: 440px; width: 90%;
+    text-align: center; animation: popIn 0.3s ease;
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.95) translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  .modal-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+  .modal-box h3 {
+    font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin-bottom: 0.8rem;
+  }
+  .modal-box p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+  .modal-close {
+    padding: 0.9rem 2.5rem; background: var(--deep); color: white;
+    border: none; cursor: pointer; font-family: var(--font-body);
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: none; }
+  }
+  .fade-up { opacity: 0; animation: fadeUp 0.9s ease forwards; }
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.45s; }
+  .delay-3 { animation-delay: 0.65s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 820px) {
+    .hero-content { grid-template-columns: 1fr; padding: 0 2rem 3rem; }
+    .hero-right { text-align: left; }
+    .hero-nav { padding: 1.5rem 2rem; }
+    .intro-personal { grid-template-columns: 1fr; padding: 3.5rem 2rem; gap: 3rem; }
+    .itinerary, .choices, .price-section { padding: 3.5rem 2rem; }
+    .hotel-options { grid-template-columns: 1fr; }
+    .price-grid { grid-template-columns: 1fr; }
+    .cta-box { position: static; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <nav class="hero-nav">
+    <a class="hero-logo" href="https://www.bassatravels.com">
+      <img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels">
+    </a>
+    <span class="hero-ref">Propuesta exclusiva · Ref. #BT-2025-001</span>
+  </nav>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag fade-up delay-1">Propuesta personalizada para María García</div>
+      <h1 class="fade-up delay-2">Indonesia<br><em>Wellness</em></h1>
+      <div class="hero-meta fade-up delay-3">
+        <div class="hero-meta-item">
+          <span>Duración</span>
+          <span>10 noches · 11 días</span>
+        </div>
+        <div class="hero-meta-item">
+          <span>Fechas</span>
+          <span>12 – 23 Sep 2025</span>
+        </div>
+        <div class="hero-meta-item">
+          <span>Viajeros</span>
+          <span>2 personas</span>
+        </div>
+        <div class="hero-meta-item">
+          <span>Estilo</span>
+          <span>Slow · Privado</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right fade-up delay-3">
+      <span class="hero-price-label">Precio estimado</span>
+      <span class="hero-price-val" id="hero-price">5.800€</span>
+      <span class="hero-price-sub">por persona · vuelos no incluidos</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO PERSONAL -->
+<section class="intro-personal">
+  <div class="intro-personal-text">
+    <span class="eyebrow">Diseñado para ti</span>
+    <h2>Un viaje construido<br>desde tu <em>conversación</em></h2>
+    <p>Tras vuestra llamada hemos diseñado este itinerario pensando en lo que nos contaste: necesitas desconectar de verdad, quieres naturaleza pero sin sacrificar el confort, y buscas algo que se sienta auténtico — no un resort genérico.</p>
+    <p>Hemos seleccionado Ubud como base wellness y una escapada a la costa de Nusa Penida. Todo con ritmo slow, sin carreras, con espacio para improvisar.</p>
+  </div>
+  <div class="intro-stats">
+    <div class="stat-box">
+      <span class="stat-num">2</span>
+      <span class="stat-label">Zonas</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Experiencias</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Privado</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Grupos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="itinerary">
+  <span class="section-eyebrow">El viaje</span>
+  <h2 class="section-heading">Día a <em>día</em></h2>
+  <div class="days-list">
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Día 01</span></div>
+      <div class="day-body">
+        <div class="day-header-row">
+          <div>
+            <p class="day-location">Bali · Llegada</p>
+            <h3 class="day-title">Bienvenida y primer respiro</h3>
+          </div>
+          <span class="day-toggle">+</span>
+        </div>
+        <p class="day-desc">Traslado privado desde el aeropuerto de Ngurah Rai hasta Ubud. Sin prisa. Check-in VIP con tratamiento de bienvenida. Tarde libre para pasear por los arrozales y cenar en el restaurante del hotel.</p>
+        <div class="day-tags">
+          <span class="tag">Traslado privado</span>
+          <span class="tag">Check-in VIP</span>
+          <span class="tag">Welcome ritual</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Día 02</span></div>
+      <div class="day-body">
+        <div class="day-header-row">
+          <div>
+            <p class="day-location">Ubud</p>
+            <h3 class="day-title">Amanecer en Tegallalang</h3>
+          </div>
+          <span class="day-toggle">+</span>
+        </div>
+        <p class="day-desc">Salida a las 5:30am para ver el amanecer sobre las terrazas de arroz de Tegallalang antes de los turistas. Desayuno con agricultor local. Tarde de spa en el hotel con masaje balinés de 2 horas.</p>
+        <div class="day-tags">
+          <span class="tag">Acceso privado</span>
+          <span class="tag">Guía local</span>
+          <span class="tag">Spa 2h</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Día 03</span></div>
+      <div class="day-body">
+        <div class="day-header-row">
+          <div>
+            <p class="day-location">Ubud</p>
+            <h3 class="day-title">Melukat · Purificación en el río sagrado</h3>
+          </div>
+          <span class="day-toggle">+</span>
+        </div>
+        <p class="day-desc">Ceremonia de purificación hindú-balinesa en el templo Tirta Empul. Con sacerdote local que guía el ritual de forma privada. No es turismo —es una experiencia real que pocas personas logran acceder. Tarde libre.</p>
+        <div class="day-tags">
+          <span class="tag">Ceremonia privada</span>
+          <span class="tag">Sacerdote local</span>
+          <span class="tag">Experiencia auténtica</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Día 04–06</span></div>
+      <div class="day-body">
+        <div class="day-header-row">
+          <div>
+            <p class="day-location">Ubud</p>
+            <h3 class="day-title">Días de profundidad</h3>
+          </div>
+          <span class="day-toggle">+</span>
+        </div>
+        <p class="day-desc">Tres días con ritmo tuyo. Cada mañana, yoga al amanecer en pabellón abierto sobre los arrozales. Puedes explorar talleres de jamu (medicina tradicional), clases de cocina balinesa, o simplemente descansar. Una tarde en el mercado de Ubud con chef local que luego cocina contigo.</p>
+        <div class="day-tags">
+          <span class="tag">Yoga privado</span>
+          <span class="tag">Jamu tradicional</span>
+          <span class="tag">Cocina local</span>
+          <span class="tag">Ritmo libre</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Día 07–09</span></div>
+      <div class="day-body">
+        <div class="day-header-row">
+          <div>
+            <p class="day-location">Nusa Penida</p>
+            <h3 class="day-title">Escapada a la isla salvaje</h3>
+          </div>
+          <span class="day-toggle">+</span>
+        </div>
+        <p class="day-desc">Lancha privada hasta Nusa Penida, la isla que Bali no ha tocado todavía. Tres noches en un cliff resort con vistas al Océano Índico. Snorkel con mantas raya en Crystal Bay, senderismo a Kelingking Beach al amanecer.</p>
+        <div class="day-tags">
+          <span class="tag">Lancha privada</span>
+          <span class="tag">Cliff resort</span>
+          <span class="tag">Mantas raya</span>
+          <span class="tag">Kelingking al amanecer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Día 10–11</span></div>
+      <div class="day-body">
+        <div class="day-header-row">
+          <div>
+            <p class="day-location">Seminyak · Regreso</p>
+            <h3 class="day-title">Cierre en la costa</h3>
+          </div>
+          <span class="day-toggle">+</span>
+        </div>
+        <p class="day-desc">Última noche en Seminyak — zona más cosmopolita de Bali. Cena de despedida en restaurante de referencia local. Mañana del día 11 libre antes del traslado al aeropuerto.</p>
+        <div class="day-tags">
+          <span class="tag">Hotel boutique</span>
+          <span class="tag">Cena de despedida</span>
+          <span class="tag">Traslado al aeropuerto</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHOICES -->
+<section class="choices">
+  <span class="section-eyebrow">Personaliza</span>
+  <h2 class="section-heading">Elige cómo<br><em>quieres vivirlo</em></h2>
+  <p class="choices-subtitle">He preparado dos decisiones clave donde tu elección cambia la experiencia. El resto ya está elegido por mí según lo que me contaste.</p>
+
+  <!-- Hotel Ubud -->
+  <div class="choice-group">
+    <span class="choice-group-label">Alojamiento en Ubud · 6 noches</span>
+    <div class="hotel-options">
+
+      <div class="hotel-card" onclick="selectHotel(this, -600)" data-price="-600">
+        <div class="hotel-tier">Bienestar · Con carácter</div>
+        <div class="hotel-name">Komaneka at Bisma</div>
+        <div class="hotel-location">Ubud, colgado sobre el río Wos</div>
+        <div class="hotel-desc">Pequeño hotel de diseño con piscina infinita sobre la selva. Spa premiado, cocina de autor balinesa, 24 habitaciones. La opción con más alma sin pagar el premium máximo.</div>
+        <div class="hotel-price">-<strong>600€</strong> / persona vs opción base</div>
+      </div>
+
+      <div class="hotel-card selected" onclick="selectHotel(this, 0)" data-price="0">
+        <div class="hotel-tier">Mi selección · Referencia wellness</div>
+        <div class="hotel-name">COMO Shambhala Estate</div>
+        <div class="hotel-location">Ubud, selva tropical privada</div>
+        <div class="hotel-desc">El referente mundial de wellness en Asia. Programa de salud a medida, nutricionista, yoga y meditación incluidos, spa de nivel clínico. Fincas independientes entre bambú.</div>
+        <div class="hotel-price">Incluido en precio base</div>
+      </div>
+
+      <div class="hotel-card" onclick="selectHotel(this, 900)" data-price="900">
+        <div class="hotel-tier">Ultra luxury</div>
+        <div class="hotel-name">Four Seasons Sayan</div>
+        <div class="hotel-location">Ubud, suspendido sobre el río Ayung</div>
+        <div class="hotel-desc">Arquitectura icónica sobre el río. La villa river tiene piscina privada sobre la selva. Programa de bienestar, restaurante de referencia. Para cuando el lujo absoluto es parte del viaje.</div>
+        <div class="hotel-price">+<strong>900€</strong> / persona</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Hotel Nusa Penida -->
+  <div class="choice-group">
+    <span class="choice-group-label">Alojamiento en Nusa Penida · 3 noches</span>
+    <div class="hotel-options">
+
+      <div class="hotel-card selected" onclick="selectNusa(this, 0)" data-price="0">
+        <div class="hotel-tier">Mi selección · Vistas únicas</div>
+        <div class="hotel-name">Adiwana Warnakali</div>
+        <div class="hotel-location">Acantilado sobre el océano</div>
+        <div class="hotel-desc">Villas con piscina sobre el Índico. Acceso privado a la cala. Pequeño, exclusivo, con el mejor atardecer de Nusa Penida. El lugar correcto para desconectar.</div>
+        <div class="hotel-price">Incluido en precio base</div>
+      </div>
+
+      <div class="hotel-card" onclick="selectNusa(this, 500)" data-price="500">
+        <div class="hotel-tier">Upgrade · Máxima privacidad</div>
+        <div class="hotel-name">Suarga Padang Padang</div>
+        <div class="hotel-location">Acantilado privado, Nusa Penida</div>
+        <div class="hotel-desc">Solo 10 villas. Piscina privada en cada una. Servicio de mayordomo 24h, acceso en barco propio. Para quienes buscan que no haya nadie más alrededor.</div>
+        <div class="hotel-price">+<strong>500€</strong> / persona</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Experiencias exclusivas -->
+  <div class="choice-group">
+    <span class="choice-group-label">Experiencias exclusivas opcionales</span>
+    <div class="activity-list">
+
+      <div class="activity-row" onclick="toggleExp(this, 'borobudur', 380)">
+        <div class="activity-info">
+          <h4>Amanecer privado en Borobudur</h4>
+          <p>El templo budista más grande del mundo, solo para vosotros antes de que abra al público. Guía arqueólogo. Acceso por convenio especial.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+380€ / persona</span>
+          <div class="switch" id="sw-borobudur"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+
+      <div class="activity-row" onclick="toggleExp(this, 'jamu', 180)">
+        <div class="activity-info">
+          <h4>Consulta de medicina Jamu con curandera</h4>
+          <p>Una mañana con una balian (sanadora tradicional balinesa) en su casa. Diagnóstico y preparación de remedios personalizados. Experiencia que no existe en ningún catálogo.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+180€ / persona</span>
+          <div class="switch" id="sw-jamu"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+
+      <div class="activity-row" onclick="toggleExp(this, 'batik', 140)">
+        <div class="activity-info">
+          <h4>Taller de batik con artesano familiar</h4>
+          <p>Familia que lleva 4 generaciones haciendo batik en Ubud. Tarde completa aprendiendo la técnica en su taller privado. Te llevas la pieza que hagas.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+140€ / persona</span>
+          <div class="switch" id="sw-batik"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+
+      <div class="activity-row" onclick="toggleExp(this, 'komodo', 520)">
+        <div class="activity-info">
+          <h4>Extensión a Komodo · 2 días</h4>
+          <p>Vuelo privado a las islas Komodo. Dragones de Komodo, snorkel en Pink Beach, barco privado. Lo más salvaje que ofrece Indonesia. Extiende el viaje 2 días.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+520€ / persona</span>
+          <div class="switch" id="sw-komodo"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+
+      <div class="activity-row" onclick="toggleExp(this, 'cooking', 95)">
+        <div class="activity-info">
+          <h4>Clase de cocina balinesa en casa local</h4>
+          <p>Mercado de madrugada con Ni Wayan (cocinera local), compra de ingredientes, cocina en su casa familiar. El almuerzo que preparas es el más sabroso del viaje.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+95€ / persona</span>
+          <div class="switch" id="sw-cooking"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- PRICE SUMMARY -->
+<section class="price-section">
+  <span class="section-eyebrow">Tu propuesta</span>
+  <h2 class="section-heading" style="margin-bottom:2.5rem;">Resumen<br><em>de precio</em></h2>
+  <div class="price-grid">
+    <div class="price-breakdown">
+      <h3>Desglose estimado · 2 personas</h3>
+
+      <div class="price-line">
+        <span class="lbl">Base del viaje — itinerario, traslados, guías</span>
+        <span class="amt">3.200€</span>
+      </div>
+      <div class="price-line" id="hotel-ubud-line">
+        <span class="lbl">Alojamiento Ubud · COMO Shambhala (6 noches)</span>
+        <span class="amt">Incluido</span>
+      </div>
+      <div class="price-line" id="hotel-nusa-line">
+        <span class="lbl">Alojamiento Nusa Penida · Adiwana (3 noches)</span>
+        <span class="amt">Incluido</span>
+      </div>
+      <div class="price-line" id="hotel-adjust-line" style="display:none">
+        <span class="lbl" id="hotel-adjust-label">Ajuste alojamiento</span>
+        <span class="amt highlight" id="hotel-adjust-amt"></span>
+      </div>
+      <div class="price-line" id="nusa-adjust-line" style="display:none">
+        <span class="lbl" id="nusa-adjust-label">Ajuste Nusa Penida</span>
+        <span class="amt highlight" id="nusa-adjust-amt"></span>
+      </div>
+      <div class="price-line" id="extras-line" style="display:none">
+        <span class="lbl" id="extras-label">Experiencias opcionales seleccionadas</span>
+        <span class="amt" id="extras-amt"></span>
+      </div>
+      <div class="price-line">
+        <span class="lbl">Vuelos internacionales</span>
+        <span class="amt">No incluidos*</span>
+      </div>
+      <div class="price-total">
+        <span class="lbl">Total estimado</span>
+        <span class="amt" id="total-display">11.600€</span>
+      </div>
+      <p style="font-size:0.75rem; color:var(--muted); margin-top:1rem; line-height:1.6;">*Los vuelos Madrid–Bali en clase business rondan los 2.200–2.800€ / persona. Puedo gestionarlos o dejártelos libres si prefieres usar puntos.</p>
+      <p style="font-size:0.72rem; color:var(--muted); margin-top:0.6rem; font-style:italic;">Precios sujetos a disponibilidad en el momento de la reserva.</p>
+    </div>
+
+    <div class="cta-box">
+      <span class="cta-eyebrow">Tu selección actual</span>
+      <h3 class="cta-title">Indonesia Wellness<br>a tu medida</h3>
+      <div class="cta-price" id="cta-price-display">11.600€ <span>/ 2 personas</span></div>
+      <p class="cta-note">Precio estimado. Al confirmar el interés os enviamos presupuesto formal con precios exactos y disponibilidad confirmada.<br><span style="color:rgba(255,255,255,0.3)">Precios sujetos a disponibilidad en el momento de la reserva.</span></p>
+      <button class="btn-cta-primary" onclick="solicitarLlamada()">Me encaja — llamadme</button>
+      <button class="btn-cta-secondary" onclick="solicitarPregunta()">Tengo alguna pregunta</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL LLAMADA -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon" id="modal-icono">📞</div>
+    <h3 id="modal-titulo">¡Perfecto, te llamamos!</h3>
+    <p id="modal-texto">He recibido tu selección y te llamaré antes de 24 horas para confirmar los detalles y arrancar la reserva.</p>
+    <button class="modal-close" onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://www.bassatravels.com">
+    <img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels">
+  </a>
+  <span class="footer-note">Propuesta para María García · Válida hasta el 30 de junio de 2025 · bassatravels.com</span>
+</footer>
+
+<script>
+  // ── CONFIG — cambia esto ──
+  const AGENT_EMAIL   = 'hola@bassatravels.com';          // tu email
+  const GOOGLE_SCRIPT = 'https://script.google.com/macros/s/AKfycbwo6M7-z_Al4kSb5eu9nXPedR3NqW8KsrArtT0Jx8mYlSdXwmydlMft1jMjWMn0RB_7fQ/exec';
+
+  const BASE = 11600;
+  const state = {
+    hotelUbud: 0,
+    hotelNusa: 0,
+    hotelUbudNombre: 'COMO Shambhala Estate',
+    hotelNusaNombre: 'Adiwana Warnakali',
+    exps: { borobudur: false, jamu: false, batik: false, komodo: false, cooking: false },
+    expPrices: { borobudur: 380, jamu: 180, batik: 140, komodo: 520, cooking: 95 },
+    expNombres: {
+      borobudur: 'Amanecer privado en Borobudur',
+      jamu: 'Consulta medicina Jamu',
+      batik: 'Taller de batik artesanal',
+      komodo: 'Extensión a Komodo (2 días)',
+      cooking: 'Clase de cocina balinesa'
+    }
+  };
+
+  function getTotal() {
+    const expTotal = Object.entries(state.exps)
+      .filter(([k,v]) => v)
+      .reduce((s, [k]) => s + state.expPrices[k] * 2, 0);
+    return BASE + state.hotelUbud * 2 + state.hotelNusa * 2 + expTotal;
+  }
+
+  function getResumen() {
+    const total = getTotal();
+    const expsActivas = Object.entries(state.exps)
+      .filter(([k,v]) => v)
+      .map(([k]) => state.expNombres[k]);
+
+    return [
+      `Propuesta: Indonesia Wellness — María García`,
+      `Hotel Ubud: ${state.hotelUbudNombre}`,
+      `Hotel Nusa Penida: ${state.hotelNusaNombre}`,
+      expsActivas.length ? `Experiencias: ${expsActivas.join(', ')}` : 'Experiencias: ninguna adicional',
+      `TOTAL ESTIMADO: ${total.toLocaleString('es-ES')}€ / 2 personas`
+    ].join('\n');
+  }
+
+  function recalc() {
+    const expTotal = Object.entries(state.exps)
+      .filter(([k,v]) => v)
+      .reduce((s, [k]) => s + state.expPrices[k] * 2, 0);
+    const total = BASE + state.hotelUbud * 2 + state.hotelNusa * 2 + expTotal;
+    const fmt = n => n.toLocaleString('es-ES') + '€';
+
+    document.getElementById('total-display').textContent = fmt(total);
+    document.getElementById('cta-price-display').innerHTML = fmt(total) + ' <span>/ 2 personas</span>';
+    document.getElementById('hero-price').textContent = fmt(Math.round(total / 2));
+
+    if (state.hotelUbud !== 0) {
+      document.getElementById('hotel-adjust-line').style.display = 'flex';
+      document.getElementById('hotel-adjust-label').textContent =
+        state.hotelUbud > 0 ? 'Upgrade alojamiento Ubud' : 'Ahorro alojamiento Ubud';
+      document.getElementById('hotel-adjust-amt').textContent =
+        (state.hotelUbud > 0 ? '+' : '') + fmt(state.hotelUbud * 2);
+    } else {
+      document.getElementById('hotel-adjust-line').style.display = 'none';
+    }
+
+    if (state.hotelNusa !== 0) {
+      document.getElementById('nusa-adjust-line').style.display = 'flex';
+      document.getElementById('nusa-adjust-label').textContent = 'Upgrade Nusa Penida';
+      document.getElementById('nusa-adjust-amt').textContent = '+' + fmt(state.hotelNusa * 2);
+    } else {
+      document.getElementById('nusa-adjust-line').style.display = 'none';
+    }
+
+    if (expTotal > 0) {
+      document.getElementById('extras-line').style.display = 'flex';
+      const names = Object.entries(state.exps).filter(([k,v]) => v).map(([k]) => state.expNombres[k]).join(', ');
+      document.getElementById('extras-label').textContent = 'Experiencias: ' + names;
+      document.getElementById('extras-amt').textContent = '+' + fmt(expTotal);
+    } else {
+      document.getElementById('extras-line').style.display = 'none';
+    }
+  }
+
+  function selectHotel(el, diff) {
+    el.closest('.choice-group').querySelectorAll('.hotel-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    state.hotelUbud = diff;
+    state.hotelUbudNombre = el.querySelector('.hotel-name').textContent;
+    recalc();
+  }
+
+  function selectNusa(el, diff) {
+    el.closest('.choice-group').querySelectorAll('.hotel-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    state.hotelNusa = diff;
+    state.hotelNusaNombre = el.querySelector('.hotel-name').textContent;
+    recalc();
+  }
+
+  function toggleExp(row, key, price) {
+    state.exps[key] = !state.exps[key];
+    const sw = document.getElementById('sw-' + key);
+    sw.classList.toggle('on', state.exps[key]);
+    recalc();
+  }
+
+  function toggleDay(row) { row.classList.toggle('open'); }
+
+  async function enviarAlAgente(accion) {
+    const total = getTotal();
+    const data = {
+      accion:      accion,
+      cliente:     'María García',
+      propuesta:   'Indonesia Wellness',
+      hotel_ubud:  state.hotelUbudNombre,
+      hotel_nusa:  state.hotelNusaNombre,
+      experiencias: Object.entries(state.exps).filter(([k,v])=>v).map(([k])=>state.expNombres[k]).join(', ') || 'Ninguna',
+      total:       total.toLocaleString('es-ES') + '€'
+    };
+    try {
+      const params = new URLSearchParams(data);
+      await fetch(GOOGLE_SCRIPT + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
+    } catch(e) {}
+  }
+
+  function solicitarLlamada() {
+    enviarAlAgente('llamada');
+    document.getElementById('modal-titulo').textContent = '¡Perfecto, te llamamos!';
+    document.getElementById('modal-texto').textContent = 'Hemos recibido tu selección y te llamaremos antes de 24 horas para confirmar los detalles y arrancar la reserva.';
+    document.getElementById('modal-icono').textContent = '📞';
+    document.getElementById('modal').classList.add('show');
+  }
+
+  function solicitarPregunta() {
+    enviarAlAgente('pregunta');
+    document.getElementById('modal-titulo').textContent = 'Te contactamos pronto';
+    document.getElementById('modal-texto').textContent = 'Hemos recibido tu mensaje. Te llamaremos antes de 24 horas para resolver cualquier duda sobre tu propuesta.';
+    document.getElementById('modal-icono').textContent = '💬';
+    document.getElementById('modal').classList.add('show');
+  }
+
+  function cerrarModal() {
+    document.getElementById('modal').classList.remove('show');
+  }
+</script>
+</body>
+</html>
