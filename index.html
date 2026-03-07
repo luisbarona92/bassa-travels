@@ -156,16 +156,17 @@
 
   /* ── CÓMO FUNCIONA ── */
   .how { background: var(--cream); }
-  .how-header { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 4rem; }
-  .how-visual { height: 420px; overflow: hidden; border-radius: 2px; }
+  .how-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; }
+  .how-left { display: flex; flex-direction: column; }
+  .how-visual { height: 520px; overflow: hidden; border-radius: 2px; }
   .how-visual img { width: 100%; height: 100%; object-fit: cover; }
-  .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
-  .step { padding: 2rem; background: white; border-radius: 2px; border-top: 3px solid var(--sand); transition: border-color 0.3s, transform 0.3s; }
+  .steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 2rem; }
+  .step { padding: 1.4rem; background: white; border-radius: 2px; border-top: 3px solid var(--sand); transition: border-color 0.3s, transform 0.3s; }
   .step:hover { border-top-color: var(--terracotta); transform: translateY(-4px); }
-  .step-num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--sand); line-height: 1; margin-bottom: 0.5rem; }
-  .step-time { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; }
-  .step h4 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 400; margin-bottom: 0.6rem; }
-  .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .step-num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; color: var(--sand); line-height: 1; margin-bottom: 0.4rem; }
+  .step-time { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.6rem; }
+  .step h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.4rem; }
+  .step p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
 
   /* ── CONTACT ── */
   .contact { background: var(--deep); color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
@@ -345,8 +346,9 @@
     .destinos-inner { grid-template-columns: 1fr; gap: 2rem; }
 
     /* How */
-    .how-header { grid-template-columns: 1fr; gap: 2rem; }
-    .how-visual { height: 240px; }
+    .how-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .how-visual { height: 280px; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
     .steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
     .step { padding: 1.4rem; }
     .step-num { font-size: 2.2rem; }
@@ -563,29 +565,31 @@
 <!-- CÓMO FUNCIONA -->
 <section class="how" id="how">
   <span class="section-tag reveal">Cómo funciona</span>
-  <h2 class="section-title reveal">Un proceso <em>simple</em><br>y acompañado</h2>
-  <div class="how-header">
-    <p style="color:var(--muted);line-height:1.8" class="reveal">En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.</p>
+  <div class="how-inner">
+    <div class="how-left">
+      <h2 class="section-title reveal">Un proceso <em>simple</em><br>y acompañado</h2>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:0" class="reveal">En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.</p>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div><div class="step-time">60 segundos</div>
+          <h4>Formulario</h4><p>Fechas, estilo y tipo de viaje. Lo justo para empezar.</p>
+        </div>
+        <div class="step reveal" style="transition-delay:0.1s">
+          <div class="step-num">02</div><div class="step-time">15–20 min</div>
+          <h4>Llamada breve</h4><p>Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.</p>
+        </div>
+        <div class="step reveal" style="transition-delay:0.2s">
+          <div class="step-num">03</div><div class="step-time">A medida</div>
+          <h4>Propuesta</h4><p>Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.</p>
+        </div>
+        <div class="step reveal" style="transition-delay:0.3s">
+          <div class="step-num">04</div><div class="step-time">Nos encargamos</div>
+          <h4>Viaje definido</h4><p>Bloqueamos servicios y te acompañamos antes y durante el viaje.</p>
+        </div>
+      </div>
+    </div>
     <div class="how-visual reveal">
       <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=85" alt="Cómo funciona Bassa">
-    </div>
-  </div>
-  <div class="steps">
-    <div class="step reveal">
-      <div class="step-num">01</div><div class="step-time">60 segundos</div>
-      <h4>Formulario</h4><p>Fechas, estilo y tipo de viaje. Lo justo para empezar.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:0.1s">
-      <div class="step-num">02</div><div class="step-time">15–20 min</div>
-      <h4>Llamada breve</h4><p>Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:0.2s">
-      <div class="step-num">03</div><div class="step-time">A medida</div>
-      <h4>Propuesta</h4><p>Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:0.3s">
-      <div class="step-num">04</div><div class="step-time">Nos encargamos</div>
-      <h4>Viaje definido</h4><p>Bloqueamos servicios y te acompañamos antes y durante el viaje.</p>
     </div>
   </div>
 </section>
