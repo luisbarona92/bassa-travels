@@ -115,7 +115,7 @@
   .experiences h2.section-title { color: white; }
   .experiences h2.section-title em { color: var(--gold); }
   .exp-intro { color: rgba(255,255,255,0.82); max-width: 500px; line-height: 1.7; margin-bottom: 4rem; }
-  .exp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; }
+  .exp-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.5px; }
   .exp-card { position: relative; height: 520px; overflow: hidden; cursor: pointer; }
   .exp-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
   .exp-card:hover img { transform: scale(1.06); }
@@ -331,10 +331,13 @@
     .about-visual { height: 280px; }
     .about-visual-badge { display: none; }
 
+    /* How archetypes */
+    .archetypes > div { grid-template-columns: repeat(2,1fr) !important; }
+
     /* Experiences */
     .experiences { padding-bottom: 0; }
-    .exp-grid { grid-template-columns: 1fr; gap: 2px; }
-    .exp-card { height: 260px; }
+    .exp-grid { grid-template-columns: repeat(2,1fr); gap: 2px; }
+    .exp-card { height: 300px; }
     .exp-card p { max-height: 120px; }
     .exp-card-overlay { background: linear-gradient(to top, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.35) 55%, transparent 100%); }
 
@@ -366,6 +369,9 @@
     .steps { grid-template-columns: 1fr; }
     .hero h1 { font-size: clamp(2.2rem, 12vw, 3rem); }
     .btn-outline { display: none; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-card { height: 260px; }
+    .archetypes > div { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -445,30 +451,46 @@
 <section class="experiences" id="experiences">
   <span class="section-tag reveal">Experiencias</span>
   <h2 class="section-title reveal">Momentos que<br><em>no se olvidan</em></h2>
-  <p class="exp-intro reveal">Tres formas distintas de vivir Indonesia. Todas diseñadas con calma, privacidad y criterio.</p>
+  <p class="exp-intro reveal">Cinco líneas de viaje diseñadas para perfiles distintos. Todas a medida, sin grupos, con criterio.</p>
   <div class="exp-grid reveal">
     <div class="exp-card">
-      <img src="images/ubud-villa-pool.jpg" alt="Villa lujo Ubud Bali">
+      <img src="ubud-reset.jpg" alt="Bassa Reset — Bali interior">
       <div class="exp-card-overlay">
-        <span class="exp-num">01</span>
-        <h3>Reset profundo en la selva</h3>
-        <p>Villa en la jungla de Bali con piscina, masajes balineses, baños florales y cenas íntimas. El relax que te mereces.</p>
+        <span class="exp-num">Reset</span>
+        <h3>Bassa Reset</h3>
+        <p>Desconexión profunda en Bali interior. Villa privada, masajes balineses, ritmo slow y gastronomía de nivel. 7–12 días.</p>
       </div>
     </div>
     <div class="exp-card">
-      <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=900&q=85" alt="Raja Ampat">
+      <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=900&q=85" alt="Bassa Moon — Luna de miel Bali">
       <div class="exp-card-overlay">
-        <span class="exp-num">02</span>
-        <h3>Islas desiertas privadas</h3>
-        <p>Raja Ampat en lancha privada, lagunas turquesa, snorkel en arrecifes intactos y atardeceres en miradores espectaculares.</p>
+        <span class="exp-num">Moon</span>
+        <h3>Bassa Moon</h3>
+        <p>Luna de miel y aniversarios en Bali premium. Villas 5 estrellas, cenas privadas, detalles curados. 10–14 días.</p>
       </div>
     </div>
     <div class="exp-card">
-      <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=900&q=85" alt="Templos Indonesia">
+      <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=900&q=85" alt="Bassa Wild — Raja Ampat">
       <div class="exp-card-overlay">
-        <span class="exp-num">03</span>
-        <h3>Amanecer entre templos</h3>
-        <p>Borobudur al amanecer y Prambanan al atardecer con guía privado. Respirar, escuchar y observar estructuras milenarias.</p>
+        <span class="exp-num">Wild</span>
+        <h3>Bassa Wild</h3>
+        <p>Naturaleza extrema en Raja Ampat. Liveaboard o resort exclusivo, arrecifes intactos, privacidad total. 8–12 días.</p>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=900&q=85" alt="Bassa Culture — Java y Bali">
+      <div class="exp-card-overlay">
+        <span class="exp-num">Culture</span>
+        <h3>Bassa Culture</h3>
+        <p>Historia viva en Java y Bali. Borobudur al amanecer, templos hindúes, guía privado especializado. 10–14 días.</p>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=900&q=85" alt="Bassa Complete — Indonesia completa">
+      <div class="exp-card-overlay">
+        <span class="exp-num">Complete</span>
+        <h3>Bassa Complete</h3>
+        <p>Indonesia en su totalidad. Java, Bali y Raja Ampat o Komodo. El gran viaje que siempre quisiste hacer. 18–21 días.</p>
       </div>
     </div>
   </div>
@@ -551,7 +573,7 @@
   <div class="steps">
     <div class="step reveal">
       <div class="step-num">01</div><div class="step-time">60 segundos</div>
-      <h4>Formulario</h4><p>Fechas, estilo y presupuesto orientativo. Lo justo para empezar.</p>
+      <h4>Formulario</h4><p>Fechas, estilo y tipo de viaje. Lo justo para empezar.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.1s">
       <div class="step-num">02</div><div class="step-time">15–20 min</div>
@@ -559,7 +581,7 @@
     </div>
     <div class="step reveal" style="transition-delay:0.2s">
       <div class="step-num">03</div><div class="step-time">A medida</div>
-      <h4>Propuesta</h4><p>Itinerario claro, opciones premium, qué incluye y ajustes necesarios.</p>
+      <h4>Propuesta</h4><p>Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.</p>
     </div>
     <div class="step reveal" style="transition-delay:0.3s">
       <div class="step-num">04</div><div class="step-time">Nos encargamos</div>
@@ -573,7 +595,7 @@
   <div class="contact-left reveal">
     <span class="section-tag">Contacto</span>
     <h2 class="section-title">¿Te ayudamos a<br><em>diseñar tu viaje</em><br>a Indonesia?</h2>
-    <p class="contact-intro">Un asesor de Bassa Travels se pondrá en contacto contigo para confeccionar el gran viaje a medida que tienes en mente.</p>
+    <p class="contact-intro">Un asesor de Bassa Travels se pondrá en contacto contigo para confeccionar el gran viaje a medida que tienes en mente. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.</p>
     <div class="contact-promise">
       <div class="promise-item">
         <span class="promise-icon">✦</span>
@@ -590,22 +612,22 @@
     </div>
   </div>
   <div class="contact-form reveal" style="transition-delay:0.2s">
-    <form id="bassa-form">
+    <form>
       <div class="form-field">
         <label>¿Qué tipo de Indonesia quieres?</label>
-        <select name="tipo_viaje">
+        <select>
           <option value="">Cuéntanos tu idea...</option>
-          <option>Bali en profundidad — slow, spa y naturaleza</option>
-          <option>Raja Ampat — snorkel y privacidad total</option>
-          <option>Java &amp; Bali — cultura y descanso</option>
-          <option>Bali &amp; Raja Ampat — lo mejor de dos mundos</option>
-          <option>Java, Bali &amp; Gili — circuito slow premium</option>
+          <option>Bassa Reset — Bali interior</option>
+          <option>Bassa Moon — Bali premium</option>
+          <option>Bassa Wild — Raja Ampat</option>
+          <option>Bassa Culture — Java &amp; Bali</option>
+          <option>Bassa Complete — Indonesia completa</option>
           <option>Aún no lo tengo claro, me ayudáis</option>
         </select>
       </div>
       <div class="form-field">
         <label>¿Con quién viajas?</label>
-        <select name="companion">
+        <select>
           <option value="">Selecciona una opción</option>
           <option>En pareja</option>
           <option>Luna de miel</option>
@@ -617,11 +639,11 @@
       <div class="form-row">
         <div class="form-field">
           <label>Salida aproximada</label>
-          <input type="month" name="salida">
+          <input type="month">
         </div>
         <div class="form-field">
           <label>Días de viaje</label>
-          <select name="dias">
+          <select>
             <option value="">¿Cuántos días?</option>
             <option>7 días</option>
             <option>10 días</option>
@@ -637,27 +659,23 @@
       <div class="form-row">
         <div class="form-field">
           <label>Nombre</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="text" placeholder="Tu nombre">
         </div>
         <div class="form-field">
           <label>Email</label>
-          <input type="email" name="email" placeholder="tu@email.com" required>
+          <input type="email" placeholder="tu@email.com">
         </div>
       </div>
       <div class="form-field">
         <label>WhatsApp</label>
-        <input type="tel" name="whatsapp" placeholder="+34 600 000 000">
+        <input type="tel" placeholder="+34 600 000 000">
       </div>
       <div class="form-field">
         <label>Imprescindibles / preferencias</label>
-        <textarea name="imprescindibles" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
+        <textarea placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
-      <button type="submit" class="btn-form" id="btn-submit">Enviar consulta →</button>
+      <button type="submit" class="btn-form">Enviar consulta →</button>
     </form>
-    <div id="form-success" style="display:none; padding: 2.5rem; text-align:center;">
-      <p style="font-family: var(--font-display); font-size: 1.8rem; font-weight:300; color: var(--deep); margin-bottom: 0.8rem;">✓ Recibido</p>
-      <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.7;">Te contactamos antes de 24h para agendar una llamada breve.<br>Revisa también tu bandeja de spam por si acaso.</p>
-    </div>
   </div>
 </section>
 
@@ -706,7 +724,7 @@
   <a href="#home" class="footer-logo">
     <img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels">
   </a>
-  <span class="footer-copy">© 2025 Bassa Travels · Agencia boutique de viajes wellness en Indonesia</span>
+  <span class="footer-copy">© 2026 Bassa Travels · Agencia boutique de viajes wellness en Indonesia</span>
   <nav class="footer-nav">
     <a href="#about">Qué es Bassa</a>
     <a href="#experiences">Experiencias</a>
@@ -761,42 +779,6 @@
       document.querySelectorAll('.dtab').forEach(t => t.classList.remove('open'));
       if (!wasOpen) tab.classList.add('open');
     });
-  });
-
-  // FORMULARIO -> GOOGLE SHEETS
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcfTp2D0nffltJOC0ypMWQgw8SCS7KTKpsSxP3fJWgxU8_lxfy36Lx93C1TTjAZ2Cq/exec";
-
-  document.getElementById('bassa-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = document.getElementById('btn-submit');
-
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
-
-    const data = {
-      tipo_viaje:      form.tipo_viaje.value,
-      companion:       form.companion.value,
-      salida:          form.salida.value,
-      dias:            form.dias.value,
-      nombre:          form.nombre.value,
-      email:           form.email.value,
-      whatsapp:        form.whatsapp.value,
-      imprescindibles: form.imprescindibles.value
-    };
-
-    try {
-      const params = new URLSearchParams(data);
-      await fetch(SCRIPT_URL + '?' + params.toString(), {
-        method: 'GET',
-        mode: 'no-cors'
-      });
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    } catch (err) {
-      btn.textContent = 'Error al enviar, intentalo de nuevo';
-      btn.disabled = false;
-    }
   });
 </script>
 </body>
