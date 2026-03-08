@@ -708,6 +708,12 @@
     else { cAmt.textContent = (state.hotelCosta > 0 ? '+' : '') + (state.hotelCosta * 2).toLocaleString('es-ES') + '€'; cAmt.style.color = state.hotelCosta > 0 ? 'var(--terracotta)' : '#3d7a4d'; }
     const container = document.getElementById('extras-container');
     container.innerHTML = '';
+    if (Object.keys(state.extras).length > 0) {
+      const hdr = document.createElement('div');
+      hdr.style.cssText = 'padding: 1.4rem 0 0.3rem; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border-top: 1px solid var(--sand); margin-top: 0.2rem;';
+      hdr.textContent = 'Experiencias seleccionadas';
+      container.appendChild(hdr);
+    }
     Object.entries(state.extras).forEach(([key, val]) => {
       const row = document.createElement('div');
       row.className = 'price-line';
