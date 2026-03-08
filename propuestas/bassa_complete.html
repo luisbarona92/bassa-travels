@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bassa Travels — Propuesta Bassa Complete</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --cream: #F5F0E8; --sand: #E8DDD0; --terracotta: #C4724A; --deep: #1C1A17; --gold: #B89B6A; --warm-white: #FAF8F4; --muted: #7A7068; --font-display: 'Cormorant Garamond', serif; --font-body: 'DM Sans', sans-serif; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--deep); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+  .hero { position: relative; height: 100vh; min-height: 680px; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1920&q=85') center 45%/cover no-repeat; }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.4) 50%, rgba(28,26,23,0.15) 100%); }
+  .hero-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 1.8rem 4rem; }
+  .hero-logo img { height: 44px; filter: brightness(0) invert(1); }
+  .hero-ref { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: white; background: rgba(28,26,23,0.45); border: 1px solid rgba(255,255,255,0.18); padding: 0.4rem 0.9rem; backdrop-filter: blur(6px); }
+  .hero-content { position: relative; z-index: 1; padding: 0 4rem 4rem; width: 100%; display: grid; grid-template-columns: 1fr auto; align-items: flex-end; gap: 3rem; }
+  .hero-tag { display: inline-block; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: white; border-left: 3px solid var(--terracotta); padding-left: 0.9rem; margin-bottom: 1.2rem; text-shadow: 0 1px 8px rgba(0,0,0,0.8); font-weight: 400; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 300; color: white; line-height: 1.0; margin-bottom: 1.8rem; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-item span:first-child { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .hero-meta-item span:last-child { font-size: 0.9rem; color: white; font-weight: 300; }
+  .hero-right { text-align: right; }
+  .hero-price-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); display: block; margin-bottom: 6px; }
+  .hero-price-val { font-family: var(--font-display); font-size: 3.2rem; font-weight: 300; color: white; line-height: 1; display: block; }
+  .hero-price-sub { font-size: 0.75rem; color: rgba(255,255,255,0.5); display: block; margin-top: 4px; }
+  .intro-personal { background: var(--warm-white); padding: 5rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .intro-personal-text .eyebrow { font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; display: block; }
+  .intro-personal-text h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem; }
+  .intro-personal-text h2 em { font-style: italic; color: var(--terracotta); }
+  .intro-personal-text p { color: var(--muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.2rem; }
+  .intro-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--sand); }
+  .stat-box { background: var(--cream); padding: 2.5rem; text-align: center; }
+  .stat-num { font-family: var(--font-display); font-size: 3.2rem; font-weight: 300; color: var(--terracotta); display: block; line-height: 1; }
+  .stat-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; display: block; }
+  .itinerary { padding: 5rem 4rem; background: var(--cream); }
+  .section-eyebrow { font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; display: block; }
+  .section-heading { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 300; line-height: 1.1; margin-bottom: 3rem; }
+  .section-heading em { font-style: italic; color: var(--terracotta); }
+  .days-list { display: flex; flex-direction: column; gap: 2px; }
+  .day-row { display: grid; grid-template-columns: 80px 1fr; background: var(--warm-white); border-left: 3px solid transparent; transition: border-color 0.3s; cursor: pointer; }
+  .day-row:hover, .day-row.open { border-left-color: var(--terracotta); }
+  .day-num-col { padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; border-right: 1px solid var(--sand); }
+  .day-num-text { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.12em; color: var(--terracotta); writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); text-transform: uppercase; }
+  .day-body { padding: 2rem 2.5rem; }
+  .day-location { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .day-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.8rem; }
+  .day-desc { font-size: 0.88rem; line-height: 1.75; color: var(--muted); max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .day-row.open .day-desc { max-height: 220px; }
+  .day-tags { display: flex; gap: 8px; margin-top: 1rem; flex-wrap: wrap; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .day-row.open .day-tags { max-height: 60px; }
+  .tag { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--sand); color: var(--muted); }
+  .day-toggle { margin-left: auto; font-size: 1.2rem; color: var(--muted); transition: transform 0.3s; line-height: 1; }
+  .day-row.open .day-toggle { transform: rotate(45deg); color: var(--terracotta); }
+  .day-header-row { display: flex; align-items: center; gap: 1rem; }
+  .choices { background: var(--deep); padding: 5rem 4rem; color: white; }
+  .choices .section-eyebrow { color: var(--gold); }
+  .choices .section-heading { color: white; }
+  .choices .section-heading em { color: var(--gold); }
+  .choices-subtitle { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.7; max-width: 520px; margin-bottom: 3.5rem; font-weight: 300; }
+  .choice-group { margin-bottom: 3.5rem; }
+  .choice-group-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1.5rem; display: block; }
+  .hotel-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .hotel-card { background: rgba(255,255,255,0.04); padding: 2rem; border: 1px solid rgba(255,255,255,0.06); cursor: pointer; transition: all 0.25s; position: relative; }
+  .hotel-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(184,155,106,0.4); }
+  .hotel-card.selected { border-color: var(--gold); background: rgba(184,155,106,0.08); }
+  .hotel-card.selected::after { content: '✓'; position: absolute; top: 14px; right: 14px; width: 20px; height: 20px; background: var(--gold); color: var(--deep); border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: 600; line-height: 20px; text-align: center; }
+  .hotel-tier { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .hotel-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; color: white; margin-bottom: 0.4rem; }
+  .hotel-location { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 0.8rem; }
+  .hotel-desc { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 1rem; }
+  .hotel-price { font-size: 0.82rem; color: white; }
+  .hotel-price strong { color: var(--gold); font-weight: 400; }
+  .activity-list { display: flex; flex-direction: column; }
+  .activity-row { display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); cursor: pointer; gap: 2rem; }
+  .activity-row:last-child { border-bottom: none; }
+  .activity-info h4 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 400; color: white; margin-bottom: 0.3rem; }
+  .activity-info p { font-size: 0.8rem; color: rgba(255,255,255,0.45); font-weight: 300; }
+  .activity-right-col { display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0; }
+  .activity-price-tag { font-size: 0.82rem; color: var(--gold); white-space: nowrap; }
+  .switch { width: 42px; height: 23px; background: rgba(255,255,255,0.1); border-radius: 12px; position: relative; transition: background 0.3s; flex-shrink: 0; }
+  .switch.on { background: var(--terracotta); }
+  .switch-knob { position: absolute; top: 3px; left: 3px; width: 17px; height: 17px; background: white; border-radius: 50%; transition: transform 0.3s; }
+  .switch.on .switch-knob { transform: translateX(19px); }
+  .price-section { background: var(--warm-white); padding: 5rem 4rem; }
+  .price-grid { display: grid; grid-template-columns: 1fr 360px; gap: 5rem; align-items: start; max-width: 1100px; }
+  .price-breakdown h3 { font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin-bottom: 2rem; }
+  .price-line { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--sand); font-size: 0.88rem; font-weight: 300; }
+  .price-line .lbl { color: var(--muted); }
+  .price-line .amt { color: var(--deep); font-weight: 400; }
+  .price-total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 1.5rem; margin-top: 0.5rem; }
+  .price-total .lbl { font-family: var(--font-display); font-size: 1.4rem; font-weight: 300; }
+  .price-total .amt { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; color: var(--terracotta); }
+  .cta-box { background: var(--deep); padding: 2.8rem; position: sticky; top: 24px; }
+  .cta-eyebrow { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+  .cta-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; color: white; line-height: 1.15; margin-bottom: 0.5rem; }
+  .cta-price { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; margin: 1.2rem 0; }
+  .cta-price span { font-family: var(--font-body); font-size: 0.8rem; color: var(--muted); }
+  .cta-note { font-size: 0.8rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 2rem; font-weight: 300; }
+  .btn-cta-primary { display: block; width: 100%; padding: 1.1rem; background: var(--terracotta); color: white; border: none; font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: background 0.3s; margin-bottom: 10px; text-decoration: none; text-align: center; }
+  .btn-cta-primary:hover { background: #b35e38; }
+  .btn-cta-secondary { display: block; width: 100%; padding: 1.1rem; background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.12); font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; text-align: center; }
+  .btn-cta-secondary:hover { color: white; border-color: rgba(255,255,255,0.4); }
+  footer { background: var(--deep); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo img { height: 36px; filter: brightness(0) invert(1); opacity: 0.7; }
+  .footer-note { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+  .modal-backdrop { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(28,26,23,0.88); align-items: center; justify-content: center; }
+  .modal-backdrop.show { display: flex; }
+  .modal-box { background: var(--warm-white); padding: 3.5rem; max-width: 440px; width: 90%; text-align: center; animation: popIn 0.3s ease; }
+  @keyframes popIn { from { opacity: 0; transform: scale(0.95) translateY(16px); } to { opacity: 1; transform: none; } }
+  .modal-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+  .modal-box h3 { font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin-bottom: 0.8rem; }
+  .modal-box p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+  .modal-close { padding: 0.9rem 2.5rem; background: var(--deep); color: white; border: none; cursor: pointer; font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+  .fade-up { opacity: 0; animation: fadeUp 0.9s ease forwards; }
+  .delay-1 { animation-delay: 0.2s; } .delay-2 { animation-delay: 0.45s; } .delay-3 { animation-delay: 0.65s; }
+  @media (max-width: 820px) { .intro-personal { grid-template-columns: 1fr; padding: 3.5rem 2rem; gap: 3rem; } .itinerary, .choices, .price-section { padding: 3.5rem 2rem; } .hotel-options { grid-template-columns: 1fr; } .price-grid { grid-template-columns: 1fr; } .cta-box { position: static; } footer { padding: 2rem; flex-direction: column; text-align: center; } }
+  @media (max-width: 600px) { .hero-nav { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; } .hero-content { grid-template-columns: 1fr; padding: 0 1.5rem 2.5rem; gap: 1.5rem; } .hero h1 { font-size: 2.8rem; margin-bottom: 1.2rem; } .hero-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; } .hero-right { text-align: left; } .hero-price-val { font-size: 2.2rem; } .itinerary, .choices, .price-section { padding: 2.5rem 1.5rem; } .intro-personal { padding: 2.5rem 1.5rem; gap: 2rem; } .day-row { grid-template-columns: 48px 1fr; } .day-num-col { padding: 1.5rem 0.5rem; } .day-body { padding: 1.5rem; } .day-title { font-size: 1.2rem; } .activity-row { flex-wrap: wrap; gap: 0.8rem; align-items: flex-start; } .activity-info { flex: 1 1 100%; } .activity-right-col { flex: 1 1 100%; justify-content: space-between; } .price-line { flex-direction: column; gap: 0.3rem; align-items: flex-start; } .price-total { flex-direction: column; gap: 0.3rem; } .price-total .amt { font-size: 2.2rem; } .cta-box { padding: 2rem 1.5rem; } .cta-price { font-size: 2.4rem; } footer { padding: 1.8rem 1.5rem; flex-direction: column; text-align: center; gap: 0.8rem; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <nav class="hero-nav">
+    <a class="hero-logo" href="https://www.bassatravels.com"><img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels"></a>
+    <span class="hero-ref">Bassa Complete · Ejemplo de propuesta</span>
+  </nav>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag fade-up delay-1">Grand Tour · Java + Bali + Raja Ampat</div>
+      <h1 class="fade-up delay-2">Bassa<br><em>Complete</em></h1>
+      <div class="hero-meta fade-up delay-3">
+        <div class="hero-meta-item"><span>Duración</span><span>20 noches · 21 días</span></div>
+        <div class="hero-meta-item"><span>Destinos</span><span>Java · Bali · Raja Ampat</span></div>
+        <div class="hero-meta-item"><span>Viajeros</span><span>2 personas</span></div>
+        <div class="hero-meta-item"><span>Estilo</span><span>Grand Tour · Sin prisas · Definitivo</span></div>
+      </div>
+    </div>
+    <div class="hero-right fade-up delay-3">
+      <span class="hero-price-label">Precio estimado desde</span>
+      <span class="hero-price-val" id="hero-price">10.000€</span>
+      <span class="hero-price-sub">por persona · vuelos no incluidos</span>
+    </div>
+  </div>
+</section>
+
+<section class="intro-personal">
+  <div class="intro-personal-text">
+    <span class="eyebrow">Para quién es este viaje</span>
+    <h2>Indonesia en su<br><em>totalidad</em></h2>
+    <p>Bassa Complete es el gran viaje. El que siempre quisiste hacer y nunca encontrabas quién lo organizara bien. Indonesia tiene tres mundos distintos en el mismo archipiélago: la historia milenaria de Java, la espiritualidad y el bienestar de Bali, y la naturaleza salvaje de Raja Ampat. Este itinerario los une sin agotamiento logístico.</p>
+    <p>Diseñado para el directivo que viaja poco pero quiere hacerlo con intensidad, o para quien regresa a Indonesia y quiere cerrar el círculo. Bassa actúa como hilo conductor: una sola persona gestiona toda la logística entre islas, para que vosotros solo tengáis que aparecer.</p>
+  </div>
+  <div class="intro-stats">
+    <div class="stat-box"><span class="stat-num">3</span><span class="stat-label">Islas</span></div>
+    <div class="stat-box"><span class="stat-num">21</span><span class="stat-label">Días</span></div>
+    <div class="stat-box"><span class="stat-num">100%</span><span class="stat-label">Privado</span></div>
+    <div class="stat-box"><span class="stat-num">0</span><span class="stat-label">Fricción logística</span></div>
+  </div>
+</section>
+
+<section class="itinerary">
+  <span class="section-eyebrow">El viaje</span>
+  <h2 class="section-heading">Día a <em>día</em></h2>
+  <div class="days-list">
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Días 01–05</span></div>
+      <div class="day-body">
+        <div class="day-header-row"><div><p class="day-location">Java · Yogyakarta + Borobudur</p><h3 class="day-title">Bloque Java: la historia que lo cambió todo</h3></div><span class="day-toggle">+</span></div>
+        <p class="day-desc">Cinco días en Java para hacer justicia a la isla más compleja de Indonesia. Llegada a Yogyakarta, palacio del sultán, mercado de artesanos. Amanecer privado en Borobudur —el templo budista más grande del planeta— con guía arqueólogo. Prambanan al atardecer. Día libre en Jogja explorando la escena cultural contemporánea. Traslado a East Java para el ascenso nocturno al volcán Ijen.</p>
+        <div class="day-tags"><span class="tag">Borobudur privado</span><span class="tag">Prambanan</span><span class="tag">Volcán Ijen</span><span class="tag">Guía arqueólogo</span></div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Días 06–07</span></div>
+      <div class="day-body">
+        <div class="day-header-row"><div><p class="day-location">Vuelo Java → Bali</p><h3 class="day-title">El puente entre mundos · Llegada a Bali</h3></div><span class="day-toggle">+</span></div>
+        <p class="day-desc">Vuelo a Bali desde Surabaya. Traslado directo a Ubud. Primer día en Bali: walk por los arrozales, cena en restaurante de autor con vista a la jungla. El cuerpo nota el cambio: de volcanes y cultura javanesa a perfume de incienso y música gamelan.</p>
+        <div class="day-tags"><span class="tag">Vuelo coordinado</span><span class="tag">Check-in Ubud</span><span class="tag">Arrozales</span></div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Días 08–12</span></div>
+      <div class="day-body">
+        <div class="day-header-row"><div><p class="day-location">Ubud · Bali</p><h3 class="day-title">Bali interior: bienestar y profundidad</h3></div><span class="day-toggle">+</span></div>
+        <p class="day-desc">Cinco días en Ubud con el ritmo que necesites. Spa de referencia con programa de bienestar a medida. Ceremonia de purificación en Tirta Empul con sacerdote local. Visita al templo Pura Besakih. Una tarde de cocina balinesa con familia local. Un día libre para explorar o simplemente descansar en la villa privada.</p>
+        <div class="day-tags"><span class="tag">Spa programa</span><span class="tag">Tirta Empul</span><span class="tag">Pura Besakih</span><span class="tag">Cocina local</span></div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Días 13–14</span></div>
+      <div class="day-body">
+        <div class="day-header-row"><div><p class="day-location">Costa de Bali</p><h3 class="day-title">El sur de Bali: acantilados y atardeceres</h3></div><span class="day-toggle">+</span></div>
+        <p class="day-desc">Traslado a Uluwatu. Dos noches en villa de acantilado con piscina infinita sobre el Índico. Espectáculo de danza Kecak al atardecer en el templo de Uluwatu. Cena en un cliff bar con el sonido del océano 80 metros abajo. El cierre visual de Bali que se queda en la retina.</p>
+        <div class="day-tags"><span class="tag">Uluwatu acantilado</span><span class="tag">Kecak al atardecer</span><span class="tag">Cliff bar</span></div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Día 15</span></div>
+      <div class="day-body">
+        <div class="day-header-row"><div><p class="day-location">Vuelo Bali → Sorong</p><h3 class="day-title">Al último lugar del mundo</h3></div><span class="day-toggle">+</span></div>
+        <p class="day-desc">Vuelo desde Bali a Sorong, West Papua. El más largo de los vuelos internos. Llegada al atardecer, transfer al resort en lancha. Ya no hay carreteras, ni edificios altos, ni ruido de ciudad. Solo el sonido del mar y el cielo lleno de estrellas.</p>
+        <div class="day-tags"><span class="tag">Vuelo Bali–Sorong</span><span class="tag">Transfer en lancha</span><span class="tag">Primer atardecer Raja</span></div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Días 16–19</span></div>
+      <div class="day-body">
+        <div class="day-header-row"><div><p class="day-location">Raja Ampat · West Papua</p><h3 class="day-title">El archipiélago más biodiverso del planeta</h3></div><span class="day-toggle">+</span></div>
+        <p class="day-desc">Cuatro días en el mar más biodiverso del mundo. Snorkel diario con guía en los mejores puntos: Wayag, Cape Kri, Crystal Rock. Kayak entre islotes al amanecer. Visita a comunidades papúes remotas. Avistamiento de aves del paraíso si el calendario lo permite. Cada atardecer termina sobre el océano sin un edificio a la vista en 360 grados.</p>
+        <div class="day-tags"><span class="tag">Wayag</span><span class="tag">Cape Kri</span><span class="tag">Kayak islas</span><span class="tag">Aves del paraíso</span><span class="tag">Aldeas papúes</span></div>
+      </div>
+    </div>
+
+    <div class="day-row" onclick="toggleDay(this)">
+      <div class="day-num-col"><span class="day-num-text">Días 20–21</span></div>
+      <div class="day-body">
+        <div class="day-header-row"><div><p class="day-location">Bali · Regreso</p><h3 class="day-title">Vuelta al mundo conocido</h3></div><span class="day-toggle">+</span></div>
+        <p class="day-desc">Vuelo de regreso a Bali para conectar con el vuelo internacional de vuelta a casa. Última noche en hotel de referencia en Seminyak o Kuta. Cena de celebración en restaurante de autor balinés. En el vuelo de vuelta hay algo diferente: ves el mundo de otra manera.</p>
+        <div class="day-tags"><span class="tag">Vuelo Sorong–Bali</span><span class="tag">Última noche</span><span class="tag">Cena de celebración</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="choices">
+  <span class="section-eyebrow">Personaliza</span>
+  <h2 class="section-heading">Elige cómo<br><em>quieres vivirlo</em></h2>
+  <p class="choices-subtitle">En Bassa Complete hay tres decisiones de alojamiento y la elección de experiencias que hacen este viaje irrepetible. El nivel de los hoteles define el presupuesto final más que cualquier otra variable.</p>
+
+  <div class="choice-group">
+    <span class="choice-group-label">Alojamiento en Java · 5 noches</span>
+    <div class="hotel-options">
+      <div class="hotel-card" onclick="selectJava(this, -700)" data-price="-700">
+        <div class="hotel-tier">Boutique · Carácter histórico</div>
+        <div class="hotel-name">Hotel Tentrem Yogyakarta</div>
+        <div class="hotel-location">Centro histórico, Yogyakarta</div>
+        <div class="hotel-desc">Hotel de diseño en el corazón de Jogja. Arquitectura con referencias a las artes javanesas. Excelente ubicación para explorar la ciudad a pie. La opción más equilibrada en Java.</div>
+        <div class="hotel-price">-<strong>700€</strong> / persona vs opción base</div>
+      </div>
+      <div class="hotel-card selected" onclick="selectJava(this, 0)" data-price="0">
+        <div class="hotel-tier">Selección recomendada · Frente a Borobudur</div>
+        <div class="hotel-name">Amanjiwo</div>
+        <div class="hotel-location">Frente a Borobudur, Java central</div>
+        <div class="hotel-desc">El hotel más icónico de Java. 36 suites con vistas directas a Borobudur. Diseño que homenajea la arquitectura del templo. Amanecer en Borobudur comienza desde tu terraza.</div>
+        <div class="hotel-price">Incluido en precio base</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="choice-group">
+    <span class="choice-group-label">Alojamiento en Bali · 9 noches</span>
+    <div class="hotel-options">
+      <div class="hotel-card" onclick="selectBali(this, -800)" data-price="-800">
+        <div class="hotel-tier">Boutique · Vistas y carácter</div>
+        <div class="hotel-name">Bisma Eight + Alila Uluwatu</div>
+        <div class="hotel-location">Ubud (6n) + Uluwatu (3n)</div>
+        <div class="hotel-desc">Bisma Eight para las mejores vistas de Ubud sobre el cañón del río. Alila para el acantilado de Uluwatu. La combinación perfecta de cultural y costa a un precio más contenido.</div>
+        <div class="hotel-price">-<strong>800€</strong> / persona vs opción base</div>
+      </div>
+      <div class="hotel-card selected" onclick="selectBali(this, 0)" data-price="0">
+        <div class="hotel-tier">Selección recomendada · Wellness + Lujo</div>
+        <div class="hotel-name">COMO Shambhala + Alila Villas Uluwatu</div>
+        <div class="hotel-location">Ubud (6n) + Uluwatu (3n)</div>
+        <div class="hotel-desc">El referente mundial de wellness en Asia para el bloque de Ubud, seguido de la villa de acantilado más fotogénica de Uluwatu. El equilibrio perfecto entre bienestar y lujo visual.</div>
+        <div class="hotel-price">Incluido en precio base</div>
+      </div>
+      <div class="hotel-card" onclick="selectBali(this, 2000)" data-price="2000">
+        <div class="hotel-tier">Ultra luxury · Cima absoluta</div>
+        <div class="hotel-name">Four Seasons Sayan + Bulgari Resort</div>
+        <div class="hotel-location">Ubud (6n) + Uluwatu (3n)</div>
+        <div class="hotel-desc">Four Seasons Sayan suspendido sobre el río Ayung. Bulgari Resort en el acantilado más exclusivo de Bali. Para cuando el viaje de vida tiene que tenerlo todo.</div>
+        <div class="hotel-price">+<strong>2.000€</strong> / persona</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="choice-group">
+    <span class="choice-group-label">Alojamiento en Raja Ampat · 5 noches</span>
+    <div class="hotel-options">
+      <div class="hotel-card" onclick="selectRaja(this, -600)" data-price="-600">
+        <div class="hotel-tier">Eco resort · Naturaleza sin filtro</div>
+        <div class="hotel-name">Papua Explorers Dive Resort</div>
+        <div class="hotel-location">Gam Island, Raja Ampat</div>
+        <div class="hotel-desc">Bungalows sobre el agua con acceso directo al arrecife. Ambiente íntimo, comunidad apasionada. El arrecife está literalmente debajo de tu habitación.</div>
+        <div class="hotel-price">-<strong>600€</strong> / persona vs opción base</div>
+      </div>
+      <div class="hotel-card selected" onclick="selectRaja(this, 0)" data-price="0">
+        <div class="hotel-tier">Selección recomendada · Exclusivo y fotogénico</div>
+        <div class="hotel-name">Papua Paradise Eco Resort</div>
+        <div class="hotel-location">Birie Island, Raja Ampat</div>
+        <div class="hotel-desc">20 bungalows privados sobre el agua. El más fotogénico de Raja Ampat. Atardeceres sobre el océano, equipo de snorkel y kayak incluido, guía marino residente.</div>
+        <div class="hotel-price">Incluido en precio base</div>
+      </div>
+      <div class="hotel-card" onclick="selectRaja(this, 1800)" data-price="1800">
+        <div class="hotel-tier">Ultra exclusivo · Los arrecifes más vírgenes</div>
+        <div class="hotel-name">Misool Eco Resort</div>
+        <div class="hotel-location">Misool Island, Raja Ampat sur</div>
+        <div class="hotel-desc">El resort más remoto y exclusivo del archipiélago. Zona marina protegida de uso privado. Para cerrar el grand tour con la experiencia más extrema y auténtica de Indonesia.</div>
+        <div class="hotel-price">+<strong>1.800€</strong> / persona</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="choice-group">
+    <span class="choice-group-label">Experiencias que definen el viaje</span>
+    <div class="activity-list">
+      <div class="activity-row" onclick="toggleExp(this, 'borobudur', 380)">
+        <div class="activity-info">
+          <h4>Amanecer privado VIP en Borobudur</h4>
+          <p>El arranque del Grand Tour en el mayor templo budista del mundo. Acceso exclusivo a la plataforma superior con guía arqueólogo antes de la apertura al público. El volcán Merapi en el horizonte y el templo para vosotros solos.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+380€ / persona</span>
+          <div class="switch" id="sw-borobudur"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+      <div class="activity-row" onclick="toggleExp(this, 'ijen', 420)">
+        <div class="activity-info">
+          <h4>Amanecer en el cráter azul del volcán Ijen · Java</h4>
+          <p>El fuego azul de azufre que solo existe aquí y en Islandia. Senderismo nocturno, amanecer sobre el lago verde más ácido del mundo. El contraste perfecto: uno de los paisajes más extraños del planeta como cierre de Java antes de volar a Bali.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+420€ / persona</span>
+          <div class="switch" id="sw-ijen"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+      <div class="activity-row" onclick="toggleExp(this, 'globo', 280)">
+        <div class="activity-info">
+          <h4>Globo aerostático al amanecer sobre Bali</h4>
+          <p>45 minutos sobre los arrozales de Tegallalang y los volcanes de Bali al alba. Una de las tres experiencias más citadas en los reviews de viajeros Bassa. El momento más fotogénico del bloque Ubud.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+280€ / persona</span>
+          <div class="switch" id="sw-globo"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+      <div class="activity-row" onclick="toggleExp(this, 'foto', 350)">
+        <div class="activity-info">
+          <h4>Sesión fotográfica profesional en Ubud</h4>
+          <p>3 horas con fotógrafo especializado. Amanecer en arrozales o atardecer en Tegallalang. 80+ fotos editadas y entregadas en 48h. Las imágenes del Grand Tour que querréis colgar en casa.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+350€ / pareja</span>
+          <div class="switch" id="sw-foto"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+      <div class="activity-row" onclick="toggleExp(this, 'buceo', 320)">
+        <div class="activity-info">
+          <h4>Pack de buceo certificado en Raja Ampat</h4>
+          <p>6 inmersiones con guía marino local en los mejores spots del archipiélago: Passage, Cape Kri, Sardine Reef. El punto final del Grand Tour en el mar más biodiverso del planeta. Para certificados PADI o equivalente.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+320€ / persona</span>
+          <div class="switch" id="sw-buceo"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+      <div class="activity-row" onclick="toggleExp(this, 'bioluminiscencia', 145)">
+        <div class="activity-info">
+          <h4>Kayak nocturno con bioluminiscencia · Raja Ampat</h4>
+          <p>El plancton bioluminiscente convierte el kayak entre islotes en algo difícil de describir. Una hora en silencio absoluto que impresiona incluso a los viajeros más experimentados. El momento más inesperado del Grand Tour.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+145€ / persona</span>
+          <div class="switch" id="sw-bioluminiscencia"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+      <div class="activity-row" onclick="toggleExp(this, 'liveaboard', 1200)">
+        <div class="activity-info">
+          <h4>Upgrade a liveaboard en Raja Ampat · 5 noches</h4>
+          <p>El cierre del Grand Tour navegando cada noche a un punto diferente de Raja Ampat. Dormir sobre el océano, despertarse con el archipiélago cambiado cada mañana. La experiencia definitiva del viaje más completo que ofrece Bassa.</p>
+        </div>
+        <div class="activity-right-col">
+          <span class="activity-price-tag">+1.200€ / persona</span>
+          <div class="switch" id="sw-liveaboard"><div class="switch-knob"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="price-section">
+  <span class="section-eyebrow">Tu propuesta</span>
+  <h2 class="section-heading" style="margin-bottom:2.5rem;">Resumen<br><em>de precio</em></h2>
+  <div class="price-grid">
+    <div class="price-breakdown">
+      <h3>Desglose estimado · 2 personas</h3>
+      <div class="price-line"><span class="lbl">Base del viaje — itinerario, guías, traslados, logística entre islas</span><span class="amt">6.000€</span></div>
+      <div class="price-line"><span class="lbl" id="hotel-java-label">Alojamiento Java · Amanjiwo (5 noches)</span><span class="amt" id="hotel-java-amt">Incluido</span></div>
+      <div class="price-line"><span class="lbl" id="hotel-bali-label">Alojamiento Bali · COMO Shambhala + Alila (9 noches)</span><span class="amt" id="hotel-bali-amt">Incluido</span></div>
+      <div class="price-line"><span class="lbl" id="hotel-raja-label">Alojamiento Raja Ampat · Papua Paradise (5 noches)</span><span class="amt" id="hotel-raja-amt">Incluido</span></div>
+      <div class="price-line"><span class="lbl">Vuelos internos Indonesia (2 tramos)</span><span class="amt">~1.100€ / persona*</span></div>
+      <div id="extras-container"></div>
+      <div class="price-line"><span class="lbl">Vuelos internacionales</span><span class="amt">No incluidos**</span></div>
+      <div class="price-total"><span class="lbl">Total estimado</span><span class="amt" id="total-display">20.000€</span></div>
+      <p style="font-size:0.75rem; color:var(--muted); margin-top:1rem; line-height:1.6;">*Vuelos internos: Yogyakarta/Surabaya→Bali (~200€) + Bali→Sorong y vuelta (~900€). Ya incluidos en precio base.<br>**Vuelos Madrid–Yogyakarta (economy vía Singapur/Dubai) rondan los 900–1.300€ / persona. En business, 3.000–4.500€.</p>
+      <p style="font-size:0.72rem; color:var(--muted); margin-top:0.6rem; font-style:italic;">Precios sujetos a disponibilidad. Los 3 tramos internos se coordinan desde Bassa para garantizar conexiones.</p>
+    </div>
+    <div class="cta-box">
+      <span class="cta-eyebrow">Tu selección actual</span>
+      <h3 class="cta-title">Bassa Complete<br>a tu medida</h3>
+      <div class="cta-price" id="cta-price-display">20.000€ <span>/ 2 personas</span></div>
+      <p class="cta-note">Precio estimado. Al confirmar el interés os enviamos presupuesto formal con precios exactos y disponibilidad de los tres destinos.<br><span style="color:rgba(255,255,255,0.3)">Sin compromiso. La consulta es completamente gratuita.</span></p>
+      <button class="btn-cta-primary" onclick="solicitarLlamada()">Lo tengo claro — llamadme</button>
+      <button class="btn-cta-secondary" onclick="solicitarPregunta()">Tengo alguna pregunta</button>
+    </div>
+  </div>
+</section>
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon" id="modal-icono">📞</div>
+    <h3 id="modal-titulo">¡Perfecto, te llamamos!</h3>
+    <p id="modal-texto">He recibido tu selección y te llamaré antes de 24 horas para arrancar tu Bassa Complete.</p>
+    <button class="modal-close" onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+
+<footer>
+  <a href="https://www.bassatravels.com" class="footer-logo"><img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels"></a>
+  <span class="footer-note">Bassa Complete · Propuesta ejemplo · bassatravels.com</span>
+</footer>
+
+<script>
+  const BASE = 20000;
+  const state = { java: 0, bali: 0, raja: 0, javaN: 'Amanjiwo', baliN: 'COMO Shambhala + Alila', rajaN: 'Papua Paradise Eco Resort', extras: {} };
+  function calcTotal() { let t = BASE; t += (state.java + state.bali + state.raja) * 2; let ex = Object.entries(state.extras).reduce((a, [k, v]) => a + (k === 'foto' ? v : v * 2), 0); return t + ex; }
+  const EXTRA_NAMES = {
+    borobudur: 'Amanecer VIP en Borobudur', ijen: 'Volcán Ijen — cráter azul · Java',
+    globo: 'Globo aerostático al amanecer · Bali', foto: 'Sesión fotográfica Ubud (pareja)',
+    buceo: 'Pack buceo certificado · Raja Ampat', bioluminiscencia: 'Kayak bioluminiscencia · Raja Ampat',
+    liveaboard: 'Upgrade liveaboard · Raja Ampat'
+  };
+  function updateUI() {
+    const t = calcTotal();
+    document.getElementById('hero-price').textContent = Math.round(t / 2).toLocaleString('es-ES') + '€';
+    document.getElementById('total-display').textContent = t.toLocaleString('es-ES') + '€';
+    document.getElementById('cta-price-display').innerHTML = t.toLocaleString('es-ES') + '€ <span>/ 2 personas</span>';
+    const jAmt = document.getElementById('hotel-java-amt');
+    document.getElementById('hotel-java-label').textContent = 'Alojamiento Java · ' + state.javaN + ' (5 noches)';
+    if (state.java === 0) { jAmt.textContent = 'Incluido'; jAmt.style.color = ''; }
+    else { jAmt.textContent = (state.java > 0 ? '+' : '') + (state.java * 2).toLocaleString('es-ES') + '€'; jAmt.style.color = state.java > 0 ? 'var(--terracotta)' : '#3d7a4d'; }
+    const bAmt = document.getElementById('hotel-bali-amt');
+    document.getElementById('hotel-bali-label').textContent = 'Alojamiento Bali · ' + state.baliN + ' (9 noches)';
+    if (state.bali === 0) { bAmt.textContent = 'Incluido'; bAmt.style.color = ''; }
+    else { bAmt.textContent = (state.bali > 0 ? '+' : '') + (state.bali * 2).toLocaleString('es-ES') + '€'; bAmt.style.color = state.bali > 0 ? 'var(--terracotta)' : '#3d7a4d'; }
+    const rAmt = document.getElementById('hotel-raja-amt');
+    document.getElementById('hotel-raja-label').textContent = 'Alojamiento Raja Ampat · ' + state.rajaN + ' (5 noches)';
+    if (state.raja === 0) { rAmt.textContent = 'Incluido'; rAmt.style.color = ''; }
+    else { rAmt.textContent = (state.raja > 0 ? '+' : '') + (state.raja * 2).toLocaleString('es-ES') + '€'; rAmt.style.color = state.raja > 0 ? 'var(--terracotta)' : '#3d7a4d'; }
+    const container = document.getElementById('extras-container');
+    container.innerHTML = '';
+    Object.entries(state.extras).forEach(([key, val]) => {
+      const total = key === 'foto' ? val : val * 2;
+      const row = document.createElement('div');
+      row.className = 'price-line';
+      row.style.cssText = 'border-left: 2px solid var(--gold); padding-left: 1rem;';
+      row.innerHTML = '<span class="lbl">' + (EXTRA_NAMES[key] || key) + '</span><span class="amt" style="color:var(--terracotta)">+' + total.toLocaleString('es-ES') + '€</span>';
+      container.appendChild(row);
+    });
+  }
+  function selectJava(el, d) { el.closest('.choice-group').querySelectorAll('.hotel-card').forEach(c => c.classList.remove('selected')); el.classList.add('selected'); state.java = d; state.javaN = el.querySelector('.hotel-name').textContent; updateUI(); }
+  function selectBali(el, d) { el.closest('.choice-group').querySelectorAll('.hotel-card').forEach(c => c.classList.remove('selected')); el.classList.add('selected'); state.bali = d; state.baliN = el.querySelector('.hotel-name').textContent; updateUI(); }
+  function selectRaja(el, d) { el.closest('.choice-group').querySelectorAll('.hotel-card').forEach(c => c.classList.remove('selected')); el.classList.add('selected'); state.raja = d; state.rajaN = el.querySelector('.hotel-name').textContent; updateUI(); }
+  function toggleExp(row, key, price) { const sw = document.getElementById('sw-' + key); if (state.extras[key]) { delete state.extras[key]; sw.classList.remove('on'); } else { state.extras[key] = price; sw.classList.add('on'); } updateUI(); }
+  function toggleDay(row) { row.classList.toggle('open'); }
+  function solicitarLlamada() { document.getElementById('modal-icono').textContent = '📞'; document.getElementById('modal-titulo').textContent = '¡Perfecto, te llamamos!'; document.getElementById('modal-texto').textContent = 'He recibido tu selección y te llamaré antes de 24 horas para arrancar tu Bassa Complete.'; document.getElementById('modal').classList.add('show'); }
+  function solicitarPregunta() { document.getElementById('modal-icono').textContent = '💬'; document.getElementById('modal-titulo').textContent = 'Hablamos cuando quieras'; document.getElementById('modal-texto').textContent = 'Escríbenos a hola@bassatravels.com o por WhatsApp y te respondemos en menos de 24 horas.'; document.getElementById('modal').classList.add('show'); }
+  function cerrarModal() { document.getElementById('modal').classList.remove('show'); }
+  document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) cerrarModal(); });
+</script>
+</body>
+</html>
