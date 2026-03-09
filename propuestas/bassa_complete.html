@@ -15,7 +15,7 @@
   .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=1920&q=85') center 45%/cover no-repeat; }
   .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.4) 50%, rgba(28,26,23,0.15) 100%); }
   .hero-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 1.8rem 4rem; }
-  .hero-logo img { height: 44px; filter: brightness(0) invert(1); }
+  .hero-logo img { height: 38px; width: auto; }
   .hero-ref { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: white; background: rgba(28,26,23,0.45); border: 1px solid rgba(255,255,255,0.18); padding: 0.4rem 0.9rem; backdrop-filter: blur(6px); }
   .hero-content { position: relative; z-index: 1; padding: 0 4rem 4rem; width: 100%; display: grid; grid-template-columns: 1fr auto; align-items: flex-end; gap: 3rem; }
   .hero-tag { display: inline-block; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: white; border-left: 3px solid var(--terracotta); padding-left: 0.9rem; margin-bottom: 1.2rem; text-shadow: 0 1px 8px rgba(0,0,0,0.8); font-weight: 400; }
@@ -107,7 +107,7 @@
   .btn-cta-secondary { display: block; width: 100%; padding: 1.1rem; background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.12); font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; text-align: center; }
   .btn-cta-secondary:hover { color: white; border-color: rgba(255,255,255,0.4); }
   footer { background: var(--deep); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  .footer-logo img { height: 36px; filter: brightness(0) invert(1); opacity: 0.7; }
+  .footer-logo img { height: 30px; width: auto; opacity: 0.75; }
   .footer-note { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
   .modal-backdrop { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(28,26,23,0.88); align-items: center; justify-content: center; }
   .modal-backdrop.show { display: flex; }
@@ -129,7 +129,7 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <nav class="hero-nav">
-    <a class="hero-logo" href="https://www.bassatravels.com"><img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels"></a>
+    <a class="hero-logo" href="https://www.bassatravels.com"><img src="../../Logo_white_crop.svg" alt="Bassa Travels"></a>
     <span class="hero-ref">Bassa Complete · Ejemplo de propuesta</span>
   </nav>
   <div class="hero-content">
@@ -431,7 +431,7 @@
 </div>
 
 <footer>
-  <a href="https://www.bassatravels.com" class="footer-logo"><img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels"></a>
+  <a href="https://www.bassatravels.com" class="footer-logo"><img src="../../Logo_white_crop.svg" alt="Bassa Travels"></a>
   <span class="footer-note">Bassa Complete · Propuesta ejemplo · bassatravels.com</span>
 </footer>
 
