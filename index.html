@@ -36,8 +36,10 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(180,160,130,0.2);
   }
-  .nav-logo img { height: 50px; filter: brightness(0) invert(1); transition: filter 0.4s; }
-  #main-nav.scrolled .nav-logo img { filter: none; }
+  .nav-logo img { height: 42px; width: auto; transition: opacity 0.4s; }
+  .nav-logo .logo-dark { display: none; }
+  #main-nav.scrolled .logo-light { display: none; }
+  #main-nav.scrolled .logo-dark { display: block; }
   .nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
   .nav-links li { display: block; }
   .nav-links a {
@@ -220,7 +222,7 @@
 
   /* ── FOOTER ── */
   footer { background: var(--deep); color: rgba(255,255,255,0.5); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-  .footer-logo img { height: 40px; filter: brightness(0.6); }
+  .footer-logo img { height: 34px; width: auto; opacity: 0.72; }
   .footer-nav a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; margin-left: 2rem; transition: color 0.3s; }
   .footer-nav a:hover { color: white; }
   .footer-copy { font-size: 0.75rem; }
@@ -382,7 +384,8 @@
 <!-- NAV -->
 <nav id="main-nav">
   <a href="#home" class="nav-logo">
-    <img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels">
+    <img class="logo-light" src="../Logo_white_crop.svg" alt="Bassa Travels">
+    <img class="logo-dark" src="../Logo_gold_crop.svg" alt="Bassa Travels">
   </a>
   <ul class="nav-links">
     <li><a href="#about">Qué es Bassa</a></li>
@@ -726,7 +729,7 @@
 <!-- FOOTER -->
 <footer>
   <a href="#home" class="footer-logo">
-    <img src="https://static.wixstatic.com/media/107884_9d6d546c3c2c4157b56936756c3ead47~mv2.png/v1/crop/x_10,y_8,w_297,h_143/fill/w_317,h_153,al_c,lg_1,q_85,enc_avif,quality_auto/BASSA_transparent.png" alt="Bassa Travels">
+    <img src="../Logo_white_crop.svg" alt="Bassa Travels">
   </a>
   <span class="footer-copy">© 2026 Bassa Travels · Agencia boutique de viajes wellness en Indonesia</span>
   <nav class="footer-nav">
