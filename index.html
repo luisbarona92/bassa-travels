@@ -619,10 +619,10 @@
     </div>
   </div>
   <div class="contact-form reveal" style="transition-delay:0.2s">
-    <form>
+    <form id="bassa-form">
       <div class="form-field">
         <label>¿Qué tipo de Indonesia quieres?</label>
-        <select>
+        <select name="tipo_viaje">
           <option value="">Cuéntanos tu idea...</option>
           <option>Bassa Reset — Bali interior</option>
           <option>Bassa Moon — Bali premium</option>
@@ -634,7 +634,7 @@
       </div>
       <div class="form-field">
         <label>¿Con quién viajas?</label>
-        <select>
+        <select name="companion">
           <option value="">Selecciona una opción</option>
           <option>En pareja</option>
           <option>Luna de miel</option>
@@ -646,11 +646,11 @@
       <div class="form-row">
         <div class="form-field">
           <label>Salida aproximada</label>
-          <input type="month">
+          <input type="month" name="salida">
         </div>
         <div class="form-field">
           <label>Días de viaje</label>
-          <select>
+          <select name="dias">
             <option value="">¿Cuántos días?</option>
             <option>7 días</option>
             <option>10 días</option>
@@ -666,23 +666,27 @@
       <div class="form-row">
         <div class="form-field">
           <label>Nombre</label>
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
         </div>
         <div class="form-field">
           <label>Email</label>
-          <input type="email" placeholder="tu@email.com">
+          <input type="email" name="email" placeholder="tu@email.com" required>
         </div>
       </div>
       <div class="form-field">
         <label>WhatsApp</label>
-        <input type="tel" placeholder="+34 600 000 000">
+        <input type="tel" name="whatsapp" placeholder="+34 600 000 000">
       </div>
       <div class="form-field">
         <label>Imprescindibles / preferencias</label>
-        <textarea placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
+        <textarea name="imprescindibles" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
       <button type="submit" class="btn-form">Enviar consulta →</button>
     </form>
+    <div id="form-success" style="display:none; text-align:center; padding:2.5rem 0;">
+      <p style="color:var(--gold); font-family:var(--font-display); font-size:1.3rem; font-weight:300; margin-bottom:0.5rem;">Consulta recibida</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; line-height:1.6;">Te escribimos en menos de 24h.<br>Revisa también tu carpeta de spam.</p>
+    </div>
   </div>
 </section>
 
@@ -786,6 +790,34 @@
       document.querySelectorAll('.dtab').forEach(t => t.classList.remove('open'));
       if (!wasOpen) tab.classList.add('open');
     });
+  });
+
+  // Formulario → Google Sheets + email
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcfTp2D0nffltJOC0ypMWQgw8SCS7KTKpsSxP3fJWgxU8_lxfy36Lx93C1TTjAZ2Cq/exec";
+  document.getElementById('bassa-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    const data = {
+      tipo_viaje:      form.tipo_viaje.value,
+      companion:       form.companion.value,
+      salida:          form.salida.value,
+      dias:            form.dias.value,
+      nombre:          form.nombre.value,
+      email:           form.email.value,
+      whatsapp:        form.whatsapp.value,
+      imprescindibles: form.imprescindibles.value
+    };
+    try {
+      await fetch(SCRIPT_URL + '?' + new URLSearchParams(data), { method: 'GET', mode: 'no-cors' });
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } catch (err) {
+      btn.textContent = 'Error al enviar, inténtalo de nuevo';
+      btn.disabled = false;
+    }
   });
 </script>
 </body>
