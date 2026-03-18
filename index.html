@@ -51,6 +51,21 @@
   .nav-links a:hover { color: var(--terracotta); }
   .nav-cta { background: var(--terracotta) !important; color: white !important; padding: 0.55rem 1.3rem !important; border-radius: 2px; }
 
+  /* ── LANG TOGGLE ── */
+  .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+  .lang-toggle {
+    display: flex; align-items: center;
+    background: none; border: 1px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+    padding: 0.38rem 0.75rem; font-size: 0.7rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: border-color 0.3s, color 0.3s;
+    font-family: var(--font-body); font-weight: 400; white-space: nowrap;
+  }
+  #main-nav.scrolled .lang-toggle { border-color: rgba(28,26,23,0.25); color: var(--deep); }
+  .lang-toggle:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
   /* ── HERO ── */
   .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; }
   .hero-bg {
@@ -293,6 +308,14 @@
     text-align: center; padding: 1rem !important; border-bottom: none !important;
     border-radius: 2px; font-weight: 500;
   }
+  .drawer-lang {
+    margin-top: auto; background: none; border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6); font-family: var(--font-body);
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.7rem 1rem; cursor: pointer; border-radius: 2px;
+    transition: border-color 0.3s, color 0.3s; width: 100%; text-align: center;
+  }
+  .drawer-lang:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -301,7 +324,6 @@
     .nav-hamburger { display: flex; }
     section { padding: 3.5rem 1.5rem; }
 
-    /* Hero */
     .hero { min-height: 100svh; align-items: flex-end; padding-bottom: 4rem; }
     .hero-bg { background-position: 50% 25%; }
     .hero-bg::after {
@@ -321,50 +343,39 @@
       text-shadow: 0 1px 12px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.6);
       line-height: 1.1;
     }
-    .hero h1 em {
-      text-shadow: 0 1px 12px rgba(0,0,0,0.9), 0 4px 32px rgba(0,0,0,0.7);
-    }
+    .hero h1 em { text-shadow: 0 1px 12px rgba(0,0,0,0.9), 0 4px 32px rgba(0,0,0,0.7); }
     .btn-primary { padding: 0.9rem 2rem; font-size: 0.72rem; display: block; text-align: center; }
     .btn-outline { display: none; }
     .hero-scroll { display: none; }
 
-    /* About */
     .about { grid-template-columns: 1fr; gap: 2.5rem; }
     .about-pillars { grid-template-columns: 1fr; gap: 1rem; }
     .about-visual { height: 280px; }
     .about-visual-badge { display: none; }
 
-    /* How archetypes */
     .archetypes > div { grid-template-columns: repeat(2,1fr) !important; }
 
-    /* Experiences */
     .experiences { padding-bottom: 0; }
     .exp-grid { grid-template-columns: repeat(2,1fr); gap: 2px; }
     .exp-card { height: 300px; }
     .exp-card p { max-height: 120px; }
     .exp-card-overlay { background: linear-gradient(to top, rgba(28,26,23,0.92) 0%, rgba(28,26,23,0.35) 55%, transparent 100%); }
 
-    /* Destinos */
     .destinos-inner { grid-template-columns: 1fr; gap: 2rem; }
 
-    /* How */
     .how-inner { grid-template-columns: 1fr; gap: 2rem; }
     .how-visual { height: 280px; }
-    .steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
     .steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
     .step { padding: 1.4rem; }
     .step-num { font-size: 2.2rem; }
 
-    /* Contact */
     .contact { grid-template-columns: 1fr; gap: 3rem; }
     .form-row { grid-template-columns: 1fr; }
 
-    /* FAQ */
     .faq-grid { grid-template-columns: 1fr; }
     .faq-item:nth-child(odd) { padding-right: 0; }
     .faq-item:nth-child(even) { padding-left: 0; border-left: none; }
 
-    /* Footer */
     footer { flex-direction: column; text-align: center; padding: 2.5rem 1.5rem; }
     .footer-nav a { margin: 0 0.8rem; }
   }
@@ -388,36 +399,40 @@
     <img class="logo-dark" src="Logo_gold_crop.svg" alt="Bassa Travels">
   </a>
   <ul class="nav-links">
-    <li><a href="#about">Qué es Bassa</a></li>
-    <li><a href="#experiences">Experiencias</a></li>
-    <li><a href="#how">Cómo funciona</a></li>
+    <li><a href="#about" data-i18n="nav.about">Qué es Bassa</a></li>
+    <li><a href="#experiences" data-i18n="nav.experiences">Experiencias</a></li>
+    <li><a href="#how" data-i18n="nav.how">Cómo funciona</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact" class="nav-cta">Diseña tu viaje</a></li>
+    <li><a href="#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-right">
+    <button class="lang-toggle" id="lang-toggle">🇬🇧 EN</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- MOBILE DRAWER -->
 <div class="nav-drawer-overlay" id="drawer-overlay"></div>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="#about" class="drawer-link">Qué es Bassa</a>
-  <a href="#experiences" class="drawer-link">Experiencias</a>
-  <a href="#how" class="drawer-link">Cómo funciona</a>
+  <a href="#about" class="drawer-link" data-i18n="nav.about">Qué es Bassa</a>
+  <a href="#experiences" class="drawer-link" data-i18n="nav.experiences">Experiencias</a>
+  <a href="#how" class="drawer-link" data-i18n="nav.how">Cómo funciona</a>
   <a href="#faq" class="drawer-link">FAQ</a>
-  <a href="#contact" class="drawer-cta">Diseña tu viaje</a>
+  <a href="#contact" class="drawer-cta" data-i18n="nav.cta">Diseña tu viaje</a>
+  <button class="drawer-lang" id="drawer-lang-toggle">🇬🇧 Switch to English</button>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <span class="hero-tag">Agencia boutique · Indonesia</span>
-    <h1>Slow luxury en<br>Indonesia, <em>diseñado<br>a tu medida</em></h1>
-    <p>Itinerarios slow, hoteles con criterio y soporte cercano en español — antes y durante el viaje.</p>
-    <a href="#contact" class="btn-primary">Diseña tu viaje</a>
-    <a href="#about" class="btn-outline">Descubre más</a>
+    <span class="hero-tag" data-i18n="hero.tag">Agencia boutique · Indonesia</span>
+    <h1 data-i18n-html="hero.h1">Slow luxury en<br>Indonesia, <em>diseñado<br>a tu medida</em></h1>
+    <p data-i18n="hero.p">Itinerarios slow, hoteles con criterio y soporte cercano en español — antes y durante el viaje.</p>
+    <a href="#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
+    <a href="#about" class="btn-outline" data-i18n="hero.discover">Descubre más</a>
   </div>
   <div class="hero-scroll">Scroll<span></span></div>
 </section>
@@ -425,45 +440,37 @@
 <!-- QUÉ ES BASSA -->
 <section class="about" id="about">
   <div class="about-text reveal">
-    <span class="section-tag">Sobre nosotros</span>
-    <h2 class="section-title">No somos<br>una agencia<br><em>cualquiera</em></h2>
-    <p>Bassa Travels es una agencia boutique especializada en slow luxury en Indonesia. Diseñamos itinerarios a medida, con criterio de selección de hoteles y soporte cercano en español antes y durante el viaje.</p>
-    <p>Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.</p>
+    <span class="section-tag" data-i18n="about.tag">Sobre nosotros</span>
+    <h2 class="section-title" data-i18n-html="about.h2">No somos<br>una agencia<br><em>cualquiera</em></h2>
+    <p data-i18n="about.p1">Bassa Travels es una agencia boutique especializada en slow luxury en Indonesia. Diseñamos itinerarios a medida, con criterio de selección de hoteles y soporte cercano en español antes y durante el viaje.</p>
+    <p data-i18n="about.p2">Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.</p>
     <div class="about-pillars">
-      <div class="pillar"><h4>Lujo<br>Personalizado</h4><p>Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p></div>
-      <div class="pillar"><h4>Criterio<br>de Selección</h4><p>Solo hoteles que conocemos. Solo experiencias que tienen sentido para ti.</p></div>
-      <div class="pillar"><h4>Experiencias<br>Únicas</h4><p>Proveedores de confianza y acompañamiento desde España.</p></div>
+      <div class="pillar"><h4 data-i18n-html="about.pillar1.h4">Lujo<br>Personalizado</h4><p data-i18n="about.pillar1.p">Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p></div>
+      <div class="pillar"><h4 data-i18n-html="about.pillar2.h4">Criterio<br>de Selección</h4><p data-i18n="about.pillar2.p">Solo hoteles que conocemos. Solo experiencias que tienen sentido para ti.</p></div>
+      <div class="pillar"><h4 data-i18n-html="about.pillar3.h4">Experiencias<br>Únicas</h4><p data-i18n="about.pillar3.p">Proveedores de confianza y acompañamiento desde España.</p></div>
     </div>
   </div>
   <div class="about-visual reveal" style="transition-delay:0.2s">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      poster="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85"
-      style="width:100%;height:100%;object-fit:cover;border-radius:2px;"
-    >
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
       <source src="images/bassa-video.mp4" type="video/mp4">
-      <!-- Fallback: si el vídeo no carga, muestra la imagen -->
       <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85" alt="Villa premium Bali">
     </video>
-    <div class="about-visual-badge">"Cada viaje es tan único como la persona que lo vive"</div>
+    <div class="about-visual-badge" data-i18n="about.badge">"Cada viaje es tan único como la persona que lo vive"</div>
   </div>
 </section>
 
 <!-- EXPERIENCIAS -->
 <section class="experiences" id="experiences">
-  <span class="section-tag reveal">Experiencias</span>
-  <h2 class="section-title reveal">Momentos que<br><em>no se olvidan</em></h2>
-  <p class="exp-intro reveal">Cinco líneas de viaje diseñadas para perfiles distintos. Todas a medida, sin grupos, con criterio.</p>
+  <span class="section-tag reveal" data-i18n="exp.tag">Experiencias</span>
+  <h2 class="section-title reveal" data-i18n-html="exp.h2">Momentos que<br><em>no se olvidan</em></h2>
+  <p class="exp-intro reveal" data-i18n="exp.intro">Cinco líneas de viaje diseñadas para perfiles distintos. Todas a medida, sin grupos, con criterio.</p>
   <div class="exp-grid reveal">
     <div class="exp-card">
       <img src="ubud-reset.jpg" alt="Bassa Reset — Bali interior">
       <div class="exp-card-overlay">
         <span class="exp-num">Reset</span>
         <h3>Bassa Reset</h3>
-        <p>Desconexión profunda en Bali interior. Villa privada, masajes balineses, ritmo slow y gastronomía de nivel. 7–12 días.</p>
+        <p data-i18n="exp.reset.p">Desconexión profunda en Bali interior. Villa privada, masajes balineses, ritmo slow y gastronomía de nivel. 7–12 días.</p>
       </div>
     </div>
     <div class="exp-card">
@@ -471,7 +478,7 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Moon</span>
         <h3>Bassa Moon</h3>
-        <p>Luna de miel y aniversarios en Bali premium. Villas 5 estrellas, cenas privadas, detalles curados. 10–14 días.</p>
+        <p data-i18n="exp.moon.p">Luna de miel y aniversarios en Bali premium. Villas 5 estrellas, cenas privadas, detalles curados. 10–14 días.</p>
       </div>
     </div>
     <div class="exp-card">
@@ -479,7 +486,7 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Explorer</span>
         <h3>Bassa Explorer</h3>
-        <p>Naturaleza extrema en Raja Ampat. Liveaboard o resort exclusivo, arrecifes intactos, privacidad total. 8–12 días.</p>
+        <p data-i18n="exp.explorer.p">Naturaleza extrema en Raja Ampat. Liveaboard o resort exclusivo, arrecifes intactos, privacidad total. 8–12 días.</p>
       </div>
     </div>
     <div class="exp-card">
@@ -487,7 +494,7 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Culture</span>
         <h3>Bassa Culture</h3>
-        <p>Historia viva en Java y Bali. Borobudur al amanecer, templos hindúes, guía privado especializado. 10–14 días.</p>
+        <p data-i18n="exp.culture.p">Historia viva en Java y Bali. Borobudur al amanecer, templos hindúes, guía privado especializado. 10–14 días.</p>
       </div>
     </div>
     <div class="exp-card">
@@ -495,34 +502,34 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Complete</span>
         <h3>Bassa Complete</h3>
-        <p>Indonesia en su totalidad. Java, Bali y Raja Ampat o Komodo. El gran viaje que siempre quisiste hacer. 18–21 días.</p>
+        <p data-i18n="exp.complete.p">Indonesia en su totalidad. Java, Bali y Raja Ampat o Komodo. El gran viaje que siempre quisiste hacer. 18–21 días.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DESTINOS — continuación de experiencias -->
+<!-- DESTINOS -->
 <section class="destinos" id="destinos">
-  <span class="section-tag reveal">Destinos</span>
-  <h2 class="section-title reveal" style="color:white">Indonesia,<br><em>bien elegida</em></h2>
+  <span class="section-tag reveal" data-i18n="dest.tag">Destinos</span>
+  <h2 class="section-title reveal" style="color:white" data-i18n-html="dest.h2">Indonesia,<br><em>bien elegida</em></h2>
   <div class="destinos-inner">
     <div class="destinos-left reveal">
-      <p>Indonesia es enorme. Para un viaje BASSA priorizamos calidad, calma y pocos cambios. Te ayudamos a elegir las islas que mejor encajan con tu estilo y ritmo.</p>
-      <a href="#contact" class="btn-primary">Cuéntanos tu viaje</a>
+      <p data-i18n="dest.p">Indonesia es enorme. Para un viaje BASSA priorizamos calidad, calma y pocos cambios. Te ayudamos a elegir las islas que mejor encajan con tu estilo y ritmo.</p>
+      <a href="#contact" class="btn-primary" data-i18n="dest.cta">Cuéntanos tu viaje</a>
     </div>
     <div class="destinos-tabs reveal" style="transition-delay:0.15s">
 
       <div class="dtab open">
         <div class="dtab-header">
-          <span class="dtab-title">Zonas favoritas</span>
+          <span class="dtab-title" data-i18n="dest.tab1.title">Zonas favoritas</span>
           <div class="dtab-icon">+</div>
         </div>
         <div class="dtab-body">
           <div class="dtab-content">
             <ul>
-              <li><strong style="color:white">Bali</strong> — Interior verde y costa tranquila. Spa, gastronomía excepcional, villas privadas. La opción más versátil para un primer viaje o quienes buscan plenitud sensorial.</li>
-              <li><strong style="color:white">Raja Ampat</strong> — Remoto y exclusivo. Snorkel y diving de primer nivel mundial, privacidad total y naturaleza pristina.</li>
-              <li><strong style="color:white">Java</strong> — Cultura e historia icónica. Templos milenarios, volcanes activos. Perfecto para un bloque corto e intenso.</li>
+              <li data-i18n-html="dest.tab1.bali"><strong style="color:white">Bali</strong> — Interior verde y costa tranquila. Spa, gastronomía excepcional, villas privadas. La opción más versátil para un primer viaje o quienes buscan plenitud sensorial.</li>
+              <li data-i18n-html="dest.tab1.raja"><strong style="color:white">Raja Ampat</strong> — Remoto y exclusivo. Snorkel y diving de primer nivel mundial, privacidad total y naturaleza pristina.</li>
+              <li data-i18n-html="dest.tab1.java"><strong style="color:white">Java</strong> — Cultura e historia icónica. Templos milenarios, volcanes activos. Perfecto para un bloque corto e intenso.</li>
             </ul>
           </div>
         </div>
@@ -530,15 +537,15 @@
 
       <div class="dtab">
         <div class="dtab-header">
-          <span class="dtab-title">Cuándo ir</span>
+          <span class="dtab-title" data-i18n="dest.tab2.title">Cuándo ir</span>
           <div class="dtab-icon">+</div>
         </div>
         <div class="dtab-body">
           <div class="dtab-content">
             <ul>
-              <li>Para <strong style="color:white">Bali y Java</strong> la referencia general es la estación seca, de abril a octubre. Menos lluvia, mejor luz y condiciones ideales.</li>
-              <li>Para <strong style="color:white">Raja Ampat</strong> la mejor ventana suele ser entre octubre y abril, aunque con matices según el tipo de experiencia.</li>
-              <li>Ajustamos islas y experiencias para que el clima siempre juegue a tu favor.</li>
+              <li data-i18n-html="dest.tab2.li1">Para <strong style="color:white">Bali y Java</strong> la referencia general es la estación seca, de abril a octubre. Menos lluvia, mejor luz y condiciones ideales.</li>
+              <li data-i18n-html="dest.tab2.li2">Para <strong style="color:white">Raja Ampat</strong> la mejor ventana suele ser entre octubre y abril, aunque con matices según el tipo de experiencia.</li>
+              <li data-i18n="dest.tab2.li3">Ajustamos islas y experiencias para que el clima siempre juegue a tu favor.</li>
             </ul>
           </div>
         </div>
@@ -546,16 +553,16 @@
 
       <div class="dtab">
         <div class="dtab-header">
-          <span class="dtab-title">Datos útiles</span>
+          <span class="dtab-title" data-i18n="dest.tab3.title">Datos útiles</span>
           <div class="dtab-icon">+</div>
         </div>
         <div class="dtab-body">
           <div class="dtab-content">
             <ul>
-              <li><strong style="color:white">Visado</strong> — e-VOA a la llegada u online: tasa oficial IDR 500.000.</li>
-              <li><strong style="color:white">Tasa turística Bali</strong> — IDR 150.000 por visitante (oficial Love Bali).</li>
-              <li><strong style="color:white">Aduanas</strong> — Declaración online en la Indonesian Customs Declaration (e-CD).</li>
-              <li><strong style="color:white">Recomendaciones</strong> — Consulta siempre el MAEC antes de viajar.</li>
+              <li data-i18n-html="dest.tab3.li1"><strong style="color:white">Visado</strong> — e-VOA a la llegada u online: tasa oficial IDR 500.000.</li>
+              <li data-i18n-html="dest.tab3.li2"><strong style="color:white">Tasa turística Bali</strong> — IDR 150.000 por visitante (oficial Love Bali).</li>
+              <li data-i18n-html="dest.tab3.li3"><strong style="color:white">Aduanas</strong> — Declaración online en la Indonesian Customs Declaration (e-CD).</li>
+              <li data-i18n-html="dest.tab3.li4"><strong style="color:white">Recomendaciones</strong> — Consulta siempre el MAEC antes de viajar.</li>
             </ul>
           </div>
         </div>
@@ -567,27 +574,35 @@
 
 <!-- CÓMO FUNCIONA -->
 <section class="how" id="how">
-  <span class="section-tag reveal">Cómo funciona</span>
+  <span class="section-tag reveal" data-i18n="how.tag">Cómo funciona</span>
   <div class="how-inner">
     <div class="how-left">
-      <h2 class="section-title reveal">Un proceso <em>simple</em><br>y acompañado</h2>
-      <p style="color:var(--muted);line-height:1.8;margin-bottom:0" class="reveal">En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.</p>
+      <h2 class="section-title reveal" data-i18n-html="how.h2">Un proceso <em>simple</em><br>y acompañado</h2>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:0" class="reveal" data-i18n="how.p">En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.</p>
       <div class="steps">
         <div class="step reveal">
-          <div class="step-num">01</div><div class="step-time">60 segundos</div>
-          <h4>Formulario</h4><p>Fechas, estilo y tipo de viaje. Lo justo para empezar.</p>
+          <div class="step-num">01</div>
+          <div class="step-time" data-i18n="how.step1.time">60 segundos</div>
+          <h4 data-i18n="how.step1.h4">Formulario</h4>
+          <p data-i18n="how.step1.p">Fechas, estilo y tipo de viaje. Lo justo para empezar.</p>
         </div>
         <div class="step reveal" style="transition-delay:0.1s">
-          <div class="step-num">02</div><div class="step-time">15–20 min</div>
-          <h4>Llamada breve</h4><p>Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.</p>
+          <div class="step-num">02</div>
+          <div class="step-time" data-i18n="how.step2.time">15–20 min</div>
+          <h4 data-i18n="how.step2.h4">Llamada breve</h4>
+          <p data-i18n="how.step2.p">Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.</p>
         </div>
         <div class="step reveal" style="transition-delay:0.2s">
-          <div class="step-num">03</div><div class="step-time">A medida</div>
-          <h4>Propuesta</h4><p>Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.</p>
+          <div class="step-num">03</div>
+          <div class="step-time" data-i18n="how.step3.time">A medida</div>
+          <h4 data-i18n="how.step3.h4">Propuesta</h4>
+          <p data-i18n="how.step3.p">Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.</p>
         </div>
         <div class="step reveal" style="transition-delay:0.3s">
-          <div class="step-num">04</div><div class="step-time">Nos encargamos</div>
-          <h4>Viaje definido</h4><p>Bloqueamos servicios y te acompañamos antes y durante el viaje.</p>
+          <div class="step-num">04</div>
+          <div class="step-time" data-i18n="how.step4.time">Nos encargamos</div>
+          <h4 data-i18n="how.step4.h4">Viaje definido</h4>
+          <p data-i18n="how.step4.p">Bloqueamos servicios y te acompañamos antes y durante el viaje.</p>
         </div>
       </div>
     </div>
@@ -600,132 +615,132 @@
 <!-- CONTACTO -->
 <section class="contact" id="contact">
   <div class="contact-left reveal">
-    <span class="section-tag">Contacto</span>
-    <h2 class="section-title">¿Te ayudamos a<br><em>diseñar tu viaje</em><br>a Indonesia?</h2>
-    <p class="contact-intro">Un asesor de Bassa Travels se pondrá en contacto contigo para confeccionar el gran viaje a medida que tienes en mente. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.</p>
+    <span class="section-tag" data-i18n="contact.tag">Contacto</span>
+    <h2 class="section-title" data-i18n-html="contact.h2">¿Te ayudamos a<br><em>diseñar tu viaje</em><br>a Indonesia?</h2>
+    <p class="contact-intro" data-i18n-html="contact.intro">Un asesor de Bassa Travels se pondrá en contacto contigo para confeccionar el gran viaje a medida que tienes en mente. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.</p>
     <div class="contact-promise">
       <div class="promise-item">
         <span class="promise-icon">✦</span>
-        <div class="promise-text"><h5>Sin compromiso</h5><p>La consulta inicial es completamente gratuita y sin ningún tipo de compromiso.</p></div>
+        <div class="promise-text"><h5 data-i18n="contact.p1.h5">Sin compromiso</h5><p data-i18n="contact.p1.p">La consulta inicial es completamente gratuita y sin ningún tipo de compromiso.</p></div>
       </div>
       <div class="promise-item">
         <span class="promise-icon">✦</span>
-        <div class="promise-text"><h5>Respuesta en 24h</h5><p>Te contactamos el siguiente día hábil para agendar vuestra llamada.</p></div>
+        <div class="promise-text"><h5 data-i18n="contact.p2.h5">Respuesta en 24h</h5><p data-i18n="contact.p2.p">Te contactamos el siguiente día hábil para agendar vuestra llamada.</p></div>
       </div>
       <div class="promise-item">
         <span class="promise-icon">✦</span>
-        <div class="promise-text"><h5>Soporte cercano</h5><p>Te acompañamos antes, durante y después del viaje con atención directa y personalizada.</p></div>
+        <div class="promise-text"><h5 data-i18n="contact.p3.h5">Soporte cercano</h5><p data-i18n="contact.p3.p">Te acompañamos antes, durante y después del viaje con atención directa y personalizada.</p></div>
       </div>
     </div>
   </div>
   <div class="contact-form reveal" style="transition-delay:0.2s">
     <form id="bassa-form">
       <div class="form-field">
-        <label>¿Qué tipo de Indonesia quieres?</label>
+        <label data-i18n="form.tipo.label">¿Qué tipo de Indonesia quieres?</label>
         <select name="tipo_viaje">
-          <option value="">Cuéntanos tu idea...</option>
-          <option>Bassa Reset — Bali interior</option>
-          <option>Bassa Moon — Bali premium</option>
-          <option>Bassa Explorer — Raja Ampat</option>
-          <option>Bassa Culture — Java &amp; Bali</option>
-          <option>Bassa Complete — Indonesia completa</option>
-          <option>Aún no lo tengo claro, me ayudáis</option>
+          <option value="" data-i18n="form.tipo.opt0">Cuéntanos tu idea...</option>
+          <option data-i18n="form.tipo.opt1">Bassa Reset — Bali interior</option>
+          <option data-i18n="form.tipo.opt2">Bassa Moon — Bali premium</option>
+          <option data-i18n="form.tipo.opt3">Bassa Explorer — Raja Ampat</option>
+          <option data-i18n="form.tipo.opt4">Bassa Culture — Java &amp; Bali</option>
+          <option data-i18n="form.tipo.opt5">Bassa Complete — Indonesia completa</option>
+          <option data-i18n="form.tipo.opt6">Aún no lo tengo claro, me ayudáis</option>
         </select>
       </div>
       <div class="form-field">
-        <label>¿Con quién viajas?</label>
+        <label data-i18n="form.companion.label">¿Con quién viajas?</label>
         <select name="companion">
-          <option value="">Selecciona una opción</option>
-          <option>En pareja</option>
-          <option>Luna de miel</option>
-          <option>En familia</option>
-          <option>Con amigos</option>
-          <option>En solitario</option>
+          <option value="" data-i18n="form.companion.opt0">Selecciona una opción</option>
+          <option data-i18n="form.companion.opt1">En pareja</option>
+          <option data-i18n="form.companion.opt2">Luna de miel</option>
+          <option data-i18n="form.companion.opt3">En familia</option>
+          <option data-i18n="form.companion.opt4">Con amigos</option>
+          <option data-i18n="form.companion.opt5">En solitario</option>
         </select>
       </div>
       <div class="form-row">
         <div class="form-field">
-          <label>Salida aproximada</label>
+          <label data-i18n="form.salida.label">Salida aproximada</label>
           <input type="month" name="salida">
         </div>
         <div class="form-field">
-          <label>Días de viaje</label>
+          <label data-i18n="form.dias.label">Días de viaje</label>
           <select name="dias">
-            <option value="">¿Cuántos días?</option>
-            <option>7 días</option>
-            <option>10 días</option>
-            <option>12 días</option>
-            <option>14 días</option>
-            <option>16 días</option>
-            <option>18 días</option>
-            <option>21 días o más</option>
-            <option>Aún no lo sé, me ayudáis</option>
+            <option value="" data-i18n="form.dias.opt0">¿Cuántos días?</option>
+            <option data-i18n="form.dias.opt1">7 días</option>
+            <option data-i18n="form.dias.opt2">10 días</option>
+            <option data-i18n="form.dias.opt3">12 días</option>
+            <option data-i18n="form.dias.opt4">14 días</option>
+            <option data-i18n="form.dias.opt5">16 días</option>
+            <option data-i18n="form.dias.opt6">18 días</option>
+            <option data-i18n="form.dias.opt7">21 días o más</option>
+            <option data-i18n="form.dias.opt8">Aún no lo sé, me ayudáis</option>
           </select>
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
-          <label>Nombre</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <label data-i18n="form.nombre.label">Nombre</label>
+          <input type="text" name="nombre" data-i18n-ph="form.nombre.ph" placeholder="Tu nombre" required>
         </div>
         <div class="form-field">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="tu@email.com" required>
+          <label data-i18n="form.email.label">Email</label>
+          <input type="email" name="email" data-i18n-ph="form.email.ph" placeholder="tu@email.com" required>
         </div>
       </div>
       <div class="form-field">
-        <label>WhatsApp</label>
+        <label data-i18n="form.whatsapp.label">WhatsApp</label>
         <input type="tel" name="whatsapp" placeholder="+34 600 000 000">
       </div>
       <div class="form-field">
-        <label>Imprescindibles / preferencias</label>
-        <textarea name="imprescindibles" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
+        <label data-i18n="form.imprescindibles.label">Imprescindibles / preferencias</label>
+        <textarea name="imprescindibles" data-i18n-ph="form.imprescindibles.ph" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
-      <button type="submit" class="btn-form">Enviar consulta →</button>
+      <button type="submit" class="btn-form" data-i18n="form.submit">Enviar consulta →</button>
     </form>
     <div id="form-success" style="display:none; text-align:center; padding:2.5rem 0;">
-      <p style="color:var(--gold); font-family:var(--font-display); font-size:1.3rem; font-weight:300; margin-bottom:0.5rem;">Consulta recibida</p>
-      <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; line-height:1.6;">Te escribimos en menos de 24h.<br>Revisa también tu carpeta de spam.</p>
+      <p style="color:var(--gold); font-family:var(--font-display); font-size:1.3rem; font-weight:300; margin-bottom:0.5rem;" data-i18n="form.success.title">Consulta recibida</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; line-height:1.6;" data-i18n-html="form.success.p">Te escribimos en menos de 24h.<br>Revisa también tu carpeta de spam.</p>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="faq" id="faq">
-  <span class="section-tag reveal">FAQ</span>
-  <h2 class="section-title reveal">Preguntas<br><em>frecuentes</em></h2>
+  <span class="section-tag reveal" data-i18n="faq.tag">FAQ</span>
+  <h2 class="section-title reveal" data-i18n-html="faq.h2">Preguntas<br><em>frecuentes</em></h2>
   <div class="faq-grid">
     <div class="faq-item">
-      <div class="faq-q"><span>¿Qué tipo de viajes hace Bassa Travels?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>Viajes slow luxury en Indonesia: itinerarios privados, hoteles con criterio, experiencias bien trabajadas. Todo a medida, sin paquetes cerrados ni grupos.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q1">¿Qué tipo de viajes hace Bassa Travels?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a1">Viajes slow luxury en Indonesia: itinerarios privados, hoteles con criterio, experiencias bien trabajadas. Todo a medida, sin paquetes cerrados ni grupos.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span>¿Cómo se diseña el viaje tras el formulario?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>Formulario → llamada breve → propuesta con ruta y hoteles → ajustes → reservas y soporte. Un proceso premium e iterativo.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q2">¿Cómo se diseña el viaje tras el formulario?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a2">Formulario → llamada breve → propuesta con ruta y hoteles → ajustes → reservas y soporte. Un proceso premium e iterativo.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span>¿Con cuánta antelación conviene reservar?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>Para asegurar disponibilidad premium: 4–6 meses en temporada baja y 8–10 meses en temporada alta. Algunos alojamientos exclusivos requieren más.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q3">¿Con cuánta antelación conviene reservar?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a3">Para asegurar disponibilidad premium: 4–6 meses en temporada baja y 8–10 meses en temporada alta. Algunos alojamientos exclusivos requieren más.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span>¿Organizáis viajes en grupo?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>No abrimos grupos. Diseñamos viajes privados: parejas, familias, amigos. La privacidad es parte del producto.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q4">¿Organizáis viajes en grupo?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a4">No abrimos grupos. Diseñamos viajes privados: parejas, familias, amigos. La privacidad es parte del producto.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span>¿Incluís vuelos internacionales?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>Podemos recomendarlos y coordinarlos, pero lo habitual es tratarlos aparte para darte más flexibilidad de aerolínea, horarios y puntos.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q5">¿Incluís vuelos internacionales?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a5">Podemos recomendarlos y coordinarlos, pero lo habitual es tratarlos aparte para darte más flexibilidad de aerolínea, horarios y puntos.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span>¿Hay fee de diseño del viaje?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>No. Diseñamos contigo sin coste. El valor está en nuestra propuesta, recomendaciones y soporte integral.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q6">¿Hay fee de diseño del viaje?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a6">No. Diseñamos contigo sin coste. El valor está en nuestra propuesta, recomendaciones y soporte integral.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span>¿Ofrecéis soporte durante el viaje?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>Sí: antes, durante y después. En slow luxury el valor real es tener un concierge que resuelve cualquier fricción en destino.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q7">¿Ofrecéis soporte durante el viaje?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a7">Sí: antes, durante y después. En slow luxury el valor real es tener un concierge que resuelve cualquier fricción en destino.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span>¿Trabajáis con familias y lunas de miel?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p>Sí. Indonesia funciona muy bien para ambos: en familia, aventura suave + descanso; en luna de miel, privacidad + experiencias exclusivas y bien curadas.</p></div>
+      <div class="faq-q"><span data-i18n="faq.q8">¿Trabajáis con familias y lunas de miel?</span><div class="faq-toggle">+</div></div>
+      <div class="faq-a"><p data-i18n="faq.a8">Sí. Indonesia funciona muy bien para ambos: en familia, aventura suave + descanso; en luna de miel, privacidad + experiencias exclusivas y bien curadas.</p></div>
     </div>
   </div>
 </section>
@@ -735,12 +750,12 @@
   <a href="#home" class="footer-logo">
     <img src="Logo_white_crop.svg" alt="Bassa Travels">
   </a>
-  <span class="footer-copy">© 2026 Bassa Travels · Agencia boutique de slow luxury en Indonesia</span>
+  <span class="footer-copy" data-i18n="footer.copy">© 2026 Bassa Travels · Agencia boutique de slow luxury en Indonesia</span>
   <nav class="footer-nav">
-    <a href="#about">Qué es Bassa</a>
-    <a href="#experiences">Experiencias</a>
-    <a href="#how">Cómo funciona</a>
-    <a href="#contact">Contacto</a>
+    <a href="#about" data-i18n="footer.about">Qué es Bassa</a>
+    <a href="#experiences" data-i18n="footer.experiences">Experiencias</a>
+    <a href="#how" data-i18n="footer.how">Cómo funciona</a>
+    <a href="#contact" data-i18n="footer.contact">Contacto</a>
   </nav>
   <div class="footer-legal">
     <a href="privacidad.html">Política de Privacidad</a>
@@ -752,11 +767,203 @@
 </footer>
 
 <script>
-  // Nav scroll
+  // ── TRANSLATIONS ──
+  const t = {
+    es: {
+      'page.title': 'Bassa Travels — Slow Luxury en Indonesia',
+      'nav.about': 'Qué es Bassa', 'nav.experiences': 'Experiencias', 'nav.how': 'Cómo funciona', 'nav.cta': 'Diseña tu viaje',
+      'hero.tag': 'Agencia boutique · Indonesia',
+      'hero.h1': 'Slow luxury en<br>Indonesia, <em>diseñado<br>a tu medida</em>',
+      'hero.p': 'Itinerarios slow, hoteles con criterio y soporte cercano en español — antes y durante el viaje.',
+      'hero.discover': 'Descubre más',
+      'about.tag': 'Sobre nosotros',
+      'about.h2': 'No somos<br>una agencia<br><em>cualquiera</em>',
+      'about.p1': 'Bassa Travels es una agencia boutique especializada en slow luxury en Indonesia. Diseñamos itinerarios a medida, con criterio de selección de hoteles y soporte cercano en español antes y durante el viaje.',
+      'about.p2': 'Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.',
+      'about.pillar1.h4': 'Lujo<br>Personalizado', 'about.pillar1.p': 'Itinerarios 100% a medida, adaptados a tu ritmo y estilo.',
+      'about.pillar2.h4': 'Criterio<br>de Selección', 'about.pillar2.p': 'Solo hoteles que conocemos. Solo experiencias que tienen sentido para ti.',
+      'about.pillar3.h4': 'Experiencias<br>Únicas', 'about.pillar3.p': 'Proveedores de confianza y acompañamiento desde España.',
+      'about.badge': '\u201cCada viaje es tan único como la persona que lo vive\u201d',
+      'exp.tag': 'Experiencias', 'exp.h2': 'Momentos que<br><em>no se olvidan</em>',
+      'exp.intro': 'Cinco líneas de viaje diseñadas para perfiles distintos. Todas a medida, sin grupos, con criterio.',
+      'exp.reset.p': 'Desconexión profunda en Bali interior. Villa privada, masajes balineses, ritmo slow y gastronomía de nivel. 7–12 días.',
+      'exp.moon.p': 'Luna de miel y aniversarios en Bali premium. Villas 5 estrellas, cenas privadas, detalles curados. 10–14 días.',
+      'exp.explorer.p': 'Naturaleza extrema en Raja Ampat. Liveaboard o resort exclusivo, arrecifes intactos, privacidad total. 8–12 días.',
+      'exp.culture.p': 'Historia viva en Java y Bali. Borobudur al amanecer, templos hindúes, guía privado especializado. 10–14 días.',
+      'exp.complete.p': 'Indonesia en su totalidad. Java, Bali y Raja Ampat o Komodo. El gran viaje que siempre quisiste hacer. 18–21 días.',
+      'dest.tag': 'Destinos', 'dest.h2': 'Indonesia,<br><em>bien elegida</em>',
+      'dest.p': 'Indonesia es enorme. Para un viaje BASSA priorizamos calidad, calma y pocos cambios. Te ayudamos a elegir las islas que mejor encajan con tu estilo y ritmo.',
+      'dest.cta': 'Cuéntanos tu viaje',
+      'dest.tab1.title': 'Zonas favoritas',
+      'dest.tab1.bali': '<strong style="color:white">Bali</strong> — Interior verde y costa tranquila. Spa, gastronomía excepcional, villas privadas. La opción más versátil para un primer viaje o quienes buscan plenitud sensorial.',
+      'dest.tab1.raja': '<strong style="color:white">Raja Ampat</strong> — Remoto y exclusivo. Snorkel y diving de primer nivel mundial, privacidad total y naturaleza pristina.',
+      'dest.tab1.java': '<strong style="color:white">Java</strong> — Cultura e historia icónica. Templos milenarios, volcanes activos. Perfecto para un bloque corto e intenso.',
+      'dest.tab2.title': 'Cuándo ir',
+      'dest.tab2.li1': 'Para <strong style="color:white">Bali y Java</strong> la referencia general es la estación seca, de abril a octubre. Menos lluvia, mejor luz y condiciones ideales.',
+      'dest.tab2.li2': 'Para <strong style="color:white">Raja Ampat</strong> la mejor ventana suele ser entre octubre y abril, aunque con matices según el tipo de experiencia.',
+      'dest.tab2.li3': 'Ajustamos islas y experiencias para que el clima siempre juegue a tu favor.',
+      'dest.tab3.title': 'Datos útiles',
+      'dest.tab3.li1': '<strong style="color:white">Visado</strong> — e-VOA a la llegada u online: tasa oficial IDR 500.000.',
+      'dest.tab3.li2': '<strong style="color:white">Tasa turística Bali</strong> — IDR 150.000 por visitante (oficial Love Bali).',
+      'dest.tab3.li3': '<strong style="color:white">Aduanas</strong> — Declaración online en la Indonesian Customs Declaration (e-CD).',
+      'dest.tab3.li4': '<strong style="color:white">Recomendaciones</strong> — Consulta siempre el MAEC antes de viajar.',
+      'how.tag': 'Cómo funciona', 'how.h2': 'Un proceso <em>simple</em><br>y acompañado',
+      'how.p': 'En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.',
+      'how.step1.time': '60 segundos', 'how.step1.h4': 'Formulario', 'how.step1.p': 'Fechas, estilo y tipo de viaje. Lo justo para empezar.',
+      'how.step2.time': '15–20 min', 'how.step2.h4': 'Llamada breve', 'how.step2.p': 'Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.',
+      'how.step3.time': 'A medida', 'how.step3.h4': 'Propuesta', 'how.step3.p': 'Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.',
+      'how.step4.time': 'Nos encargamos', 'how.step4.h4': 'Viaje definido', 'how.step4.p': 'Bloqueamos servicios y te acompañamos antes y durante el viaje.',
+      'contact.tag': 'Contacto',
+      'contact.h2': '¿Te ayudamos a<br><em>diseñar tu viaje</em><br>a Indonesia?',
+      'contact.intro': 'Un asesor de Bassa Travels se pondrá en contacto contigo para confeccionar el gran viaje a medida que tienes en mente. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.',
+      'contact.p1.h5': 'Sin compromiso', 'contact.p1.p': 'La consulta inicial es completamente gratuita y sin ningún tipo de compromiso.',
+      'contact.p2.h5': 'Respuesta en 24h', 'contact.p2.p': 'Te contactamos el siguiente día hábil para agendar vuestra llamada.',
+      'contact.p3.h5': 'Soporte cercano', 'contact.p3.p': 'Te acompañamos antes, durante y después del viaje con atención directa y personalizada.',
+      'form.tipo.label': '¿Qué tipo de Indonesia quieres?',
+      'form.tipo.opt0': 'Cuéntanos tu idea...', 'form.tipo.opt1': 'Bassa Reset — Bali interior', 'form.tipo.opt2': 'Bassa Moon — Bali premium',
+      'form.tipo.opt3': 'Bassa Explorer — Raja Ampat', 'form.tipo.opt4': 'Bassa Culture — Java & Bali',
+      'form.tipo.opt5': 'Bassa Complete — Indonesia completa', 'form.tipo.opt6': 'Aún no lo tengo claro, me ayudáis',
+      'form.companion.label': '¿Con quién viajas?',
+      'form.companion.opt0': 'Selecciona una opción', 'form.companion.opt1': 'En pareja', 'form.companion.opt2': 'Luna de miel',
+      'form.companion.opt3': 'En familia', 'form.companion.opt4': 'Con amigos', 'form.companion.opt5': 'En solitario',
+      'form.salida.label': 'Salida aproximada', 'form.dias.label': 'Días de viaje',
+      'form.dias.opt0': '¿Cuántos días?', 'form.dias.opt1': '7 días', 'form.dias.opt2': '10 días', 'form.dias.opt3': '12 días',
+      'form.dias.opt4': '14 días', 'form.dias.opt5': '16 días', 'form.dias.opt6': '18 días',
+      'form.dias.opt7': '21 días o más', 'form.dias.opt8': 'Aún no lo sé, me ayudáis',
+      'form.nombre.label': 'Nombre', 'form.nombre.ph': 'Tu nombre',
+      'form.email.label': 'Email', 'form.email.ph': 'tu@email.com',
+      'form.whatsapp.label': 'WhatsApp',
+      'form.imprescindibles.label': 'Imprescindibles / preferencias',
+      'form.imprescindibles.ph': 'Cuéntanos qué no puede faltar en tu viaje ideal...',
+      'form.submit': 'Enviar consulta →', 'form.sending': 'Enviando...', 'form.error': 'Error al enviar, inténtalo de nuevo',
+      'form.success.title': 'Consulta recibida', 'form.success.p': 'Te escribimos en menos de 24h.<br>Revisa también tu carpeta de spam.',
+      'faq.tag': 'FAQ', 'faq.h2': 'Preguntas<br><em>frecuentes</em>',
+      'faq.q1': '¿Qué tipo de viajes hace Bassa Travels?', 'faq.a1': 'Viajes slow luxury en Indonesia: itinerarios privados, hoteles con criterio, experiencias bien trabajadas. Todo a medida, sin paquetes cerrados ni grupos.',
+      'faq.q2': '¿Cómo se diseña el viaje tras el formulario?', 'faq.a2': 'Formulario → llamada breve → propuesta con ruta y hoteles → ajustes → reservas y soporte. Un proceso premium e iterativo.',
+      'faq.q3': '¿Con cuánta antelación conviene reservar?', 'faq.a3': 'Para asegurar disponibilidad premium: 4–6 meses en temporada baja y 8–10 meses en temporada alta. Algunos alojamientos exclusivos requieren más.',
+      'faq.q4': '¿Organizáis viajes en grupo?', 'faq.a4': 'No abrimos grupos. Diseñamos viajes privados: parejas, familias, amigos. La privacidad es parte del producto.',
+      'faq.q5': '¿Incluís vuelos internacionales?', 'faq.a5': 'Podemos recomendarlos y coordinarlos, pero lo habitual es tratarlos aparte para darte más flexibilidad de aerolínea, horarios y puntos.',
+      'faq.q6': '¿Hay fee de diseño del viaje?', 'faq.a6': 'No. Diseñamos contigo sin coste. El valor está en nuestra propuesta, recomendaciones y soporte integral.',
+      'faq.q7': '¿Ofrecéis soporte durante el viaje?', 'faq.a7': 'Sí: antes, durante y después. En slow luxury el valor real es tener un concierge que resuelve cualquier fricción en destino.',
+      'faq.q8': '¿Trabajáis con familias y lunas de miel?', 'faq.a8': 'Sí. Indonesia funciona muy bien para ambos: en familia, aventura suave + descanso; en luna de miel, privacidad + experiencias exclusivas y bien curadas.',
+      'footer.copy': '© 2026 Bassa Travels · Agencia boutique de slow luxury en Indonesia',
+      'footer.about': 'Qué es Bassa', 'footer.experiences': 'Experiencias', 'footer.how': 'Cómo funciona', 'footer.contact': 'Contacto',
+    },
+    en: {
+      'page.title': 'Bassa Travels — Slow Luxury in Indonesia',
+      'nav.about': 'About Bassa', 'nav.experiences': 'Experiences', 'nav.how': 'How it works', 'nav.cta': 'Design your trip',
+      'hero.tag': 'Boutique agency · Indonesia',
+      'hero.h1': 'Slow luxury in<br>Indonesia, <em>designed<br>for you</em>',
+      'hero.p': 'Slow itineraries, curated hotels and close support in English — before and during your trip.',
+      'hero.discover': 'Discover more',
+      'about.tag': 'About us',
+      'about.h2': 'We are not<br>just another<br><em>agency</em>',
+      'about.p1': 'Bassa Travels is a boutique agency specialising in slow luxury in Indonesia. We design bespoke itineraries with curated hotel selection and close support in English before and during your trip.',
+      'about.p2': 'No mass tours. No fixed packages. Only experiences designed for you.',
+      'about.pillar1.h4': 'Personalised<br>Luxury', 'about.pillar1.p': '100% bespoke itineraries, tailored to your pace and style.',
+      'about.pillar2.h4': 'Curated<br>Selection', 'about.pillar2.p': 'Only hotels we know personally. Only experiences that make sense for you.',
+      'about.pillar3.h4': 'Unique<br>Experiences', 'about.pillar3.p': 'Trusted suppliers and dedicated support from home.',
+      'about.badge': '\u201cEvery trip is as unique as the person who lives it\u201d',
+      'exp.tag': 'Experiences', 'exp.h2': 'Moments you<br><em>won\'t forget</em>',
+      'exp.intro': 'Five travel lines designed for different profiles. All bespoke, no groups, curated.',
+      'exp.reset.p': 'Deep disconnect in Bali\'s interior. Private villa, Balinese massages, slow pace and exceptional cuisine. 7–12 days.',
+      'exp.moon.p': 'Honeymoons and anniversaries in premium Bali. 5-star villas, private dinners, curated details. 10–14 days.',
+      'exp.explorer.p': 'Extreme nature in Raja Ampat. Liveaboard or exclusive resort, pristine reefs, total privacy. 8–12 days.',
+      'exp.culture.p': 'Living history in Java and Bali. Borobudur at sunrise, Hindu temples, specialist private guide. 10–14 days.',
+      'exp.complete.p': 'Indonesia in its entirety. Java, Bali and Raja Ampat or Komodo. The big trip you always wanted. 18–21 days.',
+      'dest.tag': 'Destinations', 'dest.h2': 'Indonesia,<br><em>well chosen</em>',
+      'dest.p': 'Indonesia is vast. For a BASSA trip we prioritise quality, calm and few connections. We help you choose the islands that best match your style and pace.',
+      'dest.cta': 'Tell us about your trip',
+      'dest.tab1.title': 'Favourite areas',
+      'dest.tab1.bali': '<strong style="color:white">Bali</strong> — Lush interior and quiet coast. Spa, exceptional cuisine, private villas. The most versatile option for a first trip or those seeking sensory fullness.',
+      'dest.tab1.raja': '<strong style="color:white">Raja Ampat</strong> — Remote and exclusive. World-class snorkelling and diving, total privacy and pristine nature.',
+      'dest.tab1.java': '<strong style="color:white">Java</strong> — Iconic culture and history. Ancient temples, active volcanoes. Perfect for a short, intense block.',
+      'dest.tab2.title': 'When to go',
+      'dest.tab2.li1': 'For <strong style="color:white">Bali and Java</strong> the general reference is the dry season, from April to October. Less rain, better light and ideal conditions.',
+      'dest.tab2.li2': 'For <strong style="color:white">Raja Ampat</strong> the best window is usually between October and April, though it varies by experience type.',
+      'dest.tab2.li3': 'We adjust islands and experiences so the weather always works in your favour.',
+      'dest.tab3.title': 'Useful info',
+      'dest.tab3.li1': '<strong style="color:white">Visa</strong> — e-VOA on arrival or online: official fee IDR 500,000.',
+      'dest.tab3.li2': '<strong style="color:white">Bali tourism tax</strong> — IDR 150,000 per visitor (official Love Bali).',
+      'dest.tab3.li3': '<strong style="color:white">Customs</strong> — Online declaration via Indonesian Customs Declaration (e-CD).',
+      'dest.tab3.li4': '<strong style="color:white">Advice</strong> — Always check your government\'s travel advice before travelling.',
+      'how.tag': 'How it works', 'how.h2': 'A <em>simple</em><br>guided process',
+      'how.p': 'In a brief call we understand your style and prepare a clear, premium proposal with no fuss. No endless forms, no unnecessary waits.',
+      'how.step1.time': '60 seconds', 'how.step1.h4': 'Form', 'how.step1.p': 'Dates, style and type of trip. Just enough to get started.',
+      'how.step2.time': '15–20 min', 'how.step2.h4': 'Brief call', 'how.step2.p': 'We pin down pace, islands, hotels and your must-haves.',
+      'how.step3.time': 'Bespoke', 'how.step3.h4': 'Proposal', 'how.step3.p': 'Visual itinerary with specific hotels, named experiences and premium options.',
+      'how.step4.time': 'We handle it', 'how.step4.h4': 'Trip confirmed', 'how.step4.p': 'We lock in services and support you before and during your trip.',
+      'contact.tag': 'Contact',
+      'contact.h2': 'Can we help you<br><em>design your trip</em><br>to Indonesia?',
+      'contact.intro': 'A Bassa Travels advisor will get in touch to craft the bespoke trip you have in mind. Bassa trips start from <strong style="color:white">\u20AC3,500 per person</strong> in land services.',
+      'contact.p1.h5': 'No commitment', 'contact.p1.p': 'The initial consultation is completely free and with no commitment whatsoever.',
+      'contact.p2.h5': 'Response within 24h', 'contact.p2.p': 'We\'ll contact you the next working day to schedule your call.',
+      'contact.p3.h5': 'Close support', 'contact.p3.p': 'We support you before, during and after the trip with direct, personalised attention.',
+      'form.tipo.label': 'What kind of Indonesia do you want?',
+      'form.tipo.opt0': 'Tell us your idea...', 'form.tipo.opt1': 'Bassa Reset — Bali interior', 'form.tipo.opt2': 'Bassa Moon — Premium Bali',
+      'form.tipo.opt3': 'Bassa Explorer — Raja Ampat', 'form.tipo.opt4': 'Bassa Culture — Java & Bali',
+      'form.tipo.opt5': 'Bassa Complete — Full Indonesia', 'form.tipo.opt6': 'Not sure yet, help me decide',
+      'form.companion.label': 'Who are you travelling with?',
+      'form.companion.opt0': 'Select an option', 'form.companion.opt1': 'As a couple', 'form.companion.opt2': 'Honeymoon',
+      'form.companion.opt3': 'With family', 'form.companion.opt4': 'With friends', 'form.companion.opt5': 'Solo',
+      'form.salida.label': 'Approximate departure', 'form.dias.label': 'Days of travel',
+      'form.dias.opt0': 'How many days?', 'form.dias.opt1': '7 days', 'form.dias.opt2': '10 days', 'form.dias.opt3': '12 days',
+      'form.dias.opt4': '14 days', 'form.dias.opt5': '16 days', 'form.dias.opt6': '18 days',
+      'form.dias.opt7': '21 days or more', 'form.dias.opt8': 'Not sure yet, help me',
+      'form.nombre.label': 'Name', 'form.nombre.ph': 'Your name',
+      'form.email.label': 'Email', 'form.email.ph': 'your@email.com',
+      'form.whatsapp.label': 'WhatsApp',
+      'form.imprescindibles.label': 'Must-haves / preferences',
+      'form.imprescindibles.ph': 'Tell us what your ideal trip can\'t be without...',
+      'form.submit': 'Send enquiry \u2192', 'form.sending': 'Sending...', 'form.error': 'Error sending, please try again',
+      'form.success.title': 'Enquiry received', 'form.success.p': 'We\'ll write to you within 24h.<br>Also check your spam folder.',
+      'faq.tag': 'FAQ', 'faq.h2': 'Frequently<br><em>asked questions</em>',
+      'faq.q1': 'What kind of trips does Bassa Travels offer?', 'faq.a1': 'Slow luxury trips to Indonesia: private itineraries, curated hotels, well-crafted experiences. All bespoke, no fixed packages or groups.',
+      'faq.q2': 'How is the trip designed after the form?', 'faq.a2': 'Form \u2192 brief call \u2192 proposal with route and hotels \u2192 adjustments \u2192 bookings and support. A premium, iterative process.',
+      'faq.q3': 'How far in advance should I book?', 'faq.a3': 'To secure premium availability: 4–6 months in low season and 8–10 months in high season. Some exclusive properties require more.',
+      'faq.q4': 'Do you organise group trips?', 'faq.a4': 'We don\'t open groups. We design private trips: couples, families, friends. Privacy is part of the product.',
+      'faq.q5': 'Do you include international flights?', 'faq.a5': 'We can recommend and coordinate them, but we usually handle them separately to give you more flexibility on airline, times and points.',
+      'faq.q6': 'Is there a trip design fee?', 'faq.a6': 'No. We design with you at no cost. The value lies in our proposal, recommendations and full support.',
+      'faq.q7': 'Do you offer support during the trip?', 'faq.a7': 'Yes: before, during and after. In slow luxury the real value is having a concierge who resolves any friction on the ground.',
+      'faq.q8': 'Do you work with families and honeymooners?', 'faq.a8': 'Yes. Indonesia works very well for both: families get gentle adventure + rest; honeymooners get privacy + exclusive, well-curated experiences.',
+      'footer.copy': '© 2026 Bassa Travels · Slow luxury boutique agency in Indonesia',
+      'footer.about': 'About Bassa', 'footer.experiences': 'Experiences', 'footer.how': 'How it works', 'footer.contact': 'Contact',
+    }
+  };
+
+  let currentLang = 'es';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('bassa_lang', lang);
+    document.documentElement.lang = lang;
+    document.title = t[lang]['page.title'];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[lang][key] !== undefined) el.textContent = t[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.dataset.i18nPh;
+      if (t[lang][key] !== undefined) el.placeholder = t[lang][key];
+    });
+
+    const btnLabel = lang === 'es' ? '🇬🇧 EN' : '🇪🇸 ES';
+    const drawerLabel = lang === 'es' ? '🇬🇧 Switch to English' : '🇪🇸 Cambiar a español';
+    document.getElementById('lang-toggle').textContent = btnLabel;
+    const drawerBtn = document.getElementById('drawer-lang-toggle');
+    if (drawerBtn) drawerBtn.textContent = drawerLabel;
+  }
+
+  // ── NAV SCROLL ──
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
-  // Hamburger / drawer
+  // ── HAMBURGER / DRAWER ──
   const hamburger = document.getElementById('hamburger');
   const drawer = document.getElementById('nav-drawer');
   const overlay = document.getElementById('drawer-overlay');
@@ -766,13 +973,17 @@
   overlay.addEventListener('click', closeDrawer);
   document.querySelectorAll('.nav-drawer a').forEach(a => a.addEventListener('click', closeDrawer));
 
-  // Reveal on scroll
+  // ── LANG TOGGLE ──
+  document.getElementById('lang-toggle').addEventListener('click', () => setLanguage(currentLang === 'es' ? 'en' : 'es'));
+  document.getElementById('drawer-lang-toggle').addEventListener('click', () => { setLanguage(currentLang === 'es' ? 'en' : 'es'); closeDrawer(); });
+
+  // ── REVEAL ON SCROLL ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // FAQ accordion
+  // ── FAQ ACCORDION ──
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.closest('.faq-item');
@@ -782,7 +993,7 @@
     });
   });
 
-  // Destinos accordion
+  // ── DESTINOS ACCORDION ──
   document.querySelectorAll('.dtab-header').forEach(header => {
     header.addEventListener('click', () => {
       const tab = header.closest('.dtab');
@@ -792,33 +1003,32 @@
     });
   });
 
-  // Formulario → Google Sheets + email
+  // ── FORMULARIO ──
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcfTp2D0nffltJOC0ypMWQgw8SCS7KTKpsSxP3fJWgxU8_lxfy36Lx93C1TTjAZ2Cq/exec";
   document.getElementById('bassa-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Enviando...';
+    btn.textContent = t[currentLang]['form.sending'];
     btn.disabled = true;
     const data = {
-      tipo_viaje:      form.tipo_viaje.value,
-      companion:       form.companion.value,
-      salida:          form.salida.value,
-      dias:            form.dias.value,
-      nombre:          form.nombre.value,
-      email:           form.email.value,
-      whatsapp:        form.whatsapp.value,
-      imprescindibles: form.imprescindibles.value
+      tipo_viaje: form.tipo_viaje.value, companion: form.companion.value,
+      salida: form.salida.value, dias: form.dias.value,
+      nombre: form.nombre.value, email: form.email.value,
+      whatsapp: form.whatsapp.value, imprescindibles: form.imprescindibles.value
     };
     try {
       await fetch(SCRIPT_URL + '?' + new URLSearchParams(data), { method: 'GET', mode: 'no-cors' });
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     } catch (err) {
-      btn.textContent = 'Error al enviar, inténtalo de nuevo';
+      btn.textContent = t[currentLang]['form.error'];
       btn.disabled = false;
     }
   });
+
+  // ── INIT LANGUAGE ──
+  setLanguage(localStorage.getItem('bassa_lang') || 'es');
 </script>
 </body>
 </html>
