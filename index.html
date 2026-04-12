@@ -201,6 +201,7 @@
   .promise-text h5 { color: white; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.25rem; }
   .promise-text p { color: rgba(255,255,255,0.72); font-size: 0.8rem; line-height: 1.5; }
   form { display: flex; flex-direction: column; gap: 1rem; }
+  .hp-field { position:absolute; left:-9999px; opacity:0; height:0; overflow:hidden; pointer-events:none; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
   label { font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
@@ -639,6 +640,11 @@
   </div>
   <div class="contact-form reveal" style="transition-delay:0.2s">
     <form id="bassa-form">
+      <!-- Honeypot anti-spam: invisible to humans, bots fill it -->
+      <div class="hp-field" aria-hidden="true">
+        <label>Do not fill this field</label>
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </div>
       <div class="form-field">
         <label data-i18n="form.tipo.label">¿Qué tipo de Indonesia quieres?</label>
         <select name="tipo_viaje">
@@ -1009,9 +1015,16 @@
 
   // ── FORMULARIO ──
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcfTp2D0nffltJOC0ypMWQgw8SCS7KTKpsSxP3fJWgxU8_lxfy36Lx93C1TTjAZ2Cq/exec";
+  const formLoadTime = Date.now();
   document.getElementById('bassa-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const form = e.target;
+
+    // Anti-spam: honeypot check
+    if (form.website.value !== '') return;
+    // Anti-spam: time check (bots submit instantly)
+    if (Date.now() - formLoadTime < 3000) return;
+
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = t[currentLang]['form.sending'];
     btn.disabled = true;
