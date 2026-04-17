@@ -194,21 +194,30 @@
 
   /* ── PARTNER STRIP ── */
   .partner-strip {
-    background: var(--warm-white);
-    border-top: 1px solid rgba(184,155,106,0.18);
-    border-bottom: 1px solid rgba(184,155,106,0.18);
-    padding: 1.6rem 4rem;
+    background: var(--sand);
+    padding: 3rem 4rem;
     text-align: center;
   }
+  .partner-strip::before,
+  .partner-strip::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto;
+  }
+  .partner-strip::before { margin-bottom: 1.4rem; }
+  .partner-strip::after  { margin-top: 1.4rem; }
   .partner-strip p {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 300;
     color: var(--deep);
-    max-width: 740px;
+    max-width: 700px;
     margin: 0 auto;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   /* ── CONTACT ── */
