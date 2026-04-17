@@ -148,8 +148,11 @@
   .exp-card:hover .exp-card-overlay { background: linear-gradient(to top, rgba(28,26,23,0.95) 0%, rgba(28,26,23,0.4) 60%, transparent 100%); }
   .exp-num { font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.5rem; }
   .exp-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; color: white; line-height: 1.2; margin-bottom: 0.8rem; }
-  .exp-card p { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-  .exp-card:hover p { max-height: 120px; }
+  .exp-tagline { display: block; font-family: var(--font-display); font-style: italic; font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.3; margin-bottom: 0.4rem; transition: opacity 0.3s; }
+  .exp-card:hover .exp-tagline { opacity: 0; height: 0; margin: 0; overflow: hidden; }
+  .exp-card p { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+  .exp-card:hover p { max-height: 210px; }
+  .exp-dur { display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 0.6rem; }
 
   /* ── DESTINOS ── */
   .destinos { background: var(--deep); color: white; padding-top: 5rem; }
@@ -475,7 +478,8 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Reset</span>
         <h3>Bassa Reset</h3>
-        <p data-i18n="exp.reset.p">Desconexión profunda en Bali interior. Villa privada, masajes balineses, ritmo slow y gastronomía de nivel. 7–12 días.</p>
+        <span class="exp-tagline" data-i18n="exp.reset.tag">El slow luxury más puro de Bali</span>
+        <p data-i18n-html="exp.reset.p">· Villa privada con piscina infinita<br>· Masajes balineses al amanecer<br>· Gastronomía de autor en campo de arroz<br><span class="exp-dur">7–12 días</span></p>
       </div>
     </div>
     <div class="exp-card">
@@ -483,7 +487,8 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Moon</span>
         <h3>Bassa Moon</h3>
-        <p data-i18n="exp.moon.p">Luna de miel y aniversarios en Bali premium. Villas 5 estrellas, cenas privadas, detalles curados. 10–14 días.</p>
+        <span class="exp-tagline" data-i18n="exp.moon.tag">Romanticismo sin filtros en Bali</span>
+        <p data-i18n-html="exp.moon.p">· Cena privada en la jungla con antorchas<br>· Butler exclusivo en villa de lujo<br>· Pétalos, velas y detalles curados<br><span class="exp-dur">10–14 días</span></p>
       </div>
     </div>
     <div class="exp-card">
@@ -491,7 +496,8 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Explorer</span>
         <h3>Bassa Explorer</h3>
-        <p data-i18n="exp.explorer.p">Naturaleza extrema en Raja Ampat. Liveaboard o resort exclusivo, arrecifes intactos, privacidad total. 8–12 días.</p>
+        <span class="exp-tagline" data-i18n="exp.explorer.tag">El último arrecife virgen del planeta</span>
+        <p data-i18n-html="exp.explorer.p">· Buceo en las aguas más biodiversas del mundo<br>· Liveaboard privado entre islas deshabitadas<br>· Amanecer sobre karst sin otro barco a la vista<br><span class="exp-dur">8–12 días</span></p>
       </div>
     </div>
     <div class="exp-card">
@@ -499,7 +505,8 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Culture</span>
         <h3>Bassa Culture</h3>
-        <p data-i18n="exp.culture.p">Historia viva en Java y Bali. Borobudur al amanecer, templos hindúes, guía privado especializado. 10–14 días.</p>
+        <span class="exp-tagline" data-i18n="exp.culture.tag">Civilizaciones milenarias sin multitudes</span>
+        <p data-i18n-html="exp.culture.p">· Borobudur en privado al primer rayo de sol<br>· Ceremonia hindú con guía especializado<br>· Noches en palacio real reconvertido en hotel<br><span class="exp-dur">10–14 días</span></p>
       </div>
     </div>
     <div class="exp-card">
@@ -507,7 +514,8 @@
       <div class="exp-card-overlay">
         <span class="exp-num">Complete</span>
         <h3>Bassa Complete</h3>
-        <p data-i18n="exp.complete.p">Indonesia en su totalidad. Java, Bali y Raja Ampat o Komodo. El gran viaje que siempre quisiste hacer. 18–21 días.</p>
+        <span class="exp-tagline" data-i18n="exp.complete.tag">El gran viaje definitivo</span>
+        <p data-i18n-html="exp.complete.p">· Java + Bali + Raja Ampat o Komodo<br>· Transiciones en chárter privado<br>· Profundidad real en cada destino<br><span class="exp-dur">18–21 días</span></p>
       </div>
     </div>
   </div>
@@ -796,11 +804,16 @@
       'about.badge': '\u201cCada viaje es tan único como la persona que lo vive\u201d',
       'exp.tag': 'Experiencias', 'exp.h2': 'Momentos que<br><em>no se olvidan</em>',
       'exp.intro': 'Cinco líneas de viaje diseñadas para perfiles distintos. Todas a medida, sin grupos, con criterio.',
-      'exp.reset.p': 'Desconexión profunda en Bali interior. Villa privada, masajes balineses, ritmo slow y gastronomía de nivel. 7–12 días.',
-      'exp.moon.p': 'Luna de miel y aniversarios en Bali premium. Villas 5 estrellas, cenas privadas, detalles curados. 10–14 días.',
-      'exp.explorer.p': 'Naturaleza extrema en Raja Ampat. Liveaboard o resort exclusivo, arrecifes intactos, privacidad total. 8–12 días.',
-      'exp.culture.p': 'Historia viva en Java y Bali. Borobudur al amanecer, templos hindúes, guía privado especializado. 10–14 días.',
-      'exp.complete.p': 'Indonesia en su totalidad. Java, Bali y Raja Ampat o Komodo. El gran viaje que siempre quisiste hacer. 18–21 días.',
+      'exp.reset.tag': 'El slow luxury más puro de Bali',
+      'exp.reset.p': '· Villa privada con piscina infinita<br>· Masajes balineses al amanecer<br>· Gastronomía de autor en campo de arroz<br><span class="exp-dur">7–12 días</span>',
+      'exp.moon.tag': 'Romanticismo sin filtros en Bali',
+      'exp.moon.p': '· Cena privada en la jungla con antorchas<br>· Butler exclusivo en villa de lujo<br>· Pétalos, velas y detalles curados<br><span class="exp-dur">10–14 días</span>',
+      'exp.explorer.tag': 'El último arrecife virgen del planeta',
+      'exp.explorer.p': '· Buceo en las aguas más biodiversas del mundo<br>· Liveaboard privado entre islas deshabitadas<br>· Amanecer sobre karst sin otro barco a la vista<br><span class="exp-dur">8–12 días</span>',
+      'exp.culture.tag': 'Civilizaciones milenarias sin multitudes',
+      'exp.culture.p': '· Borobudur en privado al primer rayo de sol<br>· Ceremonia hindú con guía especializado<br>· Noches en palacio real reconvertido en hotel<br><span class="exp-dur">10–14 días</span>',
+      'exp.complete.tag': 'El gran viaje definitivo',
+      'exp.complete.p': '· Java + Bali + Raja Ampat o Komodo<br>· Transiciones en chárter privado<br>· Profundidad real en cada destino<br><span class="exp-dur">18–21 días</span>',
       'dest.tag': 'Destinos', 'dest.h2': 'Indonesia,<br><em>bien elegida</em>',
       'dest.p': 'Indonesia es enorme. Para un viaje BASSA priorizamos calidad, calma y pocos cambios. Te ayudamos a elegir las islas que mejor encajan con tu estilo y ritmo.',
       'dest.cta': 'Cuéntanos tu viaje',
@@ -876,11 +889,16 @@
       'about.badge': '\u201cEvery trip is as unique as the person who lives it\u201d',
       'exp.tag': 'Experiences', 'exp.h2': 'Moments you<br><em>won\'t forget</em>',
       'exp.intro': 'Five travel lines designed for different profiles. All bespoke, no groups, curated.',
-      'exp.reset.p': 'Deep disconnect in Bali\'s interior. Private villa, Balinese massages, slow pace and exceptional cuisine. 7–12 days.',
-      'exp.moon.p': 'Honeymoons and anniversaries in premium Bali. 5-star villas, private dinners, curated details. 10–14 days.',
-      'exp.explorer.p': 'Extreme nature in Raja Ampat. Liveaboard or exclusive resort, pristine reefs, total privacy. 8–12 days.',
-      'exp.culture.p': 'Living history in Java and Bali. Borobudur at sunrise, Hindu temples, specialist private guide. 10–14 days.',
-      'exp.complete.p': 'Indonesia in its entirety. Java, Bali and Raja Ampat or Komodo. The big trip you always wanted. 18–21 days.',
+      'exp.reset.tag': 'The purest slow luxury in Bali',
+      'exp.reset.p': '· Private villa with infinity pool<br>· Balinese massages at dawn<br>· Chef\'s table dining in a rice paddy<br><span class="exp-dur">7–12 days</span>',
+      'exp.moon.tag': 'Unfiltered romance in Bali',
+      'exp.moon.p': '· Private torchlit dinner in the jungle<br>· Exclusive butler in a luxury villa<br>· Petals, candles and curated details<br><span class="exp-dur">10–14 days</span>',
+      'exp.explorer.tag': 'The last pristine reef on Earth',
+      'exp.explorer.p': '· Diving in the world\'s most biodiverse waters<br>· Private liveaboard between uninhabited islands<br>· Sunrise over karst with no other boat in sight<br><span class="exp-dur">8–12 days</span>',
+      'exp.culture.tag': 'Millennia of civilisation, crowd-free',
+      'exp.culture.p': '· Private Borobudur at the first ray of sunrise<br>· Hindu ceremony with specialist guide<br>· Nights in a royal palace turned hotel<br><span class="exp-dur">10–14 days</span>',
+      'exp.complete.tag': 'The ultimate Indonesia journey',
+      'exp.complete.p': '· Java + Bali + Raja Ampat or Komodo<br>· Private charter transfers between islands<br>· Real depth in every destination<br><span class="exp-dur">18–21 days</span>',
       'dest.tag': 'Destinations', 'dest.h2': 'Indonesia,<br><em>well chosen</em>',
       'dest.p': 'Indonesia is vast. For a BASSA trip we prioritise quality, calm and few connections. We help you choose the islands that best match your style and pace.',
       'dest.cta': 'Tell us about your trip',
