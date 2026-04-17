@@ -654,18 +654,6 @@
         <input type="text" name="website" tabindex="-1" autocomplete="off">
       </div>
       <div class="form-field">
-        <label data-i18n="form.tipo.label">¿Qué tipo de Indonesia quieres?</label>
-        <select name="tipo_viaje">
-          <option value="" data-i18n="form.tipo.opt0">Cuéntanos tu idea...</option>
-          <option data-i18n="form.tipo.opt1">Bassa Reset — Bali interior</option>
-          <option data-i18n="form.tipo.opt2">Bassa Moon — Bali premium</option>
-          <option data-i18n="form.tipo.opt3">Bassa Explorer — Raja Ampat</option>
-          <option data-i18n="form.tipo.opt4">Bassa Culture — Java &amp; Bali</option>
-          <option data-i18n="form.tipo.opt5">Bassa Complete — Indonesia completa</option>
-          <option data-i18n="form.tipo.opt6">Aún no lo tengo claro, me ayudáis</option>
-        </select>
-      </div>
-      <div class="form-field">
         <label data-i18n="form.companion.label">¿Con quién viajas?</label>
         <select name="companion">
           <option value="" data-i18n="form.companion.opt0">Selecciona una opción</option>
@@ -1047,7 +1035,7 @@
     btn.textContent = t[currentLang]['form.sending'];
     btn.disabled = true;
     const data = {
-      tipo_viaje: form.tipo_viaje.value, companion: form.companion.value,
+      companion: form.companion.value,
       salida: form.salida.value, dias: form.dias.value,
       nombre: form.nombre.value, email: form.email.value,
       whatsapp: form.whatsapp.value, imprescindibles: form.imprescindibles.value
