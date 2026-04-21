@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiencias irrepetibles — Bassa Travels</title>
+<link rel="canonical" href="https://bassatravels.com/experiencias.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --sand: #E8DDD0;
+    --terracotta: #C4724A;
+    --deep: #1C1A17;
+    --gold: #B89B6A;
+    --warm-white: #FAF8F4;
+    --muted: #7A7068;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--deep); color: white; font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+
+  /* ── NAV (replicates main site, always dark-theme here) ── */
+  #main-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(28,26,23,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(184,155,106,0.12);
+    transition: background 0.4s;
+  }
+  #main-nav.scrolled { background: rgba(28,26,23,0.96); }
+  .nav-logo img { height: 42px; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.88); text-decoration: none;
+    font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 400; transition: color 0.3s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta { background: var(--terracotta) !important; color: white !important; padding: 0.55rem 1.3rem !important; border-radius: 2px; }
+
+  /* ── HERO ── */
+  .exp-hero {
+    position: relative; min-height: 75vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 8rem 4rem 5rem;
+    overflow: hidden;
+  }
+  .exp-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1604999333679-b86d54738315?w=1920&q=85') center/cover no-repeat;
+    z-index: -2;
+  }
+  .exp-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(28,26,23,0.7) 0%, rgba(28,26,23,0.55) 50%, rgba(28,26,23,0.95) 100%);
+    z-index: -1;
+  }
+  .hero-tag {
+    display: inline-block; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.8rem;
+    border-left: 2px solid var(--terracotta); padding-left: 0.8rem;
+  }
+  .exp-hero h1 {
+    font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 300; line-height: 1.05; margin-bottom: 2rem;
+  }
+  .exp-hero h1 em { font-style: italic; color: var(--gold); }
+  .exp-hero p {
+    color: rgba(255,255,255,0.82); font-size: 1.05rem; line-height: 1.8;
+    max-width: 720px; margin: 0 auto;
+  }
+
+  /* ── ZONE SECTIONS ── */
+  .zone {
+    padding: 6rem 4rem 5rem;
+    position: relative;
+  }
+  .zone:nth-child(even) { background: #16140F; }
+  .zone-intro {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 4rem;
+    align-items: center; margin-bottom: 4rem; max-width: 1400px; margin-left: auto; margin-right: auto;
+  }
+  .zone-num {
+    font-family: var(--font-display); font-style: italic; font-size: 0.9rem;
+    letter-spacing: 0.2em; color: var(--gold); margin-bottom: 0.8rem;
+    text-transform: uppercase; display: block;
+  }
+  .zone-title {
+    font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 300; line-height: 1.05; color: white;
+  }
+  .zone-title em { font-style: italic; color: var(--gold); }
+  .zone-desc { color: rgba(255,255,255,0.78); line-height: 1.85; font-size: 0.95rem; }
+
+  /* ── EXPERIENCE GRID ── */
+  .exp-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .exp-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--deep);
+    border: 1px solid rgba(184,155,106,0.1);
+    transition: border-color 0.4s, transform 0.4s;
+  }
+  .exp-item:hover { border-color: rgba(184,155,106,0.45); transform: translateY(-4px); }
+  .exp-item-img {
+    width: 100%; aspect-ratio: 16/10;
+    overflow: hidden;
+    position: relative;
+  }
+  .exp-item-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+  .exp-item:hover .exp-item-img img { transform: scale(1.06); }
+  .exp-item-body { padding: 1.3rem 1.4rem 1.6rem; }
+  .exp-item-label {
+    display: inline-block; font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .exp-item h3 {
+    font-family: var(--font-display); font-size: 1.35rem;
+    font-weight: 400; line-height: 1.25; margin-bottom: 0.65rem;
+    color: white;
+  }
+  .exp-item p {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+
+  /* ── CTA ── */
+  .exp-cta {
+    padding: 7rem 4rem;
+    text-align: center;
+    background: var(--deep);
+    position: relative;
+  }
+  .exp-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=1920&q=80') center/cover no-repeat;
+    opacity: 0.18; z-index: 0;
+  }
+  .exp-cta > * { position: relative; z-index: 1; }
+  .exp-cta h2 {
+    font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem;
+  }
+  .exp-cta h2 em { font-style: italic; color: var(--gold); }
+  .exp-cta p { color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75; }
+  .btn-primary {
+    display: inline-block; background: var(--terracotta); color: white; text-decoration: none;
+    padding: 1rem 2.4rem; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 500; transition: background 0.3s, transform 0.2s; border-radius: 2px;
+  }
+  .btn-primary:hover { background: #b35e38; transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0F0D0A; color: rgba(255,255,255,0.5);
+    padding: 3rem 4rem; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo img { height: 34px; width: auto; opacity: 0.72; }
+  .footer-nav a {
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.08em;
+    margin-left: 2rem; transition: color 0.3s;
+  }
+  .footer-nav a:hover { color: white; }
+  .footer-copy { font-size: 0.75rem; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    #main-nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .exp-hero { padding: 7rem 1.5rem 4rem; min-height: 60vh; }
+    .zone { padding: 4rem 1.5rem 3rem; }
+    .zone-intro { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .exp-list { grid-template-columns: 1fr; gap: 1.2rem; }
+    .exp-cta { padding: 4rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .footer-nav { text-align: center; }
+    .footer-nav a { margin: 0 0.8rem; }
+  }
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .exp-list { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/BASSA_logo_horizontal_blanco.png" alt="Bassa Travels" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-family:var(--font-display);font-size:1.4rem;color:white;letter-spacing:0.15em;&quot;>BASSA</span>'">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Sobre Bassa</a></li>
+    <li><a href="experiencias.html" style="color: var(--gold);">Experiencias</a></li>
+    <li><a href="index.html#how">Cómo funciona</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Diseña tu viaje</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="exp-hero">
+  <div>
+    <span class="hero-tag">Experiencias curadas</span>
+    <h1>Lo que nadie<br>te ha <em>contado</em></h1>
+    <p>Una selección de las experiencias más extraordinarias que Indonesia puede ofrecer. Acceso privado, ceremonias reales, islas descubiertas por nuestros partners locales, encuentros que no aparecen en ninguna guía. Para quienes ya han estado en todas partes y aún buscan algo irrepetible.</p>
+  </div>
+</section>
+
+<!-- ZONA 01 — BALI -->
+<section class="zone">
+  <div class="zone-intro">
+    <div class="reveal">
+      <span class="zone-num">01 · Bali</span>
+      <h2 class="zone-title">El alma del <em>archipiélago</em></h2>
+    </div>
+    <p class="zone-desc reveal">Bali no es una isla: es un estado mental. Arrozales escalonados, templos de agua, ceremonias que no se detienen nunca, acantilados sobre el Índico. La versatilidad perfecta para un primer viaje o para volver una y otra vez.</p>
+  </div>
+  <div class="exp-list">
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=900&q=85" alt="Melukat privado Tirta Empul"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Ceremonia privada</span>
+        <h3>Melukat con sacerdote en Tirta Empul</h3>
+        <p>Ritual de purificación con un pedanda privado en los manantiales sagrados. Antes de que abran al público. Mantras en sánscrito, flores de frangipani flotando en el agua, el décimo templo secreto de Gunung Kawi.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1518544801976-3e188ea7b5d3?w=900&q=85" alt="Palacio real balinés"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Acceso exclusivo</span>
+        <h3>Royal Palace Insider Tour</h3>
+        <p>Acceso privado al interior de un palacio real balinés en funcionamiento. Vestuario ceremonial auténtico, recorrido por el complejo con el personal del palacio, cena con un miembro de la familia real como upgrade.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=900&q=85" alt="Helicóptero sobre volcán"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Aéreo privado</span>
+        <h3>Helicóptero sobre Batur y Agung</h3>
+        <p>Vuelo privado sobre los grandes volcanes de Bali partiendo de Ubud. La caldera del Agung abierta bajo tus pies, el Batur al amanecer con la niebla llenando el lago del cráter, el Índico al horizonte. Ampliable a los tres lagos sagrados.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=900&q=85" alt="Arrozales Jatiluwih"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Patrimonio UNESCO</span>
+        <h3>Almuerzo secreto en Jatiluwih</h3>
+        <p>Las terrazas de arroz más espectaculares de Bali a los pies del Monte Batukaru. Ciclismo entre arrozales con guía experto, y al final: almuerzo privado en The Artist's Corner — un rincón oculto colina arriba con mesa en solitario y vistas al volcán.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="images/Sunset Cruise 3.jpg" alt="Crucero al atardecer Uluwatu"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Navegación privada</span>
+        <h3>Sunset cruise hasta Uluwatu</h3>
+        <p>Dos horas en barco privado desde Jimbaran hasta el templo sagrado de Uluwatu, colgado sobre los acantilados. Canapés, cócteles, y al atardecer una ceremonia de bendición balinesa a bordo con el capitán-sacerdote.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="images/COMO_Reset.jpg" alt="COMO Shambhala Estate"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Bienestar profundo</span>
+        <h3>COMO Shambhala Estate</h3>
+        <p>El referente absoluto del wellness en Indonesia, sobre el barranco del río Ayung en Ubud. Programas multi-día guiados — Detox, Nourish, Ayurveda — con terapeutas de nivel internacional. Los pájaros y el río no son decorado: son parte del protocolo.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ZONA 02 — JAVA -->
+<section class="zone">
+  <div class="zone-intro">
+    <div class="reveal">
+      <span class="zone-num">02 · Java</span>
+      <h2 class="zone-title">Templos, volcanes y <em>reinos milenarios</em></h2>
+    </div>
+    <p class="zone-desc reveal">La isla más poblada del mundo también es la que guarda los templos más grandes. Borobudur y Prambanan sobreviven desde el siglo VIII rodeados de volcanes activos, palacios sultanales y paisajes cinematográficos. Java es intensidad cultural.</p>
+  </div>
+  <div class="exp-list">
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1555400113-fc13d37cdfbd?w=900&q=85" alt="Borobudur al amanecer"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Acceso privilegiado · Amanjiwo</span>
+        <h3>Borobudur al amanecer en privado</h3>
+        <p>El templo budista más grande del mundo al alba, antes del primer autobús turístico. 2,5 millones de bloques de piedra volcánica, 432 budas mirando a los puntos cardinales, los volcanes Merapi y Merbabu emergiendo de la bruma. Con antropólogo residente.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1507501336603-6e31db2be093?w=900&q=85" alt="Globo sobre Borobudur"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Aéreo exclusivo</span>
+        <h3>Globo aerostático sobre Borobudur</h3>
+        <p>La única perspectiva que permite ver Borobudur como un todo — entender por qué los sacerdotes del siglo VIII lo diseñaron como un mandala cósmico visible solo desde arriba. Despegue al amanecer, champán a bordo, los volcanes Merapi y Merbabu al fondo.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1584715642381-6f1c4b452b1c?w=900&q=85" alt="Monte Ijen llama azul"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Fenómeno único en el mundo</span>
+        <h3>Monte Ijen — La llama azul</h3>
+        <p>Uno de los dos únicos lugares del planeta donde los gases sulfúricos arden azul eléctrico al contacto con el oxígeno. Ascenso nocturno privado a partir de medianoche, llamas de hasta 5 metros danzando en la caldera, y al alba el lago ácido turquesa revelándose.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1596437896032-4f5f7028fa95?w=900&q=85" alt="Monte Bromo al alba"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Expedición privada</span>
+        <h3>Monte Bromo — Mar de Arena al alba</h3>
+        <p>4x4 privado antes del amanecer cruzando el Mar de Arena — el suelo de una antigua caldera cubierto de ceniza volcánica, plano y lunar. Llegada al mirador cuando el cielo transita de morado a dorado. Cinco picos volcánicos emergiendo de la niebla.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1569408985218-b3db443fcafe?w=900&q=85" alt="Taman Sari"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Fuera de horario</span>
+        <h3>Taman Sari privado</h3>
+        <p>El Castillo del Agua del Sultán de Yogyakarta del siglo XVIII, pero sin turistas. Pase especial fuera del horario de apertura para recorrer las piscinas reales de agua perfumada y el laberinto subterráneo en completo silencio.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=900&q=85" alt="Safari Baluran"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Sorpresa geográfica</span>
+        <h3>Safari en "Africa van Java"</h3>
+        <p>Baluran: 25.000 hectáreas de sabana abierta en Java Oriental — tan parecida a África que los holandeses le pusieron ese nombre. Banteng, pavos reales, ciervos. Al atardecer: cócteles sundowner con la silueta del volcán Ijen al fondo.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ZONA 03 — KOMODO & FLORES -->
+<section class="zone">
+  <div class="zone-intro">
+    <div class="reveal">
+      <span class="zone-num">03 · Komodo & Flores</span>
+      <h2 class="zone-title">Dragones, mantas y <em>mares turquesa</em></h2>
+    </div>
+    <p class="zone-desc reveal">El archipiélago del este: islas que emergen del mar como joyas geológicas, playas rosas, el reptil más antiguo del planeta, y tres lagos volcánicos que cambian de color sin que la ciencia sepa explicar del todo por qué. Se recorre mejor en velero tradicional.</p>
+  </div>
+  <div class="exp-list">
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1601924287811-e34de5d17476?w=900&q=85" alt="Phinisi velero"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">El barco como destino</span>
+        <h3>Phinisi privado por Komodo</h3>
+        <p>Velero tradicional de dos mástiles de los Bugis de Sulawesi. 5 cabinas privadas, chef a bordo, compresor de buceo. Despertar cada mañana en una bahía distinta, sin lobby, sin otros huéspedes. Operadores: Mischief, Rascal, Aqua Blu.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=900&q=85" alt="Pink Beach"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Playa privada al amanecer</span>
+        <h3>Pink Beach antes que nadie</h3>
+        <p>Una de las siete playas de arena rosa del mundo. Llegada en phinisi privado al amanecer, antes que cualquier excursionista del día. La playa entera para ti durante horas. Snorkel directamente desde la orilla sobre jardines de coral.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=900&q=85" alt="Padar Island"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Panorámica irrepetible</span>
+        <h3>Cima de Padar antes del alba</h3>
+        <p>Senderismo nocturno de 45 minutos con linterna frontal. Llegada a la cresta justo cuando el sol asoma. Tres bahías en media luna reveladas debajo — una blanca, una negra volcánica, una rosa — rodeadas de mar turquesa. De las vistas más impresionantes del Sudeste Asiático.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1591864697899-deb5a54e7c87?w=900&q=85" alt="Dragón de Komodo"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Encuentro privado</span>
+        <h3>Dragones de Komodo con rangers</h3>
+        <p>El lagarto más grande del mundo — 3 metros, 70 kg, sin cambios desde el Pleistoceno. Seguimiento privado con rangers expertos por las sabanas de Komodo y Rinca. La lengua bífida probando el aire a tres metros. Pura prehistoria.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1625473928454-ec2a87cefbcc?w=900&q=85" alt="Lago Kelimutu"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Fenómeno geológico</span>
+        <h3>Kelimutu — Tres cráteres, tres colores</h3>
+        <p>En el corazón de Flores, tres lagos volcánicos adyacentes que cambian de color independientemente: turquesa, verde esmeralda, negro rojizo. Los Lio locales creen que son las moradas de los espíritus. Ascenso al amanecer para verlos iluminarse.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1543158266-0066955047b0?w=900&q=85" alt="TA'AKTANA Resort"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Base de lujo</span>
+        <h3>TA'AKTANA — Labuan Bajo</h3>
+        <p>Villas sobre el agua con vistas directas al Parque Nacional de Komodo y al Mar de Flores. El mejor alojamiento de base para explorar la región por día o como complemento al phinisi. Diseño contemporáneo, privacidad total.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ZONA 04 — KALIMANTAN / BORNEO -->
+<section class="zone">
+  <div class="zone-intro">
+    <div class="reveal">
+      <span class="zone-num">04 · Kalimantan (Borneo)</span>
+      <h2 class="zone-title">La selva más antigua <em>del mundo</em></h2>
+    </div>
+    <p class="zone-desc reveal">La parte indonesia de Borneo es una de las selvas tropicales más antiguas del planeta — 140 millones de años. Orangutanes salvajes, ríos sin fondo que se navegan en klotok, pueblos Dayak con tradiciones que casi nadie de fuera ha visto. Para quien busca Indonesia en estado absolutamente puro.</p>
+  </div>
+  <div class="exp-list">
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&q=85" alt="Klotok Tanjung Puting"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">La joya oculta de Borneo</span>
+        <h3>Klotok por Tanjung Puting</h3>
+        <p>Barcaza tradicional de dos plantas que navega silenciosamente por los ríos de la selva. Estaciones de alimentación donde los orangutanes se aproximan a metros de distancia. Probóscide, cigüeñas, pescadores reales. Ritmo de meditación en la selva más biodiversa del planeta.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1507041957456-9c397ce39c97?w=900&q=85" alt="Luciérnagas río"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Experiencia signature Kostuba</span>
+        <h3>Cena con luciérnagas</h3>
+        <p>Cena romántica en la cubierta del klotok mientras el río navega entre palmeras nipah que se iluminan con millones de luciérnagas sincronizadas. La escena más mágica de Indonesia. Chef privado, mesa en cubierta, el silencio de la selva.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1502303756781-9b2fbaa59b75?w=900&q=85" alt="Selva nocturna"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Aventura exclusiva</span>
+        <h3>Trek nocturno por la jungla</h3>
+        <p>Senderismo en la selva después del atardecer con guía local. Búhos, chotacabras, hongos luminiscentes, loris lentos, tarántulas. Con suerte: un tarsier (el primate más pequeño del mundo) o incluso un leopardo nublado. Otro mundo se enciende al caer la noche.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1555767886-7a0eee53b69c?w=900&q=85" alt="Pueblo Dayak"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Cultura ancestral</span>
+        <h3>Encuentro con los Dayak</h3>
+        <p>Los pueblos originarios de Borneo — cazadores-recolectores, guerreros, tatuadores intrincados. Visita con DMC responsable a aldeas tradicionales con longhouses comunales, música de sape, artesanía de mimbre. Un encuentro genuino con una civilización aislada hasta hace poco.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=900&q=85" alt="Rimba Eco Lodge"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Base en la selva</span>
+        <h3>Rimba Orangutan Eco Lodge</h3>
+        <p>Pabellones elevados sobre el río Sekonyer, en el borde del Parque Nacional de Tanjung Puting. Alojamiento base ideal para las salidas en klotok. Arquitectura integrada en la selva, sonidos de la selva como banda sonora permanente.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ZONA 05 — RAJA AMPAT -->
+<section class="zone">
+  <div class="zone-intro">
+    <div class="reveal">
+      <span class="zone-num">05 · Raja Ampat</span>
+      <h2 class="zone-title">El último <em>paraíso marino</em></h2>
+    </div>
+    <p class="zone-desc reveal">El archipiélago con más biodiversidad marina del planeta — 75% de todas las especies de coral conocidas, 1.600 especies de peces, el único lugar del mundo donde se puede nadar con tiburones ballena residentes todo el año. Remoto, exclusivo y todavía pristino.</p>
+  </div>
+  <div class="exp-list">
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="images/COMO_Explorer.jpg" alt="Misool Resort"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Isla privada</span>
+        <h3>Misool Resort</h3>
+        <p>Máximo 40 huéspedes, 4 empleados por huésped, 165 km del puerto más cercano. Situado dentro de su propia área marina de conservación privada. Conservation International: "uno de los sistemas de arrecife más prístinos que quedan en la Tierra". Acceso solo por vuelo desde Sorong.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=900&q=85" alt="Cabo Kri buceo"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Récord Guinness</span>
+        <h3>Cabo Kri — 374 especies en una inmersión</h3>
+        <p>El récord mundial de especies de peces contadas en un solo buceo. Una columna de agua que concentra más biodiversidad que cualquier otro punto del océano. Para buceadores experimentados: la inmersión más densa de vida marina del planeta.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=900&q=85" alt="Wayag desde el aire"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Aéreo privado</span>
+        <h3>Wayag desde el aire</h3>
+        <p>Las islas karst que son el sello visual de Raja Ampat — cúpulas de piedra caliza cubiertas de vegetación emergiendo del océano turquesa. Vistas desde el helicóptero con fotógrafo privado: una de las imágenes aéreas más fotografiadas de Asia. Desde tierra nunca se ve lo mismo.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1441932544586-45b4c8f0bc83?w=900&q=85" alt="Pájaro del paraíso"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Observación endémica</span>
+        <h3>Pájaro del Paraíso de Wilson</h3>
+        <p>Uno de los seres más extraordinarios del planeta — plumaje metálico turquesa, rojo y amarillo imposibles, cabeza celeste descubierta, danza de apareamiento ritualizada. Endémico de las islas de Raja Ampat. Observación al alba desde escondite, con ornitólogo local.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=85" alt="Tiburón ballena"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Único en el mundo</span>
+        <h3>Tiburones ballena en Cenderawasih</h3>
+        <p>La Bahía de Cenderawasih es el único lugar del planeta donde los tiburones ballena son residentes — no migratorios. Se puede nadar con ellos todo el año. Los bagans (plataformas de pesca tradicionales) atraen a estos gigantes dóciles de 12 metros.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=900&q=85" alt="Liveaboard privado"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Expedición de buceo</span>
+        <h3>Liveaboard privado 7–10 noches</h3>
+        <p>Embarcación charter para buceo. Itinerario a medida por los mejores sites del archipiélago — Blue Magic (mantas), Yenbuba Jetty (macro vida), Fam Islands. Fondeos en bahías desiertas, cenas bajo estrellas sin contaminación lumínica, guías de buceo de referencia mundial.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ZONA 06 — LOMBOK & SUMBA -->
+<section class="zone">
+  <div class="zone-intro">
+    <div class="reveal">
+      <span class="zone-num">06 · Lombok & Sumba</span>
+      <h2 class="zone-title">La Indonesia <em>sin masificar</em></h2>
+    </div>
+    <p class="zone-desc reveal">Las islas al este de Bali han mantenido todo lo que Bali ha perdido: ritmo pausado, playas desiertas, tradiciones vivas. Sumba es territorio animista con ceremonias megalíticas y el mejor hotel del mundo. Lombok es el paraíso alternativo al que Bali aspiraba a ser.</p>
+  </div>
+  <div class="exp-list">
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=900&q=85" alt="NIHI Sumba"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">#1 en el mundo según T+L</span>
+        <h3>NIHI Sumba — The Edge of Wildness</h3>
+        <p>567 hectáreas en la isla de Sumba. 28 villas dispersas por colinas y acantilados, ninguna a la vista de otra. Filosofía: "No AI. No filters. No added sound." Caballos en la playa, spa en medio del campo, bean-to-bar con cacao de la finca. El mejor hotel del mundo dos años consecutivos.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?w=900&q=85" alt="Occy's Left surf"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Ola privada</span>
+        <h3>Occy's Left</h3>
+        <p>La ola legendaria de Indonesia, accesible únicamente para huéspedes de NIHI. Pase diario limitado y exclusivo del resort. Una izquierda de clase mundial en una playa sin multitudes. Para surfistas avanzados que buscan la mejor ola privada del planeta.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=85" alt="Gili desierta"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Descubrimiento de nuestros partners</span>
+        <h3>Los Secret Secret Gilis</h3>
+        <p>Lombok tiene 34 gilis. En el suroeste hay un grupo de islas sin nombre que nuestro partner local descubrió por ser completamente vírgenes. Snorkel en Gili Rengit, descanso en Gili Layar, senderismo a la cima. No están en ningún mapa turístico.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1591122947157-26bad3a117d2?w=900&q=85" alt="Tejido ikat"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Arte tradicional</span>
+        <h3>Tenun Ikat con artesanas Sumbanesas</h3>
+        <p>Taller privado con las artesanas del pueblo en el arte del tejido de seda a mano — tan complejo que una sola pieza puede tardar un año en completarse. Aprendizaje del proceso completo: desde el tinte natural hasta el telar tradicional.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1519834022362-8b9f8d6094c7?w=900&q=85" alt="Monte Rinjani"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Aéreo exclusivo</span>
+        <h3>Monte Rinjani en helicóptero</h3>
+        <p>El segundo volcán más alto de Indonesia. La travesía a pie requiere varios días de esfuerzo extremo. En helicóptero: sobrevuelo en una sola mañana de gargantas profundas, cascadas, acantilados y el lago del cráter Segara Anak — uno de los más bellos del mundo.</p>
+      </div>
+    </article>
+
+    <article class="exp-item reveal">
+      <div class="exp-item-img"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=900&q=85" alt="Pescador Lombok"></div>
+      <div class="exp-item-body">
+        <span class="exp-item-label">Del mar al plato</span>
+        <h3>Aldea de pescadores de Montong</h3>
+        <p>Traslado privado antes del amanecer. Salida al mar en barca con los pescadores para ver la pesca del día. Regreso con ellos a una casa familiar y preparación conjunta del brunch — del mar al plato en dos horas. Comida con historia real.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="exp-cta">
+  <h2>¿Te ha movido <em>alguna</em>?</h2>
+  <p>Estas son solo algunas de las experiencias que diseñamos para nuestros viajeros. Cuéntanos cuál te ha llamado la atención y construimos tu viaje a Indonesia a partir de ahí.</p>
+  <a href="index.html#contact" class="btn-primary">Diseña tu viaje</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="images/BASSA_logo_horizontal_blanco.png" alt="Bassa Travels" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-family:var(--font-display);font-size:1.2rem;color:rgba(255,255,255,0.72);letter-spacing:0.15em;&quot;>BASSA</span>'">
+  </div>
+  <div class="footer-copy">© 2026 Bassa Travels · Agencia boutique de slow luxury en Indonesia</div>
+  <div class="footer-nav">
+    <a href="index.html#about">Sobre Bassa</a>
+    <a href="index.html#how">Cómo funciona</a>
+    <a href="index.html#contact">Contacto</a>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

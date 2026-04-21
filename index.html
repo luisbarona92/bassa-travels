@@ -153,6 +153,22 @@
   .exp-card p { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.6; max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
   .exp-card:hover p { max-height: 210px; }
   .exp-dur { display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 0.6rem; }
+  .exp-more-wrap { text-align: center; margin-top: 3.5rem; }
+  .exp-more-link {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(198,161,92,0.4);
+    transition: border-color 0.3s, letter-spacing 0.3s;
+  }
+  .exp-more-link:hover { border-bottom-color: var(--gold); letter-spacing: 0.05em; }
+  .exp-more-link .arrow { display: inline-block; margin-left: 0.5rem; transition: transform 0.3s; }
+  .exp-more-link:hover .arrow { transform: translateX(4px); }
 
   /* ── DESTINOS ── */
   .destinos { background: var(--deep); color: white; padding-top: 5rem; }
@@ -547,6 +563,9 @@
       </div>
     </div>
   </div>
+  <div class="exp-more-wrap reveal">
+    <a href="experiencias.html" class="exp-more-link" data-i18n-html="exp.more">Ver todas las experiencias <span class="arrow">&rarr;</span></a>
+  </div>
 </section>
 
 <!-- DESTINOS -->
@@ -828,6 +847,7 @@
       'about.badge': '\u201cCada viaje es tan único como la persona que lo vive\u201d',
       'exp.tag': 'Experiencias', 'exp.h2': 'Momentos que<br><em>no se olvidan</em>',
       'exp.intro': '5 ideas para inspirarte con Indonesia. Tu viaje Bassa lo construiremos contigo, a medida y sin límites.',
+      'exp.more': 'Ver todas las experiencias <span class="arrow">&rarr;</span>',
       'exp.reset.tag': 'El slow luxury más puro de Bali',
       'exp.reset.p': '· Villa privada con piscina infinita<br>· Masajes balineses al amanecer<br>· Gastronomía de autor en campo de arroz<br><span class="exp-dur">7–12 días</span>',
       'exp.moon.tag': 'Romanticismo sin filtros en Bali',
@@ -918,6 +938,7 @@
       'about.badge': '\u201cEvery trip is as unique as the person who lives it\u201d',
       'exp.tag': 'Experiences', 'exp.h2': 'Moments you<br><em>won\'t forget</em>',
       'exp.intro': '5 ideas to inspire your Indonesia. Your Bassa trip will be built with you, bespoke and without limits.',
+      'exp.more': 'See all experiences <span class="arrow">&rarr;</span>',
       'exp.reset.tag': 'The purest slow luxury in Bali',
       'exp.reset.p': '· Private villa with infinity pool<br>· Balinese massages at dawn<br>· Chef\'s table dining in a rice paddy<br><span class="exp-dur">7–12 days</span>',
       'exp.moon.tag': 'Unfiltered romance in Bali',
