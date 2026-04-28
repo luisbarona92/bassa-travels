@@ -158,15 +158,15 @@
     display: inline-block;
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 1rem;
-    color: var(--gold);
+    font-size: 1.1rem;
+    color: white;
     text-decoration: none;
     letter-spacing: 0.02em;
     padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(198,161,92,0.4);
-    transition: border-color 0.3s, letter-spacing 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.45);
+    transition: border-color 0.3s, letter-spacing 0.3s, color 0.3s;
   }
-  .exp-more-link:hover { border-bottom-color: var(--gold); letter-spacing: 0.05em; }
+  .exp-more-link:hover { color: var(--gold); border-bottom-color: var(--gold); letter-spacing: 0.05em; }
   .exp-more-link .arrow { display: inline-block; margin-left: 0.5rem; transition: transform 0.3s; }
   .exp-more-link:hover .arrow { transform: translateX(4px); }
 
@@ -564,7 +564,7 @@
     </div>
   </div>
   <div class="exp-more-wrap reveal">
-    <a href="experiencias.html" class="exp-more-link" data-i18n-html="exp.more">Ver todas las experiencias <span class="arrow">&rarr;</span></a>
+    <a href="experiencias.html" class="exp-more-link" target="_blank" rel="noopener" data-i18n-html="exp.more">Ver todas las experiencias <span class="arrow">&rarr;</span></a>
   </div>
 </section>
 
