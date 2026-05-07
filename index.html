@@ -268,6 +268,8 @@
     cursor: pointer; transition: background 0.3s; border-radius: 2px; margin-top: 0.5rem;
   }
   .btn-form:hover { background: #b35e38; }
+  .optional-tag { color: rgba(255,255,255,0.4); font-weight: 300; font-size: 0.78em; margin-left: 4px; letter-spacing: normal; text-transform: none; }
+  .form-disclaimer { color: rgba(255,255,255,0.4); font-size: 0.7rem; line-height: 1.55; margin-top: 1rem; font-weight: 300; font-style: italic; }
 
   /* ── FAQ ── */
   .faq { background: var(--warm-white); }
@@ -686,7 +688,7 @@
   <div class="contact-left reveal">
     <span class="section-tag" data-i18n="contact.tag">Contacto</span>
     <h2 class="section-title" data-i18n-html="contact.h2">¿Te ayudamos a<br><em>diseñar tu viaje</em><br>a Indonesia?</h2>
-    <p class="contact-intro" data-i18n-html="contact.intro">Un asesor de Bassa Travels se pondrá en contacto contigo para confeccionar el gran viaje a medida que tienes en mente. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.</p>
+    <p class="contact-intro" data-i18n-html="contact.intro">Bassa Travels está finalizando su puesta en marcha. Déjanos tus datos y te contactaremos personalmente en cuanto estemos plenamente operativos para ayudarte a diseñar tu viaje a medida. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.</p>
     <div class="contact-promise">
       <div class="promise-item">
         <span class="promise-icon">✦</span>
@@ -694,7 +696,7 @@
       </div>
       <div class="promise-item">
         <span class="promise-icon">✦</span>
-        <div class="promise-text"><h5 data-i18n="contact.p2.h5">Respuesta en 24h</h5><p data-i18n="contact.p2.p">Te contactamos el siguiente día hábil para agendar vuestra llamada.</p></div>
+        <div class="promise-text"><h5 data-i18n="contact.p2.h5">Lista de pre-apertura</h5><p data-i18n="contact.p2.p">Estamos finalizando trámites administrativos. Te avisaremos personalmente en cuanto arranque la operativa.</p></div>
       </div>
       <div class="promise-item">
         <span class="promise-icon">✦</span>
@@ -751,18 +753,19 @@
         </div>
       </div>
       <div class="form-field">
-        <label data-i18n="form.whatsapp.label">WhatsApp</label>
+        <label data-i18n-html="form.whatsapp.label">WhatsApp <span class="optional-tag">(opcional)</span></label>
         <input type="tel" name="whatsapp" placeholder="+34 600 000 000">
       </div>
       <div class="form-field">
         <label data-i18n="form.imprescindibles.label">Imprescindibles / preferencias</label>
         <textarea name="imprescindibles" data-i18n-ph="form.imprescindibles.ph" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
-      <button type="submit" class="btn-form" data-i18n="form.submit">Enviar consulta →</button>
+      <button type="submit" class="btn-form" data-i18n="form.submit">Apuntarme a la pre-apertura →</button>
+      <p class="form-disclaimer" data-i18n="form.disclaimer">El envío de este formulario no constituye contratación de servicios ni oferta vinculante. Tus datos serán tratados conforme al RGPD únicamente para avisarte del lanzamiento.</p>
     </form>
     <div id="form-success" style="display:none; text-align:center; padding:2.5rem 0;">
-      <p style="color:var(--gold); font-family:var(--font-display); font-size:1.3rem; font-weight:300; margin-bottom:0.5rem;" data-i18n="form.success.title">Consulta recibida</p>
-      <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; line-height:1.6;" data-i18n-html="form.success.p">Te escribimos en menos de 24h.<br>Revisa también tu carpeta de spam.</p>
+      <p style="color:var(--gold); font-family:var(--font-display); font-size:1.3rem; font-weight:300; margin-bottom:0.5rem;" data-i18n="form.success.title">Estás en la lista</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; line-height:1.6;" data-i18n-html="form.success.p">Te avisaremos personalmente en cuanto Bassa Travels esté plenamente operativo.<br>Gracias por tu paciencia.</p>
     </div>
   </div>
 </section>
@@ -888,9 +891,9 @@
       'partner.strip': 'En Indonesia, contamos con receptivos locales de confianza, seleccionados por su acceso a experiencias exclusivas, su conocimiento profundo del país y sus personas.',
       'contact.tag': 'Contacto',
       'contact.h2': '¿Te ayudamos a<br><em>diseñar tu viaje</em><br>a Indonesia?',
-      'contact.intro': 'Un asesor de Bassa Travels se pondrá en contacto contigo para confeccionar el gran viaje a medida que tienes en mente. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.',
+      'contact.intro': 'Bassa Travels está finalizando su puesta en marcha. Déjanos tus datos y te contactaremos personalmente en cuanto estemos plenamente operativos para ayudarte a diseñar tu viaje a medida. Los viajes Bassa parten desde <strong style="color:white">3.500 € por persona</strong> en servicios terrestres.',
       'contact.p1.h5': 'Sin compromiso', 'contact.p1.p': 'La consulta inicial es completamente gratuita y sin ningún tipo de compromiso.',
-      'contact.p2.h5': 'Respuesta en 24h', 'contact.p2.p': 'Te contactamos el siguiente día hábil para agendar vuestra llamada.',
+      'contact.p2.h5': 'Lista de pre-apertura', 'contact.p2.p': 'Estamos finalizando trámites administrativos. Te avisaremos personalmente en cuanto arranque la operativa.',
       'contact.p3.h5': 'Soporte cercano', 'contact.p3.p': 'Te acompañamos antes, durante y después del viaje con atención directa y personalizada.',
       'form.tipo.label': '¿Qué tipo de Indonesia quieres?',
       'form.tipo.opt0': 'Cuéntanos tu idea...', 'form.tipo.opt1': 'Bassa Reset — Bali interior', 'form.tipo.opt2': 'Bassa Moon — Bali premium',
@@ -905,11 +908,12 @@
       'form.dias.opt7': '21 días o más', 'form.dias.opt8': 'Aún no lo sé, me ayudáis',
       'form.nombre.label': 'Nombre', 'form.nombre.ph': 'Tu nombre',
       'form.email.label': 'Email', 'form.email.ph': 'tu@email.com',
-      'form.whatsapp.label': 'WhatsApp',
+      'form.whatsapp.label': 'WhatsApp <span class="optional-tag">(opcional)</span>',
       'form.imprescindibles.label': 'Imprescindibles / preferencias',
       'form.imprescindibles.ph': 'Cuéntanos qué no puede faltar en tu viaje ideal...',
-      'form.submit': 'Enviar consulta →', 'form.sending': 'Enviando...', 'form.error': 'Error al enviar, inténtalo de nuevo',
-      'form.success.title': 'Consulta recibida', 'form.success.p': 'Te escribimos en menos de 24h.<br>Revisa también tu carpeta de spam.',
+      'form.submit': 'Apuntarme a la pre-apertura →', 'form.sending': 'Enviando...', 'form.error': 'Error al enviar, inténtalo de nuevo',
+      'form.disclaimer': 'El envío de este formulario no constituye contratación de servicios ni oferta vinculante. Tus datos serán tratados conforme al RGPD únicamente para avisarte del lanzamiento.',
+      'form.success.title': 'Estás en la lista', 'form.success.p': 'Te avisaremos personalmente en cuanto Bassa Travels esté plenamente operativo.<br>Gracias por tu paciencia.',
       'faq.tag': 'FAQ', 'faq.h2': 'Preguntas<br><em>frecuentes</em>',
       'faq.q1': '¿Qué tipo de viajes hace Bassa Travels?', 'faq.a1': 'Viajes slow luxury en Indonesia: itinerarios privados, hoteles con criterio, experiencias bien trabajadas. Todo a medida, sin paquetes cerrados ni grupos.',
       'faq.q2': '¿Cómo se diseña el viaje tras el formulario?', 'faq.a2': 'Formulario → llamada breve → propuesta con ruta y hoteles → ajustes → reservas y soporte. Un proceso premium e iterativo.',
@@ -979,9 +983,9 @@
       'partner.strip': 'In Indonesia, we work with trusted local partners, selected for their access to exclusive experiences, their deep knowledge of the country and its people.',
       'contact.tag': 'Contact',
       'contact.h2': 'Can we help you<br><em>design your trip</em><br>to Indonesia?',
-      'contact.intro': 'A Bassa Travels advisor will get in touch to craft the bespoke trip you have in mind. Bassa trips start from <strong style="color:white">\u20AC3,500 per person</strong> in land services.',
+      'contact.intro': 'Bassa Travels is finalising its launch. Leave us your details and we\'ll personally get in touch as soon as we\'re fully operational to help you design your bespoke trip. Bassa trips start from <strong style="color:white">\u20AC3,500 per person</strong> in land services.',
       'contact.p1.h5': 'No commitment', 'contact.p1.p': 'The initial consultation is completely free and with no commitment whatsoever.',
-      'contact.p2.h5': 'Response within 24h', 'contact.p2.p': 'We\'ll contact you the next working day to schedule your call.',
+      'contact.p2.h5': 'Pre-launch list', 'contact.p2.p': 'We\'re finalising administrative formalities. We\'ll personally let you know as soon as we go live.',
       'contact.p3.h5': 'Close support', 'contact.p3.p': 'We support you before, during and after the trip with direct, personalised attention.',
       'form.tipo.label': 'What kind of Indonesia do you want?',
       'form.tipo.opt0': 'Tell us your idea...', 'form.tipo.opt1': 'Bassa Reset — Bali interior', 'form.tipo.opt2': 'Bassa Moon — Premium Bali',
@@ -996,11 +1000,12 @@
       'form.dias.opt7': '21 days or more', 'form.dias.opt8': 'Not sure yet, help me',
       'form.nombre.label': 'Name', 'form.nombre.ph': 'Your name',
       'form.email.label': 'Email', 'form.email.ph': 'your@email.com',
-      'form.whatsapp.label': 'WhatsApp',
+      'form.whatsapp.label': 'WhatsApp <span class="optional-tag">(optional)</span>',
       'form.imprescindibles.label': 'Must-haves / preferences',
       'form.imprescindibles.ph': 'Tell us what your ideal trip can\'t be without...',
-      'form.submit': 'Send enquiry \u2192', 'form.sending': 'Sending...', 'form.error': 'Error sending, please try again',
-      'form.success.title': 'Enquiry received', 'form.success.p': 'We\'ll write to you within 24h.<br>Also check your spam folder.',
+      'form.submit': 'Join the pre-launch list \u2192', 'form.sending': 'Sending...', 'form.error': 'Error sending, please try again',
+      'form.disclaimer': 'Submitting this form does not constitute a service contract or binding offer. Your data will be processed in accordance with the GDPR solely to notify you of our launch.',
+      'form.success.title': 'You\'re on the list', 'form.success.p': 'We\'ll personally let you know as soon as Bassa Travels is fully operational.<br>Thank you for your patience.',
       'faq.tag': 'FAQ', 'faq.h2': 'Frequently<br><em>asked questions</em>',
       'faq.q1': 'What kind of trips does Bassa Travels offer?', 'faq.a1': 'Slow luxury trips to Indonesia: private itineraries, curated hotels, well-crafted experiences. All bespoke, no fixed packages or groups.',
       'faq.q2': 'How is the trip designed after the form?', 'faq.a2': 'Form \u2192 brief call \u2192 proposal with route and hotels \u2192 adjustments \u2192 bookings and support. A premium, iterative process.',
