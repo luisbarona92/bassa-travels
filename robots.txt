@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://bassatravels.com/sitemap.xml
