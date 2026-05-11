@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog — Guías de viaje a Indonesia | Bassa Travels</title>
+<meta name="description" content="Guías honestas para planificar tu viaje a Bali, Java, Lombok y el resto de Indonesia: itinerarios, presupuestos, visados, clima y consejos de slow luxury.">
+<link rel="canonical" href="https://bassatravels.com/blog/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — Guías de viaje a Indonesia | Bassa Travels">
+<meta property="og:description" content="Guías honestas para planificar tu viaje a Indonesia: itinerarios, presupuestos, clima y consejos de slow luxury.">
+<meta property="og:url" content="https://bassatravels.com/blog/">
+<meta property="og:image" content="https://bassatravels.com/Logo_gold_crop.svg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream:#F5F0E8; --sand:#E8DDD0; --terracotta:#C4724A; --deep:#1C1A17;
+    --gold:#B89B6A; --warm-white:#FAF8F4; --muted:#7A7068;
+    --font-display:'Cormorant Garamond',serif; --font-body:'DM Sans',sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--warm-white); color: var(--deep); font-family: var(--font-body); font-weight: 300; }
+  a { color: inherit; }
+
+  /* Header */
+  header.site-header { background: var(--deep); padding: 1.4rem 4rem; display: flex; align-items: center; justify-content: space-between; }
+  header.site-header img { height: 34px; width: auto; opacity: 0.85; }
+  header.site-header nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.3s; margin-left: 1.8rem; }
+  header.site-header nav a:hover { color: white; }
+  header.site-header nav a.active { color: white; }
+
+  /* Intro */
+  .blog-intro { max-width: 880px; margin: 0 auto; padding: 6rem 2rem 3rem; text-align: center; }
+  .blog-tag { font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; display: block; }
+  .blog-intro h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.4rem; }
+  .blog-intro h1 em { font-style: italic; color: var(--terracotta); }
+  .blog-intro p { color: var(--muted); font-size: 1.02rem; line-height: 1.8; max-width: 620px; margin: 0 auto; }
+
+  /* Post list */
+  .post-list { max-width: 880px; margin: 0 auto; padding: 2rem 2rem 6rem; }
+  .post-card { display: grid; grid-template-columns: 220px 1fr; gap: 2.2rem; padding: 2.5rem 0; border-top: 1px solid var(--sand); transition: opacity 0.3s; }
+  .post-card:last-of-type { border-bottom: 1px solid var(--sand); }
+  .post-card:hover { opacity: 0.85; }
+  .post-card .post-thumb {
+    aspect-ratio: 4/3; background: linear-gradient(135deg, var(--sand) 0%, var(--gold) 100%);
+    border-radius: 2px; position: relative; overflow: hidden;
+  }
+  .post-card .post-thumb.bali {
+    background: linear-gradient(180deg, rgba(28,26,23,0.15), rgba(28,26,23,0.55)),
+                url('https://images.unsplash.com/photo-1604999333679-b86d54738315?w=600&q=80') center/cover;
+  }
+  .post-card .post-thumb span {
+    position: absolute; bottom: 0.8rem; left: 0.9rem;
+    color: white; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .post-card .post-meta { display: flex; gap: 1rem; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; }
+  .post-card .post-meta .dot { color: var(--gold); }
+  .post-card h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 400; line-height: 1.15; margin-bottom: 0.7rem; }
+  .post-card h2 a { text-decoration: none; transition: color 0.3s; }
+  .post-card h2 a:hover { color: var(--terracotta); }
+  .post-card p { color: var(--muted); font-size: 0.93rem; line-height: 1.7; margin-bottom: 1rem; }
+  .post-card .read-more { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terracotta); text-decoration: none; font-weight: 500; }
+  .post-card .read-more:hover { text-decoration: underline; }
+
+  /* Footer CTA */
+  .blog-footer { background: var(--cream); padding: 5rem 2rem; text-align: center; }
+  .blog-footer h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 300; margin-bottom: 1rem; }
+  .blog-footer h2 em { font-style: italic; color: var(--terracotta); }
+  .blog-footer p { color: var(--muted); margin-bottom: 2rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .btn-primary {
+    display: inline-block; background: var(--terracotta); color: white; text-decoration: none;
+    padding: 1rem 2.2rem; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 500; border-radius: 2px; transition: background 0.3s, transform 0.2s;
+  }
+  .btn-primary:hover { background: #b35e38; transform: translateY(-1px); }
+
+  /* Bottom legal footer */
+  footer.legal { background: var(--deep); color: rgba(255,255,255,0.55); padding: 2.5rem 4rem; text-align: center; font-size: 0.78rem; }
+  footer.legal a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 0.6rem; }
+  footer.legal a:hover { color: white; }
+
+  @media (max-width: 720px) {
+    header.site-header { padding: 1.2rem 1.5rem; }
+    header.site-header nav a { margin-left: 1rem; }
+    .blog-intro { padding: 4rem 1.5rem 2rem; }
+    .post-list { padding: 1rem 1.5rem 4rem; }
+    .post-card { grid-template-columns: 1fr; gap: 1.2rem; padding: 2rem 0; }
+    .post-card .post-thumb { aspect-ratio: 16/9; }
+    footer.legal { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/"><img src="/Logo_white_crop.svg" alt="Bassa Travels"></a>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="/experiencias.html">Experiencias</a>
+    <a href="/blog/" class="active">Blog</a>
+  </nav>
+</header>
+
+<section class="blog-intro">
+  <span class="blog-tag">Diario de viaje</span>
+  <h1>Guías honestas para viajar a <em>Indonesia</em></h1>
+  <p>Climas, presupuestos reales, visados, itinerarios probados y los pequeños detalles que sólo cuentan los que han estado. Sin filtros de redes ni listicles vacíos.</p>
+</section>
+
+<section class="post-list">
+
+  <article class="post-card">
+    <a href="/blog/mejor-epoca-para-ir-a-bali.html" class="post-thumb bali" aria-label="Mejor época para ir a Bali">
+      <span>Clima</span>
+    </a>
+    <div>
+      <div class="post-meta">
+        <span>11 mayo 2026</span>
+        <span class="dot">•</span>
+        <span>9 min de lectura</span>
+      </div>
+      <h2><a href="/blog/mejor-epoca-para-ir-a-bali.html">Mejor época para ir a Bali: guía mes a mes</a></h2>
+      <p>Cuánto llueve cada mes, cuándo hay multitudes, cuándo suben los precios y qué mes elegir según el tipo de viaje (surf, buceo, luna de miel, familia). Con datos reales de pluviometría y temperatura.</p>
+      <a href="/blog/mejor-epoca-para-ir-a-bali.html" class="read-more">Leer artículo →</a>
+    </div>
+  </article>
+
+</section>
+
+<section class="blog-footer">
+  <h2>¿Listo para diseñar <em>tu</em> viaje?</h2>
+  <p>Cuéntanos cómo te imaginas Indonesia y te proponemos una ruta a medida, sin compromiso.</p>
+  <a href="/#contact" class="btn-primary">Hablar con nosotros</a>
+</section>
+
+<footer class="legal">
+  © 2026 Bassa Travels S.L. ·
+  <a href="/legal.html">Aviso legal</a> ·
+  <a href="/privacidad.html">Privacidad</a> ·
+  <a href="/cookies.html">Cookies</a> ·
+  <a href="/condiciones.html">Condiciones</a>
+</footer>
+
+</body>
+</html>

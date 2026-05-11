@@ -13,6 +13,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bassatravels.com/blog/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bassatravels.com/blog/mejor-epoca-para-ir-a-bali.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bassatravels.com/privacidad.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>yearly</changefreq>
