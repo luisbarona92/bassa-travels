@@ -4,12 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="hf9PVRkEg6UAT8H1GV_doa20BtA9EEdJ7KAl30sIb1o">
+
 <title>Bassa Travels — Slow Luxury en Indonesia</title>
+<meta name="description" content="Agencia boutique de slow luxury especializada en viajes a medida a Indonesia: Bali, Java, Komodo y Raja Ampat. Diseño personalizado y soporte en español.">
 <link rel="canonical" href="https://bassatravels.com/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#1C1A17">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Bassa Travels">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bassa Travels">
+<meta property="og:title" content="Bassa Travels — Slow Luxury en Indonesia">
+<meta property="og:description" content="Agencia boutique de slow luxury especializada en viajes a medida a Indonesia: Bali, Java, Komodo y Raja Ampat.">
+<meta property="og:url" content="https://bassatravels.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bassa Travels — Slow Luxury en Indonesia">
+<meta name="twitter:description" content="Agencia boutique de slow luxury especializada en viajes a medida a Indonesia.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=jpg">
+
+<!-- Performance: preconnect + LCP image preload -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=70&fm=webp&auto=compress" fetchpriority="high">
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+
+<!-- Structured data: TravelAgency -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Bassa Travels",
+  "alternateName": "Bassa Travels S.L.",
+  "url": "https://bassatravels.com/",
+  "logo": "https://bassatravels.com/Logo_gold_crop.svg",
+  "image": "https://bassatravels.com/Logo_gold_crop.svg",
+  "description": "Agencia boutique de slow luxury especializada en viajes a medida a Indonesia: Bali, Java, Komodo y Raja Ampat.",
+  "email": "hola@bassatravels.com",
+  "areaServed": [
+    { "@type": "Country", "name": "Indonesia" },
+    { "@type": "Place", "name": "Bali" },
+    { "@type": "Place", "name": "Java" },
+    { "@type": "Place", "name": "Komodo" },
+    { "@type": "Place", "name": "Raja Ampat" }
+  ],
+  "inLanguage": ["es", "en"],
+  "knowsLanguage": ["es", "en"]
+}
+</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -105,7 +154,7 @@
   .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920&q=85') center 45%/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=70&fm=webp&auto=compress') center 45%/cover no-repeat;
   }
   .hero-bg::after {
     content: ''; position: absolute; inset: 0;
@@ -151,7 +200,7 @@
   .about-text p { color: var(--muted); line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem; }
   .about-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 3rem; }
   .pillar { padding: 0.75rem; border-top: 2px solid var(--terracotta); background: var(--cream); }
-  .pillar h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.35rem; }
+  .pillar h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.35rem; }
   .pillar p { font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
   .about-visual { position: relative; height: 520px; }
   .about-visual img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
@@ -236,7 +285,7 @@
   .step:hover { border-top-color: var(--terracotta); transform: translateY(-4px); }
   .step-num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; color: var(--sand); line-height: 1; margin-bottom: 0.4rem; }
   .step-time { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.6rem; }
-  .step h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.4rem; }
+  .step h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.4rem; }
   .step p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
 
   /* ── PARTNER STRIP ── */
@@ -544,9 +593,9 @@
     <p data-i18n="about.p1">Bassa Travels es una agencia boutique especializada en slow luxury en Indonesia. Diseñamos itinerarios a medida, con criterio de selección de hoteles y soporte cercano en español antes y durante el viaje.</p>
     <p data-i18n="about.p2">Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.</p>
     <div class="about-pillars">
-      <div class="pillar"><h4 data-i18n-html="about.pillar1.h4">Lujo<br>Personalizado</h4><p data-i18n="about.pillar1.p">Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p></div>
-      <div class="pillar"><h4 data-i18n-html="about.pillar2.h4">Agenda<br>Selectiva</h4><p data-i18n="about.pillar2.p">Trabajamos con un número limitado de viajeros al año para dedicarle a cada viaje la atención que merece.</p></div>
-      <div class="pillar"><h4 data-i18n-html="about.pillar3.h4">Criterio<br>de Selección</h4><p data-i18n="about.pillar3.p">Solo hoteles que conocemos. Solo experiencias que tienen sentido para ti.</p></div>
+      <div class="pillar"><h3 data-i18n-html="about.pillar1.h4">Lujo<br>Personalizado</h3><p data-i18n="about.pillar1.p">Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p></div>
+      <div class="pillar"><h3 data-i18n-html="about.pillar2.h4">Agenda<br>Selectiva</h3><p data-i18n="about.pillar2.p">Trabajamos con un número limitado de viajeros al año para dedicarle a cada viaje la atención que merece.</p></div>
+      <div class="pillar"><h3 data-i18n-html="about.pillar3.h4">Criterio<br>de Selección</h3><p data-i18n="about.pillar3.p">Solo hoteles que conocemos. Solo experiencias que tienen sentido para ti.</p></div>
     </div>
   </div>
   <div class="about-visual reveal" style="transition-delay:0.2s">
@@ -693,25 +742,25 @@
         <div class="step reveal">
           <div class="step-num">01</div>
           <div class="step-time" data-i18n="how.step1.time">60 segundos</div>
-          <h4 data-i18n="how.step1.h4">Formulario</h4>
+          <h3 data-i18n="how.step1.h4">Formulario</h3>
           <p data-i18n="how.step1.p">Fechas, estilo y tipo de viaje. Lo justo para empezar.</p>
         </div>
         <div class="step reveal" style="transition-delay:0.1s">
           <div class="step-num">02</div>
           <div class="step-time" data-i18n="how.step2.time">15–20 min</div>
-          <h4 data-i18n="how.step2.h4">Llamada breve</h4>
+          <h3 data-i18n="how.step2.h4">Llamada breve</h3>
           <p data-i18n="how.step2.p">Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.</p>
         </div>
         <div class="step reveal" style="transition-delay:0.2s">
           <div class="step-num">03</div>
           <div class="step-time" data-i18n="how.step3.time">A medida</div>
-          <h4 data-i18n="how.step3.h4">Propuesta</h4>
+          <h3 data-i18n="how.step3.h4">Propuesta</h3>
           <p data-i18n="how.step3.p">Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.</p>
         </div>
         <div class="step reveal" style="transition-delay:0.3s">
           <div class="step-num">04</div>
           <div class="step-time" data-i18n="how.step4.time">Nos encargamos</div>
-          <h4 data-i18n="how.step4.h4">Viaje definido</h4>
+          <h3 data-i18n="how.step4.h4">Viaje definido</h3>
           <p data-i18n="how.step4.p">Bloqueamos servicios y te acompañamos antes y durante el viaje.</p>
         </div>
       </div>
@@ -756,8 +805,8 @@
         <input type="text" name="website" tabindex="-1" autocomplete="off">
       </div>
       <div class="form-field">
-        <label data-i18n="form.companion.label">¿Con quién viajas?</label>
-        <select name="companion">
+        <label for="f-companion" data-i18n="form.companion.label">¿Con quién viajas?</label>
+        <select id="f-companion" name="companion">
           <option value="" data-i18n="form.companion.opt0">Selecciona una opción</option>
           <option data-i18n="form.companion.opt1">En pareja</option>
           <option data-i18n="form.companion.opt2">Luna de miel</option>
@@ -768,12 +817,12 @@
       </div>
       <div class="form-row">
         <div class="form-field">
-          <label data-i18n="form.salida.label">Salida aproximada</label>
-          <input type="month" name="salida">
+          <label for="f-salida" data-i18n="form.salida.label">Salida aproximada</label>
+          <input id="f-salida" type="month" name="salida">
         </div>
         <div class="form-field">
-          <label data-i18n="form.dias.label">Días de viaje</label>
-          <select name="dias">
+          <label for="f-dias" data-i18n="form.dias.label">Días de viaje</label>
+          <select id="f-dias" name="dias">
             <option value="" data-i18n="form.dias.opt0">¿Cuántos días?</option>
             <option data-i18n="form.dias.opt1">7 días</option>
             <option data-i18n="form.dias.opt2">10 días</option>
@@ -788,21 +837,21 @@
       </div>
       <div class="form-row">
         <div class="form-field">
-          <label data-i18n="form.nombre.label">Nombre</label>
-          <input type="text" name="nombre" data-i18n-ph="form.nombre.ph" placeholder="Tu nombre" required>
+          <label for="f-nombre" data-i18n="form.nombre.label">Nombre</label>
+          <input id="f-nombre" type="text" name="nombre" data-i18n-ph="form.nombre.ph" placeholder="Tu nombre" required>
         </div>
         <div class="form-field">
-          <label data-i18n="form.email.label">Email</label>
-          <input type="email" name="email" data-i18n-ph="form.email.ph" placeholder="tu@email.com" required>
+          <label for="f-email" data-i18n="form.email.label">Email</label>
+          <input id="f-email" type="email" name="email" data-i18n-ph="form.email.ph" placeholder="tu@email.com" required>
         </div>
       </div>
       <div class="form-field">
-        <label data-i18n-html="form.whatsapp.label">WhatsApp <span class="optional-tag">(opcional)</span></label>
-        <input type="tel" name="whatsapp" placeholder="+34 600 000 000">
+        <label for="f-whatsapp" data-i18n-html="form.whatsapp.label">WhatsApp <span class="optional-tag">(opcional)</span></label>
+        <input id="f-whatsapp" type="tel" name="whatsapp" placeholder="+34 600 000 000">
       </div>
       <div class="form-field">
-        <label data-i18n="form.imprescindibles.label">Imprescindibles / preferencias</label>
-        <textarea name="imprescindibles" data-i18n-ph="form.imprescindibles.ph" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
+        <label for="f-imprescindibles" data-i18n="form.imprescindibles.label">Imprescindibles / preferencias</label>
+        <textarea id="f-imprescindibles" name="imprescindibles" data-i18n-ph="form.imprescindibles.ph" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
       <button type="submit" class="btn-form" data-i18n="form.submit">Apuntarme a la pre-apertura →</button>
       <p class="form-disclaimer" data-i18n="form.disclaimer">El envío de este formulario no constituye contratación de servicios ni oferta vinculante. Tus datos serán tratados conforme al RGPD únicamente para avisarte del lanzamiento.</p>
