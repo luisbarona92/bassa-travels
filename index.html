@@ -31,7 +31,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=70&fm=webp&auto=compress" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 900px)" href="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=65&fm=webp&auto=compress" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 901px)" href="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=70&fm=webp&auto=compress" fetchpriority="high">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
@@ -374,21 +375,22 @@
   /* ── FOOTER ── */
   footer { background: var(--deep); color: rgba(255,255,255,0.5); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
   .footer-logo img { height: 34px; width: auto; opacity: 0.72; }
-  .footer-nav a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; margin-left: 2rem; transition: color 0.3s; }
+  .footer-nav a { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; margin-left: 1.5rem; padding: 0.5rem 0; display: inline-block; transition: color 0.3s; }
   .footer-nav a:hover { color: white; }
-  .footer-copy { font-size: 0.75rem; }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.68); }
   .footer-legal {
     width: 100%;
     border-top: 1px solid rgba(255,255,255,0.07);
     padding-top: 1.2rem;
-    display: flex; flex-wrap: wrap; gap: 0.5rem 2rem;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem;
   }
   .footer-legal a {
-    color: rgba(255,255,255,0.28); text-decoration: none;
-    font-size: 0.68rem; letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 0.06em;
+    padding: 0.4rem 0; display: inline-block;
     transition: color 0.3s;
   }
-  .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+  .footer-legal a:hover { color: rgba(255,255,255,0.9); }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
@@ -465,7 +467,10 @@
     section { padding: 3.5rem 1.5rem; }
 
     .hero { min-height: 100svh; align-items: flex-end; padding-bottom: 4rem; }
-    .hero-bg { background-position: 50% 25%; }
+    .hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=65&fm=webp&auto=compress');
+      background-position: 50% 25%;
+    }
     .hero-bg::after {
       background: linear-gradient(to top,
         rgba(10,8,6,0.88) 0%,
