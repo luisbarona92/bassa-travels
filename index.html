@@ -276,7 +276,7 @@
   .experiences h2.section-title em { color: var(--gold); }
   .exp-intro { color: rgba(255,255,255,0.82); max-width: 500px; line-height: 1.7; margin-bottom: 4rem; }
   .exp-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.5px; }
-  .exp-card { position: relative; height: 520px; overflow: hidden; cursor: pointer; }
+  .exp-card { position: relative; height: 520px; overflow: hidden; cursor: pointer; display: block; text-decoration: none; color: inherit; }
   .exp-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
   .exp-card:hover img { transform: scale(1.06); }
   .exp-card-overlay {
@@ -676,15 +676,15 @@
   <h2 class="section-title reveal" data-i18n-html="exp.h2">Momentos que<br><em>no se olvidan</em></h2>
   <p class="exp-intro reveal" data-i18n="exp.intro">5 ideas para inspirarte con Indonesia. Tu viaje Bassa lo construiremos contigo, a medida y sin límites.</p>
   <div class="exp-grid reveal">
-    <div class="exp-card">
+    <a class="exp-card" href="reset.html">
       <img src="images/COMO_Reset.jpg" alt="Bassa Reset — Bali interior" style="object-position: 25% 40%;">
       <div class="exp-card-overlay">
         <span class="exp-num">Reset</span>
         <h3>Bassa Reset</h3>
         <span class="exp-tagline" data-i18n="exp.reset.tag">El slow luxury más puro de Bali</span>
-        <p data-i18n-html="exp.reset.p">· Villa privada con piscina infinita<br>· Masajes balineses al amanecer<br>· Gastronomía de autor en campo de arroz<br><span class="exp-dur">7–12 días</span></p>
+        <p data-i18n-html="exp.reset.p">· Ceremonia de purificación en Tirta Empul<br>· Almuerzo entre los arrozales de Jatiluwih<br>· Crucero privado al atardecer hasta Uluwatu<br><span class="exp-dur">7–12 días</span></p>
       </div>
-    </div>
+    </a>
     <div class="exp-card">
       <img src="images/FS_Moon.jpg" alt="Bassa Moon — Luna de miel Bali" style="object-position: center 30%;">
       <div class="exp-card-overlay">
@@ -1010,7 +1010,7 @@
       'exp.intro': '5 ideas para inspirarte con Indonesia. Tu viaje Bassa lo construiremos contigo, a medida y sin límites.',
       'exp.more': 'Ver todas las experiencias <span class="arrow">&rarr;</span>',
       'exp.reset.tag': 'El slow luxury más puro de Bali',
-      'exp.reset.p': '· Villa privada con piscina infinita<br>· Masajes balineses al amanecer<br>· Gastronomía de autor en campo de arroz<br><span class="exp-dur">7–12 días</span>',
+      'exp.reset.p': '· Ceremonia de purificación en Tirta Empul<br>· Almuerzo entre los arrozales de Jatiluwih<br>· Crucero privado al atardecer hasta Uluwatu<br><span class="exp-dur">7–12 días</span>',
       'exp.moon.tag': 'Romanticismo sin filtros en Bali',
       'exp.moon.p': '· Cena privada en la jungla con antorchas<br>· Butler exclusivo en villa de lujo<br>· Pétalos, velas y detalles curados<br><span class="exp-dur">10–14 días</span>',
       'exp.explorer.tag': 'El último arrecife virgen del planeta',
@@ -1104,7 +1104,7 @@
       'exp.intro': '5 ideas to inspire your Indonesia. Your Bassa trip will be built with you, bespoke and without limits.',
       'exp.more': 'See all experiences <span class="arrow">&rarr;</span>',
       'exp.reset.tag': 'The purest slow luxury in Bali',
-      'exp.reset.p': '· Private villa with infinity pool<br>· Balinese massages at dawn<br>· Chef\'s table dining in a rice paddy<br><span class="exp-dur">7–12 days</span>',
+      'exp.reset.p': '· Purification ceremony at Tirta Empul<br>· Lunch among the Jatiluwih rice terraces<br>· Private sunset cruise to Uluwatu<br><span class="exp-dur">7–12 days</span>',
       'exp.moon.tag': 'Unfiltered romance in Bali',
       'exp.moon.p': '· Private torchlit dinner in the jungle<br>· Exclusive butler in a luxury villa<br>· Petals, candles and curated details<br><span class="exp-dur">10–14 days</span>',
       'exp.explorer.tag': 'The last pristine reef on Earth',

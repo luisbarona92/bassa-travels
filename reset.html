@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bassa Reset: Slow Luxury en Bali a Medida | Bassa Travels</title>
+<meta name="description" content="Bassa Reset: viaje de slow luxury de 7 a 12 días por Bali. Villa privada, masajes balineses y gastronomía de autor entre arrozales. Diseño a medida, sin paquetes cerrados.">
+<link rel="canonical" href="https://bassatravels.com/reset.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bassatravels.com/reset.html">
+<meta property="og:title" content="Bassa Reset: Slow Luxury en Bali a Medida | Bassa Travels">
+<meta property="og:description" content="Viaje de slow luxury de 7 a 12 días por Bali: villa privada, masajes balineses y gastronomía de autor entre arrozales. Diseñado a medida, sin paquetes cerrados.">
+<meta property="og:image" content="https://bassatravels.com/images/COMO_Reset.jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Bassa Travels">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --sand: #E8DDD0;
+    --terracotta: #C4724A;
+    --deep: #1C1A17;
+    --gold: #B89B6A;
+    --warm-white: #FAF8F4;
+    --muted: #7A7068;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--deep); color: white; font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+
+  /* ── PRELAUNCH BANNER ── */
+  .prelaunch-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+    background: #0F0E0C; color: rgba(255,255,255,0.85);
+    font-size: 0.78rem; letter-spacing: 0.02em; line-height: 1.4;
+    padding: 0.7rem 4rem; font-weight: 300;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    border-bottom: 1px solid rgba(184,155,106,0.18);
+    transition: transform 0.4s ease;
+  }
+  .prelaunch-banner.hidden { transform: translateY(-100%); }
+  .prelaunch-content { display: flex; align-items: center; gap: 1.2rem; flex: 1; justify-content: center; flex-wrap: wrap; }
+  .prelaunch-icon { color: var(--gold); font-size: 0.9rem; }
+  .prelaunch-banner strong { color: white; font-weight: 500; }
+  .prelaunch-cta {
+    color: var(--gold); text-decoration: none;
+    border: 1px solid rgba(184,155,106,0.5);
+    padding: 0.3rem 0.85rem; font-size: 0.68rem;
+    letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400;
+    transition: all 0.3s; white-space: nowrap;
+  }
+  .prelaunch-cta:hover { background: var(--gold); color: var(--deep); }
+  .prelaunch-close {
+    background: none; border: none; color: rgba(255,255,255,0.45);
+    font-size: 1rem; cursor: pointer; padding: 0 0.4rem; line-height: 1;
+    transition: color 0.3s; flex-shrink: 0;
+  }
+  .prelaunch-close:hover { color: white; }
+  body.banner-visible #main-nav { top: 44px; }
+
+  /* ── NAV ── */
+  #main-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(28,26,23,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(184,155,106,0.12);
+    transition: background 0.4s, top 0.4s;
+  }
+  #main-nav.scrolled { background: rgba(28,26,23,0.96); }
+  .nav-logo img { height: 42px; width: auto; }
+  .nav-cta {
+    display: inline-block;
+    background: var(--terracotta); color: white !important;
+    padding: 0.55rem 1.3rem; border-radius: 2px;
+    font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: #b35e38; transform: translateY(-1px); }
+
+  /* ── LANG TOGGLE ── */
+  .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+  .lang-toggle {
+    display: flex; align-items: center; gap: 0.4rem;
+    background: none; border: 1px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+    padding: 0.38rem 0.75rem; font-size: 0.7rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: border-color 0.3s, color 0.3s;
+    font-family: var(--font-body); font-weight: 400; white-space: nowrap;
+  }
+  .lang-toggle .fi { font-size: 1rem; letter-spacing: 0; }
+  .lang-toggle:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    padding: 7.5rem 4rem 0; font-size: 0.7rem; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb span.sep { margin: 0 0.5rem; color: rgba(255,255,255,0.2); }
+  .breadcrumb span.current { color: var(--gold); }
+
+  /* ── HERO ── */
+  .line-hero {
+    position: relative; min-height: 70vh;
+    display: flex; align-items: flex-end;
+    padding: 4rem 4rem 4rem;
+    overflow: hidden;
+  }
+  .line-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('images/COMO_Reset.jpg') center 35%/cover no-repeat;
+    z-index: -2;
+  }
+  .line-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(28,26,23,0.55) 0%, rgba(28,26,23,0.55) 40%, rgba(28,26,23,0.97) 100%);
+    z-index: -1;
+  }
+  .line-hero-inner { max-width: 1000px; }
+  .hero-tag {
+    display: inline-block; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    border-left: 2px solid var(--terracotta); padding-left: 0.8rem;
+  }
+  .line-hero h1 {
+    font-family: var(--font-display); font-size: clamp(2.6rem, 6vw, 4.6rem);
+    font-weight: 300; line-height: 1.08; margin-bottom: 1.8rem;
+  }
+  .line-hero h1 em { font-style: italic; color: var(--gold); }
+  .answer-direct {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.4rem; max-width: 760px;
+    color: rgba(255,255,255,0.88); font-size: 1.05rem; line-height: 1.85;
+  }
+
+  /* ── INFO SECTIONS ── */
+  .info-section { padding: 5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .info-section:nth-of-type(even) { background: #16140F; max-width: none; }
+  .info-section .inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: block; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300; line-height: 1.1; margin-bottom: 2rem; color: white;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .info-section p { color: rgba(255,255,255,0.78); line-height: 1.85; font-size: 0.97rem; max-width: 800px; margin-bottom: 1.2rem; }
+
+  /* ── DATA TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+  .data-table tr { border-bottom: 1px solid rgba(184,155,106,0.14); }
+  .data-table tr:last-child { border-bottom: none; }
+  .data-table td { padding: 1.15rem 0; vertical-align: top; }
+  .data-table td:first-child {
+    color: var(--gold); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+    width: 240px; padding-right: 2rem; padding-top: 1.3rem;
+  }
+  .data-table td:last-child { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; }
+  .table-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 1.2rem; line-height: 1.7; font-style: italic; }
+
+  /* ── EXPERIENCE GRID (reusa estilo experiencias.html) ── */
+  .exp-list {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .exp-item {
+    position: relative; overflow: hidden; background: var(--deep);
+    border: 1px solid rgba(184,155,106,0.1);
+    transition: border-color 0.4s, transform 0.4s;
+  }
+  .exp-item:hover { border-color: rgba(184,155,106,0.45); transform: translateY(-4px); }
+  .exp-item-img { width: 100%; aspect-ratio: 4/5; overflow: hidden; position: relative; }
+  .exp-item-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+  .exp-item:hover .exp-item-img img { transform: scale(1.06); }
+  .exp-item-body { padding: 1.2rem 1.2rem 1.5rem; }
+  .exp-item-label { display: inline-block; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .exp-item h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; line-height: 1.2; margin-bottom: 0.5rem; color: white; }
+  .exp-item-sub { font-family: var(--font-display); font-style: italic; font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+  .exp-more-wrap { text-align: center; margin-top: 2.5rem; }
+  .exp-more-link { color: var(--gold); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; border-bottom: 1px solid rgba(184,155,106,0.4); padding-bottom: 4px; transition: opacity 0.3s; }
+  .exp-more-link:hover { opacity: 0.7; }
+
+  /* ── FAQ ── */
+  .faq-section .faq-item { border-bottom: 1px solid rgba(184,155,106,0.12); padding: 1.6rem 0; }
+  .faq-section .faq-item:first-of-type { border-top: 1px solid rgba(184,155,106,0.12); }
+  .faq-section summary {
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 400;
+    cursor: pointer; color: white; list-style: none; display: flex;
+    justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  .faq-section summary::-webkit-details-marker { display: none; }
+  .faq-section summary::after { content: '+'; color: var(--gold); font-size: 1.4rem; flex-shrink: 0; transition: transform 0.3s; }
+  .faq-section details[open] summary::after { content: '\2212'; }
+  .faq-section .faq-item p { margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-size: 0.95rem; max-width: 800px; }
+
+  /* ── CTA ── */
+  .exp-cta { padding: 7rem 4rem; text-align: center; background: var(--deep); position: relative; }
+  .exp-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('images/bali_jatiluwih.jpg') center/cover no-repeat;
+    opacity: 0.16; z-index: 0;
+  }
+  .exp-cta > * { position: relative; z-index: 1; }
+  .exp-cta h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem; }
+  .exp-cta h2 em { font-style: italic; color: var(--gold); }
+  .exp-cta p { color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75; }
+  .btn-primary {
+    display: inline-block; background: var(--terracotta); color: white; text-decoration: none;
+    padding: 1rem 2.4rem; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 500; transition: background 0.3s, transform 0.2s; border-radius: 2px;
+  }
+  .btn-primary:hover { background: #b35e38; transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0F0D0A; color: rgba(255,255,255,0.5);
+    padding: 3rem 4rem; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo img { height: 34px; width: auto; opacity: 0.72; }
+  .footer-nav a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; margin-left: 2rem; transition: color 0.3s; }
+  .footer-nav a:hover { color: white; }
+  .footer-copy { font-size: 0.75rem; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .exp-list { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    #main-nav { padding: 1rem 1.5rem; }
+    .nav-logo img { height: 36px; }
+    .nav-cta { padding: 0.5rem 1rem; font-size: 0.7rem; }
+    .lang-toggle { padding: 0.3rem 0.55rem; font-size: 0.62rem; gap: 0.3rem; }
+    .nav-right { gap: 0.5rem; }
+    .prelaunch-banner { padding: 0.55rem 1.2rem; font-size: 0.7rem; gap: 0.6rem; }
+    .prelaunch-content { gap: 0.7rem; }
+    .prelaunch-cta { padding: 0.25rem 0.65rem; font-size: 0.6rem; letter-spacing: 0.1em; }
+    body.banner-visible #main-nav { top: 38px; }
+    .breadcrumb { padding: 6rem 1.5rem 0; }
+    .line-hero { padding: 2.5rem 1.5rem 2.5rem; min-height: 60vh; }
+    .info-section { padding: 3.5rem 1.5rem; }
+    .data-table td:first-child { width: 150px; }
+    .exp-list { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .exp-cta { padding: 4rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .footer-nav { text-align: center; }
+    .footer-nav a { margin: 0 0.8rem; }
+  }
+  @media (max-width: 560px) {
+    .exp-list { grid-template-columns: 1fr; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://bassatravels.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Experiencias", "item": "https://bassatravels.com/experiencias.html" },
+    { "@type": "ListItem", "position": 3, "name": "Bassa Reset", "item": "https://bassatravels.com/reset.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Bassa Reset",
+  "description": "Viaje de slow luxury de 7 a 12 días por Bali (interior y costa), diseñado a medida: villa privada con piscina, masajes balineses al amanecer y gastronomía de autor entre arrozales.",
+  "touristType": ["Parejas", "Profesionales que buscan desconexión real"],
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "Bassa Travels",
+    "url": "https://bassatravels.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Bassa Reset es un retiro de wellness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado de wellness, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura un viaje Bassa Reset?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entre 7 y 12 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 11 días (10 noches): una semana en el interior de Bali (Ubud) y unos días finales en la costa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Bassa Reset es un paquete cerrado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Bassa Reset es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los hoteles y las actividades se ajustan contigo durante el diseño del viaje."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo combinar Bassa Reset con otra línea, como Bassa Explorer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Muchos viajeros combinan Bassa Reset con días de buceo en Raja Ampat o Komodo (Bassa Explorer) o con cultura en Java (Bassa Culture) dentro de un mismo viaje — es la base de Bassa Complete."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- PRELAUNCH BANNER -->
+<div id="prelaunch-banner" class="prelaunch-banner" role="region" aria-label="Aviso de pre-apertura">
+  <div class="prelaunch-content">
+    <span class="prelaunch-icon">✦</span>
+    <span data-i18n-html="banner.text">Bassa Travels está en <strong>pre-apertura</strong> · Apúntate y te avisaremos cuando arranque la operativa.</span>
+    <a href="index.html#contact" class="prelaunch-cta" data-i18n="banner.cta">Apuntarme →</a>
+  </div>
+  <button class="prelaunch-close" id="prelaunch-close" aria-label="Cerrar aviso">✕</button>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Volver a la portada">
+    <img src="Logo_white_crop.svg" alt="Bassa Travels">
+  </a>
+  <div class="nav-right">
+    <button class="lang-toggle" id="lang-toggle"><span class="fi fi-gb"></span> EN</button>
+    <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html" data-i18n="breadcrumb.home">Inicio</a><span class="sep">/</span><a href="experiencias.html" data-i18n="breadcrumb.experiences">Experiencias</a><span class="sep">/</span><span class="current">Bassa Reset</span>
+</div>
+
+<!-- HERO + RESPUESTA DIRECTA -->
+<section class="line-hero">
+  <div class="line-hero-inner">
+    <span class="hero-tag">Bassa Reset · Bali</span>
+    <h1 data-i18n-html="hero.h1">Slow luxury en Bali,<br><em>a tu medida</em></h1>
+    <p class="answer-direct" data-i18n="hero.p">Bassa Reset es un viaje de slow luxury de entre 7 y 12 días por Bali, pensado para desconectar de verdad: villa privada con piscina, masajes balineses al amanecer y gastronomía de autor entre arrozales. No es un paquete cerrado, sino un punto de partida que adaptamos contigo, combinando el interior (Ubud) y la costa según tu ritmo.</p>
+  </div>
+</section>
+
+<!-- EN UNA MIRADA -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="glance.tag">En una mirada</span>
+    <h2 class="section-title" data-i18n-html="glance.h2"><em>Datos</em> clave</h2>
+    <table class="data-table">
+      <tr>
+        <td data-i18n="glance.duracion.label">Duración orientativa</td>
+        <td data-i18n="glance.duracion.value">7–12 días. El ejemplo desarrollado en esta página son 11 días / 10 noches.</td>
+      </tr>
+      <tr>
+        <td data-i18n="glance.estilo.label">Estilo</td>
+        <td data-i18n="glance.estilo.value">Slow luxury · 100% privado · sin grupos ni itinerarios cerrados.</td>
+      </tr>
+      <tr>
+        <td data-i18n="glance.zona.label">Zona principal</td>
+        <td data-i18n="glance.zona.value">Bali interior (Ubud) combinado con unos días de costa (Canggu o Seminyak).</td>
+      </tr>
+      <tr>
+        <td data-i18n="glance.quien.label">Para quién</td>
+        <td data-i18n="glance.quien.value">Parejas y profesionales que necesitan desconectar del ritmo urbano sin renunciar al confort.</td>
+      </tr>
+      <tr>
+        <td data-i18n="glance.epoca.label">Mejor época</td>
+        <td data-i18n="glance.epoca.value">Abril a octubre, estación seca en Bali.</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- QUÉ ES BASSA RESET -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="concept.tag">El concepto</span>
+    <h2 class="section-title" data-i18n-html="concept.h2">Reset, no <em>retiro</em></h2>
+    <p data-i18n="concept.p1">Bassa Reset nace de una idea simple: la mayoría de viajes de "desconexión" están más llenos de actividades que el día a día del que se quiere escapar. Aquí ocurre lo contrario. El interior de Bali —Ubud y sus arrozales— marca el ritmo: mañanas sin despertador, masajes balineses, ceremonias de purificación y comidas con producto local, todo en una villa privada con piscina propia.</p>
+    <p data-i18n="concept.p2">La segunda mitad del viaje cambia de paisaje sin cambiar de filosofía: unos días de costa (Canggu o Seminyak) para cerrar con el mar, atardeceres y una gastronomía más relajada. Sin colas, sin grupos, sin horarios impuestos por nadie más que por ti.</p>
+    <p data-i18n="concept.p3">Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Reset — no un menú cerrado, sino el punto de partida sobre el que diseñamos tu viaje.</p>
+  </div>
+</section>
+
+<!-- EJEMPLOS DE EXPERIENCIAS -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="examples.tag">Ejemplos de experiencias</span>
+    <h2 class="section-title" data-i18n-html="examples.h2">Lo que puede incluir<br>tu <em>Bassa Reset</em></h2>
+    <p data-i18n="examples.intro">Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Reset es distinto: estas son referencias para inspirarte, no una lista cerrada.</p>
+    <div class="exp-list">
+      <article class="exp-item">
+        <div class="exp-item-img"><img src="images/bali_melukat.jpg" alt="Ceremonia melukat de purificación en los manantiales de Tirta Empul, Bali"></div>
+        <div class="exp-item-body">
+          <span class="exp-item-label" data-i18n="examples.item1.label">Ceremonia privada</span>
+          <h3 data-i18n="examples.item1.h3">Melukat con sumo sacerdote en Tirta Empul</h3>
+          <p class="exp-item-sub" data-i18n="examples.item1.sub">El templo entero para ti, antes del primer turista.</p>
+        </div>
+      </article>
+      <article class="exp-item">
+        <div class="exp-item-img"><img src="images/bali_jatiluwih.jpg" alt="Terrazas de arroz UNESCO de Jatiluwih a los pies del Monte Batukaru"></div>
+        <div class="exp-item-body">
+          <span class="exp-item-label" data-i18n="examples.item2.label">Patrimonio UNESCO</span>
+          <h3 data-i18n="examples.item2.h3">Almuerzo entre los arrozales de Jatiluwih</h3>
+          <p class="exp-item-sub" data-i18n="examples.item2.sub">Mesa única en un rincón oculto, el volcán al fondo.</p>
+        </div>
+      </article>
+      <article class="exp-item">
+        <div class="exp-item-img"><img src="images/COMO_Reset.jpg" alt="COMO Shambhala Estate retiro de bienestar sobre el río Ayung en Ubud" style="object-position: 25% 40%;"></div>
+        <div class="exp-item-body">
+          <span class="exp-item-label" data-i18n="examples.item3.label">Alojamiento de referencia</span>
+          <h3 data-i18n="examples.item3.h3">COMO Shambhala — Ubud</h3>
+          <p class="exp-item-sub" data-i18n="examples.item3.sub">El referente absoluto del slow living en Indonesia.</p>
+        </div>
+      </article>
+      <article class="exp-item">
+        <div class="exp-item-img"><img src="images/Sunset Cruise 3.jpg" alt="Crucero privado al atardecer hacia el templo de Uluwatu en Bali"></div>
+        <div class="exp-item-body">
+          <span class="exp-item-label" data-i18n="examples.item4.label">Navegación privada</span>
+          <h3 data-i18n="examples.item4.h3">El último crucero hasta Uluwatu</h3>
+          <p class="exp-item-sub" data-i18n="examples.item4.sub">Cócteles a bordo, bendición balinesa con el sol cayendo.</p>
+        </div>
+      </article>
+    </div>
+    <div class="exp-more-wrap">
+      <a href="experiencias.html" class="exp-more-link" data-i18n="examples.more">Ver todas las experiencias →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="info-section reveal faq-section">
+  <div class="inner">
+    <span class="section-tag" data-i18n="faq.tag">Preguntas frecuentes</span>
+    <h2 class="section-title" data-i18n-html="faq.h2">Bassa Reset, <em>en detalle</em></h2>
+
+    <details class="faq-item">
+      <summary data-i18n="faq.q1">¿Bassa Reset es un retiro de wellness?</summary>
+      <p data-i18n="faq.a1">No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado de wellness, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary data-i18n="faq.q2">¿Cuánto dura un viaje Bassa Reset?</summary>
+      <p data-i18n="faq.a2">Entre 7 y 12 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 11 días (10 noches): una semana en el interior de Bali (Ubud) y unos días finales en la costa.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary data-i18n="faq.q3">¿Bassa Reset es un paquete cerrado?</summary>
+      <p data-i18n="faq.a3">No. Bassa Reset es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los hoteles y las actividades se ajustan contigo durante el diseño del viaje.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary data-i18n="faq.q4">¿Puedo combinar Bassa Reset con otra línea, como Bassa Explorer?</summary>
+      <p data-i18n="faq.a4">Sí. Muchos viajeros combinan Bassa Reset con días de buceo en Raja Ampat o Komodo (Bassa Explorer) o con cultura en Java (Bassa Culture) dentro de un mismo viaje — es la base de Bassa Complete.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="exp-cta">
+  <h2 data-i18n-html="cta.h2">¿Diseñamos tu <em>Bassa Reset</em>?</h2>
+  <p data-i18n="cta.p">Cuéntanos tus fechas, con quién viajas y qué no puede faltar. A partir de ahí construimos un itinerario a tu medida.</p>
+  <a href="index.html#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <a href="index.html"><img src="Logo_white_crop.svg" alt="Bassa Travels"></a>
+  </div>
+  <div class="footer-copy" data-i18n="footer.copy">© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia</div>
+  <div class="footer-nav">
+    <a href="index.html#about" data-i18n="footer.about">Sobre Bassa</a>
+    <a href="experiencias.html" data-i18n="footer.experiences">Experiencias</a>
+    <a href="index.html#contact" data-i18n="footer.contact">Contacto</a>
+  </div>
+</footer>
+
+<script>
+  const t = {
+    es: {
+      'page.title': 'Bassa Reset: Slow Luxury en Bali a Medida | Bassa Travels',
+      'banner.text': 'Bassa Travels está en <strong>pre-apertura</strong> · Apúntate y te avisaremos cuando arranque la operativa.',
+      'banner.cta': 'Apuntarme →',
+      'nav.cta': 'Diseña tu viaje',
+      'breadcrumb.home': 'Inicio',
+      'breadcrumb.experiences': 'Experiencias',
+      'hero.h1': 'Slow luxury en Bali,<br><em>a tu medida</em>',
+      'hero.p': 'Bassa Reset es un viaje de slow luxury de entre 7 y 12 días por Bali, pensado para desconectar de verdad: villa privada con piscina, masajes balineses al amanecer y gastronomía de autor entre arrozales. No es un paquete cerrado, sino un punto de partida que adaptamos contigo, combinando el interior (Ubud) y la costa según tu ritmo.',
+      'glance.tag': 'En una mirada',
+      'glance.h2': '<em>Datos</em> clave',
+      'glance.duracion.label': 'Duración orientativa',
+      'glance.duracion.value': '7–12 días. El ejemplo desarrollado en esta página son 11 días / 10 noches.',
+      'glance.estilo.label': 'Estilo',
+      'glance.estilo.value': 'Slow luxury · 100% privado · sin grupos ni itinerarios cerrados.',
+      'glance.zona.label': 'Zona principal',
+      'glance.zona.value': 'Bali interior (Ubud) combinado con unos días de costa (Canggu o Seminyak).',
+      'glance.quien.label': 'Para quién',
+      'glance.quien.value': 'Parejas y profesionales que necesitan desconectar del ritmo urbano sin renunciar al confort.',
+      'glance.epoca.label': 'Mejor época',
+      'glance.epoca.value': 'Abril a octubre, estación seca en Bali.',
+      'concept.tag': 'El concepto',
+      'concept.h2': 'Reset, no <em>retiro</em>',
+      'concept.p1': 'Bassa Reset nace de una idea simple: la mayoría de viajes de "desconexión" están más llenos de actividades que el día a día del que se quiere escapar. Aquí ocurre lo contrario. El interior de Bali —Ubud y sus arrozales— marca el ritmo: mañanas sin despertador, masajes balineses, ceremonias de purificación y comidas con producto local, todo en una villa privada con piscina propia.',
+      'concept.p2': 'La segunda mitad del viaje cambia de paisaje sin cambiar de filosofía: unos días de costa (Canggu o Seminyak) para cerrar con el mar, atardeceres y una gastronomía más relajada. Sin colas, sin grupos, sin horarios impuestos por nadie más que por ti.',
+      'concept.p3': 'Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Reset — no un menú cerrado, sino el punto de partida sobre el que diseñamos tu viaje.',
+      'examples.tag': 'Ejemplos de experiencias',
+      'examples.h2': 'Lo que puede incluir<br>tu <em>Bassa Reset</em>',
+      'examples.intro': 'Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Reset es distinto: estas son referencias para inspirarte, no una lista cerrada.',
+      'examples.item1.label': 'Ceremonia privada',
+      'examples.item1.h3': 'Melukat con sumo sacerdote en Tirta Empul',
+      'examples.item1.sub': 'El templo entero para ti, antes del primer turista.',
+      'examples.item2.label': 'Patrimonio UNESCO',
+      'examples.item2.h3': 'Almuerzo entre los arrozales de Jatiluwih',
+      'examples.item2.sub': 'Mesa única en un rincón oculto, el volcán al fondo.',
+      'examples.item3.label': 'Alojamiento de referencia',
+      'examples.item3.h3': 'COMO Shambhala — Ubud',
+      'examples.item3.sub': 'El referente absoluto del slow living en Indonesia.',
+      'examples.item4.label': 'Navegación privada',
+      'examples.item4.h3': 'El último crucero hasta Uluwatu',
+      'examples.item4.sub': 'Cócteles a bordo, bendición balinesa con el sol cayendo.',
+      'examples.more': 'Ver todas las experiencias →',
+      'faq.tag': 'Preguntas frecuentes',
+      'faq.h2': 'Bassa Reset, <em>en detalle</em>',
+      'faq.q1': '¿Bassa Reset es un retiro de wellness?',
+      'faq.a1': 'No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado de wellness, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas.',
+      'faq.q2': '¿Cuánto dura un viaje Bassa Reset?',
+      'faq.a2': 'Entre 7 y 12 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 11 días (10 noches): una semana en el interior de Bali (Ubud) y unos días finales en la costa.',
+      'faq.q3': '¿Bassa Reset es un paquete cerrado?',
+      'faq.a3': 'No. Bassa Reset es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los hoteles y las actividades se ajustan contigo durante el diseño del viaje.',
+      'faq.q4': '¿Puedo combinar Bassa Reset con otra línea, como Bassa Explorer?',
+      'faq.a4': 'Sí. Muchos viajeros combinan Bassa Reset con días de buceo en Raja Ampat o Komodo (Bassa Explorer) o con cultura en Java (Bassa Culture) dentro de un mismo viaje — es la base de Bassa Complete.',
+      'cta.h2': '¿Diseñamos tu <em>Bassa Reset</em>?',
+      'cta.p': 'Cuéntanos tus fechas, con quién viajas y qué no puede faltar. A partir de ahí construimos un itinerario a tu medida.',
+      'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia',
+      'footer.about': 'Sobre Bassa', 'footer.experiences': 'Experiencias', 'footer.contact': 'Contacto'
+    },
+    en: {
+      'page.title': 'Bassa Reset: Tailor-Made Slow Luxury in Bali | Bassa Travels',
+      'banner.text': 'Bassa Travels is in <strong>pre-launch</strong> · Join the list and we\'ll notify you when we go live.',
+      'banner.cta': 'Join now →',
+      'nav.cta': 'Design your trip',
+      'breadcrumb.home': 'Home',
+      'breadcrumb.experiences': 'Experiences',
+      'hero.h1': 'Slow luxury in Bali,<br><em>tailored to you</em>',
+      'hero.p': 'Bassa Reset is a 7-to-12-day slow luxury journey through Bali, designed for genuine disconnection: a private pool villa, sunrise Balinese massages and signature dining among the rice terraces. It\'s not a fixed package, but a starting point we shape with you, combining the interior (Ubud) and the coast at your own pace.',
+      'glance.tag': 'At a glance',
+      'glance.h2': 'Key <em>details</em>',
+      'glance.duracion.label': 'Suggested duration',
+      'glance.duracion.value': '7–12 days. The example developed on this page is 11 days / 10 nights.',
+      'glance.estilo.label': 'Style',
+      'glance.estilo.value': 'Slow luxury · 100% private · no groups, no fixed itineraries.',
+      'glance.zona.label': 'Main area',
+      'glance.zona.value': 'Inland Bali (Ubud) combined with a few days on the coast (Canggu or Seminyak).',
+      'glance.quien.label': 'Who it\'s for',
+      'glance.quien.value': 'Couples and professionals who need to disconnect from city life without giving up comfort.',
+      'glance.epoca.label': 'Best season',
+      'glance.epoca.value': 'April to October, Bali\'s dry season.',
+      'concept.tag': 'The concept',
+      'concept.h2': 'Reset, not a <em>retreat</em>',
+      'concept.p1': 'Bassa Reset starts from a simple idea: most "disconnection" trips end up busier than the everyday life you\'re trying to escape. Here, it\'s the opposite. Inland Bali — Ubud and its rice terraces — sets the pace: mornings with no alarm, Balinese massages, purification ceremonies and meals built around local produce, all from a private villa with its own pool.',
+      'concept.p2': 'The second half of the trip changes the scenery without changing the philosophy: a few days on the coast (Canggu or Seminyak) to close with the sea, sunsets and more relaxed dining. No queues, no groups, no schedule set by anyone but you.',
+      'concept.p3': 'The experiences below are real examples of what could be part of your Bassa Reset — not a fixed menu, but the starting point from which we design your trip.',
+      'examples.tag': 'Example experiences',
+      'examples.h2': 'What your <em>Bassa Reset</em><br>could include',
+      'examples.intro': 'A selection of experiences we regularly design within this line. Every Bassa Reset is different: these are references for inspiration, not a fixed list.',
+      'examples.item1.label': 'Private ceremony',
+      'examples.item1.h3': 'Melukat with a high priest at Tirta Empul',
+      'examples.item1.sub': 'The whole temple to yourselves, before the first tourist arrives.',
+      'examples.item2.label': 'UNESCO heritage',
+      'examples.item2.h3': 'Lunch among the Jatiluwih rice terraces',
+      'examples.item2.sub': 'A table of your own in a hidden corner, the volcano in the background.',
+      'examples.item3.label': 'Signature stay',
+      'examples.item3.h3': 'COMO Shambhala — Ubud',
+      'examples.item3.sub': 'The undisputed reference for slow living in Indonesia.',
+      'examples.item4.label': 'Private sailing',
+      'examples.item4.h3': 'The last cruise to Uluwatu',
+      'examples.item4.sub': 'Cocktails on board, a Balinese blessing as the sun goes down.',
+      'examples.more': 'See all experiences →',
+      'faq.tag': 'Frequently asked questions',
+      'faq.h2': 'Bassa Reset, <em>in detail</em>',
+      'faq.q1': 'Is Bassa Reset a wellness retreat?',
+      'faq.a1': 'Not exactly. Bassa Reset isn\'t a medical programme or a structured wellness retreat — it\'s a slow luxury trip through Bali centred on genuine disconnection: a slow pace, a private villa, Balinese massages and authentic experiences, with no clinical agenda or imposed routines.',
+      'faq.q2': 'How long does a Bassa Reset trip last?',
+      'faq.a2': 'Between 7 and 12 days, depending on availability and preferences. The reference example on this page is 11 days (10 nights): a week inland in Bali (Ubud) and a few final days on the coast.',
+      'faq.q3': 'Is Bassa Reset a fixed package?',
+      'faq.a3': 'No. Bassa Reset is a starting point, not a fixed package. The experiences on this page are examples of what your trip could include; the final itinerary, hotels and activities are adjusted with you during the design process.',
+      'faq.q4': 'Can I combine Bassa Reset with another line, like Bassa Explorer?',
+      'faq.a4': 'Yes. Many travelers combine Bassa Reset with days of diving in Raja Ampat or Komodo (Bassa Explorer) or culture in Java (Bassa Culture) within the same trip — that\'s the basis of Bassa Complete.',
+      'cta.h2': 'Shall we design your <em>Bassa Reset</em>?',
+      'cta.p': 'Tell us your dates, who you\'re traveling with and what can\'t be missing. From there we build a tailor-made itinerary.',
+      'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia',
+      'footer.about': 'About Bassa', 'footer.experiences': 'Experiences', 'footer.contact': 'Contact'
+    }
+  };
+
+  let currentLang = 'es';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('bassa_lang', lang);
+    document.documentElement.lang = lang;
+    document.title = t[lang]['page.title'];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[lang][key] !== undefined) el.textContent = t[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
+    });
+
+    const btnLabel = lang === 'es' ? '<span class="fi fi-gb"></span> EN' : '<span class="fi fi-es"></span> ES';
+    document.getElementById('lang-toggle').innerHTML = btnLabel;
+  }
+
+  document.getElementById('lang-toggle').addEventListener('click', () => setLanguage(currentLang === 'es' ? 'en' : 'es'));
+
+  // Prelaunch banner
+  (function() {
+    const banner = document.getElementById('prelaunch-banner');
+    const closeBtn = document.getElementById('prelaunch-close');
+    if (!banner) return;
+    const dismissed = localStorage.getItem('bassa-prelaunch-dismissed');
+    if (dismissed) {
+      banner.style.display = 'none';
+    } else {
+      document.body.classList.add('banner-visible');
+    }
+    closeBtn.addEventListener('click', function() {
+      banner.classList.add('hidden');
+      document.body.classList.remove('banner-visible');
+      localStorage.setItem('bassa-prelaunch-dismissed', '1');
+      setTimeout(() => { banner.style.display = 'none'; }, 400);
+    });
+  })();
+
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  setLanguage(localStorage.getItem('bassa_lang') || 'es');
+</script>
+
+</body>
+</html>
