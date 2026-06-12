@@ -5,8 +5,10 @@
     </style>
   </defs>
   <rect width="32" height="32" fill="#F5F0E8"/>
+  <!-- BSS centered as one block -->
   <text x="16" y="26" text-anchor="middle"
-    font-family="'Cormorant Garamond', serif"
-    font-size="28" font-weight="400"
-    fill="#B89B6A">B</text>
+    font-family="'Cormorant Garamond', 'Times New Roman', serif"
+    font-size="18" font-weight="400" fill="#B89B6A">BSS</text>
+  <!-- Line above SS only: right ~2/3 of text block -->
+  <line x1="16" y1="9" x2="30" y2="9" stroke="#B89B6A" stroke-width="0.9"/>
 </svg>
