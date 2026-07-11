@@ -31,6 +31,17 @@
     if (b) b.remove();
   }
 
+  /* Al rechazar, elimina también las cookies _ga instaladas en visitas anteriores */
+  function clearGACookies() {
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (name.indexOf('_ga') === 0) {
+        document.cookie = name + '=; max-age=0; path=/';
+        document.cookie = name + '=; max-age=0; path=/; domain=.' + location.hostname;
+      }
+    });
+  }
+
   function showBanner() {
     if (document.getElementById('bassa-cookies')) return;
     if (!document.getElementById('bassa-cookies-css')) {
@@ -79,6 +90,7 @@
     });
     d.querySelector('.bc-reject').addEventListener('click', function () {
       setConsent('denied');
+      clearGACookies();
       removeBanner();
     });
   }
