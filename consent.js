@@ -66,21 +66,39 @@
         '@media (max-width:600px){#bassa-cookies{left:0.8rem;right:0.8rem;bottom:0.8rem;max-width:none;}}';
       document.head.appendChild(st);
     }
+    var lang = 'es';
+    try { if (localStorage.getItem('bassa_lang') === 'en') lang = 'en'; } catch (e) {}
+    var texts = {
+      es: {
+        aria: 'Aviso de cookies',
+        msg: 'Usamos una cookie analítica (Google Analytics) para entender cómo se usa la web.',
+        more: 'Más información',
+        reject: 'Rechazar',
+        accept: 'Aceptar'
+      },
+      en: {
+        aria: 'Cookie notice',
+        msg: 'We use an analytics cookie (Google Analytics) to understand how the site is used.',
+        more: 'Learn more',
+        reject: 'Decline',
+        accept: 'Accept'
+      }
+    }[lang];
     var d = document.createElement('div');
     d.id = 'bassa-cookies';
     d.setAttribute('role', 'dialog');
-    d.setAttribute('aria-label', 'Aviso de cookies');
+    d.setAttribute('aria-label', texts.aria);
     var inBlog = location.pathname.indexOf('/blog/') === 0 ||
                  location.pathname.indexOf('/propuestas/') === 0 ||
                  location.pathname.indexOf('/partners/') === 0 ||
                  location.pathname.indexOf('/contact/') === 0;
     var policyHref = (inBlog ? '../' : '') + 'cookies.html';
     d.innerHTML =
-      '<p>Usamos una cookie analítica (Google Analytics) para entender cómo se usa la web. ' +
-      '<a href="' + policyHref + '">Más información</a></p>' +
+      '<p>' + texts.msg + ' ' +
+      '<a href="' + policyHref + '">' + texts.more + '</a></p>' +
       '<div class="bc-actions">' +
-      '<button type="button" class="bc-reject">Rechazar</button>' +
-      '<button type="button" class="bc-accept">Aceptar</button>' +
+      '<button type="button" class="bc-reject">' + texts.reject + '</button>' +
+      '<button type="button" class="bc-accept">' + texts.accept + '</button>' +
       '</div>';
     document.body.appendChild(d);
     d.querySelector('.bc-accept').addEventListener('click', function () {
