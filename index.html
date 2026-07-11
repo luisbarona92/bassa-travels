@@ -665,10 +665,21 @@
     </div>
   </div>
   <div class="about-visual reveal" style="transition-delay:0.2s">
-    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
-      <source src="images/bassa-video.mp4" type="video/mp4">
-      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85" alt="Villa premium Bali">
+    <video id="bassa-hero-video" autoplay muted loop playsinline poster="images/bassa-video-poster.webp" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
+      <img src="images/bassa-video-poster.webp" alt="Templo balinés al atardecer, vídeo de Bassa Travels">
     </video>
+    <script>
+      (function(){
+        var v = document.getElementById('bassa-hero-video');
+        v.src = window.matchMedia('(max-width: 768px)').matches ? 'images/bassa-video-720.mp4' : 'images/bassa-video-1080.mp4';
+        var tryPlay = function () {
+          var p = v.play();
+          if (p && p.catch) p.catch(function (e) { console.warn('hero video autoplay:', e.name); });
+        };
+        v.addEventListener('canplay', tryPlay, { once: true });
+        tryPlay();
+      })();
+    </script>
     <div class="about-visual-badge" data-i18n="about.badge">"Cada viaje es tan único como la persona que lo vive"</div>
   </div>
 </section>
