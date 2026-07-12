@@ -38,8 +38,11 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"></noscript>
+<style>
+  .fi{display:inline-block;width:1.333em;height:1em;background-size:cover;background-position:50%;border-radius:1px}
+  .fi-es{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23AA151B' d='M0 0h3v2H0z'/%3E%3Cpath fill='%23F1BF00' d='M0 .5h3v1H0z'/%3E%3C/svg%3E")}
+  .fi-gb{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cpath fill='%23012169' d='M0 0h60v30H0z'/%3E%3Cpath stroke='%23fff' stroke-width='6' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23C8102E' stroke-width='4' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23fff' stroke-width='10' d='M30 0v30M0 15h60'/%3E%3Cpath stroke='%23C8102E' stroke-width='6' d='M30 0v30M0 15h60'/%3E%3C/svg%3E")}
+</style>
 
 <!-- Structured data: TravelAgency -->
 <script type="application/ld+json">
@@ -1018,6 +1021,7 @@
         <textarea id="f-imprescindibles" name="imprescindibles" data-i18n-ph="form.imprescindibles.ph" placeholder="Cuéntanos qué no puede faltar en tu viaje ideal..."></textarea>
       </div>
       <button type="submit" class="btn-form" data-i18n="form.submit">Apuntarme a la pre-apertura →</button>
+      <p id="form-fallback" style="display:none;margin-top:0.8rem;font-size:0.82rem;color:var(--muted);" data-i18n-html="form.fallback">Si el problema persiste, escríbenos a <a href="mailto:admin@bassatravels.com">admin@bassatravels.com</a></p>
       <p class="form-disclaimer" data-i18n="form.disclaimer">El envío de este formulario no constituye contratación de servicios ni oferta vinculante. Tus datos serán tratados conforme al RGPD únicamente para avisarte del lanzamiento.</p>
     </form>
     <div id="form-success" style="display:none; text-align:center; padding:2.5rem 0;">
@@ -1087,6 +1091,7 @@
     <a href="#how" data-i18n="footer.how">Cómo funciona</a>
     <a href="/blog/" data-i18n="footer.blog">Blog</a>
     <a href="#contact" data-i18n="footer.contact">Contacto</a>
+    <a href="mailto:admin@bassatravels.com">admin@bassatravels.com</a>
   </nav>
   <div class="footer-legal">
     <a href="privacidad.html">Política de Privacidad</a>
@@ -1180,6 +1185,7 @@
       'form.imprescindibles.label': 'Imprescindibles / preferencias',
       'form.imprescindibles.ph': 'Cuéntanos qué no puede faltar en tu viaje ideal...',
       'form.submit': 'Apuntarme a la pre-apertura →', 'form.sending': 'Enviando...', 'form.error': 'Error al enviar, inténtalo de nuevo',
+      'form.fallback': 'Si el problema persiste, escríbenos a <a href="mailto:admin@bassatravels.com">admin@bassatravels.com</a>',
       'form.disclaimer': 'El envío de este formulario no constituye contratación de servicios ni oferta vinculante. Tus datos serán tratados conforme al RGPD únicamente para avisarte del lanzamiento.',
       'form.success.title': 'Estás en la lista', 'form.success.p': 'Te avisaremos personalmente en cuanto Bassa Travels esté plenamente operativo.<br>Gracias por tu paciencia.',
       'faq.tag': 'FAQ', 'faq.h2': 'Preguntas<br><em>frecuentes</em>',
@@ -1276,6 +1282,7 @@
       'form.imprescindibles.label': 'Must-haves / preferences',
       'form.imprescindibles.ph': 'Tell us what your ideal trip can\'t be without...',
       'form.submit': 'Join the pre-launch list \u2192', 'form.sending': 'Sending...', 'form.error': 'Error sending, please try again',
+      'form.fallback': 'If the problem persists, email us at <a href="mailto:admin@bassatravels.com">admin@bassatravels.com</a>',
       'form.disclaimer': 'Submitting this form does not constitute a service contract or binding offer. Your data will be processed in accordance with the GDPR solely to notify you of our launch.',
       'form.success.title': 'You\'re on the list', 'form.success.p': 'We\'ll personally let you know as soon as Bassa Travels is fully operational.<br>Thank you for your patience.',
       'faq.tag': 'FAQ', 'faq.h2': 'Frequently<br><em>asked questions</em>',
@@ -1407,12 +1414,16 @@
       whatsapp: form.whatsapp.value, imprescindibles: form.imprescindibles.value
     };
     try {
-      await fetch(SCRIPT_URL + '?' + new URLSearchParams(data), { method: 'GET', mode: 'no-cors' });
+      const res = await fetch(SCRIPT_URL + '?' + new URLSearchParams(data), { method: 'GET' });
+      const out = await res.json();
+      if (!res.ok || !out || out.status !== 'ok') throw new Error('respuesta no valida');
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     } catch (err) {
       btn.textContent = t[currentLang]['form.error'];
       btn.disabled = false;
+      const fb = document.getElementById('form-fallback');
+      if (fb) fb.style.display = 'block';
     }
   });
 
