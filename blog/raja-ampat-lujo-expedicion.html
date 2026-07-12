@@ -172,6 +172,15 @@
   .faq details[open] summary::after { transform: rotate(45deg); }
   .faq details p { margin-top: 0.8rem; margin-bottom: 0; }
 
+  
+  .related { max-width: 720px; margin: 4rem auto 0; padding: 0 2rem; }
+  .related h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; margin-bottom: 1.2rem; }
+  .related a.rel-card { display: block; border: 1px solid var(--sand); border-radius: 2px; padding: 1.1rem 1.3rem; margin-bottom: 0.8rem; text-decoration: none; transition: border-color 0.3s; }
+  .related a.rel-card:hover { border-color: var(--terracotta); }
+  .related .rel-tag { display: block; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.3rem; }
+  .related .rel-title { display: block; font-family: var(--font-display); font-size: 1.15rem; color: var(--deep); margin-bottom: 0.2rem; }
+  .related .rel-sub { display: block; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
   .end-cta { background: var(--deep); color: white; padding: 4rem 2rem; text-align: center; margin-top: 4rem; }
   .end-cta h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 300; margin-bottom: 1rem; color: white; }
   .end-cta h2 em { font-style: italic; color: var(--gold); }
@@ -355,6 +364,20 @@
   <a href="/blog/" class="back-link">← Volver al blog</a>
 
 </article>
+
+<section class="related">
+  <h2>Seguir leyendo</h2>
+  <a class="rel-card" href="/explorer.html">
+    <span class="rel-tag">El viaje</span>
+    <span class="rel-title">Bassa Explorer</span>
+    <span class="rel-sub">Nuestra expedición de buceo de lujo a Raja Ampat, con liveaboard o resort privado</span>
+  </a>
+  <a class="rel-card" href="/blog/indonesia-mas-alla-de-bali-lujo.html">
+    <span class="rel-tag">Del blog</span>
+    <span class="rel-title">Más allá de Bali</span>
+    <span class="rel-sub">Las islas de Indonesia para un viaje de lujo, comparadas</span>
+  </a>
+</section>
 
 <section class="end-cta">
   <h2>Organiza tu expedición a <em>Raja Ampat</em></h2>
