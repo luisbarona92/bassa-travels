@@ -446,7 +446,7 @@
   function toggleExp(row, key, price) { const sw = document.getElementById('sw-' + key); if (state.extras[key]) { delete state.extras[key]; sw.classList.remove('on'); } else { state.extras[key] = price; sw.classList.add('on'); } updateUI(); }
   function toggleDay(row) { row.classList.toggle('open'); }
   function solicitarLlamada() { document.getElementById('modal-icono').textContent = '📞'; document.getElementById('modal-titulo').textContent = '¡Perfecto, te llamamos!'; document.getElementById('modal-texto').textContent = 'He recibido tu selección y te llamaré antes de 24 horas para arrancar tu Bassa Explorer.'; document.getElementById('modal').classList.add('show'); }
-  function solicitarPregunta() { document.getElementById('modal-icono').textContent = '💬'; document.getElementById('modal-titulo').textContent = 'Hablamos cuando quieras'; document.getElementById('modal-texto').textContent = 'Escríbenos a hola@bassatravels.com o por WhatsApp y te respondemos en menos de 24 horas.'; document.getElementById('modal').classList.add('show'); }
+  function solicitarPregunta() { document.getElementById('modal-icono').textContent = '💬'; document.getElementById('modal-titulo').textContent = 'Hablamos cuando quieras'; document.getElementById('modal-texto').textContent = 'Escríbenos a admin@bassatravels.com o por WhatsApp y te respondemos en menos de 24 horas.'; document.getElementById('modal').classList.add('show'); }
   function cerrarModal() { document.getElementById('modal').classList.remove('show'); }
   document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) cerrarModal(); });
 </script>

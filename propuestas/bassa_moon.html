@@ -522,7 +522,7 @@
   }
   function toggleDay(row) { row.classList.toggle('open'); }
   function solicitarLlamada() { document.getElementById('modal-icono').textContent = '📞'; document.getElementById('modal-titulo').textContent = '¡Perfecto, os llamamos!'; document.getElementById('modal-texto').textContent = 'He recibido vuestra selección y os llamaré antes de 24 horas para arrancar vuestro Bassa Moon.'; document.getElementById('modal').classList.add('show'); }
-  function solicitarPregunta() { document.getElementById('modal-icono').textContent = '💬'; document.getElementById('modal-titulo').textContent = 'Hablamos cuando queráis'; document.getElementById('modal-texto').textContent = 'Escríbenos a hola@bassatravels.com o por WhatsApp y os respondemos en menos de 24 horas.'; document.getElementById('modal').classList.add('show'); }
+  function solicitarPregunta() { document.getElementById('modal-icono').textContent = '💬'; document.getElementById('modal-titulo').textContent = 'Hablamos cuando queráis'; document.getElementById('modal-texto').textContent = 'Escríbenos a admin@bassatravels.com o por WhatsApp y os respondemos en menos de 24 horas.'; document.getElementById('modal').classList.add('show'); }
   function cerrarModal() { document.getElementById('modal').classList.remove('show'); }
   document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) cerrarModal(); });
 </script>
