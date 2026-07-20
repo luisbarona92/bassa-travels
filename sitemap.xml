@@ -44,9 +44,15 @@
   </url>
   <url>
     <loc>https://bassatravels.com/blog/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bassatravels.com/blog/sumatra-orangutanes-salvajes-lujo.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bassatravels.com/blog/borobudur-amanecer-privado-java-lujo.html</loc>
