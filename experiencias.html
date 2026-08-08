@@ -90,6 +90,24 @@
   }
   .nav-cta:hover { background: #b35e38; transform: translateY(-1px); }
 
+  /* ── LANG TOGGLE ── */
+  .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+  .fi { display: inline-block; width: 1.333em; height: 1em; background-size: cover; background-position: 50%; border-radius: 1px; }
+  .fi-es { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23AA151B' d='M0 0h3v2H0z'/%3E%3Cpath fill='%23F1BF00' d='M0 .5h3v1H0z'/%3E%3C/svg%3E"); }
+  .fi-gb { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cpath fill='%23012169' d='M0 0h60v30H0z'/%3E%3Cpath stroke='%23fff' stroke-width='6' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23C8102E' stroke-width='4' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23fff' stroke-width='10' d='M30 0v30M0 15h60'/%3E%3Cpath stroke='%23C8102E' stroke-width='6' d='M30 0v30M0 15h60'/%3E%3C/svg%3E"); }
+  .lang-toggle {
+    display: flex; align-items: center; gap: 0.4rem;
+    background: none; border: 1px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+    padding: 0.38rem 0.75rem; font-size: 0.7rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: border-color 0.3s, color 0.3s;
+    font-family: var(--font-body); font-weight: 400; white-space: nowrap;
+  }
+  .lang-toggle .fi { font-size: 1rem; letter-spacing: 0; }
+  .lang-toggle:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
   /* ── HERO ── */
   .exp-hero {
     position: relative; min-height: 75vh;
@@ -283,8 +301,8 @@
 <div id="prelaunch-banner" class="prelaunch-banner" role="region" aria-label="Aviso de pre-apertura">
   <div class="prelaunch-content">
     <span class="prelaunch-icon">✦</span>
-    <span>Bassa Travels está en <strong>pre-apertura</strong> · Apúntate y te avisaremos cuando arranque la operativa.</span>
-    <a href="index.html#contact" class="prelaunch-cta">Apuntarme →</a>
+    <span data-i18n-html="banner.text">Bassa Travels está en <strong>pre-apertura</strong> · Apúntate y te avisaremos cuando arranque la operativa.</span>
+    <a href="index.html#contact" class="prelaunch-cta" data-i18n="banner.cta">Apuntarme →</a>
     <a href="mailto:admin@bassatravels.com">admin@bassatravels.com</a>
     <a href="https://www.instagram.com/bassa_travels/" target="_blank" rel="noopener">Instagram</a>
   </div>
@@ -296,15 +314,18 @@
   <a href="index.html" class="nav-logo" aria-label="Volver a la portada">
     <img src="Logo_white_crop.svg" alt="Bassa Travels">
   </a>
-  <a href="index.html#contact" class="nav-cta">Diseña tu viaje</a>
+  <div class="nav-right">
+    <button class="lang-toggle" id="lang-toggle"><span class="fi fi-gb"></span> EN</button>
+    <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="exp-hero">
   <div>
-    <span class="hero-tag">Experiencias curadas</span>
-    <h1>Lo que nadie<br>te ha <em>contado</em></h1>
-    <p>Una selección de las experiencias más extraordinarias que Indonesia puede ofrecer. Acceso privado, ceremonias reales, islas descubiertas por nuestros partners locales, encuentros que no aparecen en ninguna guía. Para quienes ya han estado en todas partes y aún buscan algo irrepetible.</p>
+    <span class="hero-tag" data-i18n="hero.tag">Experiencias curadas</span>
+    <h1 data-i18n-html="hero.h1">Lo que nadie<br>te ha <em>contado</em></h1>
+    <p data-i18n="hero.p">Una selección de las experiencias más extraordinarias que Indonesia puede ofrecer. Acceso privado, ceremonias reales, islas descubiertas por nuestros partners locales, encuentros que no aparecen en ninguna guía. Para quienes ya han estado en todas partes y aún buscan algo irrepetible.</p>
   </div>
 </section>
 
@@ -313,62 +334,62 @@
   <div class="zone-intro">
     <div class="reveal">
       <span class="zone-num">01 · Bali</span>
-      <h2 class="zone-title">El alma del <em>archipiélago</em></h2>
+      <h2 class="zone-title" data-i18n-html="z1.h2">El alma del <em>archipiélago</em></h2>
     </div>
-    <p class="zone-desc reveal">Bali no es una isla: es un estado mental. Arrozales escalonados, templos de agua, ceremonias que no se detienen nunca, acantilados sobre el Índico. La versatilidad perfecta para un primer viaje o para volver una y otra vez.</p>
+    <p class="zone-desc reveal" data-i18n="z1.desc">Bali no es una isla: es un estado mental. Arrozales escalonados, templos de agua, ceremonias que no se detienen nunca, acantilados sobre el Índico. La versatilidad perfecta para un primer viaje o para volver una y otra vez.</p>
   </div>
   <div class="exp-list">
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/bali_melukat.jpg" loading="lazy" decoding="async" alt="Ceremonia melukat de purificación en los manantiales de Tirta Empul, Bali"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Ceremonia privada</span>
-        <h3>Melukat con sumo sacerdote en Tirta Empul</h3>
-        <p class="exp-item-sub">El templo entero para ti, antes del primer turista.</p>
+        <span class="exp-item-label" data-i18n="c1.label">Ceremonia privada</span>
+        <h3 data-i18n="c1.h3">Melukat con sumo sacerdote en Tirta Empul</h3>
+        <p class="exp-item-sub" data-i18n="c1.sub">El templo entero para ti, antes del primer turista.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/bali_lempuyang.jpg" loading="lazy" decoding="async" alt="Pura Lempuyang Puerta del Cielo con vistas al Monte Agung al amanecer" style="object-position:50% 80%;"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Sesión privada al alba</span>
-        <h3>Las puertas del cielo de Lempuyang</h3>
-        <p class="exp-item-sub">El Monte Agung enmarcado entre las puertas, sin colas.</p>
+        <span class="exp-item-label" data-i18n="c2.label">Sesión privada al alba</span>
+        <h3 data-i18n="c2.h3">Las puertas del cielo de Lempuyang</h3>
+        <p class="exp-item-sub" data-i18n="c2.sub">El Monte Agung enmarcado entre las puertas, sin colas.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/bali_helicoptero.jpg" loading="lazy" decoding="async" alt="Vuelo en helicóptero privado sobre los volcanes Batur y Agung de Bali"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Aéreo privado</span>
-        <h3>Helicóptero sobre Batur y Agung</h3>
-        <p class="exp-item-sub">Las calderas abiertas bajo tus pies. El Índico al horizonte.</p>
+        <span class="exp-item-label" data-i18n="c3.label">Aéreo privado</span>
+        <h3 data-i18n="c3.h3">Helicóptero sobre Batur y Agung</h3>
+        <p class="exp-item-sub" data-i18n="c3.sub">Las calderas abiertas bajo tus pies. El Índico al horizonte.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/bali_jatiluwih.jpg" loading="lazy" decoding="async" alt="Terrazas de arroz UNESCO de Jatiluwih a los pies del Monte Batukaru"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Patrimonio UNESCO</span>
-        <h3>Almuerzo entre los arrozales de Jatiluwih</h3>
-        <p class="exp-item-sub">Mesa única en un rincón oculto, el volcán al fondo.</p>
+        <span class="exp-item-label" data-i18n="c4.label">Patrimonio UNESCO</span>
+        <h3 data-i18n="c4.h3">Almuerzo entre los arrozales de Jatiluwih</h3>
+        <p class="exp-item-sub" data-i18n="c4.sub">Mesa única en un rincón oculto, el volcán al fondo.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/Sunset Cruise 3.jpg" loading="lazy" decoding="async" alt="Crucero privado al atardecer hacia el templo de Uluwatu en Bali"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Navegación privada</span>
-        <h3>El último crucero hasta Uluwatu</h3>
-        <p class="exp-item-sub">Cócteles a bordo, bendición balinesa con el sol cayendo.</p>
+        <span class="exp-item-label" data-i18n="c5.label">Navegación privada</span>
+        <h3 data-i18n="c5.h3">El último crucero hasta Uluwatu</h3>
+        <p class="exp-item-sub" data-i18n="c5.sub">Cócteles a bordo, bendición balinesa con el sol cayendo.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/COMO_Reset.jpg" loading="lazy" decoding="async" alt="COMO Shambhala Estate retiro de bienestar sobre el río Ayung en Ubud"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Bienestar profundo</span>
-        <h3>COMO Shambhala — Retiro estate</h3>
-        <p class="exp-item-sub">El referente absoluto del wellness en Indonesia.</p>
+        <span class="exp-item-label" data-i18n="c6.label">Bienestar profundo</span>
+        <h3 data-i18n="c6.h3">COMO Shambhala — Retiro estate</h3>
+        <p class="exp-item-sub" data-i18n="c6.sub">El referente absoluto del wellness en Indonesia.</p>
       </div>
     </article>
   </div>
@@ -379,62 +400,62 @@
   <div class="zone-intro">
     <div class="reveal">
       <span class="zone-num">02 · Java</span>
-      <h2 class="zone-title">Templos, volcanes y <em>reinos milenarios</em></h2>
+      <h2 class="zone-title" data-i18n-html="z2.h2">Templos, volcanes y <em>reinos milenarios</em></h2>
     </div>
-    <p class="zone-desc reveal">La isla más poblada del mundo también es la que guarda los templos más grandes. Borobudur y Prambanan sobreviven desde el siglo VIII rodeados de volcanes activos, palacios sultanales y paisajes cinematográficos. Java es intensidad cultural.</p>
+    <p class="zone-desc reveal" data-i18n="z2.desc">La isla más poblada del mundo también es la que guarda los templos más grandes. Borobudur y Prambanan sobreviven desde el siglo VIII rodeados de volcanes activos, palacios sultanales y paisajes cinematográficos. Java es intensidad cultural.</p>
   </div>
   <div class="exp-list">
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/java_borobudur.jpg" loading="lazy" decoding="async" alt="Borobudur al amanecer desde Amanjiwo, el templo budista más grande del mundo"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Acceso desde Amanjiwo</span>
-        <h3>Borobudur al amanecer en privado</h3>
-        <p class="exp-item-sub">Antes del primer autobús. Con antropólogo residente.</p>
+        <span class="exp-item-label" data-i18n="c7.label">Acceso desde Amanjiwo</span>
+        <h3 data-i18n="c7.h3">Borobudur al amanecer en privado</h3>
+        <p class="exp-item-sub" data-i18n="c7.sub">Antes del primer autobús. Con antropólogo residente.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/java_globo.jpg" loading="lazy" decoding="async" alt="Globo aerostático sobrevolando Borobudur al amanecer en Java"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Aéreo exclusivo</span>
-        <h3>Globo aerostático sobre Borobudur</h3>
-        <p class="exp-item-sub">El mandala cósmico del siglo VIII, visto desde arriba.</p>
+        <span class="exp-item-label" data-i18n="c8.label">Aéreo exclusivo</span>
+        <h3 data-i18n="c8.h3">Globo aerostático sobre Borobudur</h3>
+        <p class="exp-item-sub" data-i18n="c8.sub">El mandala cósmico del siglo VIII, visto desde arriba.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/java_ijen.jpg" loading="lazy" decoding="async" alt="Llamas azules de gas sulfúrico en el cráter del Monte Ijen, Java Oriental"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Único en el planeta</span>
-        <h3>Monte Ijen — La llama azul</h3>
-        <p class="exp-item-sub">Gases que arden eléctricos. Y al alba, el lago turquesa.</p>
+        <span class="exp-item-label" data-i18n="c9.label">Único en el planeta</span>
+        <h3 data-i18n="c9.h3">Monte Ijen — La llama azul</h3>
+        <p class="exp-item-sub" data-i18n="c9.sub">Gases que arden eléctricos. Y al alba, el lago turquesa.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/monte-bromo-mar-de-arena-al-alba.webp" loading="lazy" decoding="async" width="1600" height="1066" alt="Mar de Arena al amanecer en el Monte Bromo, Java Oriental"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Expedición privada</span>
-        <h3>Monte Bromo — Mar de Arena al alba</h3>
-        <p class="exp-item-sub">4x4 cruzando una caldera lunar. Cinco volcanes al amanecer.</p>
+        <span class="exp-item-label" data-i18n="c10.label">Expedición privada</span>
+        <h3 data-i18n="c10.h3">Monte Bromo — Mar de Arena al alba</h3>
+        <p class="exp-item-sub" data-i18n="c10.sub">4x4 cruzando una caldera lunar. Cinco volcanes al amanecer.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/tumpak-sewu-las-mil-cascadas.webp" loading="lazy" decoding="async" width="1600" height="1200" alt="Cascada Tumpak Sewu de las mil corrientes en Lumajang, Java"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Catarata escondida</span>
-        <h3>Tumpak Sewu — Las mil cascadas</h3>
-        <p class="exp-item-sub">Un anfiteatro de agua a 120 metros, a la sombra del Semeru.</p>
+        <span class="exp-item-label" data-i18n="c11.label">Catarata escondida</span>
+        <h3 data-i18n="c11.h3">Tumpak Sewu — Las mil cascadas</h3>
+        <p class="exp-item-sub" data-i18n="c11.sub">Un anfiteatro de agua a 120 metros, a la sombra del Semeru.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/tren-de-lujo-a-yogyakarta.webp" loading="lazy" decoding="async" width="1600" height="1235" alt="Tren de lujo privado entre Yakarta y Yogyakarta atravesando Java"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Tránsito de lujo</span>
-        <h3>Tren de Lujo a Yogyakarta</h3>
-        <p class="exp-item-sub">Java entera por la ventana, vagón privado, servicio butler.</p>
+        <span class="exp-item-label" data-i18n="c12.label">Tránsito de lujo</span>
+        <h3 data-i18n="c12.h3">Tren de Lujo a Yogyakarta</h3>
+        <p class="exp-item-sub" data-i18n="c12.sub">Java entera por la ventana, vagón privado, servicio butler.</p>
       </div>
     </article>
   </div>
@@ -445,62 +466,62 @@
   <div class="zone-intro">
     <div class="reveal">
       <span class="zone-num">03 · Komodo & Flores</span>
-      <h2 class="zone-title">Dragones, mantas y <em>mares turquesa</em></h2>
+      <h2 class="zone-title" data-i18n-html="z3.h2">Dragones, mantas y <em>mares turquesa</em></h2>
     </div>
-    <p class="zone-desc reveal">El archipiélago del este: islas que emergen del mar como joyas geológicas, playas rosas, el reptil más antiguo del planeta, y tres lagos volcánicos que cambian de color sin que la ciencia sepa explicar del todo por qué. Se recorre mejor en velero tradicional.</p>
+    <p class="zone-desc reveal" data-i18n="z3.desc">El archipiélago del este: islas que emergen del mar como joyas geológicas, playas rosas, el reptil más antiguo del planeta, y tres lagos volcánicos que cambian de color sin que la ciencia sepa explicar del todo por qué. Se recorre mejor en velero tradicional.</p>
   </div>
   <div class="exp-list">
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/phinisi-privado-por-komodo.webp" loading="lazy" decoding="async" width="1600" height="1066" alt="Velero phinisi tradicional indonesio navegando por Komodo en charter privado"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">El barco como destino</span>
-        <h3>Phinisi privado por Komodo</h3>
-        <p class="exp-item-sub">Velero tradicional Bugis. Cada amanecer, una bahía distinta.</p>
+        <span class="exp-item-label" data-i18n="c13.label">El barco como destino</span>
+        <h3 data-i18n="c13.h3">Phinisi privado por Komodo</h3>
+        <p class="exp-item-sub" data-i18n="c13.sub">Velero tradicional Bugis. Cada amanecer, una bahía distinta.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/pink-beach-antes-que-nadie.webp" loading="lazy" decoding="async" width="1600" height="1066" alt="Pink Beach playa de arena rosa en el Parque Nacional de Komodo"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Playa al amanecer</span>
-        <h3>Pink Beach antes que nadie</h3>
-        <p class="exp-item-sub">Una de las siete playas rosas del mundo, solo para ti.</p>
+        <span class="exp-item-label" data-i18n="c14.label">Playa al amanecer</span>
+        <h3 data-i18n="c14.h3">Pink Beach antes que nadie</h3>
+        <p class="exp-item-sub" data-i18n="c14.sub">Una de las siete playas rosas del mundo, solo para ti.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/cima-de-padar-antes-del-alba.webp" loading="lazy" decoding="async" width="1600" height="1066" alt="Vista panorámica de las tres bahías desde la cima de Padar Island en Komodo"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Panorámica irrepetible</span>
-        <h3>Cima de Padar antes del alba</h3>
-        <p class="exp-item-sub">Tres bahías en media luna, blanca, negra y rosa.</p>
+        <span class="exp-item-label" data-i18n="c15.label">Panorámica irrepetible</span>
+        <h3 data-i18n="c15.h3">Cima de Padar antes del alba</h3>
+        <p class="exp-item-sub" data-i18n="c15.sub">Tres bahías en media luna, blanca, negra y rosa.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/dragones-de-komodo-con-rangers.webp" loading="lazy" decoding="async" width="1600" height="1066" alt="Dragón de Komodo en su hábitat natural en el Parque Nacional"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Encuentro privado</span>
-        <h3>Dragones de Komodo con rangers</h3>
-        <p class="exp-item-sub">Tres metros de prehistoria. La lengua probando el aire.</p>
+        <span class="exp-item-label" data-i18n="c16.label">Encuentro privado</span>
+        <h3 data-i18n="c16.h3">Dragones de Komodo con rangers</h3>
+        <p class="exp-item-sub" data-i18n="c16.sub">Tres metros de prehistoria. La lengua probando el aire.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/kelimutu-tres-crateres.webp" loading="lazy" decoding="async" width="1600" height="1127" alt="Lagos volcánicos de Kelimutu con tres colores distintos en Flores"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Fenómeno geológico</span>
-        <h3>Kelimutu — Tres cráteres, tres colores</h3>
-        <p class="exp-item-sub">Turquesa, esmeralda, negro rojizo. Sin explicación científica.</p>
+        <span class="exp-item-label" data-i18n="c17.label">Fenómeno geológico</span>
+        <h3 data-i18n="c17.h3">Kelimutu — Tres cráteres, tres colores</h3>
+        <p class="exp-item-sub" data-i18n="c17.sub">Turquesa, esmeralda, negro rojizo. Sin explicación científica.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/wae-rebo-las-casas-cono.webp" loading="lazy" decoding="async" width="1600" height="900" alt="Aldea tradicional de Wae Rebo con casas cono mbaru niang en Flores"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Aldea ancestral</span>
-        <h3>Wae Rebo — Las casas cono</h3>
-        <p class="exp-item-sub">UNESCO. Siete casas Manggarai escondidas a 1.200m.</p>
+        <span class="exp-item-label" data-i18n="c18.label">Aldea ancestral</span>
+        <h3 data-i18n="c18.h3">Wae Rebo — Las casas cono</h3>
+        <p class="exp-item-sub" data-i18n="c18.sub">UNESCO. Siete casas Manggarai escondidas a 1.200m.</p>
       </div>
     </article>
   </div>
@@ -511,62 +532,62 @@
   <div class="zone-intro">
     <div class="reveal">
       <span class="zone-num">04 · Kalimantan (Borneo)</span>
-      <h2 class="zone-title">La selva más antigua <em>del mundo</em></h2>
+      <h2 class="zone-title" data-i18n-html="z4.h2">La selva más antigua <em>del mundo</em></h2>
     </div>
-    <p class="zone-desc reveal">La parte indonesia de Borneo es una de las selvas tropicales más antiguas del planeta — 140 millones de años. Orangutanes salvajes, ríos sin fondo que se navegan en klotok, pueblos Dayak con tradiciones que casi nadie de fuera ha visto. Para quien busca Indonesia en estado absolutamente puro.</p>
+    <p class="zone-desc reveal" data-i18n="z4.desc">La parte indonesia de Borneo es una de las selvas tropicales más antiguas del planeta — 140 millones de años. Orangutanes salvajes, ríos sin fondo que se navegan en klotok, pueblos Dayak con tradiciones que casi nadie de fuera ha visto. Para quien busca Indonesia en estado absolutamente puro.</p>
   </div>
   <div class="exp-list">
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/klotok-por-tanjung-puting.webp" loading="lazy" decoding="async" width="1600" height="1012" alt="Klotok barcaza tradicional navegando por Tanjung Puting en Kalimantan"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">La joya oculta de Borneo</span>
-        <h3>Klotok por Tanjung Puting</h3>
-        <p class="exp-item-sub">Orangutanes a metros. La selva más biodiversa del planeta.</p>
+        <span class="exp-item-label" data-i18n="c19.label">La joya oculta de Borneo</span>
+        <h3 data-i18n="c19.h3">Klotok por Tanjung Puting</h3>
+        <p class="exp-item-sub" data-i18n="c19.sub">Orangutanes a metros. La selva más biodiversa del planeta.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/el-mono-de-nariz-larga-al-atardecer.webp" width="1600" height="1060" loading="lazy" decoding="async" alt="Mono probóscide endémico de Borneo observado al atardecer desde el klotok en el río Sekonyer"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Fauna endémica</span>
-        <h3>El mono de nariz larga al atardecer</h3>
-        <p class="exp-item-sub">Solo existe en Borneo. Al crepúsculo baja a las orillas del río.</p>
+        <span class="exp-item-label" data-i18n="c20.label">Fauna endémica</span>
+        <h3 data-i18n="c20.h3">El mono de nariz larga al atardecer</h3>
+        <p class="exp-item-sub" data-i18n="c20.sub">Solo existe en Borneo. Al crepúsculo baja a las orillas del río.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/tarsier-y-leopardo-nublado-al-caer-la-noche.webp" width="1600" height="2125" loading="lazy" decoding="async" alt="Trek nocturno por la jungla de Borneo con avistamiento de tarsier y leopardo nublado"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Aventura nocturna</span>
-        <h3>Tarsier y leopardo nublado al caer la noche</h3>
-        <p class="exp-item-sub">El tarsier, el primate más pequeño del mundo. Y rarísimamente, un leopardo nublado.</p>
+        <span class="exp-item-label" data-i18n="c21.label">Aventura nocturna</span>
+        <h3 data-i18n="c21.h3">Tarsier y leopardo nublado al caer la noche</h3>
+        <p class="exp-item-sub" data-i18n="c21.sub">El tarsier, el primate más pequeño del mundo. Y rarísimamente, un leopardo nublado.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/encuentro-con-los-dayak.webp" width="1600" height="2000" loading="lazy" decoding="async" alt="Encuentro cultural con la comunidad Dayak en una longhouse tradicional de Borneo"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Cultura ancestral</span>
-        <h3>Encuentro con los Dayak</h3>
-        <p class="exp-item-sub">Longhouses, música de sape y tatuajes que son mapas de vida.</p>
+        <span class="exp-item-label" data-i18n="c22.label">Cultura ancestral</span>
+        <h3 data-i18n="c22.h3">Encuentro con los Dayak</h3>
+        <p class="exp-item-sub" data-i18n="c22.sub">Longhouses, música de sape y tatuajes que son mapas de vida.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/islas-derawan-tiburon-ballena.webp" width="1600" height="1062" loading="lazy" decoding="async" alt="Tiburón ballena en Talisayan cerca de las Islas Derawan en Kalimantan Oriental"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Kalimantan Oriental</span>
-        <h3>Islas Derawan — tiburón ballena y tortugas</h3>
-        <p class="exp-item-sub">Tortugas verdes, mantas en Sangalaki y tiburón ballena en Talisayan.</p>
+        <span class="exp-item-label" data-i18n="c23.label">Kalimantan Oriental</span>
+        <h3 data-i18n="c23.h3">Islas Derawan — tiburón ballena y tortugas</h3>
+        <p class="exp-item-sub" data-i18n="c23.sub">Tortugas verdes, mantas en Sangalaki y tiburón ballena en Talisayan.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/lago-kakaban-medusas.webp" width="1600" height="2134" loading="lazy" decoding="async" alt="Lago marino de Kakaban en las Islas Derawan con medusas sin aguijón en Borneo" style="object-position:50% 70%;"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Fenómeno único</span>
-        <h3>Lago Kakaban — nadar entre medusas</h3>
-        <p class="exp-item-sub">Un lago marino aislado hace milenios. Las medusas perdieron el aguijón.</p>
+        <span class="exp-item-label" data-i18n="c24.label">Fenómeno único</span>
+        <h3 data-i18n="c24.h3">Lago Kakaban — nadar entre medusas</h3>
+        <p class="exp-item-sub" data-i18n="c24.sub">Un lago marino aislado hace milenios. Las medusas perdieron el aguijón.</p>
       </div>
     </article>
   </div>
@@ -577,62 +598,62 @@
   <div class="zone-intro">
     <div class="reveal">
       <span class="zone-num">05 · Raja Ampat</span>
-      <h2 class="zone-title">El último <em>paraíso marino</em></h2>
+      <h2 class="zone-title" data-i18n-html="z5.h2">El último <em>paraíso marino</em></h2>
     </div>
-    <p class="zone-desc reveal">El archipiélago con más biodiversidad marina del planeta — 75% de todas las especies de coral conocidas, 1.600 especies de peces, el único lugar del mundo donde se puede nadar con tiburones ballena residentes todo el año. Remoto, exclusivo y todavía pristino.</p>
+    <p class="zone-desc reveal" data-i18n="z5.desc">El archipiélago con más biodiversidad marina del planeta — 75% de todas las especies de coral conocidas, 1.600 especies de peces, el único lugar del mundo donde se puede nadar con tiburones ballena residentes todo el año. Remoto, exclusivo y todavía pristino.</p>
   </div>
   <div class="exp-list">
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/misool-reserva-marina.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Misool Resort en Raja Ampat, isla privada con conservación marina propia"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Isla privada</span>
-        <h3>Misool — Reserva marina propia</h3>
-        <p class="exp-item-sub">Máximo 40 huéspedes. 165 km del puerto más cercano.</p>
+        <span class="exp-item-label" data-i18n="c25.label">Isla privada</span>
+        <h3 data-i18n="c25.h3">Misool — Reserva marina propia</h3>
+        <p class="exp-item-sub" data-i18n="c25.sub">Máximo 40 huéspedes. 165 km del puerto más cercano.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/cabo-kri-374-especies.webp" width="1600" height="2400" loading="lazy" decoding="async" alt="Buceo en Cabo Kri Raja Ampat, récord mundial de biodiversidad marina"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Récord mundial</span>
-        <h3>Cabo Kri — 374 especies</h3>
-        <p class="exp-item-sub">La inmersión más densa de vida marina del planeta.</p>
+        <span class="exp-item-label" data-i18n="c26.label">Récord mundial</span>
+        <h3 data-i18n="c26.h3">Cabo Kri — 374 especies</h3>
+        <p class="exp-item-sub" data-i18n="c26.sub">La inmersión más densa de vida marina del planeta.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/wayag-desde-el-aire.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Vista aérea de las islas karst de Wayag en Raja Ampat desde helicóptero"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Aéreo privado</span>
-        <h3>Wayag desde el aire</h3>
-        <p class="exp-item-sub">El sello visual de Raja Ampat — inalcanzable desde tierra.</p>
+        <span class="exp-item-label" data-i18n="c27.label">Aéreo privado</span>
+        <h3 data-i18n="c27.h3">Wayag desde el aire</h3>
+        <p class="exp-item-sub" data-i18n="c27.sub">El sello visual de Raja Ampat — inalcanzable desde tierra.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/blue-magic-mantas-martillos.webp" width="1600" height="1060" loading="lazy" decoding="async" alt="Buceo en Blue Magic Raja Ampat con congregaciones de mantas y tiburones martillo"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Récord mundial</span>
-        <h3>Blue Magic — mantas y martillos</h3>
-        <p class="exp-item-sub">Congregaciones de mantas gigantes en su corriente de limpieza.</p>
+        <span class="exp-item-label" data-i18n="c28.label">Récord mundial</span>
+        <h3 data-i18n="c28.h3">Blue Magic — mantas y martillos</h3>
+        <p class="exp-item-sub" data-i18n="c28.sub">Congregaciones de mantas gigantes en su corriente de limpieza.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/tiburones-ballena-cenderawasih.webp" width="1600" height="1101" loading="lazy" decoding="async" alt="Nadar con tiburones ballena residentes en la Bahía de Cenderawasih, Papúa"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Único en el mundo</span>
-        <h3>Tiburones ballena en Cenderawasih</h3>
-        <p class="exp-item-sub">12 metros de gigante dócil. Residentes todo el año.</p>
+        <span class="exp-item-label" data-i18n="c29.label">Único en el mundo</span>
+        <h3 data-i18n="c29.h3">Tiburones ballena en Cenderawasih</h3>
+        <p class="exp-item-sub" data-i18n="c29.sub">12 metros de gigante dócil. Residentes todo el año.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/liveaboard-privado-7-10-noches.webp" width="1600" height="2401" loading="lazy" decoding="async" alt="Liveaboard charter privado para buceo expedición en Raja Ampat"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Expedición de buceo</span>
-        <h3>Liveaboard privado · 7–10 noches</h3>
-        <p class="exp-item-sub">Itinerario a medida. Fondeos en bahías desiertas.</p>
+        <span class="exp-item-label" data-i18n="c30.label">Expedición de buceo</span>
+        <h3 data-i18n="c30.h3">Liveaboard privado · 7–10 noches</h3>
+        <p class="exp-item-sub" data-i18n="c30.sub">Itinerario a medida. Fondeos en bahías desiertas.</p>
       </div>
     </article>
   </div>
@@ -643,62 +664,62 @@
   <div class="zone-intro">
     <div class="reveal">
       <span class="zone-num">06 · Lombok & Sumba</span>
-      <h2 class="zone-title">La Indonesia <em>sin masificar</em></h2>
+      <h2 class="zone-title" data-i18n-html="z6.h2">La Indonesia <em>sin masificar</em></h2>
     </div>
-    <p class="zone-desc reveal">Las islas al este de Bali han mantenido todo lo que Bali ha perdido: ritmo pausado, playas desiertas, tradiciones vivas. Sumba es territorio animista con ceremonias megalíticas y el mejor hotel del mundo. Lombok es el paraíso alternativo al que Bali aspiraba a ser.</p>
+    <p class="zone-desc reveal" data-i18n="z6.desc">Las islas al este de Bali han mantenido todo lo que Bali ha perdido: ritmo pausado, playas desiertas, tradiciones vivas. Sumba es territorio animista con ceremonias megalíticas y el mejor hotel del mundo. Lombok es el paraíso alternativo al que Bali aspiraba a ser.</p>
   </div>
   <div class="exp-list">
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/nihi-sumba-edge-of-wildness.webp" width="1600" height="2134" loading="lazy" decoding="async" alt="NIHI Sumba resort de lujo en la isla de Sumba, mejor hotel del mundo"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">#1 mundial · T+L</span>
-        <h3>NIHI Sumba — The Edge of Wildness</h3>
-        <p class="exp-item-sub">567 hectáreas, 28 villas dispersas. No AI. No filters.</p>
+        <span class="exp-item-label" data-i18n="c31.label">#1 mundial · T+L</span>
+        <h3 data-i18n="c31.h3">NIHI Sumba — The Edge of Wildness</h3>
+        <p class="exp-item-sub" data-i18n="c31.sub">567 hectáreas, 28 villas dispersas. No AI. No filters.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/occys-left.webp" width="1600" height="2400" loading="lazy" decoding="async" alt="Occy's Left la ola privada de NIHI Sumba para surfistas avanzados"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Ola privada</span>
-        <h3>Occy's Left</h3>
-        <p class="exp-item-sub">La izquierda legendaria. Solo para huéspedes de NIHI.</p>
+        <span class="exp-item-label" data-i18n="c32.label">Ola privada</span>
+        <h3 data-i18n="c32.h3">Occy's Left</h3>
+        <p class="exp-item-sub" data-i18n="c32.sub">La izquierda legendaria. Solo para huéspedes de NIHI.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/las-secret-secret-gilis.webp" width="1600" height="2134" loading="lazy" decoding="async" alt="Gilis secretas del suroeste de Lombok con playas vírgenes"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Descubrimiento privado</span>
-        <h3>Las Secret Secret Gilis</h3>
-        <p class="exp-item-sub">Vírgenes. Sin nombre en el mapa turístico.</p>
+        <span class="exp-item-label" data-i18n="c33.label">Descubrimiento privado</span>
+        <h3 data-i18n="c33.h3">Las Secret Secret Gilis</h3>
+        <p class="exp-item-sub" data-i18n="c33.sub">Vírgenes. Sin nombre en el mapa turístico.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/tenun-ikat-artesanas-sumbanesas.webp" width="1600" height="1068" loading="lazy" decoding="async" alt="Tejido tradicional Tenun Ikat con artesanas en una aldea de Sumba"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Arte tradicional</span>
-        <h3>Tenun Ikat con artesanas Sumbanesas</h3>
-        <p class="exp-item-sub">Una pieza puede tardar un año. Tinte natural, telar de cintura.</p>
+        <span class="exp-item-label" data-i18n="c34.label">Arte tradicional</span>
+        <h3 data-i18n="c34.h3">Tenun Ikat con artesanas Sumbanesas</h3>
+        <p class="exp-item-sub" data-i18n="c34.sub">Una pieza puede tardar un año. Tinte natural, telar de cintura.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/monte-rinjani-helicoptero.webp" width="1600" height="899" loading="lazy" decoding="async" alt="Sobrevuelo en helicóptero del Monte Rinjani y el lago del cráter Segara Anak"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Aéreo exclusivo</span>
-        <h3>Monte Rinjani en helicóptero</h3>
-        <p class="exp-item-sub">Lo que cuesta cuatro días a pie, en una sola mañana.</p>
+        <span class="exp-item-label" data-i18n="c35.label">Aéreo exclusivo</span>
+        <h3 data-i18n="c35.h3">Monte Rinjani en helicóptero</h3>
+        <p class="exp-item-sub" data-i18n="c35.sub">Lo que cuesta cuatro días a pie, en una sola mañana.</p>
       </div>
     </article>
 
     <article class="exp-item reveal">
       <div class="exp-item-img"><img src="images/del-mar-al-plato-montong.webp" width="1600" height="2400" loading="lazy" decoding="async" alt="Aldea de pescadores tradicional en Montong, Lombok"></div>
       <div class="exp-item-body">
-        <span class="exp-item-label">Amanecer privado</span>
-        <h3>Del mar al plato en Montong</h3>
-        <p class="exp-item-sub">Barca privada al amanecer. Tu pescado, cocinado por quien lo pescó.</p>
+        <span class="exp-item-label" data-i18n="c36.label">Amanecer privado</span>
+        <h3 data-i18n="c36.h3">Del mar al plato en Montong</h3>
+        <p class="exp-item-sub" data-i18n="c36.sub">Barca privada al amanecer. Tu pescado, cocinado por quien lo pescó.</p>
       </div>
     </article>
   </div>
@@ -706,9 +727,9 @@
 
 <!-- CTA FINAL -->
 <section class="exp-cta">
-  <h2>¿Te ha movido <em>alguna</em>?</h2>
-  <p>Estas son solo algunas de las experiencias que diseñamos para nuestros viajeros. Cuéntanos cuál te ha llamado la atención y construimos tu viaje a Indonesia a partir de ahí.</p>
-  <a href="index.html#contact" class="btn-primary">Diseña tu viaje</a>
+  <h2 data-i18n-html="cta.h2">¿Te ha movido <em>alguna</em>?</h2>
+  <p data-i18n="cta.p">Estas son solo algunas de las experiencias que diseñamos para nuestros viajeros. Cuéntanos cuál te ha llamado la atención y construimos tu viaje a Indonesia a partir de ahí.</p>
+  <a href="index.html#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
 </section>
 
 <!-- FOOTER -->
@@ -716,15 +737,311 @@
   <div class="footer-logo">
     <a href="index.html"><img src="Logo_white_crop.svg" alt="Bassa Travels"></a>
   </div>
-  <div class="footer-copy">© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia</div>
+  <div class="footer-copy" data-i18n="footer.copy">© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia</div>
   <div class="footer-nav">
-    <a href="index.html#about">Sobre Bassa</a>
-    <a href="index.html#how">Cómo funciona</a>
-    <a href="index.html#contact">Contacto</a>
+    <a href="index.html#about" data-i18n="footer.about">Sobre Bassa</a>
+    <a href="index.html#how" data-i18n="footer.how">Cómo funciona</a>
+    <a href="index.html#contact" data-i18n="footer.contact">Contacto</a>
   </div>
 </footer>
 
 <script>
+  const t = {
+    es: {
+      'page.title': 'Experiencias irrepetibles en Indonesia — Bassa Travels',
+      'nav.cta': 'Diseña tu viaje',
+      'banner.text': 'Bassa Travels está en <strong>pre-apertura</strong> · Apúntate y te avisaremos cuando arranque la operativa.',
+      'banner.cta': 'Apuntarme →',
+      'hero.tag': 'Experiencias curadas',
+      'hero.h1': 'Lo que nadie<br>te ha <em>contado</em>',
+      'hero.p': 'Una selección de las experiencias más extraordinarias que Indonesia puede ofrecer. Acceso privado, ceremonias reales, islas descubiertas por nuestros partners locales, encuentros que no aparecen en ninguna guía. Para quienes ya han estado en todas partes y aún buscan algo irrepetible.',
+      'z1.h2': 'El alma del <em>archipiélago</em>',
+      'z1.desc': 'Bali no es una isla: es un estado mental. Arrozales escalonados, templos de agua, ceremonias que no se detienen nunca, acantilados sobre el Índico. La versatilidad perfecta para un primer viaje o para volver una y otra vez.',
+      'z2.h2': 'Templos, volcanes y <em>reinos milenarios</em>',
+      'z2.desc': 'La isla más poblada del mundo también es la que guarda los templos más grandes. Borobudur y Prambanan sobreviven desde el siglo VIII rodeados de volcanes activos, palacios sultanales y paisajes cinematográficos. Java es intensidad cultural.',
+      'z3.h2': 'Dragones, mantas y <em>mares turquesa</em>',
+      'z3.desc': 'El archipiélago del este: islas que emergen del mar como joyas geológicas, playas rosas, el reptil más antiguo del planeta, y tres lagos volcánicos que cambian de color sin que la ciencia sepa explicar del todo por qué. Se recorre mejor en velero tradicional.',
+      'z4.h2': 'La selva más antigua <em>del mundo</em>',
+      'z4.desc': 'La parte indonesia de Borneo es una de las selvas tropicales más antiguas del planeta — 140 millones de años. Orangutanes salvajes, ríos sin fondo que se navegan en klotok, pueblos Dayak con tradiciones que casi nadie de fuera ha visto. Para quien busca Indonesia en estado absolutamente puro.',
+      'z5.h2': 'El último <em>paraíso marino</em>',
+      'z5.desc': 'El archipiélago con más biodiversidad marina del planeta — 75% de todas las especies de coral conocidas, 1.600 especies de peces, el único lugar del mundo donde se puede nadar con tiburones ballena residentes todo el año. Remoto, exclusivo y todavía pristino.',
+      'z6.h2': 'La Indonesia <em>sin masificar</em>',
+      'z6.desc': 'Las islas al este de Bali han mantenido todo lo que Bali ha perdido: ritmo pausado, playas desiertas, tradiciones vivas. Sumba es territorio animista con ceremonias megalíticas y el mejor hotel del mundo. Lombok es el paraíso alternativo al que Bali aspiraba a ser.',
+      'cta.h2': '¿Te ha movido <em>alguna</em>?',
+      'cta.p': 'Estas son solo algunas de las experiencias que diseñamos para nuestros viajeros. Cuéntanos cuál te ha llamado la atención y construimos tu viaje a Indonesia a partir de ahí.',
+      'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia',
+      'footer.about': 'Sobre Bassa',
+      'footer.how': 'Cómo funciona',
+      'footer.contact': 'Contacto',
+      'c1.label': 'Ceremonia privada',
+      'c1.h3': 'Melukat con sumo sacerdote en Tirta Empul',
+      'c1.sub': 'El templo entero para ti, antes del primer turista.',
+      'c2.label': 'Sesión privada al alba',
+      'c2.h3': 'Las puertas del cielo de Lempuyang',
+      'c2.sub': 'El Monte Agung enmarcado entre las puertas, sin colas.',
+      'c3.label': 'Aéreo privado',
+      'c3.h3': 'Helicóptero sobre Batur y Agung',
+      'c3.sub': 'Las calderas abiertas bajo tus pies. El Índico al horizonte.',
+      'c4.label': 'Patrimonio UNESCO',
+      'c4.h3': 'Almuerzo entre los arrozales de Jatiluwih',
+      'c4.sub': 'Mesa única en un rincón oculto, el volcán al fondo.',
+      'c5.label': 'Navegación privada',
+      'c5.h3': 'El último crucero hasta Uluwatu',
+      'c5.sub': 'Cócteles a bordo, bendición balinesa con el sol cayendo.',
+      'c6.label': 'Bienestar profundo',
+      'c6.h3': 'COMO Shambhala — Retiro estate',
+      'c6.sub': 'El referente absoluto del wellness en Indonesia.',
+      'c7.label': 'Acceso desde Amanjiwo',
+      'c7.h3': 'Borobudur al amanecer en privado',
+      'c7.sub': 'Antes del primer autobús. Con antropólogo residente.',
+      'c8.label': 'Aéreo exclusivo',
+      'c8.h3': 'Globo aerostático sobre Borobudur',
+      'c8.sub': 'El mandala cósmico del siglo VIII, visto desde arriba.',
+      'c9.label': 'Único en el planeta',
+      'c9.h3': 'Monte Ijen — La llama azul',
+      'c9.sub': 'Gases que arden eléctricos. Y al alba, el lago turquesa.',
+      'c10.label': 'Expedición privada',
+      'c10.h3': 'Monte Bromo — Mar de Arena al alba',
+      'c10.sub': '4x4 cruzando una caldera lunar. Cinco volcanes al amanecer.',
+      'c11.label': 'Catarata escondida',
+      'c11.h3': 'Tumpak Sewu — Las mil cascadas',
+      'c11.sub': 'Un anfiteatro de agua a 120 metros, a la sombra del Semeru.',
+      'c12.label': 'Tránsito de lujo',
+      'c12.h3': 'Tren de Lujo a Yogyakarta',
+      'c12.sub': 'Java entera por la ventana, vagón privado, servicio butler.',
+      'c13.label': 'El barco como destino',
+      'c13.h3': 'Phinisi privado por Komodo',
+      'c13.sub': 'Velero tradicional Bugis. Cada amanecer, una bahía distinta.',
+      'c14.label': 'Playa al amanecer',
+      'c14.h3': 'Pink Beach antes que nadie',
+      'c14.sub': 'Una de las siete playas rosas del mundo, solo para ti.',
+      'c15.label': 'Panorámica irrepetible',
+      'c15.h3': 'Cima de Padar antes del alba',
+      'c15.sub': 'Tres bahías en media luna, blanca, negra y rosa.',
+      'c16.label': 'Encuentro privado',
+      'c16.h3': 'Dragones de Komodo con rangers',
+      'c16.sub': 'Tres metros de prehistoria. La lengua probando el aire.',
+      'c17.label': 'Fenómeno geológico',
+      'c17.h3': 'Kelimutu — Tres cráteres, tres colores',
+      'c17.sub': 'Turquesa, esmeralda, negro rojizo. Sin explicación científica.',
+      'c18.label': 'Aldea ancestral',
+      'c18.h3': 'Wae Rebo — Las casas cono',
+      'c18.sub': 'UNESCO. Siete casas Manggarai escondidas a 1.200m.',
+      'c19.label': 'La joya oculta de Borneo',
+      'c19.h3': 'Klotok por Tanjung Puting',
+      'c19.sub': 'Orangutanes a metros. La selva más biodiversa del planeta.',
+      'c20.label': 'Fauna endémica',
+      'c20.h3': 'El mono de nariz larga al atardecer',
+      'c20.sub': 'Solo existe en Borneo. Al crepúsculo baja a las orillas del río.',
+      'c21.label': 'Aventura nocturna',
+      'c21.h3': 'Tarsier y leopardo nublado al caer la noche',
+      'c21.sub': 'El tarsier, el primate más pequeño del mundo. Y rarísimamente, un leopardo nublado.',
+      'c22.label': 'Cultura ancestral',
+      'c22.h3': 'Encuentro con los Dayak',
+      'c22.sub': 'Longhouses, música de sape y tatuajes que son mapas de vida.',
+      'c23.label': 'Kalimantan Oriental',
+      'c23.h3': 'Islas Derawan — tiburón ballena y tortugas',
+      'c23.sub': 'Tortugas verdes, mantas en Sangalaki y tiburón ballena en Talisayan.',
+      'c24.label': 'Fenómeno único',
+      'c24.h3': 'Lago Kakaban — nadar entre medusas',
+      'c24.sub': 'Un lago marino aislado hace milenios. Las medusas perdieron el aguijón.',
+      'c25.label': 'Isla privada',
+      'c25.h3': 'Misool — Reserva marina propia',
+      'c25.sub': 'Máximo 40 huéspedes. 165 km del puerto más cercano.',
+      'c26.label': 'Récord mundial',
+      'c26.h3': 'Cabo Kri — 374 especies',
+      'c26.sub': 'La inmersión más densa de vida marina del planeta.',
+      'c27.label': 'Aéreo privado',
+      'c27.h3': 'Wayag desde el aire',
+      'c27.sub': 'El sello visual de Raja Ampat — inalcanzable desde tierra.',
+      'c28.label': 'Récord mundial',
+      'c28.h3': 'Blue Magic — mantas y martillos',
+      'c28.sub': 'Congregaciones de mantas gigantes en su corriente de limpieza.',
+      'c29.label': 'Único en el mundo',
+      'c29.h3': 'Tiburones ballena en Cenderawasih',
+      'c29.sub': '12 metros de gigante dócil. Residentes todo el año.',
+      'c30.label': 'Expedición de buceo',
+      'c30.h3': 'Liveaboard privado · 7–10 noches',
+      'c30.sub': 'Itinerario a medida. Fondeos en bahías desiertas.',
+      'c31.label': '#1 mundial · T+L',
+      'c31.h3': 'NIHI Sumba — The Edge of Wildness',
+      'c31.sub': '567 hectáreas, 28 villas dispersas. No AI. No filters.',
+      'c32.label': 'Ola privada',
+      'c32.h3': 'Occy\'s Left',
+      'c32.sub': 'La izquierda legendaria. Solo para huéspedes de NIHI.',
+      'c33.label': 'Descubrimiento privado',
+      'c33.h3': 'Las Secret Secret Gilis',
+      'c33.sub': 'Vírgenes. Sin nombre en el mapa turístico.',
+      'c34.label': 'Arte tradicional',
+      'c34.h3': 'Tenun Ikat con artesanas Sumbanesas',
+      'c34.sub': 'Una pieza puede tardar un año. Tinte natural, telar de cintura.',
+      'c35.label': 'Aéreo exclusivo',
+      'c35.h3': 'Monte Rinjani en helicóptero',
+      'c35.sub': 'Lo que cuesta cuatro días a pie, en una sola mañana.',
+      'c36.label': 'Amanecer privado',
+      'c36.h3': 'Del mar al plato en Montong',
+      'c36.sub': 'Barca privada al amanecer. Tu pescado, cocinado por quien lo pescó.',
+    },
+    en: {
+      'page.title': 'Unforgettable Experiences in Indonesia — Bassa Travels',
+      'nav.cta': 'Design your trip',
+      'banner.text': 'Bassa Travels is in <strong>pre-launch</strong> · Join the list and we\'ll notify you when we go live.',
+      'banner.cta': 'Join now →',
+      'hero.tag': 'Curated experiences',
+      'hero.h1': 'What no one<br>has <em>told you</em>',
+      'hero.p': 'A selection of the most extraordinary experiences Indonesia has to offer. Private access, real ceremonies, islands discovered by our local partners, encounters that appear in no guidebook. For those who have already been everywhere and are still looking for something unrepeatable.',
+      'z1.h2': 'The soul of the <em>archipelago</em>',
+      'z1.desc': 'Bali isn\'t an island: it\'s a state of mind. Terraced rice paddies, water temples, ceremonies that never stop, cliffs over the Indian Ocean. The perfect versatility for a first trip — or to return to again and again.',
+      'z2.h2': 'Temples, volcanoes and <em>ancient kingdoms</em>',
+      'z2.desc': 'The world\'s most populated island is also home to its grandest temples. Borobudur and Prambanan have stood since the 8th century, surrounded by active volcanoes, sultans\' palaces and cinematic landscapes. Java is cultural intensity.',
+      'z3.h2': 'Dragons, manta rays and <em>turquoise seas</em>',
+      'z3.desc': 'The eastern archipelago: islands rising from the sea like geological jewels, pink beaches, the planet\'s oldest living reptile, and three volcanic lakes that shift colour without science fully explaining why. Best explored aboard a traditional sailboat.',
+      'z4.h2': 'The world\'s <em>oldest rainforest</em>',
+      'z4.desc': 'The Indonesian side of Borneo is one of the oldest tropical rainforests on the planet — 140 million years old. Wild orangutans, bottomless rivers navigated by klotok, Dayak communities with traditions almost no outsider has seen. For those seeking Indonesia in its purest state.',
+      'z5.h2': 'The last <em>marine paradise</em>',
+      'z5.desc': 'The archipelago with the greatest marine biodiversity on the planet — 75% of all known coral species, 1,600 fish species, the only place on Earth where you can swim with resident whale sharks year-round. Remote, exclusive and still pristine.',
+      'z6.h2': 'The <em>uncrowded</em> Indonesia',
+      'z6.desc': 'The islands east of Bali have kept everything Bali has lost: a slower pace, deserted beaches, living traditions. Sumba is animist territory with megalithic ceremonies and the world\'s best hotel. Lombok is the alternative paradise Bali once aspired to be.',
+      'cta.h2': 'Did <em>any of these</em> move you?',
+      'cta.p': 'These are just a few of the experiences we design for our travellers. Tell us which one caught your eye and we\'ll build your trip to Indonesia from there.',
+      'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia',
+      'footer.about': 'About Bassa',
+      'footer.how': 'How it works',
+      'footer.contact': 'Contact',
+      'c1.label': 'Private ceremony',
+      'c1.h3': 'Melukat with a high priest at Tirta Empul',
+      'c1.sub': 'The whole temple to yourselves, before the first tourist arrives.',
+      'c2.label': 'Private dawn session',
+      'c2.h3': 'Lempuyang\'s Gates of Heaven',
+      'c2.sub': 'Mount Agung framed between the gates, no queues.',
+      'c3.label': 'Private aerial',
+      'c3.h3': 'Helicopter over Batur and Agung',
+      'c3.sub': 'The calderas open beneath your feet. The Indian Ocean on the horizon.',
+      'c4.label': 'UNESCO heritage',
+      'c4.h3': 'Lunch among the rice terraces of Jatiluwih',
+      'c4.sub': 'A single table in a hidden corner, the volcano behind it.',
+      'c5.label': 'Private sailing',
+      'c5.h3': 'The last cruise to Uluwatu',
+      'c5.sub': 'Cocktails on board, a Balinese blessing as the sun sets.',
+      'c6.label': 'Deep wellness',
+      'c6.h3': 'COMO Shambhala — Estate retreat',
+      'c6.sub': 'Indonesia\'s ultimate benchmark for wellness.',
+      'c7.label': 'Access from Amanjiwo',
+      'c7.h3': 'Private sunrise at Borobudur',
+      'c7.sub': 'Before the first bus arrives. With a resident anthropologist.',
+      'c8.label': 'Exclusive aerial',
+      'c8.h3': 'Hot air balloon over Borobudur',
+      'c8.sub': 'The 8th-century cosmic mandala, seen from above.',
+      'c9.label': 'Unique on the planet',
+      'c9.h3': 'Mount Ijen — The blue flame',
+      'c9.sub': 'Gases burning electric blue. And at dawn, the turquoise lake.',
+      'c10.label': 'Private expedition',
+      'c10.h3': 'Mount Bromo — Sea of Sand at dawn',
+      'c10.sub': '4x4 crossing a lunar caldera. Five volcanoes at sunrise.',
+      'c11.label': 'Hidden waterfall',
+      'c11.h3': 'Tumpak Sewu — The thousand waterfalls',
+      'c11.sub': 'A 120-metre amphitheatre of water, in the shadow of Mount Semeru.',
+      'c12.label': 'Luxury transit',
+      'c12.h3': 'Luxury Train to Yogyakarta',
+      'c12.sub': 'All of Java through the window, private carriage, butler service.',
+      'c13.label': 'The boat as the destination',
+      'c13.h3': 'Private phinisi through Komodo',
+      'c13.sub': 'A traditional Bugis sailboat. A different bay every sunrise.',
+      'c14.label': 'Beach at dawn',
+      'c14.h3': 'Pink Beach before anyone else',
+      'c14.sub': 'One of the world\'s seven pink beaches, all to yourself.',
+      'c15.label': 'One-of-a-kind view',
+      'c15.h3': 'Padar\'s summit before dawn',
+      'c15.sub': 'Three crescent bays — white, black and pink sand.',
+      'c16.label': 'Private encounter',
+      'c16.h3': 'Komodo dragons with rangers',
+      'c16.sub': 'Three metres of prehistory. Its tongue tasting the air.',
+      'c17.label': 'Geological phenomenon',
+      'c17.h3': 'Kelimutu — Three craters, three colours',
+      'c17.sub': 'Turquoise, emerald, reddish black. No scientific explanation.',
+      'c18.label': 'Ancestral village',
+      'c18.h3': 'Wae Rebo — The cone houses',
+      'c18.sub': 'UNESCO. Seven Manggarai houses hidden at 1,200m.',
+      'c19.label': 'Borneo\'s hidden gem',
+      'c19.h3': 'Klotok through Tanjung Puting',
+      'c19.sub': 'Orangutans just metres away. The planet\'s most biodiverse rainforest.',
+      'c20.label': 'Endemic wildlife',
+      'c20.h3': 'The long-nosed monkey at dusk',
+      'c20.sub': 'Found only in Borneo. It comes down to the riverbanks at dusk.',
+      'c21.label': 'Night adventure',
+      'c21.h3': 'Tarsier and clouded leopard after dark',
+      'c21.sub': 'The tarsier, the world\'s smallest primate. And, very rarely, a clouded leopard.',
+      'c22.label': 'Ancestral culture',
+      'c22.h3': 'Meeting the Dayak',
+      'c22.sub': 'Longhouses, sape music and tattoos that map a life.',
+      'c23.label': 'East Kalimantan',
+      'c23.h3': 'Derawan Islands — whale sharks and turtles',
+      'c23.sub': 'Green turtles, manta rays at Sangalaki and whale sharks at Talisayan.',
+      'c24.label': 'One-of-a-kind phenomenon',
+      'c24.h3': 'Lake Kakaban — swimming among jellyfish',
+      'c24.sub': 'A marine lake isolated for millennia. The jellyfish lost their sting.',
+      'c25.label': 'Private island',
+      'c25.h3': 'Misool — Its own marine reserve',
+      'c25.sub': 'Maximum 40 guests. 165 km from the nearest port.',
+      'c26.label': 'World record',
+      'c26.h3': 'Cape Kri — 374 species',
+      'c26.sub': 'The planet\'s densest single dive for marine life.',
+      'c27.label': 'Private aerial',
+      'c27.h3': 'Wayag from above',
+      'c27.sub': 'Raja Ampat\'s signature view — unreachable from land.',
+      'c28.label': 'World record',
+      'c28.h3': 'Blue Magic — manta rays and hammerheads',
+      'c28.sub': 'Gatherings of giant manta rays at their cleaning station.',
+      'c29.label': 'Unique in the world',
+      'c29.h3': 'Whale sharks in Cenderawasih',
+      'c29.sub': 'A gentle 12-metre giant. Resident all year round.',
+      'c30.label': 'Diving expedition',
+      'c30.h3': 'Private liveaboard · 7–10 nights',
+      'c30.sub': 'Bespoke itinerary. Anchoring in deserted bays.',
+      'c31.label': '#1 in the world · T+L',
+      'c31.h3': 'NIHI Sumba — The Edge of Wildness',
+      'c31.sub': '567 hectares, 28 scattered villas. No AI. No filters.',
+      'c32.label': 'Private wave',
+      'c32.h3': 'Occy\'s Left',
+      'c32.sub': 'The legendary left-hander. For NIHI guests only.',
+      'c33.label': 'Private discovery',
+      'c33.h3': 'The Secret Secret Gilis',
+      'c33.sub': 'Untouched. Nameless on the tourist map.',
+      'c34.label': 'Traditional craft',
+      'c34.h3': 'Tenun Ikat with Sumbanese weavers',
+      'c34.sub': 'A single piece can take a year. Natural dye, backstrap loom.',
+      'c35.label': 'Exclusive aerial',
+      'c35.h3': 'Mount Rinjani by helicopter',
+      'c35.sub': 'What takes four days on foot, in a single morning.',
+      'c36.label': 'Private dawn',
+      'c36.h3': 'From sea to plate in Montong',
+      'c36.sub': 'Private boat at dawn. Your catch, cooked by the person who caught it.',
+    }
+  };
+
+  let currentLang = 'es';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('bassa_lang', lang);
+    document.documentElement.lang = lang;
+    document.title = t[lang]['page.title'];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[lang][key] !== undefined) el.textContent = t[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
+    });
+
+    const btnLabel = lang === 'es' ? '<span class="fi fi-gb"></span> EN' : '<span class="fi fi-es"></span> ES';
+    document.getElementById('lang-toggle').innerHTML = btnLabel;
+  }
+
+  document.getElementById('lang-toggle').addEventListener('click', () => setLanguage(currentLang === 'es' ? 'en' : 'es'));
+
   // Prelaunch banner
   (function() {
     const banner = document.getElementById('prelaunch-banner');
@@ -753,6 +1070,8 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  setLanguage(localStorage.getItem('bassa_lang') || 'es');
 </script>
 
 </body>
