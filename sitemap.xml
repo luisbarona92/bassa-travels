@@ -44,9 +44,15 @@
   </url>
   <url>
     <loc>https://bassatravels.com/blog/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bassatravels.com/blog/sumba-lujo-privado-indonesia.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bassatravels.com/blog/islas-banda-maluku-lujo-phinisi.html</loc>
