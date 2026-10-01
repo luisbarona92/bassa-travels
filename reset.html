@@ -6,13 +6,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bassa Reset: Slow Luxury en Bali a Medida | Bassa Travels</title>
-<meta name="description" content="Bassa Reset: viaje de slow luxury de 7 a 12 días por Bali. Villa privada, masajes balineses y gastronomía de autor entre arrozales. Diseño a medida, sin paquetes cerrados.">
+<title>Viaje de desconexión y bienestar en Bali | Bassa Reset</title>
+<meta name="description" content="Bassa Reset: de 7 a 12 días de slow luxury en Bali para desconectar de verdad. Ubud, Sidemen, arrozales y Uluwatu, rituales balineses y una isla de silencio.">
 <link rel="canonical" href="https://bassatravels.com/reset.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bassatravels.com/reset.html">
-<meta property="og:title" content="Bassa Reset: Slow Luxury en Bali a Medida | Bassa Travels">
-<meta property="og:description" content="Viaje de slow luxury de 7 a 12 días por Bali: villa privada, masajes balineses y gastronomía de autor entre arrozales. Diseñado a medida, sin paquetes cerrados.">
+<meta property="og:title" content="Viaje de desconexión y bienestar en Bali | Bassa Reset">
+<meta property="og:description" content="Desconectar de verdad en Bali: villas sobre la selva, rituales balineses, arrozales al amanecer y el océano como final. Con una isla de silencio opcional.">
 <meta property="og:image" content="https://bassatravels.com/images/COMO_Reset.jpg">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Bassa Travels">
@@ -187,6 +187,25 @@
   .faq-section .faq-item p { margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-size: 0.95rem; max-width: 800px; }
 
   /* ── CTA ── */
+  .chapter-list { display: flex; flex-direction: column; gap: 4.5rem; margin-top: 3rem; }
+  .chapter { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; align-items: center; }
+  .chapter:nth-child(even) .chapter-img { order: 2; }
+  .chapter-img { aspect-ratio: 4 / 3; overflow: hidden; }
+  .chapter-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .chapter-label { display: block; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .chapter h3 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; line-height: 1.15; color: white; margin-bottom: 1rem; }
+  .chapter-body p { font-size: 0.95rem; }
+  .chapter-moments { list-style: none; margin: 0.4rem 0 1.2rem; padding: 0; border-top: 1px solid rgba(184,155,106,0.18); }
+  .chapter-moments li { position: relative; padding: 0.7rem 0 0.7rem 1.5rem; border-bottom: 1px solid rgba(184,155,106,0.12); font-size: 0.9rem; color: rgba(255,255,255,0.86); line-height: 1.5; }
+  .chapter-moments li::before { content: '✦'; position: absolute; left: 0; top: 0.78rem; color: var(--gold); font-size: 0.7rem; }
+  .info-section .chapter-when { font-size: 0.85rem; color: rgba(255,255,255,0.62); margin-bottom: 0; }
+  .chapter-when strong { color: var(--gold); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.7rem; }
+  .info-section p a, .faq-section .faq-item p a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .chapter { grid-template-columns: 1fr; gap: 1.6rem; }
+    .chapter:nth-child(even) .chapter-img { order: 0; }
+    .chapter-list { gap: 3.5rem; }
+  }
   .exp-cta { padding: 7rem 4rem; text-align: center; background: var(--deep); position: relative; }
   .exp-cta::before {
     content: ''; position: absolute; inset: 0;
@@ -272,8 +291,56 @@
   "@context": "https://schema.org",
   "@type": "TouristTrip",
   "name": "Bassa Reset",
-  "description": "Viaje de slow luxury de 7 a 12 días por Bali (interior y costa), diseñado a medida: villa privada con piscina, masajes balineses al amanecer y gastronomía de autor entre arrozales.",
-  "touristType": ["Parejas", "Profesionales que buscan desconexión real"],
+  "description": "Bassa Reset es un viaje de slow luxury de 7 a 12 días por Bali pensado para desconectar de verdad: villas privadas sobre la selva, rituales balineses de la mano de quienes los practican, arrozales al amanecer y el océano como final. Sin agenda impuesta, sin multitudes y sin prisas. Si tienes unos días más, el viaje puede cerrarse en una isla de silencio: Sumba, Moyo o una isla secreta de Lombok.",
+  "touristType": [
+    "Parejas",
+    "Profesionales que buscan desconexión real"
+  ],
+  "itinerary": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Place",
+          "name": "Ubud y el valle del Ayung (Bali)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Place",
+          "name": "Sidemen y Karangasem (Bali)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Place",
+          "name": "Jatiluwih y lago Bratan (Bali)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Place",
+          "name": "Uluwatu, península de Bukit (Bali)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Place",
+          "name": "Sumba, Moyo o Lombok (opcional)"
+        }
+      }
+    ]
+  },
   "provider": {
     "@type": "TravelAgency",
     "name": "Bassa Travels",
@@ -291,31 +358,23 @@
       "name": "¿Bassa Reset es un retiro de wellness?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado de wellness, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas."
+        "text": "No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas. Si buscas un programa de bienestar concreto, lo integramos dentro del viaje."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuánto dura un viaje Bassa Reset?",
+      "name": "¿Cuántos días hacen falta para desconectar en Bali?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Entre 7 y 12 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 11 días (10 noches): una semana en el interior de Bali (Ubud) y unos días finales en la costa."
+        "text": "Recomendamos entre 7 y 12 días. Con el vuelo desde España, una semana es el mínimo para que el viaje compense; con 10 o 12 días hay tiempo para combinar varias zonas de Bali sin prisas o para terminar en una isla de silencio."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Bassa Reset es un paquete cerrado?",
+      "name": "¿Cuál es la mejor época para un viaje de desconexión a Bali?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Bassa Reset es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los hoteles y las actividades se ajustan contigo durante el diseño del viaje."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo combinar Bassa Reset con otra línea, como Bassa Explorer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Muchos viajeros combinan Bassa Reset con días de buceo en Raja Ampat o Komodo (Bassa Explorer) o con cultura en Java (Bassa Culture) dentro de un mismo viaje — es la base de Bassa Complete."
+        "text": "De abril a octubre es la estación seca, y mayo, junio y septiembre suelen ser los meses más tranquilos. De noviembre a marzo llueve más, normalmente en chaparrones por la tarde, a cambio de una isla más verde y con menos gente. Y si buscas algo distinto, el Nyepi, el Año Nuevo balinés (en marzo, con fecha variable), detiene la isla entera durante 24 horas: un día de silencio absoluto que pocas veces se vive. Más detalle en nuestra guía de la mejor época para ir a Bali."
       }
     }
   ]
@@ -344,8 +403,8 @@
 <section class="line-hero">
   <div class="line-hero-inner">
     <span class="hero-tag">Bassa Reset · Bali</span>
-    <h1 data-i18n-html="hero.h1">Slow luxury en Bali,<br><em>a tu medida</em></h1>
-    <p class="answer-direct" data-i18n="hero.p">Bassa Reset es un viaje de slow luxury de entre 7 y 12 días por Bali, pensado para desconectar de verdad: villa privada con piscina, masajes balineses al amanecer y gastronomía de autor entre arrozales. No es un paquete cerrado, sino un punto de partida que adaptamos contigo, combinando el interior (Ubud) y la costa según tu ritmo.</p>
+    <h1 data-i18n-html="hero.h1">Desconectar en Bali,<br><em>de verdad</em></h1>
+    <p class="answer-direct" data-i18n="hero.p">Bassa Reset es un viaje de slow luxury de 7 a 12 días por Bali pensado para desconectar de verdad: villas privadas sobre la selva, rituales balineses de la mano de quienes los practican, arrozales al amanecer y el océano como final. Sin agenda impuesta, sin multitudes y sin prisas. Si tienes unos días más, el viaje puede cerrarse en una isla de silencio: Sumba, Moyo o una isla secreta de Lombok.</p>
   </div>
 </section>
 
@@ -357,15 +416,15 @@
     <table class="data-table">
       <tr>
         <td data-i18n="glance.duracion.label">Duración orientativa</td>
-        <td data-i18n="glance.duracion.value">7–12 días. El ejemplo desarrollado en esta página son 11 días / 10 noches.</td>
+        <td data-i18n="glance.duracion.value">7–12 días. Lo justo para que el cuerpo cambie de ritmo sin que el viaje se llene de traslados.</td>
       </tr>
       <tr>
         <td data-i18n="glance.estilo.label">Estilo</td>
-        <td data-i18n="glance.estilo.value">Slow luxury · 100% privado · sin grupos ni itinerarios cerrados.</td>
+        <td data-i18n="glance.estilo.value">Slow luxury y 100% privado: villa con piscina propia, sin horarios impuestos y con el bienestar integrado en el día a día.</td>
       </tr>
       <tr>
-        <td data-i18n="glance.zona.label">Zona principal</td>
-        <td data-i18n="glance.zona.value">Bali interior (Ubud) combinado con unos días de costa (Canggu o Seminyak).</td>
+        <td data-i18n="glance.zona.label">Zonas</td>
+        <td data-i18n="glance.zona.value">Bali: Ubud y el valle del Ayung, Sidemen, los arrozales y volcanes del centro y Uluwatu. Opcional: Sumba, Moyo o las Secret Gilis de Lombok.</td>
       </tr>
       <tr>
         <td data-i18n="glance.quien.label">Para quién</td>
@@ -373,65 +432,103 @@
       </tr>
       <tr>
         <td data-i18n="glance.epoca.label">Mejor época</td>
-        <td data-i18n="glance.epoca.value">Abril a octubre, estación seca en Bali.</td>
+        <td data-i18n="glance.epoca.value">Todo el año; de abril a octubre, estación seca. En marzo, el Nyepi convierte la isla en un día entero de silencio.</td>
       </tr>
     </table>
   </div>
 </section>
 
-<!-- QUÉ ES BASSA RESET -->
+<!-- CONCEPTO -->
 <section class="info-section reveal">
   <div class="inner">
     <span class="section-tag" data-i18n="concept.tag">El concepto</span>
     <h2 class="section-title" data-i18n-html="concept.h2">Reset, no <em>retiro</em></h2>
-    <p data-i18n="concept.p1">Bassa Reset nace de una idea simple: la mayoría de viajes de "desconexión" están más llenos de actividades que el día a día del que se quiere escapar. Aquí ocurre lo contrario. El interior de Bali —Ubud y sus arrozales— marca el ritmo: mañanas sin despertador, masajes balineses, ceremonias de purificación y comidas con producto local, todo en una villa privada con piscina propia.</p>
-    <p data-i18n="concept.p2">La segunda mitad del viaje cambia de paisaje sin cambiar de filosofía: unos días de costa (Canggu o Seminyak) para cerrar con el mar, atardeceres y una gastronomía más relajada. Sin colas, sin grupos, sin horarios impuestos por nadie más que por ti.</p>
-    <p data-i18n="concept.p3">Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Reset — no un menú cerrado, sino el punto de partida sobre el que diseñamos tu viaje.</p>
+    <p data-i18n="concept.p1">Bassa Reset nace de una idea simple: la mayoría de viajes de "desconexión" están más llenos de actividades que el día a día del que se quiere escapar. Aquí ocurre lo contrario. El interior de Bali marca el ritmo: mañanas sin despertador, masajes balineses, ceremonias de purificación y comidas con producto local, todo desde una villa privada con piscina propia.</p>
+    <p data-i18n="concept.p2">La segunda parte del viaje cambia de paisaje sin cambiar de filosofía: los valles rurales del este, los arrozales y lagos de montaña del centro o los acantilados de Uluwatu, siempre lejos de las zonas más concurridas del sur. Y si quieres ir más lejos, una isla pequeña donde el silencio es el verdadero lujo.</p>
+    <p data-i18n="concept.p3">A continuación, los escenarios con los que trabajamos. Tu viaje se construye a partir de ellos, de tus fechas y de lo que necesites dejar atrás.</p>
   </div>
 </section>
 
-<!-- EJEMPLOS DE EXPERIENCIAS -->
+<!-- ESCENARIOS -->
 <section class="info-section reveal">
   <div class="inner">
-    <span class="section-tag" data-i18n="examples.tag">Ejemplos de experiencias</span>
-    <h2 class="section-title" data-i18n-html="examples.h2">Lo que puede incluir<br>tu <em>Bassa Reset</em></h2>
-    <p data-i18n="examples.intro">Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Reset es distinto: estas son referencias para inspirarte, no una lista cerrada.</p>
-    <div class="exp-list">
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/bali_melukat.jpg" alt="Ceremonia melukat de purificación en los manantiales de Tirta Empul, Bali"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item1.label">Ceremonia privada</span>
-          <h3 data-i18n="examples.item1.h3">Melukat con sumo sacerdote en Tirta Empul</h3>
-          <p class="exp-item-sub" data-i18n="examples.item1.sub">El templo entero para ti, antes del primer turista.</p>
+    <span class="section-tag" data-i18n="chapters.tag">Dónde</span>
+    <h2 class="section-title" data-i18n-html="chapters.h2">Los escenarios de <em>tu Bassa Reset</em></h2>
+    <p data-i18n="chapters.intro">Bali es mucho más que playas y beach clubs: tiene selva, valles rurales, volcanes, lagos sagrados y acantilados sobre el océano. Estos son los rincones donde la isla todavía se vive despacio.</p>
+    <div class="chapter-list">
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/Anantara_Ubud_Bali_Resort_Location_2056.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Atardecer sobre el volcán desde la selva del interior de Bali"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch1.label">Selva y bienestar</span>
+          <h3 data-i18n="ch1.h3">Ubud y el valle del Ayung</h3>
+          <p data-i18n="ch1.p">Ubud es el centro espiritual de Bali, y sus mejores villas no están en el pueblo, sino suspendidas sobre el valle del río Ayung, rodeadas de selva y con el río como único sonido. Es el lugar para bajar revoluciones: masajes balineses sin reloj, yoga al amanecer frente a los arrozales y una cocina basada en producto local. Aquí el bienestar también es cultura: un melukat, el ritual de purificación en los manantiales sagrados de Tirta Empul, guiado por un sacerdote solo para ti antes de que llegue nadie; los templos tallados en la roca de Gunung Kawi, o una tarde en el jardín de una mujer que cultiva hierbas medicinales y te enseña a preparar tu propia infusión.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch1.m1">Melukat con sacerdote privado en Tirta Empul, antes de las multitudes</li>
+          <li data-i18n="ch1.m2">Té de hierbas medicinales en el jardín de una curandera local</li>
+          <li data-i18n="ch1.m3">Taller de jamu, la medicina herbal tradicional</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch1.when">Todo el año; de abril a octubre, estación seca.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/bali_jatiluwih.jpg" alt="Terrazas de arroz UNESCO de Jatiluwih a los pies del Monte Batukaru"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item2.label">Patrimonio UNESCO</span>
-          <h3 data-i18n="examples.item2.h3">Almuerzo entre los arrozales de Jatiluwih</h3>
-          <p class="exp-item-sub" data-i18n="examples.item2.sub">Mesa única en un rincón oculto, el volcán al fondo.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/bali_lempuyang.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Pura Lempuyang Puerta del Cielo con vistas al Monte Agung al amanecer"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch2.label">La Bali rural</span>
+          <h3 data-i18n="ch2.h3">Sidemen y el este, a los pies del Agung</h3>
+          <p data-i18n="ch2.p">A algo más de una hora de Ubud, el valle de Sidemen conserva el Bali de antes: arrozales en terrazas, agricultores que siguen trabajando la tierra a mano y el monte Agung, el volcán sagrado de la isla, presidiendo cada vista. Casi no hay tiendas de recuerdos ni grupos. Se camina entre los campos con gente del valle, se cocina con lo recogido del huerto y se aprende a escribir el propio nombre en hojas de lontar con el alfabeto balinés. Más al este, en Karangasem, el palacio de agua de Tirta Gangga y el templo de Lempuyang al amanecer completan la Bali más serena.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch2.m1">Paseo entre arrozales con agricultores del valle</li>
+          <li data-i18n="ch2.m2">Escribir tu nombre en lontar con el alfabeto balinés</li>
+          <li data-i18n="ch2.m3">Lempuyang al amanecer, antes de las colas</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch2.when">De abril a octubre.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/COMO_Reset.jpg" alt="COMO Shambhala Estate retiro de bienestar sobre el río Ayung en Ubud" style="object-position: 25% 40%;"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item3.label">Alojamiento de referencia</span>
-          <h3 data-i18n="examples.item3.h3">COMO Shambhala — Ubud</h3>
-          <p class="exp-item-sub" data-i18n="examples.item3.sub">El referente absoluto del slow living en Indonesia.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/bali_jatiluwih.jpg" width="900" height="600" loading="lazy" decoding="async" alt="Terrazas de arroz UNESCO de Jatiluwih a los pies del Monte Batukaru"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch3.label">Arrozales y volcanes</span>
+          <h3 data-i18n="ch3.h3">Jatiluwih, los lagos sagrados y los volcanes</h3>
+          <p data-i18n="ch3.p">En el centro de la isla, a los pies del monte Batukaru, las terrazas de Jatiluwih forman parte del paisaje del subak, el sistema tradicional de riego que la UNESCO declaró Patrimonio de la Humanidad. Se recorren a pie o en bicicleta con un guía que explica cada variedad de arroz, y el paseo termina con un almuerzo privado en un rincón escondido, con el volcán de fondo. Más arriba, el aire se enfría alrededor de los lagos sagrados y del templo de Ulun Danu, sobre el lago Bratan. Y para ver Bali desde otra perspectiva, un helicóptero privado sobrevuela los volcanes Batur y Agung.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch3.m1">Almuerzo privado en un rincón escondido de Jatiluwih</li>
+          <li data-i18n="ch3.m2">Amanecer en el templo de Ulun Danu, sobre el lago Bratan</li>
+          <li data-i18n="ch3.m3">Helicóptero sobre los volcanes Batur y Agung</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch3.when">De abril a octubre. En las tierras altas refresca por la noche.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/Sunset Cruise 3.jpg" alt="Crucero privado al atardecer hacia el templo de Uluwatu en Bali"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item4.label">Navegación privada</span>
-          <h3 data-i18n="examples.item4.h3">El último crucero hasta Uluwatu</h3>
-          <p class="exp-item-sub" data-i18n="examples.item4.sub">Cócteles a bordo, bendición balinesa con el sol cayendo.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/Sunset%20Cruise%203.jpg" width="1800" height="1200" loading="lazy" decoding="async" alt="Crucero privado al atardecer hacia el templo de Uluwatu en Bali"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch4.label">El océano como final</span>
+          <h3 data-i18n="ch4.h3">Uluwatu y los acantilados del sur</h3>
+          <p data-i18n="ch4.p">Para cerrar el viaje frente al mar, la península de Bukit ofrece lo que la costa más transitada no tiene: acantilados de piedra caliza, calas a las que se baja por escaleras entre las rocas y villas suspendidas sobre el océano Índico. Al atardecer, un barco privado navega hasta el templo de Uluwatu y, con el sol cayendo, la tripulación celebra una bendición balinesa a bordo. Para quien quiera entender el lugar, una ruta privada sigue los pasos de Dang Hyang Nirartha, el sacerdote del siglo XVI que recorrió esta costa: cuevas de meditación, templos junto al mar y rituales de purificación en la playa.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch4.m1">Crucero privado al atardecer con bendición balinesa a bordo</li>
+          <li data-i18n="ch4.m2">La ruta oculta de Dang Hyang Nirartha</li>
+          <li data-i18n="ch4.m3">Danza Kecak en el templo de Uluwatu al caer el sol</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch4.when">Todo el año; de abril a octubre, estación seca.</span></p>
+        </div>
+      </article>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/nihi-sumba-edge-of-wildness.webp" width="1600" height="2134" loading="lazy" decoding="async" alt="Costa salvaje de la isla de Sumba, en Indonesia"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch5.label">Opcional · Una isla de silencio</span>
+          <h3 data-i18n="ch5.h3">Sumba, Moyo o una isla secreta de Lombok</h3>
+          <p data-i18n="ch5.p">Si tienes algunos días más, el viaje puede cerrarse fuera de Bali, en una isla donde no hay nada que hacer salvo estar. Sumba, a 70–90 minutos de vuelo, ofrece colinas de sabana, playas kilométricas vacías y alojamientos donde hasta el spa se alcanza a caballo o en bicicleta por el campo. Moyo, a una hora de hidroavión, es una isla protegida con un campamento de lujo entre la selva y cascadas de agua turquesa. Y al suroeste de Lombok, las llamadas Secret Gilis son islotes casi sin visitantes, perfectos para navegar en catamarán y fondear sin nadie alrededor.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch5.m1">Llegada a Moyo en hidroavión</li>
+          <li data-i18n="ch5.m2">Galope por una playa vacía de Sumba</li>
+          <li data-i18n="ch5.m3">Catamarán privado por las Secret Gilis</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch5.when">De abril a octubre.</span></p>
         </div>
       </article>
     </div>
     <div class="exp-more-wrap">
-      <a href="experiencias.html" class="exp-more-link" data-i18n="examples.more">Ver todas las experiencias →</a>
+      <a href="experiencias.html" class="exp-more-link" data-i18n="chapters.more">Ver todas las experiencias →</a>
     </div>
   </div>
 </section>
@@ -444,22 +541,17 @@
 
     <details class="faq-item">
       <summary data-i18n="faq.q1">¿Bassa Reset es un retiro de wellness?</summary>
-      <p data-i18n="faq.a1">No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado de wellness, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas.</p>
+      <p data-i18n="faq.a1">No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas. Si buscas un programa de bienestar concreto, lo integramos dentro del viaje.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q2">¿Cuánto dura un viaje Bassa Reset?</summary>
-      <p data-i18n="faq.a2">Entre 7 y 12 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 11 días (10 noches): una semana en el interior de Bali (Ubud) y unos días finales en la costa.</p>
+      <summary data-i18n="faq.q2">¿Cuántos días hacen falta para desconectar en Bali?</summary>
+      <p data-i18n="faq.a2">Recomendamos entre 7 y 12 días. Con el vuelo desde España, una semana es el mínimo para que el viaje compense; con 10 o 12 días hay tiempo para combinar varias zonas de Bali sin prisas o para terminar en una isla de silencio.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q3">¿Bassa Reset es un paquete cerrado?</summary>
-      <p data-i18n="faq.a3">No. Bassa Reset es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los hoteles y las actividades se ajustan contigo durante el diseño del viaje.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary data-i18n="faq.q4">¿Puedo combinar Bassa Reset con otra línea, como Bassa Explorer?</summary>
-      <p data-i18n="faq.a4">Sí. Muchos viajeros combinan Bassa Reset con días de buceo en Raja Ampat o Komodo (Bassa Explorer) o con cultura en Java (Bassa Culture) dentro de un mismo viaje — es la base de Bassa Complete.</p>
+      <summary data-i18n="faq.q3">¿Cuál es la mejor época para un viaje de desconexión a Bali?</summary>
+      <p data-i18n-html="faq.a3">De abril a octubre es la estación seca, y mayo, junio y septiembre suelen ser los meses más tranquilos. De noviembre a marzo llueve más, normalmente en chaparrones por la tarde, a cambio de una isla más verde y con menos gente. Y si buscas algo distinto, el Nyepi, el Año Nuevo balinés (en marzo, con fecha variable), detiene la isla entera durante 24 horas: un día de silencio absoluto que pocas veces se vive. Más detalle en nuestra <a href="blog/mejor-epoca-para-ir-a-bali.html">guía de la mejor época para ir a Bali</a>.</p>
     </details>
   </div>
 </section>
@@ -467,7 +559,7 @@
 <!-- CTA FINAL -->
 <section class="exp-cta">
   <h2 data-i18n-html="cta.h2">¿Diseñamos tu <em>Bassa Reset</em>?</h2>
-  <p data-i18n="cta.p">Cuéntanos tus fechas, con quién viajas y qué no puede faltar. A partir de ahí construimos un itinerario a tu medida.</p>
+  <p data-i18n="cta.p">Cuéntanos tus fechas, cuánto tiempo tienes y qué necesitas dejar atrás. A partir de ahí diseñamos un viaje a tu ritmo.</p>
   <a href="index.html#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
 </section>
 
@@ -495,114 +587,162 @@
 <script>
   const t = {
     es: {
-      'page.title': 'Bassa Reset: Slow Luxury en Bali a Medida | Bassa Travels',
+      'page.title': 'Viaje de desconexión y bienestar en Bali | Bassa Reset',
       'nav.cta': 'Diseña tu viaje',
       'breadcrumb.home': 'Inicio',
       'breadcrumb.experiences': 'Experiencias',
-      'hero.h1': 'Slow luxury en Bali,<br><em>a tu medida</em>',
-      'hero.p': 'Bassa Reset es un viaje de slow luxury de entre 7 y 12 días por Bali, pensado para desconectar de verdad: villa privada con piscina, masajes balineses al amanecer y gastronomía de autor entre arrozales. No es un paquete cerrado, sino un punto de partida que adaptamos contigo, combinando el interior (Ubud) y la costa según tu ritmo.',
+      'hero.h1': 'Desconectar en Bali,<br><em>de verdad</em>',
+      'hero.p': 'Bassa Reset es un viaje de slow luxury de 7 a 12 días por Bali pensado para desconectar de verdad: villas privadas sobre la selva, rituales balineses de la mano de quienes los practican, arrozales al amanecer y el océano como final. Sin agenda impuesta, sin multitudes y sin prisas. Si tienes unos días más, el viaje puede cerrarse en una isla de silencio: Sumba, Moyo o una isla secreta de Lombok.',
       'glance.tag': 'En una mirada',
       'glance.h2': '<em>Datos</em> clave',
       'glance.duracion.label': 'Duración orientativa',
-      'glance.duracion.value': '7–12 días. El ejemplo desarrollado en esta página son 11 días / 10 noches.',
+      'glance.duracion.value': '7–12 días. Lo justo para que el cuerpo cambie de ritmo sin que el viaje se llene de traslados.',
       'glance.estilo.label': 'Estilo',
-      'glance.estilo.value': 'Slow luxury · 100% privado · sin grupos ni itinerarios cerrados.',
-      'glance.zona.label': 'Zona principal',
-      'glance.zona.value': 'Bali interior (Ubud) combinado con unos días de costa (Canggu o Seminyak).',
+      'glance.estilo.value': 'Slow luxury y 100% privado: villa con piscina propia, sin horarios impuestos y con el bienestar integrado en el día a día.',
+      'glance.zona.label': 'Zonas',
+      'glance.zona.value': 'Bali: Ubud y el valle del Ayung, Sidemen, los arrozales y volcanes del centro y Uluwatu. Opcional: Sumba, Moyo o las Secret Gilis de Lombok.',
       'glance.quien.label': 'Para quién',
       'glance.quien.value': 'Parejas y profesionales que necesitan desconectar del ritmo urbano sin renunciar al confort.',
       'glance.epoca.label': 'Mejor época',
-      'glance.epoca.value': 'Abril a octubre, estación seca en Bali.',
+      'glance.epoca.value': 'Todo el año; de abril a octubre, estación seca. En marzo, el Nyepi convierte la isla en un día entero de silencio.',
       'concept.tag': 'El concepto',
       'concept.h2': 'Reset, no <em>retiro</em>',
-      'concept.p1': 'Bassa Reset nace de una idea simple: la mayoría de viajes de "desconexión" están más llenos de actividades que el día a día del que se quiere escapar. Aquí ocurre lo contrario. El interior de Bali —Ubud y sus arrozales— marca el ritmo: mañanas sin despertador, masajes balineses, ceremonias de purificación y comidas con producto local, todo en una villa privada con piscina propia.',
-      'concept.p2': 'La segunda mitad del viaje cambia de paisaje sin cambiar de filosofía: unos días de costa (Canggu o Seminyak) para cerrar con el mar, atardeceres y una gastronomía más relajada. Sin colas, sin grupos, sin horarios impuestos por nadie más que por ti.',
-      'concept.p3': 'Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Reset — no un menú cerrado, sino el punto de partida sobre el que diseñamos tu viaje.',
-      'examples.tag': 'Ejemplos de experiencias',
-      'examples.h2': 'Lo que puede incluir<br>tu <em>Bassa Reset</em>',
-      'examples.intro': 'Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Reset es distinto: estas son referencias para inspirarte, no una lista cerrada.',
-      'examples.item1.label': 'Ceremonia privada',
-      'examples.item1.h3': 'Melukat con sumo sacerdote en Tirta Empul',
-      'examples.item1.sub': 'El templo entero para ti, antes del primer turista.',
-      'examples.item2.label': 'Patrimonio UNESCO',
-      'examples.item2.h3': 'Almuerzo entre los arrozales de Jatiluwih',
-      'examples.item2.sub': 'Mesa única en un rincón oculto, el volcán al fondo.',
-      'examples.item3.label': 'Alojamiento de referencia',
-      'examples.item3.h3': 'COMO Shambhala — Ubud',
-      'examples.item3.sub': 'El referente absoluto del slow living en Indonesia.',
-      'examples.item4.label': 'Navegación privada',
-      'examples.item4.h3': 'El último crucero hasta Uluwatu',
-      'examples.item4.sub': 'Cócteles a bordo, bendición balinesa con el sol cayendo.',
-      'examples.more': 'Ver todas las experiencias →',
+      'concept.p1': 'Bassa Reset nace de una idea simple: la mayoría de viajes de "desconexión" están más llenos de actividades que el día a día del que se quiere escapar. Aquí ocurre lo contrario. El interior de Bali marca el ritmo: mañanas sin despertador, masajes balineses, ceremonias de purificación y comidas con producto local, todo desde una villa privada con piscina propia.',
+      'concept.p2': 'La segunda parte del viaje cambia de paisaje sin cambiar de filosofía: los valles rurales del este, los arrozales y lagos de montaña del centro o los acantilados de Uluwatu, siempre lejos de las zonas más concurridas del sur. Y si quieres ir más lejos, una isla pequeña donde el silencio es el verdadero lujo.',
+      'concept.p3': 'A continuación, los escenarios con los que trabajamos. Tu viaje se construye a partir de ellos, de tus fechas y de lo que necesites dejar atrás.',
+      'chapters.tag': 'Dónde',
+      'chapters.h2': 'Los escenarios de <em>tu Bassa Reset</em>',
+      'chapters.intro': 'Bali es mucho más que playas y beach clubs: tiene selva, valles rurales, volcanes, lagos sagrados y acantilados sobre el océano. Estos son los rincones donde la isla todavía se vive despacio.',
+      'chapters.when': 'Cuándo',
+      'chapters.more': 'Ver todas las experiencias →',
+      'ch1.label': 'Selva y bienestar',
+      'ch1.h3': 'Ubud y el valle del Ayung',
+      'ch1.p': 'Ubud es el centro espiritual de Bali, y sus mejores villas no están en el pueblo, sino suspendidas sobre el valle del río Ayung, rodeadas de selva y con el río como único sonido. Es el lugar para bajar revoluciones: masajes balineses sin reloj, yoga al amanecer frente a los arrozales y una cocina basada en producto local. Aquí el bienestar también es cultura: un melukat, el ritual de purificación en los manantiales sagrados de Tirta Empul, guiado por un sacerdote solo para ti antes de que llegue nadie; los templos tallados en la roca de Gunung Kawi, o una tarde en el jardín de una mujer que cultiva hierbas medicinales y te enseña a preparar tu propia infusión.',
+      'ch1.when': 'Todo el año; de abril a octubre, estación seca.',
+      'ch1.m1': 'Melukat con sacerdote privado en Tirta Empul, antes de las multitudes',
+      'ch1.m2': 'Té de hierbas medicinales en el jardín de una curandera local',
+      'ch1.m3': 'Taller de jamu, la medicina herbal tradicional',
+      'ch2.label': 'La Bali rural',
+      'ch2.h3': 'Sidemen y el este, a los pies del Agung',
+      'ch2.p': 'A algo más de una hora de Ubud, el valle de Sidemen conserva el Bali de antes: arrozales en terrazas, agricultores que siguen trabajando la tierra a mano y el monte Agung, el volcán sagrado de la isla, presidiendo cada vista. Casi no hay tiendas de recuerdos ni grupos. Se camina entre los campos con gente del valle, se cocina con lo recogido del huerto y se aprende a escribir el propio nombre en hojas de lontar con el alfabeto balinés. Más al este, en Karangasem, el palacio de agua de Tirta Gangga y el templo de Lempuyang al amanecer completan la Bali más serena.',
+      'ch2.when': 'De abril a octubre.',
+      'ch2.m1': 'Paseo entre arrozales con agricultores del valle',
+      'ch2.m2': 'Escribir tu nombre en lontar con el alfabeto balinés',
+      'ch2.m3': 'Lempuyang al amanecer, antes de las colas',
+      'ch3.label': 'Arrozales y volcanes',
+      'ch3.h3': 'Jatiluwih, los lagos sagrados y los volcanes',
+      'ch3.p': 'En el centro de la isla, a los pies del monte Batukaru, las terrazas de Jatiluwih forman parte del paisaje del subak, el sistema tradicional de riego que la UNESCO declaró Patrimonio de la Humanidad. Se recorren a pie o en bicicleta con un guía que explica cada variedad de arroz, y el paseo termina con un almuerzo privado en un rincón escondido, con el volcán de fondo. Más arriba, el aire se enfría alrededor de los lagos sagrados y del templo de Ulun Danu, sobre el lago Bratan. Y para ver Bali desde otra perspectiva, un helicóptero privado sobrevuela los volcanes Batur y Agung.',
+      'ch3.when': 'De abril a octubre. En las tierras altas refresca por la noche.',
+      'ch3.m1': 'Almuerzo privado en un rincón escondido de Jatiluwih',
+      'ch3.m2': 'Amanecer en el templo de Ulun Danu, sobre el lago Bratan',
+      'ch3.m3': 'Helicóptero sobre los volcanes Batur y Agung',
+      'ch4.label': 'El océano como final',
+      'ch4.h3': 'Uluwatu y los acantilados del sur',
+      'ch4.p': 'Para cerrar el viaje frente al mar, la península de Bukit ofrece lo que la costa más transitada no tiene: acantilados de piedra caliza, calas a las que se baja por escaleras entre las rocas y villas suspendidas sobre el océano Índico. Al atardecer, un barco privado navega hasta el templo de Uluwatu y, con el sol cayendo, la tripulación celebra una bendición balinesa a bordo. Para quien quiera entender el lugar, una ruta privada sigue los pasos de Dang Hyang Nirartha, el sacerdote del siglo XVI que recorrió esta costa: cuevas de meditación, templos junto al mar y rituales de purificación en la playa.',
+      'ch4.when': 'Todo el año; de abril a octubre, estación seca.',
+      'ch4.m1': 'Crucero privado al atardecer con bendición balinesa a bordo',
+      'ch4.m2': 'La ruta oculta de Dang Hyang Nirartha',
+      'ch4.m3': 'Danza Kecak en el templo de Uluwatu al caer el sol',
+      'ch5.label': 'Opcional · Una isla de silencio',
+      'ch5.h3': 'Sumba, Moyo o una isla secreta de Lombok',
+      'ch5.p': 'Si tienes algunos días más, el viaje puede cerrarse fuera de Bali, en una isla donde no hay nada que hacer salvo estar. Sumba, a 70–90 minutos de vuelo, ofrece colinas de sabana, playas kilométricas vacías y alojamientos donde hasta el spa se alcanza a caballo o en bicicleta por el campo. Moyo, a una hora de hidroavión, es una isla protegida con un campamento de lujo entre la selva y cascadas de agua turquesa. Y al suroeste de Lombok, las llamadas Secret Gilis son islotes casi sin visitantes, perfectos para navegar en catamarán y fondear sin nadie alrededor.',
+      'ch5.when': 'De abril a octubre.',
+      'ch5.m1': 'Llegada a Moyo en hidroavión',
+      'ch5.m2': 'Galope por una playa vacía de Sumba',
+      'ch5.m3': 'Catamarán privado por las Secret Gilis',
       'faq.tag': 'Preguntas frecuentes',
       'faq.h2': 'Bassa Reset, <em>en detalle</em>',
       'faq.q1': '¿Bassa Reset es un retiro de wellness?',
-      'faq.a1': 'No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado de wellness, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas.',
-      'faq.q2': '¿Cuánto dura un viaje Bassa Reset?',
-      'faq.a2': 'Entre 7 y 12 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 11 días (10 noches): una semana en el interior de Bali (Ubud) y unos días finales en la costa.',
-      'faq.q3': '¿Bassa Reset es un paquete cerrado?',
-      'faq.a3': 'No. Bassa Reset es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los hoteles y las actividades se ajustan contigo durante el diseño del viaje.',
-      'faq.q4': '¿Puedo combinar Bassa Reset con otra línea, como Bassa Explorer?',
-      'faq.a4': 'Sí. Muchos viajeros combinan Bassa Reset con días de buceo en Raja Ampat o Komodo (Bassa Explorer) o con cultura en Java (Bassa Culture) dentro de un mismo viaje — es la base de Bassa Complete.',
+      'faq.a1': 'No exactamente. Bassa Reset no es un programa médico ni un retiro estructurado, sino un viaje de slow luxury por Bali centrado en la desconexión real: ritmo lento, villa privada, masajes balineses y experiencias auténticas, sin agenda clínica ni rutinas impuestas. Si buscas un programa de bienestar concreto, lo integramos dentro del viaje.',
+      'faq.q2': '¿Cuántos días hacen falta para desconectar en Bali?',
+      'faq.a2': 'Recomendamos entre 7 y 12 días. Con el vuelo desde España, una semana es el mínimo para que el viaje compense; con 10 o 12 días hay tiempo para combinar varias zonas de Bali sin prisas o para terminar en una isla de silencio.',
+      'faq.q3': '¿Cuál es la mejor época para un viaje de desconexión a Bali?',
+      'faq.a3': 'De abril a octubre es la estación seca, y mayo, junio y septiembre suelen ser los meses más tranquilos. De noviembre a marzo llueve más, normalmente en chaparrones por la tarde, a cambio de una isla más verde y con menos gente. Y si buscas algo distinto, el Nyepi, el Año Nuevo balinés (en marzo, con fecha variable), detiene la isla entera durante 24 horas: un día de silencio absoluto que pocas veces se vive. Más detalle en nuestra <a href="blog/mejor-epoca-para-ir-a-bali.html">guía de la mejor época para ir a Bali</a>.',
       'cta.h2': '¿Diseñamos tu <em>Bassa Reset</em>?',
-      'cta.p': 'Cuéntanos tus fechas, con quién viajas y qué no puede faltar. A partir de ahí construimos un itinerario a tu medida.',
+      'cta.p': 'Cuéntanos tus fechas, cuánto tiempo tienes y qué necesitas dejar atrás. A partir de ahí diseñamos un viaje a tu ritmo.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia',
-      'footer.about': 'Sobre Bassa', 'footer.experiences': 'Experiencias', 'footer.contact': 'Contacto'
+      'footer.about': 'Sobre Bassa',
+      'footer.experiences': 'Experiencias',
+      'footer.contact': 'Contacto'
     },
     en: {
-      'page.title': 'Bassa Reset: Tailor-Made Slow Luxury in Bali | Bassa Travels',
+      'page.title': 'Slow Luxury Wellness Escape in Bali | Bassa Reset',
       'nav.cta': 'Design your trip',
       'breadcrumb.home': 'Home',
       'breadcrumb.experiences': 'Experiences',
-      'hero.h1': 'Slow luxury in Bali,<br><em>tailored to you</em>',
-      'hero.p': 'Bassa Reset is a 7-to-12-day slow luxury journey through Bali, designed for genuine disconnection: a private pool villa, sunrise Balinese massages and signature dining among the rice terraces. It\'s not a fixed package, but a starting point we shape with you, combining the interior (Ubud) and the coast at your own pace.',
+      'hero.h1': 'Switching off in Bali,<br><em>for real</em>',
+      'hero.p': 'Bassa Reset is a 7-to-12-day slow luxury journey through Bali designed to truly switch off: private villas above the jungle, Balinese rituals led by the people who practise them, rice terraces at sunrise and the ocean as a finale. No imposed agenda, no crowds and no rush. If you have a few more days, the trip can end on an island of silence: Sumba, Moyo or a secret island off Lombok.',
       'glance.tag': 'At a glance',
       'glance.h2': 'Key <em>details</em>',
       'glance.duracion.label': 'Suggested duration',
-      'glance.duracion.value': '7–12 days. The example developed on this page is 11 days / 10 nights.',
+      'glance.duracion.value': '7–12 days. Just enough for your body to change pace without the trip filling up with transfers.',
       'glance.estilo.label': 'Style',
-      'glance.estilo.value': 'Slow luxury · 100% private · no groups, no fixed itineraries.',
-      'glance.zona.label': 'Main area',
-      'glance.zona.value': 'Inland Bali (Ubud) combined with a few days on the coast (Canggu or Seminyak).',
+      'glance.estilo.value': 'Slow luxury and 100% private: a villa with its own pool, no imposed schedules and wellbeing woven into every day.',
+      'glance.zona.label': 'Areas',
+      'glance.zona.value': 'Bali: Ubud and the Ayung valley, Sidemen, the rice terraces and volcanoes of the centre, and Uluwatu. Optional: Sumba, Moyo or Lombok\'s Secret Gilis.',
       'glance.quien.label': 'Who it\'s for',
-      'glance.quien.value': 'Couples and professionals who need to disconnect from city life without giving up comfort.',
+      'glance.quien.value': 'Couples and professionals who need to step away from city life without giving up comfort.',
       'glance.epoca.label': 'Best season',
-      'glance.epoca.value': 'April to October, Bali\'s dry season.',
+      'glance.epoca.value': 'All year round; April to October is the dry season. In March, Nyepi turns the whole island into a day of silence.',
       'concept.tag': 'The concept',
       'concept.h2': 'Reset, not a <em>retreat</em>',
-      'concept.p1': 'Bassa Reset starts from a simple idea: most "disconnection" trips end up busier than the everyday life you\'re trying to escape. Here, it\'s the opposite. Inland Bali — Ubud and its rice terraces — sets the pace: mornings with no alarm, Balinese massages, purification ceremonies and meals built around local produce, all from a private villa with its own pool.',
-      'concept.p2': 'The second half of the trip changes the scenery without changing the philosophy: a few days on the coast (Canggu or Seminyak) to close with the sea, sunsets and more relaxed dining. No queues, no groups, no schedule set by anyone but you.',
-      'concept.p3': 'The experiences below are real examples of what could be part of your Bassa Reset — not a fixed menu, but the starting point from which we design your trip.',
-      'examples.tag': 'Example experiences',
-      'examples.h2': 'What your <em>Bassa Reset</em><br>could include',
-      'examples.intro': 'A selection of experiences we regularly design within this line. Every Bassa Reset is different: these are references for inspiration, not a fixed list.',
-      'examples.item1.label': 'Private ceremony',
-      'examples.item1.h3': 'Melukat with a high priest at Tirta Empul',
-      'examples.item1.sub': 'The whole temple to yourselves, before the first tourist arrives.',
-      'examples.item2.label': 'UNESCO heritage',
-      'examples.item2.h3': 'Lunch among the Jatiluwih rice terraces',
-      'examples.item2.sub': 'A table of your own in a hidden corner, the volcano in the background.',
-      'examples.item3.label': 'Signature stay',
-      'examples.item3.h3': 'COMO Shambhala — Ubud',
-      'examples.item3.sub': 'The undisputed reference for slow living in Indonesia.',
-      'examples.item4.label': 'Private sailing',
-      'examples.item4.h3': 'The last cruise to Uluwatu',
-      'examples.item4.sub': 'Cocktails on board, a Balinese blessing as the sun goes down.',
-      'examples.more': 'See all experiences →',
+      'concept.p1': 'Bassa Reset starts from a simple idea: most "disconnection" trips are busier than the daily life you\'re trying to escape. Here it\'s the opposite. Inland Bali sets the pace: mornings without an alarm, Balinese massages, purification ceremonies and meals built on local produce, all from a private villa with its own pool.',
+      'concept.p2': 'The second part of the trip changes scenery without changing philosophy: the rural valleys of the east, the rice terraces and mountain lakes of the centre or the cliffs of Uluwatu, always away from the busiest parts of the south. And if you want to go further, a small island where silence is the real luxury.',
+      'concept.p3': 'Below are the settings we work with. Your trip is built from them, from your dates and from whatever you need to leave behind.',
+      'chapters.tag': 'Where',
+      'chapters.h2': 'The settings of <em>your Bassa Reset</em>',
+      'chapters.intro': 'Bali is much more than beaches and beach clubs: it has jungle, rural valleys, volcanoes, sacred lakes and cliffs above the ocean. These are the corners where the island is still lived slowly.',
+      'chapters.when': 'When',
+      'chapters.more': 'See all experiences →',
+      'ch1.label': 'Jungle and wellbeing',
+      'ch1.h3': 'Ubud and the Ayung valley',
+      'ch1.p': 'Ubud is Bali\'s spiritual centre, and its best villas aren\'t in town but suspended above the Ayung river valley, surrounded by jungle with the river as the only sound. It\'s the place to slow right down: Balinese massages with no clock, sunrise yoga facing the rice fields and food built on local produce. Here wellbeing is also culture: a melukat, the purification ritual in the sacred springs of Tirta Empul, led by a priest just for you before anyone else arrives; the rock-carved temples of Gunung Kawi; or an afternoon in the garden of a woman who grows medicinal herbs and teaches you to blend your own infusion.',
+      'ch1.when': 'All year round; April to October is the dry season.',
+      'ch1.m1': 'Melukat with a private priest at Tirta Empul, before the crowds',
+      'ch1.m2': 'Medicinal herb tea in a local healer\'s garden',
+      'ch1.m3': 'Jamu workshop, the traditional herbal medicine',
+      'ch2.label': 'Rural Bali',
+      'ch2.h3': 'Sidemen and the east, at the foot of Agung',
+      'ch2.p': 'A little over an hour from Ubud, the Sidemen valley keeps the Bali of old: terraced rice fields, farmers who still work the land by hand and Mount Agung, the island\'s sacred volcano, presiding over every view. There are hardly any souvenir shops or groups. You walk through the fields with people from the valley, cook with what\'s picked from the garden and learn to write your own name on lontar leaves in the Balinese script. Further east, in Karangasem, the Tirta Gangga water palace and Lempuyang temple at sunrise complete the most serene side of Bali.',
+      'ch2.when': 'April to October.',
+      'ch2.m1': 'A walk through the rice fields with local farmers',
+      'ch2.m2': 'Writing your name on lontar in the Balinese script',
+      'ch2.m3': 'Lempuyang at sunrise, before the queues',
+      'ch3.label': 'Rice terraces and volcanoes',
+      'ch3.h3': 'Jatiluwih, the sacred lakes and the volcanoes',
+      'ch3.p': 'In the centre of the island, at the foot of Mount Batukaru, the Jatiluwih terraces are part of the subak landscape, the traditional irrigation system declared a World Heritage Site by UNESCO. You explore them on foot or by bike with a guide who explains each variety of rice, and the walk ends with a private lunch in a hidden spot with the volcano behind. Higher up, the air cools around the sacred lakes and the Ulun Danu temple on Lake Bratan. And to see Bali from another perspective, a private helicopter flies over the Batur and Agung volcanoes.',
+      'ch3.when': 'April to October. Nights are cooler in the highlands.',
+      'ch3.m1': 'Private lunch in a hidden corner of Jatiluwih',
+      'ch3.m2': 'Sunrise at Ulun Danu temple on Lake Bratan',
+      'ch3.m3': 'Helicopter flight over the Batur and Agung volcanoes',
+      'ch4.label': 'The ocean as a finale',
+      'ch4.h3': 'Uluwatu and the southern cliffs',
+      'ch4.p': 'To end the trip facing the sea, the Bukit peninsula offers what the busier coast doesn\'t: limestone cliffs, coves reached by steps between the rocks and villas suspended above the Indian Ocean. At sunset, a private boat sails to Uluwatu temple and, as the sun goes down, the crew holds a Balinese blessing on board. For those who want to understand the place, a private route follows in the footsteps of Dang Hyang Nirartha, the 16th-century priest who travelled this coast: meditation caves, seaside temples and purification rituals on the beach.',
+      'ch4.when': 'All year round; April to October is the dry season.',
+      'ch4.m1': 'Private sunset cruise with a Balinese blessing on board',
+      'ch4.m2': 'The hidden route of Dang Hyang Nirartha',
+      'ch4.m3': 'Kecak dance at Uluwatu temple at sunset',
+      'ch5.label': 'Optional · An island of silence',
+      'ch5.h3': 'Sumba, Moyo or a secret island off Lombok',
+      'ch5.p': 'If you have a few more days, the trip can end outside Bali, on an island where there\'s nothing to do but be. Sumba, a 70–90 minute flight away, offers savannah hills, miles of empty beach and places to stay where even the spa is reached on horseback or by bike through the countryside. Moyo, an hour by seaplane, is a protected island with a luxury tented camp in the jungle and turquoise waterfalls. And southwest of Lombok, the so-called Secret Gilis are islets with hardly any visitors, perfect for sailing by catamaran and dropping anchor with no one around.',
+      'ch5.when': 'April to October.',
+      'ch5.m1': 'Arriving on Moyo by seaplane',
+      'ch5.m2': 'A gallop along an empty Sumba beach',
+      'ch5.m3': 'Private catamaran around the Secret Gilis',
       'faq.tag': 'Frequently asked questions',
       'faq.h2': 'Bassa Reset, <em>in detail</em>',
       'faq.q1': 'Is Bassa Reset a wellness retreat?',
-      'faq.a1': 'Not exactly. Bassa Reset isn\'t a medical programme or a structured wellness retreat — it\'s a slow luxury trip through Bali centred on genuine disconnection: a slow pace, a private villa, Balinese massages and authentic experiences, with no clinical agenda or imposed routines.',
-      'faq.q2': 'How long does a Bassa Reset trip last?',
-      'faq.a2': 'Between 7 and 12 days, depending on availability and preferences. The reference example on this page is 11 days (10 nights): a week inland in Bali (Ubud) and a few final days on the coast.',
-      'faq.q3': 'Is Bassa Reset a fixed package?',
-      'faq.a3': 'No. Bassa Reset is a starting point, not a fixed package. The experiences on this page are examples of what your trip could include; the final itinerary, hotels and activities are adjusted with you during the design process.',
-      'faq.q4': 'Can I combine Bassa Reset with another line, like Bassa Explorer?',
-      'faq.a4': 'Yes. Many travelers combine Bassa Reset with days of diving in Raja Ampat or Komodo (Bassa Explorer) or culture in Java (Bassa Culture) within the same trip — that\'s the basis of Bassa Complete.',
+      'faq.a1': 'Not exactly. Bassa Reset isn\'t a medical programme or a structured retreat, but a slow luxury journey through Bali focused on genuinely switching off: a slow pace, a private villa, Balinese massages and authentic experiences, with no clinical agenda or imposed routines. If you\'re looking for a specific wellness programme, we build it into the trip.',
+      'faq.q2': 'How many days do you need to switch off in Bali?',
+      'faq.a2': 'We recommend 7 to 12 days. With the flight from Spain, a week is the minimum for the trip to be worthwhile; with 10 or 12 days there\'s time to combine several areas of Bali at an easy pace or to finish on an island of silence.',
+      'faq.q3': 'When is the best time for a switch-off trip to Bali?',
+      'faq.a3': 'April to October is the dry season, and May, June and September tend to be the calmest months. From November to March it rains more, usually in afternoon showers, in exchange for a greener island with fewer people. And if you\'re after something different, Nyepi, the Balinese New Year (in March, on a variable date), stops the whole island for 24 hours: a day of absolute silence that few people ever experience. More detail in our <a href="blog/mejor-epoca-para-ir-a-bali.html">guide to the best time to visit Bali</a> (in Spanish).',
       'cta.h2': 'Shall we design your <em>Bassa Reset</em>?',
-      'cta.p': 'Tell us your dates, who you\'re traveling with and what can\'t be missing. From there we build a tailor-made itinerary.',
+      'cta.p': 'Tell us your dates, how much time you have and what you need to leave behind. From there we design a trip at your own pace.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia',
-      'footer.about': 'About Bassa', 'footer.experiences': 'Experiences', 'footer.contact': 'Contact'
+      'footer.about': 'About Bassa',
+      'footer.experiences': 'Experiences',
+      'footer.contact': 'Contact'
     }
   };
 
