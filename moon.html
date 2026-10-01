@@ -6,13 +6,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bassa Moon: Luna de Miel de Slow Luxury en Bali | Bassa Travels</title>
-<meta name="description" content="Bassa Moon: viaje romántico de slow luxury de 10 a 14 días por Bali. Villas privadas con piscina, cenas en la jungla y amaneceres en templos sin multitudes. Diseño a medida.">
+<title>Luna de miel de lujo en Indonesia | Bassa Moon</title>
+<meta name="description" content="Luna de miel de lujo por Indonesia: Bali, Sumba, Komodo en phinisi privado, Raja Ampat o una isla privada. Viajes de 14 a 18 días diseñados según vuestra fecha.">
 <link rel="canonical" href="https://bassatravels.com/moon.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bassatravels.com/moon.html">
-<meta property="og:title" content="Bassa Moon: Luna de Miel de Slow Luxury en Bali | Bassa Travels">
-<meta property="og:description" content="Viaje romántico de slow luxury de 10 a 14 días por Bali: villas privadas con piscina, cenas en la jungla y amaneceres en templos sin multitudes. Diseñado a medida.">
+<meta property="og:title" content="Luna de miel de lujo en Indonesia | Bassa Moon">
+<meta property="og:description" content="Una luna de miel de isla en isla: la selva de Bali, la Sumba salvaje, Komodo en phinisi privado, Raja Ampat o una isla privada en hidroavión. Diseñada según vuestra fecha.">
 <meta property="og:image" content="https://bassatravels.com/images/FS_Moon.jpg">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Bassa Travels">
@@ -187,6 +187,25 @@
   .faq-section .faq-item p { margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-size: 0.95rem; max-width: 800px; }
 
   /* ── CTA ── */
+  .chapter-list { display: flex; flex-direction: column; gap: 4.5rem; margin-top: 3rem; }
+  .chapter { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; align-items: center; }
+  .chapter:nth-child(even) .chapter-img { order: 2; }
+  .chapter-img { aspect-ratio: 4 / 3; overflow: hidden; }
+  .chapter-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .chapter-label { display: block; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .chapter h3 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; line-height: 1.15; color: white; margin-bottom: 1rem; }
+  .chapter-body p { font-size: 0.95rem; }
+  .chapter-moments { list-style: none; margin: 0.4rem 0 1.2rem; padding: 0; border-top: 1px solid rgba(184,155,106,0.18); }
+  .chapter-moments li { position: relative; padding: 0.7rem 0 0.7rem 1.5rem; border-bottom: 1px solid rgba(184,155,106,0.12); font-size: 0.9rem; color: rgba(255,255,255,0.86); line-height: 1.5; }
+  .chapter-moments li::before { content: '✦'; position: absolute; left: 0; top: 0.78rem; color: var(--gold); font-size: 0.7rem; }
+  .info-section .chapter-when { font-size: 0.85rem; color: rgba(255,255,255,0.62); margin-bottom: 0; }
+  .chapter-when strong { color: var(--gold); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.7rem; }
+  .info-section p a, .faq-section .faq-item p a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .chapter { grid-template-columns: 1fr; gap: 1.6rem; }
+    .chapter:nth-child(even) .chapter-img { order: 0; }
+    .chapter-list { gap: 3.5rem; }
+  }
   .exp-cta { padding: 7rem 4rem; text-align: center; background: var(--deep); position: relative; }
   .exp-cta::before {
     content: ''; position: absolute; inset: 0;
@@ -272,8 +291,64 @@
   "@context": "https://schema.org",
   "@type": "TouristTrip",
   "name": "Bassa Moon",
-  "description": "Viaje romántico de slow luxury de 10 a 14 días por Bali, diseñado a medida: villas privadas con piscina, cenas reservadas en la jungla y amaneceres en templos sin multitudes.",
-  "touristType": ["Parejas en luna de miel", "Aniversarios y escapadas románticas"],
+  "description": "Bassa Moon es una luna de miel de lujo por Indonesia, de 14 a 18 días, que combina dos o tres islas muy distintas: la selva y la espiritualidad de Bali, una isla salvaje como Sumba o un phinisi privado por Komodo, y un final de mar e isla privada en Raja Ampat, Moyo o Anambas. La ruta se diseña según la fecha de vuestra boda, porque cada isla tiene su temporada, y todo es privado: guías, traslados, barcos y cenas.",
+  "touristType": [
+    "Parejas en luna de miel",
+    "Aniversarios y viajes románticos"
+  ],
+  "itinerary": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Place",
+          "name": "Bali (Ubud y Karangasem)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Place",
+          "name": "Sumba"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Place",
+          "name": "Parque Nacional de Komodo"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Place",
+          "name": "Raja Ampat (Misool)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Place",
+          "name": "Lombok, Moyo y Anambas"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Place",
+          "name": "Java (Borobudur y Yogyakarta)"
+        }
+      }
+    ]
+  },
   "provider": {
     "@type": "TravelAgency",
     "name": "Bassa Travels",
@@ -288,34 +363,26 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "¿Bali o Maldivas para la luna de miel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No hace falta elegir. La gran diferencia de Indonesia es que permite unir la cultura, la selva y la espiritualidad de Bali con un final de isla privada en Raja Ampat, Moyo o Anambas, donde el hidroavión amerriza en la laguna. Es el aislamiento de Maldivas, pero con más naturaleza, menos fórmula y un viaje alrededor que lo hace único."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos días necesitamos para una luna de miel en Indonesia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recomendamos entre 14 y 18 días. Con 12 días se pueden combinar dos islas con calma; con 15 o más, tres. Lo importante es dar a cada isla el tiempo suficiente para que el viaje no se convierta en una sucesión de traslados."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Bassa Moon es solo para lunas de miel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No exclusivamente. Aunque está pensado para lunas de miel, Bassa Moon funciona igual de bien para aniversarios, propuestas de matrimonio o cualquier escapada en pareja que busque momentos memorables, privacidad y un ritmo pausado, sin necesidad de justificar la ocasión."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto dura un viaje Bassa Moon?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Entre 10 y 14 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 12 días (11 noches): una semana en el interior de Bali (Ubud) y unos días finales en los acantilados del sur."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Bassa Moon es un paquete cerrado?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Bassa Moon es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, las villas y las actividades se ajustan contigo durante el diseño del viaje."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo combinar Bassa Moon con otra línea, como Bassa Reset?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Bassa Moon y Bassa Reset comparten zona (Bali) y son fáciles de combinar en un mismo viaje: unos días de desconexión slow luxury seguidos de unos días más enfocados en momentos en pareja, sin cambiar de isla ni de ritmo."
+        "text": "No. Está pensado para lunas de miel, pero funciona igual de bien para aniversarios, pedidas de mano o cualquier viaje en pareja que busque privacidad, momentos memorables y un ritmo pausado."
       }
     }
   ]
@@ -343,9 +410,9 @@
 <!-- HERO + RESPUESTA DIRECTA -->
 <section class="line-hero">
   <div class="line-hero-inner">
-    <span class="hero-tag">Bassa Moon · Bali</span>
-    <h1 data-i18n-html="hero.h1">Luna de miel en Bali,<br><em>a vuestro ritmo</em></h1>
-    <p class="answer-direct" data-i18n="hero.p">Bassa Moon es un viaje de slow luxury de entre 10 y 14 días por Bali, pensado para parejas: villas privadas con piscina, cenas reservadas en plena jungla y amaneceres en templos sin nadie alrededor. No es un paquete cerrado, sino un punto de partida que adaptamos contigo, combinando el interior de la isla y los acantilados del sur.</p>
+    <span class="hero-tag">Bassa Moon · Indonesia</span>
+    <h1 data-i18n-html="hero.h1">Luna de miel en Indonesia,<br><em>de isla en isla</em></h1>
+    <p class="answer-direct" data-i18n="hero.p">Bassa Moon es una luna de miel de lujo por Indonesia, de 14 a 18 días, que combina dos o tres islas muy distintas: la selva y la espiritualidad de Bali, una isla salvaje como Sumba o un phinisi privado por Komodo, y un final de mar e isla privada en Raja Ampat, Moyo o Anambas. La ruta se diseña según la fecha de vuestra boda, porque cada isla tiene su temporada, y todo es privado: guías, traslados, barcos y cenas.</p>
   </div>
 </section>
 
@@ -357,81 +424,133 @@
     <table class="data-table">
       <tr>
         <td data-i18n="glance.duracion.label">Duración orientativa</td>
-        <td data-i18n="glance.duracion.value">10–14 días. El ejemplo desarrollado en esta página son 12 días / 11 noches.</td>
+        <td data-i18n="glance.duracion.value">14–18 días, combinando dos o tres islas a un ritmo pausado.</td>
       </tr>
       <tr>
         <td data-i18n="glance.estilo.label">Estilo</td>
-        <td data-i18n="glance.estilo.value">Slow luxury romántico · 100% privado · villas con piscina propia.</td>
+        <td data-i18n="glance.estilo.value">Romántico y 100% privado: villas con piscina, phinisi solo para vosotros y cenas donde nadie más puede llegar.</td>
       </tr>
       <tr>
-        <td data-i18n="glance.zona.label">Zona principal</td>
-        <td data-i18n="glance.zona.value">Bali interior (Ubud) combinado con los acantilados del sur (Uluwatu / Bukit).</td>
+        <td data-i18n="glance.zona.label">Islas</td>
+        <td data-i18n="glance.zona.value">Bali como primer capítulo, combinado con Sumba, Komodo, Raja Ampat, Lombok, Moyo o Anambas. Java, como extensión cultural.</td>
       </tr>
       <tr>
         <td data-i18n="glance.quien.label">Para quién</td>
-        <td data-i18n="glance.quien.value">Parejas en luna de miel, aniversarios o escapadas que buscan momentos memorables sin masificación.</td>
+        <td data-i18n="glance.quien.value">Parejas en luna de miel, aniversarios o pedidas de mano que buscan algo más que una sola isla.</td>
       </tr>
       <tr>
         <td data-i18n="glance.epoca.label">Mejor época</td>
-        <td data-i18n="glance.epoca.value">Abril a octubre, estación seca en Bali.</td>
+        <td data-i18n="glance.epoca.value">Todo el año: cada isla tiene su temporada y la combinación se diseña según vuestra fecha.</td>
       </tr>
     </table>
   </div>
 </section>
 
-<!-- QUÉ ES BASSA MOON -->
+<!-- CONCEPTO -->
 <section class="info-section reveal">
   <div class="inner">
     <span class="section-tag" data-i18n="concept.tag">El concepto</span>
-    <h2 class="section-title" data-i18n-html="concept.h2">Romance, no <em>postal</em></h2>
-    <p data-i18n="concept.p1">Bassa Moon nace de una pregunta sencilla: ¿qué hace que un viaje en pareja sea memorable de verdad, más allá de la foto perfecta? Bali ofrece algunos de los escenarios más fotogénicos del planeta, pero el verdadero lujo está en los detalles que nadie ve: una cena reservada solo para vosotros en mitad de la jungla, un amanecer en un templo vacío, una villa donde el servicio desaparece hasta que lo necesitas.</p>
-    <p data-i18n="concept.p2">El itinerario combina el interior de Bali —Ubud, arrozales, templos de montaña— con los acantilados del sur, donde las villas se abren al océano Índico y los atardeceres duran una hora. El ritmo es lento: dos o tres experiencias por jornada, nunca una agenda apretada, y mucho tiempo para simplemente estar.</p>
-    <p data-i18n="concept.p3">Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Moon — no un álbum cerrado, sino el punto de partida sobre el que diseñamos tu viaje.</p>
+    <h2 class="section-title" data-i18n-html="concept.h2">Más que una isla, <em>un viaje</em></h2>
+    <p data-i18n="concept.p1">La mayoría de lunas de miel en Indonesia se quedan en Bali, a veces con un salto a Lombok o a las Gili. Es un buen viaje, pero no es el que proponemos. Indonesia tiene más de 17.000 islas, y algunas de las experiencias más románticas del planeta están a uno o dos vuelos de Bali: despertar fondeados en una bahía de Komodo, nadar con caballos en una playa vacía de Sumba o cenar en un banco de arena en Raja Ampat sin nadie más en el horizonte.</p>
+    <p data-i18n="concept.p2">Por eso Bassa Moon se diseña en capítulos. Cada uno tiene un paisaje y un tono distintos —selva y espiritualidad, naturaleza salvaje, mar y aislamiento— y entre ellos hay el tiempo justo para que el viaje se sienta como una historia y no como una lista de lugares. Nunca más de tres o cuatro destinos: en una luna de miel, cada traslado de más es un día de menos.</p>
+    <p data-i18n="concept.p3">A continuación, los escenarios con los que trabajamos. Vuestro viaje se construye a partir de ellos, de vuestras fechas y de lo que queráis celebrar.</p>
   </div>
 </section>
 
-<!-- EJEMPLOS DE EXPERIENCIAS -->
+<!-- CAPÍTULOS -->
 <section class="info-section reveal">
   <div class="inner">
-    <span class="section-tag" data-i18n="examples.tag">Ejemplos de experiencias</span>
-    <h2 class="section-title" data-i18n-html="examples.h2">Lo que puede incluir<br>tu <em>Bassa Moon</em></h2>
-    <p data-i18n="examples.intro">Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Moon es distinto: estas son referencias para inspiraros, no una lista cerrada.</p>
-    <div class="exp-list">
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/Anantara_Ubud_Bali_Resort_Location_2056.jpg" alt="Cena privada junto al río en la jungla de Ubud, Bali"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item1.label">Cena privada</span>
-          <h3 data-i18n="examples.item1.h3">Cena a la luz de las velas en la jungla de Ubud</h3>
-          <p class="exp-item-sub" data-i18n="examples.item1.sub">Solo el sonido del río y las antorchas encendidas para vosotros.</p>
+    <span class="section-tag" data-i18n="chapters.tag">Los capítulos</span>
+    <h2 class="section-title" data-i18n-html="chapters.h2">Las islas de <em>vuestra luna de miel</em></h2>
+    <p data-i18n="chapters.intro">Seis escenarios posibles. Bali abre casi siempre el viaje: es la puerta de entrada internacional y el mejor lugar para aterrizar despacio. El resto se elige según la temporada y según cómo sois como pareja.</p>
+    <div class="chapter-list">
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/bali_melukat.jpg" width="900" height="600" loading="lazy" decoding="async" alt="Ceremonia melukat de purificación en los manantiales de Tirta Empul, Bali"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch1.label">Selva y espíritu</span>
+          <h3 data-i18n="ch1.h3">Bali: Ubud, el valle del Ayung y el este sagrado</h3>
+          <p data-i18n="ch1.p">El viaje empieza tierra adentro. Las villas más especiales de Ubud se asoman al barranco del río Ayung, rodeadas de selva, y son el lugar perfecto para recuperarse del vuelo sin prisa. Desde aquí Bali se vive como la viven los balineses: un melukat privado, el ritual de purificación en los manantiales sagrados de Tirta Empul guiado por un sacerdote solo para vosotros; arrozales en terrazas al amanecer y templos de montaña. Si queréis cambiar de paisaje sin salir de la isla, el este, en Karangasem, ofrece valles rurales a los pies del monte Agung y villas sobre el estrecho de Lombok.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch1.m1">Melukat privado en Tirta Empul, solo para vosotros</li>
+          <li data-i18n="ch1.m2">Helicóptero sobre los volcanes Batur y Agung</li>
+          <li data-i18n="ch1.m3">Cena entre arrozales iluminada con antorchas</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch1.when">Todo el año; de abril a octubre, estación seca.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/bali_lempuyang.jpg" alt="Pura Lempuyang Puerta del Cielo con vistas al Monte Agung al amanecer" style="object-position: 50% 80%;"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item2.label">Sesión privada al alba</span>
-          <h3 data-i18n="examples.item2.h3">Las puertas del cielo de Lempuyang</h3>
-          <p class="exp-item-sub" data-i18n="examples.item2.sub">El Monte Agung enmarcado entre las puertas, sin colas.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/nihi-sumba-edge-of-wildness.webp" width="1600" height="2134" loading="lazy" decoding="async" alt="Costa salvaje de la isla de Sumba, en Indonesia"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch2.label">La isla salvaje</span>
+          <h3 data-i18n="ch2.h3">Sumba: la Indonesia que el turismo no ha tocado</h3>
+          <p data-i18n="ch2.p">A 70–90 minutos de vuelo desde Bali, Sumba es otro mundo: colinas de sabana, playas kilométricas sin construcciones, poblados de casas con tejado en pico y una cultura ancestral que sigue viva. Aquí el lujo no está en la arquitectura, sino en el espacio: villas aisladas entre la selva y el océano, caballos en la playa al atardecer y artesanas que tejen ikat a mano, una técnica en la que una sola pieza puede llevar meses. Es el capítulo para desconectar de verdad, sin tráfico, sin multitudes y con la sensación de estar en el borde del mapa.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch2.m1">Nadar con caballos en la laguna o galopar por la playa</li>
+          <li data-i18n="ch2.m2">Caminata privada a las cascadas de Lapopu</li>
+          <li data-i18n="ch2.m3">Taller de tejido ikat con artesanas sumbanesas</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch2.when">De abril a noviembre. Entre febrero y marzo se celebra el Pasola, en plena temporada de lluvias.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/bali_helicoptero.jpg" alt="Vuelo en helicóptero privado sobre los volcanes Batur y Agung de Bali"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item3.label">Aéreo privado</span>
-          <h3 data-i18n="examples.item3.h3">Helicóptero privado sobre Batur y Agung</h3>
-          <p class="exp-item-sub" data-i18n="examples.item3.sub">Una forma distinta de ver Bali, solo para dos.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/phinisi-privado-por-komodo.webp" width="1600" height="1066" loading="lazy" decoding="async" alt="Velero phinisi tradicional indonesio navegando por Komodo en charter privado"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch3.label">El mar como hotel</span>
+          <h3 data-i18n="ch3.h3">Komodo en phinisi privado</h3>
+          <p data-i18n="ch3.p">El phinisi es el velero de madera de los navegantes bugis, convertido en un pequeño hotel flotante: camarotes con baño, chef, capitán y tripulación solo para vosotros. Cada mañana, el barco amanece en una bahía distinta del Parque Nacional de Komodo, a 70–90 minutos de vuelo desde Bali. Aquí el lujo es el horario: llegar a Pink Beach al amanecer, antes que cualquier excursión, y tener una de las pocas playas de arena rosa del mundo solo para vosotros; subir a la cima de Padar para ver salir el sol sobre sus tres bahías; y encontraros con los dragones en Rinca acompañados por guardaparques.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch3.m1">Pink Beach al amanecer, sin nadie más</li>
+          <li data-i18n="ch3.m2">La cima de Padar antes del alba</li>
+          <li data-i18n="ch3.m3">Cena en cubierta, fondeados en una bahía desierta</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch3.when">De abril a septiembre. En julio y agosto los alisios pueden agitar el sur del parque y la ruta se adapta.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/FS_Moon.jpg" alt="Villa privada con piscina infinita frente al océano en Bali" style="object-position: center 30%;"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item4.label">Alojamiento de referencia</span>
-          <h3 data-i18n="examples.item4.h3">Villa privada con piscina infinita</h3>
-          <p class="exp-item-sub" data-i18n="examples.item4.sub">Butler exclusivo, pétalos y velas — sin que tengas que pedirlo.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/misool-reserva-marina.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Isla de Misool en Raja Ampat, con reserva marina propia"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch4.label">El fin del mundo</span>
+          <h3 data-i18n="ch4.h3">Raja Ampat: lagunas de karst y arrecifes intactos</h3>
+          <p data-i18n="ch4.p">En el extremo oriental de Indonesia, en Papúa Occidental, Raja Ampat es el ecosistema marino más rico del planeta y uno de los lugares más remotos a los que se puede llegar con comodidad. Al sur, en Misool, una isla privada dentro de su propia reserva marina recibe a muy pocos huéspedes: kayak al amanecer entre lagunas de piedra caliza, snorkel junto a la villa sobre corales en plena recuperación y cenas en un banco de arena bajo un cielo sin contaminación lumínica. Llegar exige un vuelo a Sorong y varias horas de barco; por eso lo planteamos como gran final del viaje, nunca como una etapa corta.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch4.m1">Kayak al amanecer por las lagunas de karst</li>
+          <li data-i18n="ch4.m2">Cena en un banco de arena privado</li>
+          <li data-i18n="ch4.m3">Wayag desde el aire, la imagen más famosa de Raja Ampat</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch4.when">De octubre a abril, con el mar más tranquilo.</span></p>
+        </div>
+      </article>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/las-secret-secret-gilis.webp" width="1600" height="2134" loading="lazy" decoding="async" alt="Gilis secretas del suroeste de Lombok con playas vírgenes"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch5.label">Islas secretas</span>
+          <h3 data-i18n="ch5.h3">Lombok, Moyo y Anambas: la alternativa a Maldivas</h3>
+          <p data-i18n="ch5.p">Muchas parejas dudan entre Indonesia y Maldivas. No hace falta elegir: Indonesia tiene sus propias islas vírgenes y privadas, con más naturaleza y menos fórmula. Al suroeste de Lombok, las Secret Gilis son un grupo de islotes casi sin visitantes, con algunos de los mejores corales de la zona y playas donde preparamos una cena con hoguera solo para dos. En Moyo, isla protegida frente a Sumbawa y a una hora de hidroavión desde Bali, un campamento de lujo entre la selva mira a un arrecife intacto. Y en Anambas, al norte, cerca de Singapur, el hidroavión amerriza directamente en la laguna de una isla privada: el final perfecto si volvéis a casa vía Singapur.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch5.m1">Cena con hoguera en una playa secreta de Lombok</li>
+          <li data-i18n="ch5.m2">Llegada en hidroavión, amerizando en la laguna</li>
+          <li data-i18n="ch5.m3">Snorkel en arrecifes sin otros barcos</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch5.when">De abril a octubre. En Anambas, de noviembre a febrero el monzón agita el mar.</span></p>
+        </div>
+      </article>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/java_globo.jpg" width="900" height="600" loading="lazy" decoding="async" alt="Globo aerostático sobrevolando Borobudur al amanecer en Java"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch6.label">Templos al amanecer</span>
+          <h3 data-i18n="ch6.h3">Java: Borobudur en privado</h3>
+          <p data-i18n="ch6.p">Para las parejas a las que les mueve la historia, Java añade un capítulo distinto antes de Bali. Borobudur, el mayor templo budista del mundo, se vive con acceso privado al amanecer, cuando la niebla todavía cubre la llanura y los volcanes asoman en el horizonte, o desde un globo aerostático. En los alrededores de Yogyakarta, el palacio de agua de Taman Sari y los templos hindúes de Prambanan completan la visita.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch6.m1">Borobudur con acceso privado al amanecer</li>
+          <li data-i18n="ch6.m2">Globo aerostático sobre la llanura al alba</li>
+          <li data-i18n="ch6.m3">Taman Sari, el palacio de agua de los sultanes</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch6.when">De abril a octubre.</span></p>
         </div>
       </article>
     </div>
     <div class="exp-more-wrap">
-      <a href="experiencias.html" class="exp-more-link" data-i18n="examples.more">Ver todas las experiencias →</a>
+      <a href="experiencias.html" class="exp-more-link" data-i18n="chapters.more">Ver todas las experiencias →</a>
     </div>
   </div>
 </section>
@@ -443,31 +562,26 @@
     <h2 class="section-title" data-i18n-html="faq.h2">Bassa Moon, <em>en detalle</em></h2>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q1">¿Bassa Moon es solo para lunas de miel?</summary>
-      <p data-i18n="faq.a1">No exclusivamente. Aunque está pensado para lunas de miel, Bassa Moon funciona igual de bien para aniversarios, propuestas de matrimonio o cualquier escapada en pareja que busque momentos memorables, privacidad y un ritmo pausado, sin necesidad de justificar la ocasión.</p>
+      <summary data-i18n="faq.q1">¿Bali o Maldivas para la luna de miel?</summary>
+      <p data-i18n="faq.a1">No hace falta elegir. La gran diferencia de Indonesia es que permite unir la cultura, la selva y la espiritualidad de Bali con un final de isla privada en Raja Ampat, Moyo o Anambas, donde el hidroavión amerriza en la laguna. Es el aislamiento de Maldivas, pero con más naturaleza, menos fórmula y un viaje alrededor que lo hace único.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q2">¿Cuánto dura un viaje Bassa Moon?</summary>
-      <p data-i18n="faq.a2">Entre 10 y 14 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 12 días (11 noches): una semana en el interior de Bali (Ubud) y unos días finales en los acantilados del sur.</p>
+      <summary data-i18n="faq.q2">¿Cuántos días necesitamos para una luna de miel en Indonesia?</summary>
+      <p data-i18n="faq.a2">Recomendamos entre 14 y 18 días. Con 12 días se pueden combinar dos islas con calma; con 15 o más, tres. Lo importante es dar a cada isla el tiempo suficiente para que el viaje no se convierta en una sucesión de traslados.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q3">¿Bassa Moon es un paquete cerrado?</summary>
-      <p data-i18n="faq.a3">No. Bassa Moon es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, las villas y las actividades se ajustan contigo durante el diseño del viaje.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary data-i18n="faq.q4">¿Puedo combinar Bassa Moon con otra línea, como Bassa Reset?</summary>
-      <p data-i18n="faq.a4">Sí. Bassa Moon y Bassa Reset comparten zona (Bali) y son fáciles de combinar en un mismo viaje: unos días de desconexión slow luxury seguidos de unos días más enfocados en momentos en pareja, sin cambiar de isla ni de ritmo.</p>
+      <summary data-i18n="faq.q3">¿Bassa Moon es solo para lunas de miel?</summary>
+      <p data-i18n="faq.a3">No. Está pensado para lunas de miel, pero funciona igual de bien para aniversarios, pedidas de mano o cualquier viaje en pareja que busque privacidad, momentos memorables y un ritmo pausado.</p>
     </details>
   </div>
 </section>
 
 <!-- CTA FINAL -->
 <section class="exp-cta">
-  <h2 data-i18n-html="cta.h2">¿Diseñamos tu <em>Bassa Moon</em>?</h2>
-  <p data-i18n="cta.p">Cuéntanos vuestras fechas, qué celebráis y qué no puede faltar. A partir de ahí construimos un itinerario a vuestra medida.</p>
+  <h2 data-i18n-html="cta.h2">¿Diseñamos vuestra <em>Bassa Moon</em>?</h2>
+  <p data-i18n="cta.p">Contadnos la fecha de la boda, cuántos días tenéis y qué os imagináis. Con eso os proponemos las islas y la ruta que mejor encajan.</p>
   <a href="index.html#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
 </section>
 
@@ -495,114 +609,176 @@
 <script>
   const t = {
     es: {
-      'page.title': 'Bassa Moon: Luna de Miel de Slow Luxury en Bali | Bassa Travels',
+      'page.title': 'Luna de miel de lujo en Indonesia | Bassa Moon',
       'nav.cta': 'Diseña tu viaje',
       'breadcrumb.home': 'Inicio',
       'breadcrumb.experiences': 'Experiencias',
-      'hero.h1': 'Luna de miel en Bali,<br><em>a vuestro ritmo</em>',
-      'hero.p': 'Bassa Moon es un viaje de slow luxury de entre 10 y 14 días por Bali, pensado para parejas: villas privadas con piscina, cenas reservadas en plena jungla y amaneceres en templos sin nadie alrededor. No es un paquete cerrado, sino un punto de partida que adaptamos contigo, combinando el interior de la isla y los acantilados del sur.',
+      'hero.h1': 'Luna de miel en Indonesia,<br><em>de isla en isla</em>',
+      'hero.p': 'Bassa Moon es una luna de miel de lujo por Indonesia, de 14 a 18 días, que combina dos o tres islas muy distintas: la selva y la espiritualidad de Bali, una isla salvaje como Sumba o un phinisi privado por Komodo, y un final de mar e isla privada en Raja Ampat, Moyo o Anambas. La ruta se diseña según la fecha de vuestra boda, porque cada isla tiene su temporada, y todo es privado: guías, traslados, barcos y cenas.',
       'glance.tag': 'En una mirada',
       'glance.h2': '<em>Datos</em> clave',
       'glance.duracion.label': 'Duración orientativa',
-      'glance.duracion.value': '10–14 días. El ejemplo desarrollado en esta página son 12 días / 11 noches.',
+      'glance.duracion.value': '14–18 días, combinando dos o tres islas a un ritmo pausado.',
       'glance.estilo.label': 'Estilo',
-      'glance.estilo.value': 'Slow luxury romántico · 100% privado · villas con piscina propia.',
-      'glance.zona.label': 'Zona principal',
-      'glance.zona.value': 'Bali interior (Ubud) combinado con los acantilados del sur (Uluwatu / Bukit).',
+      'glance.estilo.value': 'Romántico y 100% privado: villas con piscina, phinisi solo para vosotros y cenas donde nadie más puede llegar.',
+      'glance.zona.label': 'Islas',
+      'glance.zona.value': 'Bali como primer capítulo, combinado con Sumba, Komodo, Raja Ampat, Lombok, Moyo o Anambas. Java, como extensión cultural.',
       'glance.quien.label': 'Para quién',
-      'glance.quien.value': 'Parejas en luna de miel, aniversarios o escapadas que buscan momentos memorables sin masificación.',
+      'glance.quien.value': 'Parejas en luna de miel, aniversarios o pedidas de mano que buscan algo más que una sola isla.',
       'glance.epoca.label': 'Mejor época',
-      'glance.epoca.value': 'Abril a octubre, estación seca en Bali.',
+      'glance.epoca.value': 'Todo el año: cada isla tiene su temporada y la combinación se diseña según vuestra fecha.',
       'concept.tag': 'El concepto',
-      'concept.h2': 'Romance, no <em>postal</em>',
-      'concept.p1': 'Bassa Moon nace de una pregunta sencilla: ¿qué hace que un viaje en pareja sea memorable de verdad, más allá de la foto perfecta? Bali ofrece algunos de los escenarios más fotogénicos del planeta, pero el verdadero lujo está en los detalles que nadie ve: una cena reservada solo para vosotros en mitad de la jungla, un amanecer en un templo vacío, una villa donde el servicio desaparece hasta que lo necesitas.',
-      'concept.p2': 'El itinerario combina el interior de Bali —Ubud, arrozales, templos de montaña— con los acantilados del sur, donde las villas se abren al océano Índico y los atardeceres duran una hora. El ritmo es lento: dos o tres experiencias por jornada, nunca una agenda apretada, y mucho tiempo para simplemente estar.',
-      'concept.p3': 'Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Moon — no un álbum cerrado, sino el punto de partida sobre el que diseñamos tu viaje.',
-      'examples.tag': 'Ejemplos de experiencias',
-      'examples.h2': 'Lo que puede incluir<br>tu <em>Bassa Moon</em>',
-      'examples.intro': 'Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Moon es distinto: estas son referencias para inspiraros, no una lista cerrada.',
-      'examples.item1.label': 'Cena privada',
-      'examples.item1.h3': 'Cena a la luz de las velas en la jungla de Ubud',
-      'examples.item1.sub': 'Solo el sonido del río y las antorchas encendidas para vosotros.',
-      'examples.item2.label': 'Sesión privada al alba',
-      'examples.item2.h3': 'Las puertas del cielo de Lempuyang',
-      'examples.item2.sub': 'El Monte Agung enmarcado entre las puertas, sin colas.',
-      'examples.item3.label': 'Aéreo privado',
-      'examples.item3.h3': 'Helicóptero privado sobre Batur y Agung',
-      'examples.item3.sub': 'Una forma distinta de ver Bali, solo para dos.',
-      'examples.item4.label': 'Alojamiento de referencia',
-      'examples.item4.h3': 'Villa privada con piscina infinita',
-      'examples.item4.sub': 'Butler exclusivo, pétalos y velas — sin que tengas que pedirlo.',
-      'examples.more': 'Ver todas las experiencias →',
+      'concept.h2': 'Más que una isla, <em>un viaje</em>',
+      'concept.p1': 'La mayoría de lunas de miel en Indonesia se quedan en Bali, a veces con un salto a Lombok o a las Gili. Es un buen viaje, pero no es el que proponemos. Indonesia tiene más de 17.000 islas, y algunas de las experiencias más románticas del planeta están a uno o dos vuelos de Bali: despertar fondeados en una bahía de Komodo, nadar con caballos en una playa vacía de Sumba o cenar en un banco de arena en Raja Ampat sin nadie más en el horizonte.',
+      'concept.p2': 'Por eso Bassa Moon se diseña en capítulos. Cada uno tiene un paisaje y un tono distintos —selva y espiritualidad, naturaleza salvaje, mar y aislamiento— y entre ellos hay el tiempo justo para que el viaje se sienta como una historia y no como una lista de lugares. Nunca más de tres o cuatro destinos: en una luna de miel, cada traslado de más es un día de menos.',
+      'concept.p3': 'A continuación, los escenarios con los que trabajamos. Vuestro viaje se construye a partir de ellos, de vuestras fechas y de lo que queráis celebrar.',
+      'chapters.tag': 'Los capítulos',
+      'chapters.h2': 'Las islas de <em>vuestra luna de miel</em>',
+      'chapters.intro': 'Seis escenarios posibles. Bali abre casi siempre el viaje: es la puerta de entrada internacional y el mejor lugar para aterrizar despacio. El resto se elige según la temporada y según cómo sois como pareja.',
+      'chapters.when': 'Cuándo',
+      'chapters.more': 'Ver todas las experiencias →',
+      'ch1.label': 'Selva y espíritu',
+      'ch1.h3': 'Bali: Ubud, el valle del Ayung y el este sagrado',
+      'ch1.p': 'El viaje empieza tierra adentro. Las villas más especiales de Ubud se asoman al barranco del río Ayung, rodeadas de selva, y son el lugar perfecto para recuperarse del vuelo sin prisa. Desde aquí Bali se vive como la viven los balineses: un melukat privado, el ritual de purificación en los manantiales sagrados de Tirta Empul guiado por un sacerdote solo para vosotros; arrozales en terrazas al amanecer y templos de montaña. Si queréis cambiar de paisaje sin salir de la isla, el este, en Karangasem, ofrece valles rurales a los pies del monte Agung y villas sobre el estrecho de Lombok.',
+      'ch1.when': 'Todo el año; de abril a octubre, estación seca.',
+      'ch1.m1': 'Melukat privado en Tirta Empul, solo para vosotros',
+      'ch1.m2': 'Helicóptero sobre los volcanes Batur y Agung',
+      'ch1.m3': 'Cena entre arrozales iluminada con antorchas',
+      'ch2.label': 'La isla salvaje',
+      'ch2.h3': 'Sumba: la Indonesia que el turismo no ha tocado',
+      'ch2.p': 'A 70–90 minutos de vuelo desde Bali, Sumba es otro mundo: colinas de sabana, playas kilométricas sin construcciones, poblados de casas con tejado en pico y una cultura ancestral que sigue viva. Aquí el lujo no está en la arquitectura, sino en el espacio: villas aisladas entre la selva y el océano, caballos en la playa al atardecer y artesanas que tejen ikat a mano, una técnica en la que una sola pieza puede llevar meses. Es el capítulo para desconectar de verdad, sin tráfico, sin multitudes y con la sensación de estar en el borde del mapa.',
+      'ch2.when': 'De abril a noviembre. Entre febrero y marzo se celebra el Pasola, en plena temporada de lluvias.',
+      'ch2.m1': 'Nadar con caballos en la laguna o galopar por la playa',
+      'ch2.m2': 'Caminata privada a las cascadas de Lapopu',
+      'ch2.m3': 'Taller de tejido ikat con artesanas sumbanesas',
+      'ch3.label': 'El mar como hotel',
+      'ch3.h3': 'Komodo en phinisi privado',
+      'ch3.p': 'El phinisi es el velero de madera de los navegantes bugis, convertido en un pequeño hotel flotante: camarotes con baño, chef, capitán y tripulación solo para vosotros. Cada mañana, el barco amanece en una bahía distinta del Parque Nacional de Komodo, a 70–90 minutos de vuelo desde Bali. Aquí el lujo es el horario: llegar a Pink Beach al amanecer, antes que cualquier excursión, y tener una de las pocas playas de arena rosa del mundo solo para vosotros; subir a la cima de Padar para ver salir el sol sobre sus tres bahías; y encontraros con los dragones en Rinca acompañados por guardaparques.',
+      'ch3.when': 'De abril a septiembre. En julio y agosto los alisios pueden agitar el sur del parque y la ruta se adapta.',
+      'ch3.m1': 'Pink Beach al amanecer, sin nadie más',
+      'ch3.m2': 'La cima de Padar antes del alba',
+      'ch3.m3': 'Cena en cubierta, fondeados en una bahía desierta',
+      'ch4.label': 'El fin del mundo',
+      'ch4.h3': 'Raja Ampat: lagunas de karst y arrecifes intactos',
+      'ch4.p': 'En el extremo oriental de Indonesia, en Papúa Occidental, Raja Ampat es el ecosistema marino más rico del planeta y uno de los lugares más remotos a los que se puede llegar con comodidad. Al sur, en Misool, una isla privada dentro de su propia reserva marina recibe a muy pocos huéspedes: kayak al amanecer entre lagunas de piedra caliza, snorkel junto a la villa sobre corales en plena recuperación y cenas en un banco de arena bajo un cielo sin contaminación lumínica. Llegar exige un vuelo a Sorong y varias horas de barco; por eso lo planteamos como gran final del viaje, nunca como una etapa corta.',
+      'ch4.when': 'De octubre a abril, con el mar más tranquilo.',
+      'ch4.m1': 'Kayak al amanecer por las lagunas de karst',
+      'ch4.m2': 'Cena en un banco de arena privado',
+      'ch4.m3': 'Wayag desde el aire, la imagen más famosa de Raja Ampat',
+      'ch5.label': 'Islas secretas',
+      'ch5.h3': 'Lombok, Moyo y Anambas: la alternativa a Maldivas',
+      'ch5.p': 'Muchas parejas dudan entre Indonesia y Maldivas. No hace falta elegir: Indonesia tiene sus propias islas vírgenes y privadas, con más naturaleza y menos fórmula. Al suroeste de Lombok, las Secret Gilis son un grupo de islotes casi sin visitantes, con algunos de los mejores corales de la zona y playas donde preparamos una cena con hoguera solo para dos. En Moyo, isla protegida frente a Sumbawa y a una hora de hidroavión desde Bali, un campamento de lujo entre la selva mira a un arrecife intacto. Y en Anambas, al norte, cerca de Singapur, el hidroavión amerriza directamente en la laguna de una isla privada: el final perfecto si volvéis a casa vía Singapur.',
+      'ch5.when': 'De abril a octubre. En Anambas, de noviembre a febrero el monzón agita el mar.',
+      'ch5.m1': 'Cena con hoguera en una playa secreta de Lombok',
+      'ch5.m2': 'Llegada en hidroavión, amerizando en la laguna',
+      'ch5.m3': 'Snorkel en arrecifes sin otros barcos',
+      'ch6.label': 'Templos al amanecer',
+      'ch6.h3': 'Java: Borobudur en privado',
+      'ch6.p': 'Para las parejas a las que les mueve la historia, Java añade un capítulo distinto antes de Bali. Borobudur, el mayor templo budista del mundo, se vive con acceso privado al amanecer, cuando la niebla todavía cubre la llanura y los volcanes asoman en el horizonte, o desde un globo aerostático. En los alrededores de Yogyakarta, el palacio de agua de Taman Sari y los templos hindúes de Prambanan completan la visita.',
+      'ch6.when': 'De abril a octubre.',
+      'ch6.m1': 'Borobudur con acceso privado al amanecer',
+      'ch6.m2': 'Globo aerostático sobre la llanura al alba',
+      'ch6.m3': 'Taman Sari, el palacio de agua de los sultanes',
       'faq.tag': 'Preguntas frecuentes',
       'faq.h2': 'Bassa Moon, <em>en detalle</em>',
-      'faq.q1': '¿Bassa Moon es solo para lunas de miel?',
-      'faq.a1': 'No exclusivamente. Aunque está pensado para lunas de miel, Bassa Moon funciona igual de bien para aniversarios, propuestas de matrimonio o cualquier escapada en pareja que busque momentos memorables, privacidad y un ritmo pausado, sin necesidad de justificar la ocasión.',
-      'faq.q2': '¿Cuánto dura un viaje Bassa Moon?',
-      'faq.a2': 'Entre 10 y 14 días, según disponibilidad y preferencias. El ejemplo de referencia de esta página son 12 días (11 noches): una semana en el interior de Bali (Ubud) y unos días finales en los acantilados del sur.',
-      'faq.q3': '¿Bassa Moon es un paquete cerrado?',
-      'faq.a3': 'No. Bassa Moon es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, las villas y las actividades se ajustan contigo durante el diseño del viaje.',
-      'faq.q4': '¿Puedo combinar Bassa Moon con otra línea, como Bassa Reset?',
-      'faq.a4': 'Sí. Bassa Moon y Bassa Reset comparten zona (Bali) y son fáciles de combinar en un mismo viaje: unos días de desconexión slow luxury seguidos de unos días más enfocados en momentos en pareja, sin cambiar de isla ni de ritmo.',
-      'cta.h2': '¿Diseñamos tu <em>Bassa Moon</em>?',
-      'cta.p': 'Cuéntanos vuestras fechas, qué celebráis y qué no puede faltar. A partir de ahí construimos un itinerario a vuestra medida.',
+      'faq.q1': '¿Bali o Maldivas para la luna de miel?',
+      'faq.a1': 'No hace falta elegir. La gran diferencia de Indonesia es que permite unir la cultura, la selva y la espiritualidad de Bali con un final de isla privada en Raja Ampat, Moyo o Anambas, donde el hidroavión amerriza en la laguna. Es el aislamiento de Maldivas, pero con más naturaleza, menos fórmula y un viaje alrededor que lo hace único.',
+      'faq.q2': '¿Cuántos días necesitamos para una luna de miel en Indonesia?',
+      'faq.a2': 'Recomendamos entre 14 y 18 días. Con 12 días se pueden combinar dos islas con calma; con 15 o más, tres. Lo importante es dar a cada isla el tiempo suficiente para que el viaje no se convierta en una sucesión de traslados.',
+      'faq.q3': '¿Bassa Moon es solo para lunas de miel?',
+      'faq.a3': 'No. Está pensado para lunas de miel, pero funciona igual de bien para aniversarios, pedidas de mano o cualquier viaje en pareja que busque privacidad, momentos memorables y un ritmo pausado.',
+      'cta.h2': '¿Diseñamos vuestra <em>Bassa Moon</em>?',
+      'cta.p': 'Contadnos la fecha de la boda, cuántos días tenéis y qué os imagináis. Con eso os proponemos las islas y la ruta que mejor encajan.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia',
-      'footer.about': 'Sobre Bassa', 'footer.experiences': 'Experiencias', 'footer.contact': 'Contacto'
+      'footer.about': 'Sobre Bassa',
+      'footer.experiences': 'Experiencias',
+      'footer.contact': 'Contacto'
     },
     en: {
-      'page.title': 'Bassa Moon: Slow Luxury Honeymoon in Bali | Bassa Travels',
+      'page.title': 'Luxury Honeymoon in Indonesia | Bassa Moon',
       'nav.cta': 'Design your trip',
       'breadcrumb.home': 'Home',
       'breadcrumb.experiences': 'Experiences',
-      'hero.h1': 'A Bali honeymoon,<br><em>on your own time</em>',
-      'hero.p': 'Bassa Moon is a 10-to-14-day slow luxury journey through Bali designed for couples: private pool villas, candlelit dinners reserved just for you in the jungle, and temple sunrises with no one else around. It\'s not a fixed package, but a starting point we shape with you, combining the island\'s interior and its southern cliffs.',
+      'hero.h1': 'A honeymoon in Indonesia,<br><em>island by island</em>',
+      'hero.p': 'Bassa Moon is a luxury honeymoon across Indonesia, 14 to 18 days long, combining two or three very different islands: the jungle and spirituality of Bali, a wild island like Sumba or a private phinisi through Komodo, and a finale of sea and private island in Raja Ampat, Moyo or Anambas. The route is designed around your wedding date, because every island has its season, and everything is private: guides, transfers, boats and dinners.',
       'glance.tag': 'At a glance',
       'glance.h2': 'Key <em>details</em>',
       'glance.duracion.label': 'Suggested duration',
-      'glance.duracion.value': '10–14 days. The example developed on this page is 12 days / 11 nights.',
+      'glance.duracion.value': '14–18 days, combining two or three islands at an unhurried pace.',
       'glance.estilo.label': 'Style',
-      'glance.estilo.value': 'Romantic slow luxury · 100% private · villas with their own pool.',
-      'glance.zona.label': 'Main area',
-      'glance.zona.value': 'Inland Bali (Ubud) combined with the southern cliffs (Uluwatu / Bukit).',
+      'glance.estilo.value': 'Romantic and 100% private: pool villas, a phinisi just for the two of you and dinners where no one else can reach.',
+      'glance.zona.label': 'Islands',
+      'glance.zona.value': 'Bali as the first chapter, combined with Sumba, Komodo, Raja Ampat, Lombok, Moyo or Anambas. Java as a cultural extension.',
       'glance.quien.label': 'Who it\'s for',
-      'glance.quien.value': 'Couples on honeymoon, anniversaries or getaways looking for memorable moments without the crowds.',
+      'glance.quien.value': 'Couples on honeymoon, anniversaries or proposals looking for more than a single island.',
       'glance.epoca.label': 'Best season',
-      'glance.epoca.value': 'April to October, Bali\'s dry season.',
+      'glance.epoca.value': 'All year round: every island has its season and the combination is designed around your date.',
       'concept.tag': 'The concept',
-      'concept.h2': 'Romance, not a <em>postcard</em>',
-      'concept.p1': 'Bassa Moon starts from a simple question: what really makes a trip as a couple memorable, beyond the perfect photo? Bali offers some of the most photogenic settings on the planet, but the real luxury is in the details no one sees: a dinner reserved just for the two of you in the middle of the jungle, a sunrise at an empty temple, a villa where the staff disappears until you need them.',
-      'concept.p2': 'The itinerary combines inland Bali — Ubud, rice terraces, mountain temples — with the southern cliffs, where villas open onto the Indian Ocean and sunsets last an hour. The pace is slow: two or three experiences a day, never a packed agenda, and plenty of time to simply be.',
-      'concept.p3': 'The experiences below are real examples of what could be part of your Bassa Moon — not a fixed album, but the starting point from which we design your trip.',
-      'examples.tag': 'Example experiences',
-      'examples.h2': 'What your <em>Bassa Moon</em><br>could include',
-      'examples.intro': 'A selection of experiences we regularly design within this line. Every Bassa Moon is different: these are references for inspiration, not a fixed list.',
-      'examples.item1.label': 'Private dinner',
-      'examples.item1.h3': 'Candlelit dinner in the Ubud jungle',
-      'examples.item1.sub': 'Just the sound of the river and torches lit for the two of you.',
-      'examples.item2.label': 'Private sunrise session',
-      'examples.item2.h3': 'The Gates of Heaven at Lempuyang',
-      'examples.item2.sub': 'Mount Agung framed between the gates, with no queues.',
-      'examples.item3.label': 'Private aerial',
-      'examples.item3.h3': 'Private helicopter over Batur and Agung',
-      'examples.item3.sub': 'A different way to see Bali, just for two.',
-      'examples.item4.label': 'Signature stay',
-      'examples.item4.h3': 'Private villa with infinity pool',
-      'examples.item4.sub': 'A dedicated butler, petals and candles — without having to ask.',
-      'examples.more': 'See all experiences →',
+      'concept.h2': 'More than an island, <em>a journey</em>',
+      'concept.p1': 'Most honeymoons in Indonesia stay in Bali, sometimes with a hop to Lombok or the Gilis. It\'s a good trip, but it isn\'t the one we propose. Indonesia has more than 17,000 islands, and some of the most romantic experiences on the planet are one or two flights from Bali: waking up at anchor in a Komodo bay, swimming with horses on an empty Sumba beach or dining on a sandbank in Raja Ampat with no one else on the horizon.',
+      'concept.p2': 'That\'s why Bassa Moon is designed in chapters. Each one has a different landscape and mood — jungle and spirituality, wild nature, sea and seclusion — with just enough time between them for the trip to feel like a story rather than a list of places. Never more than three or four destinations: on a honeymoon, every extra transfer is one day less.',
+      'concept.p3': 'Below are the settings we work with. Your trip is built from them, from your dates and from what you want to celebrate.',
+      'chapters.tag': 'The chapters',
+      'chapters.h2': 'The islands of <em>your honeymoon</em>',
+      'chapters.intro': 'Six possible settings. Bali almost always opens the trip: it\'s the international gateway and the best place to land slowly. The rest are chosen according to the season and to the kind of couple you are.',
+      'chapters.when': 'When',
+      'chapters.more': 'See all experiences →',
+      'ch1.label': 'Jungle and spirit',
+      'ch1.h3': 'Bali: Ubud, the Ayung valley and the sacred east',
+      'ch1.p': 'The trip begins inland. Ubud\'s most special villas look out over the Ayung river gorge, surrounded by jungle, and are the perfect place to recover from the flight without hurry. From here, Bali is lived the way the Balinese live it: a private melukat, the purification ritual in the sacred springs of Tirta Empul led by a priest just for the two of you; terraced rice fields at sunrise and mountain temples. If you want a change of scenery without leaving the island, the east, in Karangasem, offers rural valleys at the foot of Mount Agung and villas above the Lombok Strait.',
+      'ch1.when': 'All year round; April to October is the dry season.',
+      'ch1.m1': 'A private melukat at Tirta Empul, just for you',
+      'ch1.m2': 'Helicopter flight over the Batur and Agung volcanoes',
+      'ch1.m3': 'Dinner among the rice terraces, lit by torches',
+      'ch2.label': 'The wild island',
+      'ch2.h3': 'Sumba: the Indonesia tourism hasn\'t touched',
+      'ch2.p': 'A 70–90 minute flight from Bali, Sumba is another world: savannah hills, miles of beach with no buildings, villages of steep-roofed houses and an ancestral culture that is still alive. Here luxury isn\'t in the architecture but in the space: secluded villas between jungle and ocean, horses on the beach at sunset and women weaving ikat by hand, a technique in which a single piece can take months. It\'s the chapter for truly switching off, with no traffic, no crowds and the feeling of being at the edge of the map.',
+      'ch2.when': 'April to November. The Pasola festival takes place in February and March, in the rainy season.',
+      'ch2.m1': 'Swimming with horses in the lagoon or galloping along the beach',
+      'ch2.m2': 'Private walk to the Lapopu waterfalls',
+      'ch2.m3': 'Ikat weaving workshop with Sumbanese artisans',
+      'ch3.label': 'The sea as your hotel',
+      'ch3.h3': 'Komodo on a private phinisi',
+      'ch3.p': 'The phinisi is the wooden sailing ship of the Bugis seafarers, turned into a small floating hotel: cabins with bathrooms, a chef, captain and crew just for the two of you. Every morning the boat wakes up in a different bay of Komodo National Park, a 70–90 minute flight from Bali. Here, luxury is timing: reaching Pink Beach at sunrise, before any day trip, and having one of the world\'s few pink-sand beaches to yourselves; climbing Padar to watch the sun rise over its three bays; and meeting the dragons on Rinca with park rangers.',
+      'ch3.when': 'April to September. In July and August the trade winds can stir up the south of the park and the route is adjusted.',
+      'ch3.m1': 'Pink Beach at sunrise, with no one else around',
+      'ch3.m2': 'The top of Padar before dawn',
+      'ch3.m3': 'Dinner on deck, anchored in a deserted bay',
+      'ch4.label': 'The end of the world',
+      'ch4.h3': 'Raja Ampat: karst lagoons and pristine reefs',
+      'ch4.p': 'At Indonesia\'s eastern edge, in West Papua, Raja Ampat is the richest marine ecosystem on the planet and one of the most remote places you can reach in comfort. In the south, on Misool, a private island inside its own marine reserve welcomes very few guests: sunrise kayaking through limestone lagoons, snorkelling by the villa over recovering coral and dinners on a sandbank under a sky free of light pollution. Getting there takes a flight to Sorong and several hours by boat, so we plan it as the grand finale of the trip, never as a short stop.',
+      'ch4.when': 'October to April, when the sea is calmest.',
+      'ch4.m1': 'Sunrise kayaking through the karst lagoons',
+      'ch4.m2': 'Dinner on a private sandbank',
+      'ch4.m3': 'Wayag from the air, Raja Ampat\'s most famous view',
+      'ch5.label': 'Secret islands',
+      'ch5.h3': 'Lombok, Moyo and Anambas: the alternative to the Maldives',
+      'ch5.p': 'Many couples hesitate between Indonesia and the Maldives. There\'s no need to choose: Indonesia has its own untouched and private islands, with more nature and less formula. Southwest of Lombok, the Secret Gilis are a cluster of islets with hardly any visitors, some of the best coral in the area and beaches where we set up a bonfire dinner just for two. On Moyo, a protected island off Sumbawa an hour by seaplane from Bali, a luxury tented camp in the jungle faces an untouched reef. And in Anambas, to the north near Singapore, the seaplane lands right in the lagoon of a private island: the perfect finale if you fly home via Singapore.',
+      'ch5.when': 'April to October. In Anambas, the monsoon makes the sea rougher from November to February.',
+      'ch5.m1': 'Bonfire dinner on a secret Lombok beach',
+      'ch5.m2': 'Arriving by seaplane, landing in the lagoon',
+      'ch5.m3': 'Snorkelling on reefs with no other boats',
+      'ch6.label': 'Temples at sunrise',
+      'ch6.h3': 'Java: Borobudur in private',
+      'ch6.p': 'For couples moved by history, Java adds a different chapter before Bali. Borobudur, the largest Buddhist temple in the world, is experienced with private access at sunrise, when mist still covers the plain and the volcanoes rise on the horizon, or from a hot-air balloon. Around Yogyakarta, the Taman Sari water palace and the Hindu temples of Prambanan complete the visit.',
+      'ch6.when': 'April to October.',
+      'ch6.m1': 'Borobudur with private access at sunrise',
+      'ch6.m2': 'Hot-air balloon over the plain at dawn',
+      'ch6.m3': 'Taman Sari, the sultans\' water palace',
       'faq.tag': 'Frequently asked questions',
       'faq.h2': 'Bassa Moon, <em>in detail</em>',
-      'faq.q1': 'Is Bassa Moon only for honeymoons?',
-      'faq.a1': 'Not exclusively. While it\'s designed for honeymoons, Bassa Moon works just as well for anniversaries, marriage proposals or any romantic getaway looking for memorable moments, privacy and a slow pace — no occasion required.',
-      'faq.q2': 'How long does a Bassa Moon trip last?',
-      'faq.a2': 'Between 10 and 14 days, depending on availability and preferences. The reference example on this page is 12 days (11 nights): a week inland in Bali (Ubud) and a few final days on the southern cliffs.',
-      'faq.q3': 'Is Bassa Moon a fixed package?',
-      'faq.a3': 'No. Bassa Moon is a starting point, not a fixed package. The experiences on this page are examples of what your trip could include; the final itinerary, villas and activities are adjusted with you during the design process.',
-      'faq.q4': 'Can I combine Bassa Moon with another line, like Bassa Reset?',
-      'faq.a4': 'Yes. Bassa Moon and Bassa Reset share the same area (Bali) and are easy to combine in a single trip: a few days of slow luxury disconnection followed by a few days more focused on moments as a couple, without changing islands or pace.',
+      'faq.q1': 'Bali or the Maldives for our honeymoon?',
+      'faq.a1': 'There\'s no need to choose. Indonesia\'s great advantage is that it combines the culture, jungle and spirituality of Bali with a private-island finale in Raja Ampat, Moyo or Anambas, where the seaplane lands in the lagoon. It\'s the seclusion of the Maldives, with more nature, less formula and a whole journey around it that makes it unique.',
+      'faq.q2': 'How many days do we need for a honeymoon in Indonesia?',
+      'faq.a2': 'We recommend 14 to 18 days. With 12 days you can combine two islands at an easy pace; with 15 or more, three. What matters is giving each island enough time so the trip doesn\'t become a string of transfers.',
+      'faq.q3': 'Is Bassa Moon only for honeymoons?',
+      'faq.a3': 'No. It\'s designed for honeymoons, but it works just as well for anniversaries, proposals or any trip as a couple looking for privacy, memorable moments and an unhurried pace.',
       'cta.h2': 'Shall we design your <em>Bassa Moon</em>?',
-      'cta.p': 'Tell us your dates, what you\'re celebrating and what can\'t be missing. From there we build a tailor-made itinerary.',
+      'cta.p': 'Tell us your wedding date, how many days you have and what you imagine. From there we\'ll suggest the islands and route that fit you best.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia',
-      'footer.about': 'About Bassa', 'footer.experiences': 'Experiences', 'footer.contact': 'Contact'
+      'footer.about': 'About Bassa',
+      'footer.experiences': 'Experiences',
+      'footer.contact': 'Contact'
     }
   };
 
