@@ -6,13 +6,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bassa Explorer: Expedición de Buceo de Lujo a Raja Ampat | Bassa Travels</title>
-<meta name="description" content="Bassa Explorer: expedición de slow luxury de 8 a 12 días a Raja Ampat, el epicentro de biodiversidad marina del planeta. Liveaboard privado o resort exclusivo. Diseño a medida.">
+<title>Viaje de naturaleza de lujo por Indonesia | Bassa Explorer</title>
+<meta name="description" content="Bassa Explorer: la Indonesia salvaje en privado. Raja Ampat, Komodo, orangutanes en Borneo y Sumatra, los volcanes de Java y tiburones ballena. A tu medida.">
 <link rel="canonical" href="https://bassatravels.com/explorer.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bassatravels.com/explorer.html">
-<meta property="og:title" content="Bassa Explorer: Expedición de Buceo de Lujo a Raja Ampat | Bassa Travels">
-<meta property="og:description" content="Expedición de slow luxury de 8 a 12 días a Raja Ampat, el epicentro de biodiversidad marina del planeta: liveaboard privado o resort exclusivo. Diseño a medida.">
+<meta property="og:title" content="Viaje de naturaleza de lujo por Indonesia | Bassa Explorer">
+<meta property="og:description" content="La Indonesia salvaje, en privado: los karst de Raja Ampat, los dragones de Komodo, orangutanes en Borneo y Sumatra, los volcanes de Java y los gigantes del mar.">
 <meta property="og:image" content="https://bassatravels.com/images/COMO_Explorer.jpg">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Bassa Travels">
@@ -187,6 +187,25 @@
   .faq-section .faq-item p { margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-size: 0.95rem; max-width: 800px; }
 
   /* ── CTA ── */
+  .chapter-list { display: flex; flex-direction: column; gap: 4.5rem; margin-top: 3rem; }
+  .chapter { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; align-items: center; }
+  .chapter:nth-child(even) .chapter-img { order: 2; }
+  .chapter-img { aspect-ratio: 4 / 3; overflow: hidden; }
+  .chapter-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .chapter-label { display: block; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .chapter h3 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; line-height: 1.15; color: white; margin-bottom: 1rem; }
+  .chapter-body p { font-size: 0.95rem; }
+  .chapter-moments { list-style: none; margin: 0.4rem 0 1.2rem; padding: 0; border-top: 1px solid rgba(184,155,106,0.18); }
+  .chapter-moments li { position: relative; padding: 0.7rem 0 0.7rem 1.5rem; border-bottom: 1px solid rgba(184,155,106,0.12); font-size: 0.9rem; color: rgba(255,255,255,0.86); line-height: 1.5; }
+  .chapter-moments li::before { content: '✦'; position: absolute; left: 0; top: 0.78rem; color: var(--gold); font-size: 0.7rem; }
+  .info-section .chapter-when { font-size: 0.85rem; color: rgba(255,255,255,0.62); margin-bottom: 0; }
+  .chapter-when strong { color: var(--gold); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.7rem; }
+  .info-section p a, .faq-section .faq-item p a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .chapter { grid-template-columns: 1fr; gap: 1.6rem; }
+    .chapter:nth-child(even) .chapter-img { order: 0; }
+    .chapter-list { gap: 3.5rem; }
+  }
   .exp-cta { padding: 7rem 4rem; text-align: center; background: var(--deep); position: relative; }
   .exp-cta::before {
     content: ''; position: absolute; inset: 0;
@@ -272,8 +291,64 @@
   "@context": "https://schema.org",
   "@type": "TouristTrip",
   "name": "Bassa Explorer",
-  "description": "Expedición de slow luxury de 8 a 12 días a Raja Ampat, el epicentro de biodiversidad marina del planeta: liveaboard privado o resort de buceo exclusivo, diseñada a medida.",
-  "touristType": ["Buceadores", "Amantes de la naturaleza y expediciones"],
+  "description": "Bassa Explorer es una expedición de lujo por la naturaleza de Indonesia, de 10 a 16 días: navegar entre los karst de Raja Ampat, encontrarte con los dragones de Komodo, remontar los ríos de Borneo en busca de orangutanes, cruzar el mar de arena del Bromo al amanecer o nadar junto a tiburones ballena. El buceo y el snorkel son parte del viaje, pero no lo son todo: aquí manda el paisaje, con una logística privada para llegar donde casi nadie llega.",
+  "touristType": [
+    "Amantes de la naturaleza y la fauna",
+    "Buceadores y aficionados al snorkel"
+  ],
+  "itinerary": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Place",
+          "name": "Raja Ampat (Papúa Occidental)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Place",
+          "name": "Parque Nacional de Komodo"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Place",
+          "name": "Borneo (Tanjung Puting e islas Derawan)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Place",
+          "name": "Sumatra (Gunung Leuser y lago Toba)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Place",
+          "name": "Java Oriental (Bromo, Ijen y Baluran)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Place",
+          "name": "Wakatobi y bahía de Cenderawasih"
+        }
+      }
+    ]
+  },
   "provider": {
     "@type": "TravelAgency",
     "name": "Bassa Travels",
@@ -288,34 +363,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Necesito ser un buceador experimentado para hacer Bassa Explorer?",
+      "name": "¿Hace falta bucear para hacer Bassa Explorer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No necesariamente, pero ayuda. Raja Ampat tiene puntos de buceo para todos los niveles, incluido snorkel de superficie con una visibilidad espectacular. Dicho esto, los puntos más icónicos (como Cabo Kri) se disfrutan más con cierta experiencia. Si no buceáis, adaptamos el itinerario hacia snorkel, kayak y vuelos privados."
+        "text": "No. El buceo es una opción, no un requisito. Gran parte del viaje se vive en tierra o en la superficie: selva, volcanes, fauna, navegación en velero, kayak y snorkel, que en lugares como Raja Ampat o Wakatobi ofrece arrecifes espectaculares a pocos metros. Si buceas, organizamos las inmersiones según tu nivel, y si quieres empezar, se puede hacer un curso de iniciación durante el viaje."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuánto dura un viaje Bassa Explorer?",
+      "name": "¿Cuál es la mejor época para un viaje de naturaleza por Indonesia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Entre 8 y 12 días, sin contar los vuelos de conexión hasta Papúa Occidental, que ya son un viaje en sí. El ejemplo de esta página son 10 días / 9 noches, mayormente a bordo de un liveaboard privado."
+        "text": "Depende de la zona. Raja Ampat tiene su mejor momento de octubre a abril, mientras que Komodo, Java Oriental, Borneo y Sumatra brillan en la estación seca, aproximadamente de abril a octubre. Wakatobi y la bahía de Cenderawasih funcionan todo el año. Por eso combinamos los escenarios según tus fechas."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Bassa Explorer es un paquete cerrado?",
+      "name": "¿Es un viaje exigente físicamente?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Bassa Explorer es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, el barco o resort y las actividades se ajustan contigo durante el diseño del viaje."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo combinar Bassa Explorer con otra línea, como Bassa Complete?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Raja Ampat es precisamente el tramo final de Bassa Complete, que añade Java y Bali antes de la expedición. Si solo tienes tiempo para una zona, Bassa Explorer se centra exclusivamente en Raja Ampat (con opción a Komodo); si quieres profundidad en todo el archipiélago, Bassa Complete es la opción."
+        "text": "Se adapta a cada viajero. Algunas experiencias piden madrugar o caminar, como el ascenso al Ijen o las caminatas por la selva de Sumatra, pero siempre hay alternativas más tranquilas y el ritmo general es pausado: alojamientos cómodos, traslados privados y tiempo para descansar."
       }
     }
   ]
@@ -343,9 +410,9 @@
 <!-- HERO + RESPUESTA DIRECTA -->
 <section class="line-hero">
   <div class="line-hero-inner">
-    <span class="hero-tag">Bassa Explorer · Raja Ampat</span>
-    <h1 data-i18n-html="hero.h1">El último arrecife virgen<br>del <em>planeta</em></h1>
-    <p class="answer-direct" data-i18n="hero.p">Bassa Explorer es una expedición de slow luxury de entre 8 y 12 días por Raja Ampat — el epicentro de la biodiversidad marina del planeta — a bordo de un liveaboard privado o desde un resort de buceo exclusivo. No es una excursión de buceo más: es ver en persona lo que los documentales solo pueden filmar. Punto de partida, no paquete cerrado.</p>
+    <span class="hero-tag">Bassa Explorer · Indonesia</span>
+    <h1 data-i18n-html="hero.h1">La Indonesia<br><em>salvaje</em></h1>
+    <p class="answer-direct" data-i18n="hero.p">Bassa Explorer es una expedición de lujo por la naturaleza de Indonesia, de 10 a 16 días: navegar entre los karst de Raja Ampat, encontrarte con los dragones de Komodo, remontar los ríos de Borneo en busca de orangutanes, cruzar el mar de arena del Bromo al amanecer o nadar junto a tiburones ballena. El buceo y el snorkel son parte del viaje, pero no lo son todo: aquí manda el paisaje, con una logística privada para llegar donde casi nadie llega.</p>
   </div>
 </section>
 
@@ -357,81 +424,133 @@
     <table class="data-table">
       <tr>
         <td data-i18n="glance.duracion.label">Duración orientativa</td>
-        <td data-i18n="glance.duracion.value">8–12 días. El ejemplo desarrollado en esta página son 10 días / 9 noches.</td>
+        <td data-i18n="glance.duracion.value">10–16 días, combinando dos o tres escenarios naturales sin prisas.</td>
       </tr>
       <tr>
         <td data-i18n="glance.estilo.label">Estilo</td>
-        <td data-i18n="glance.estilo.value">Expedición de slow luxury · liveaboard privado o resort de buceo exclusivo · 100% a medida.</td>
+        <td data-i18n="glance.estilo.value">Expedición de slow luxury, 100% privada: phinisi o liveaboard solo para ti, guías naturalistas y alojamientos en plena naturaleza.</td>
       </tr>
       <tr>
-        <td data-i18n="glance.zona.label">Zona principal</td>
-        <td data-i18n="glance.zona.value">Raja Ampat (Papúa Occidental), con posible extensión a Komodo y Flores.</td>
+        <td data-i18n="glance.zona.label">Escenarios</td>
+        <td data-i18n="glance.zona.value">Raja Ampat, Komodo, Borneo, Sumatra, los volcanes de Java Oriental, Wakatobi y la bahía de Cenderawasih.</td>
       </tr>
       <tr>
         <td data-i18n="glance.quien.label">Para quién</td>
-        <td data-i18n="glance.quien.value">Buceadores experimentados y amantes de la naturaleza que buscan biodiversidad real, sin masificación.</td>
+        <td data-i18n="glance.quien.value">Amantes de la naturaleza, la fauna y el mar, buceen o no, que buscan lugares remotos sin renunciar al confort.</td>
       </tr>
       <tr>
         <td data-i18n="glance.epoca.label">Mejor época</td>
-        <td data-i18n="glance.epoca.value">Octubre a abril, temporada seca y de mejor visibilidad en Raja Ampat.</td>
+        <td data-i18n="glance.epoca.value">Todo el año: Raja Ampat brilla de octubre a abril, y la mayoría de los demás escenarios, de abril a octubre.</td>
       </tr>
     </table>
   </div>
 </section>
 
-<!-- QUÉ ES BASSA EXPLORER -->
+<!-- CONCEPTO -->
 <section class="info-section reveal">
   <div class="inner">
     <span class="section-tag" data-i18n="concept.tag">El concepto</span>
     <h2 class="section-title" data-i18n-html="concept.h2">Expedición, no <em>excursión</em></h2>
-    <p data-i18n="concept.p1">Bassa Explorer parte de un dato: Raja Ampat alberga más del 75% de las especies de coral conocidas en el mundo, concentradas en un archipiélago remoto al que solo se llega con vuelos privados, barcos chárter y mucha planificación. No es un destino de turismo masivo — y eso es exactamente lo que lo hace extraordinario.</p>
-    <p data-i18n="concept.p2">El eje del viaje es un liveaboard privado: noches a bordo de un velero phinisi navegando entre islas deshabitadas, despertando cada día frente a un punto de buceo distinto, con la tripulación organizando cada inmersión a vuestro ritmo. Quienes prefieren no pasar noches en barco pueden optar por un resort de buceo exclusivo en una isla privada, con el mismo acceso a los arrecifes.</p>
-    <p data-i18n="concept.p3">Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Explorer — no un álbum cerrado, sino el punto de partida sobre el que diseñamos tu expedición.</p>
+    <p data-i18n="concept.p1">Indonesia guarda algunos de los últimos grandes espacios salvajes del planeta: el mar con más especies de coral del mundo, la selva donde viven los orangutanes, islas habitadas por dragones y volcanes que siguen activos. Llegar a ellos exige vuelos, barcos y permisos que la mayoría de viajeros no sabe combinar. Bassa Explorer se ocupa de esa parte para que tú solo tengas que mirar.</p>
+    <p data-i18n="concept.p2">No es un viaje solo de buceo. Hay días a bordo de un velero tradicional, despertando cada mañana en una bahía distinta; madrugadas al borde de un cráter; caminatas por la selva con guías naturalistas y noches en las que la única luz son las luciérnagas. El mar es protagonista, pero también se vive con snorkel, en kayak o desde cubierta, sin necesidad de certificación.</p>
+    <p data-i18n="concept.p3">A continuación, los escenarios con los que trabajamos. Tu expedición se construye a partir de ellos, de tus fechas y de lo que más quieras ver.</p>
   </div>
 </section>
 
-<!-- EJEMPLOS DE EXPERIENCIAS -->
+<!-- ESCENARIOS -->
 <section class="info-section reveal">
   <div class="inner">
-    <span class="section-tag" data-i18n="examples.tag">Ejemplos de experiencias</span>
-    <h2 class="section-title" data-i18n-html="examples.h2">Lo que puede incluir<br>tu <em>Bassa Explorer</em></h2>
-    <p data-i18n="examples.intro">Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Explorer es distinto: estas son referencias para inspiraros, no una lista cerrada.</p>
-    <div class="exp-list">
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/placeholder.jpg" alt="Buceo en Cabo Kri Raja Ampat, récord mundial de biodiversidad marina"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item1.label">Récord mundial</span>
-          <h3 data-i18n="examples.item1.h3">Buceo en Cabo Kri — 374 especies</h3>
-          <p class="exp-item-sub" data-i18n="examples.item1.sub">La inmersión más densa de vida marina del planeta.</p>
+    <span class="section-tag" data-i18n="chapters.tag">Dónde</span>
+    <h2 class="section-title" data-i18n-html="chapters.h2">Los escenarios de <em>tu Bassa Explorer</em></h2>
+    <p data-i18n="chapters.intro">Seis escenarios, de la selva al fondo del mar. Se combinan según la temporada, porque el este y el oeste del archipiélago tienen su mejor momento en épocas distintas.</p>
+    <div class="chapter-list">
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/wayag-desde-el-aire.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Vista aérea de las islas karst de Wayag en Raja Ampat"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch1.label">El mar más rico del planeta</span>
+          <h3 data-i18n="ch1.h3">Raja Ampat: karst, arrecifes y aves del paraíso</h3>
+          <p data-i18n-html="ch1.p">En el extremo oriental de Indonesia, <a href="blog/raja-ampat-lujo-expedicion.html">Raja Ampat</a> reúne alrededor del 75% de las especies de coral conocidas. Se recorre a bordo de un phinisi o un liveaboard privado, entre islas de piedra caliza cubiertas de selva que emergen de un mar turquesa. Bajo el agua están Cabo Kri, donde se llegaron a contar 374 especies de peces en una sola inmersión, y las mantas de Blue Magic; en la superficie, lagunas para recorrer en kayak, arrecifes accesibles con snorkel y, al amanecer en tierra firme, el ave del paraíso de Wilson, que solo vive en estas islas. Y la imagen que todo el mundo busca: los karst de Wayag vistos desde lo alto.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch1.m1">Los karst de Wayag desde lo alto</li>
+          <li data-i18n="ch1.m2">Snorkel y buceo en Cabo Kri y Blue Magic</li>
+          <li data-i18n="ch1.m3">El ave del paraíso de Wilson al amanecer</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch1.when">De octubre a abril, con el mar en calma.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/phinisi-privado-por-komodo.webp" alt="Velero phinisi tradicional indonesio navegando por Raja Ampat en charter privado"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item2.label">Liveaboard de lujo</span>
-          <h3 data-i18n="examples.item2.h3">El Silolona — velero phinisi privado</h3>
-          <p class="exp-item-sub" data-i18n="examples.item2.sub">Cada amanecer, un punto de buceo distinto — y ningún otro barco a la vista.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/dragones-de-komodo-con-rangers.webp" width="1600" height="1066" loading="lazy" decoding="async" alt="Dragón de Komodo en su hábitat natural en el Parque Nacional de Komodo"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch2.label">Dragones y velero</span>
+          <h3 data-i18n="ch2.h3">Komodo: dragones, playas rosas y vida a bordo</h3>
+          <p data-i18n-html="ch2.p">El Parque Nacional de Komodo protege al dragón de Komodo, el mayor lagarto del planeta, que puede superar los tres metros. Se busca a pie por las sabanas de Rinca o Komodo, con guardaparques, y el resto del viaje transcurre en <a href="blog/komodo-yate-privado-dragones-lujo.html">un phinisi privado</a>: subir a Padar antes del alba, tener Pink Beach para ti al amanecer, nadar con mantas y fondear cada noche en una bahía distinta, con la cena servida en cubierta. Desde abril de 2026 el parque limita las visitas a 1.000 personas al día, y moverse con un operador con licencia marca la diferencia.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch2.m1">Dragones en Rinca, con guardaparques</li>
+          <li data-i18n="ch2.m2">Padar y Pink Beach antes que nadie</li>
+          <li data-i18n="ch2.m3">Snorkel con mantas en Manta Point</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch2.when">De abril a septiembre. En julio y agosto, los alisios pueden agitar el sur del parque.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/raja-ampat-aereo-sm.webp" alt="Vista aérea de las islas karst de Wayag en Raja Ampat desde helicóptero"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item3.label">Aéreo privado</span>
-          <h3 data-i18n="examples.item3.h3">Wayag desde el aire</h3>
-          <p class="exp-item-sub" data-i18n="examples.item3.sub">El sello visual de Raja Ampat — inalcanzable desde tierra.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/el-mono-de-nariz-larga-al-atardecer.webp" width="1600" height="1060" loading="lazy" decoding="async" alt="Mono narigudo, especie exclusiva de Borneo, en Kalimantan"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch3.label">La selva más antigua</span>
+          <h3 data-i18n="ch3.h3">Borneo: orangutanes en klotok y los gigantes de Derawan</h3>
+          <p data-i18n="ch3.p">En el sur de Borneo, el parque nacional de Tanjung Puting se recorre como hace un siglo: a bordo de un klotok, una barcaza de madera de dos pisos que remonta despacio el río Sekonyer. De día, orangutanes en los comederos de Camp Leakey y otros puntos del parque, monos narigudos en las orillas y cálaos sobrevolando la selva; de noche, caminatas con linterna en busca de animales nocturnos y una cena en cubierta mientras miles de luciérnagas iluminan las palmeras del río. En la costa este, las islas Derawan suman otro mundo: tiburones ballena al amanecer y Kakaban, un lago marino lleno de medusas que no pican.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch3.m1">Navegación en klotok privado por el río Sekonyer</li>
+          <li data-i18n="ch3.m2">Cena en cubierta entre luciérnagas</li>
+          <li data-i18n="ch3.m3">Tiburones ballena al amanecer en Derawan</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch3.when">De junio a octubre, estación seca.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/dragones-de-komodo-con-rangers.webp" alt="Dragón de Komodo en su hábitat natural en el Parque Nacional"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item4.label">Encuentro privado</span>
-          <h3 data-i18n="examples.item4.h3">Dragones de Komodo con rangers</h3>
-          <p class="exp-item-sub" data-i18n="examples.item4.sub">Tres metros de prehistoria. La lengua probando el aire.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/orangutan-salvaje-sumatra.webp" width="1600" height="2000" loading="lazy" decoding="async" alt="Orangután macho en libertad en la selva de Sumatra"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch4.label">Orangutanes salvajes</span>
+          <h3 data-i18n="ch4.h3">Sumatra: la selva de Leuser</h3>
+          <p data-i18n-html="ch4.p">En el norte de <a href="blog/sumatra-orangutanes-salvajes-lujo.html">Sumatra</a>, el ecosistema de Leuser es el único lugar del planeta donde conviven orangutanes, tigres, rinocerontes y elefantes, y el parque nacional Gunung Leuser es Patrimonio de la Humanidad. Aquí los orangutanes no se ven en comederos, sino en libertad, durante caminatas por la selva con guías y rastreadores locales. Según la puerta de entrada se elige el tono: Bukit Lawang para los primeros encuentros, Tangkahan para el río y los elefantes, o Ketambe para la selva más remota. Y para cerrar, el lago Toba, el mayor lago volcánico del mundo.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch4.m1">Orangutanes en libertad, con rastreadores locales</li>
+          <li data-i18n="ch4.m2">Río y elefantes en Tangkahan</li>
+          <li data-i18n="ch4.m3">El lago Toba, el mayor lago volcánico del mundo</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch4.when">De mayo a septiembre, estación seca.</span></p>
+        </div>
+      </article>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/monte-bromo-mar-de-arena-al-alba.webp" width="1600" height="1066" loading="lazy" decoding="async" alt="Mar de Arena al amanecer en el Monte Bromo, Java Oriental"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch5.label">Volcanes y sabana</span>
+          <h3 data-i18n="ch5.h3">Java Oriental: Bromo, Ijen y la sabana de Baluran</h3>
+          <p data-i18n="ch5.p">El este de Java es uno de los paisajes volcánicos más espectaculares de Asia. Al amanecer, un todoterreno privado cruza el mar de arena del Bromo hasta los miradores desde los que se ve humear el Bromo y, al fondo, el Semeru, el techo de Java. En el Ijen, la expedición empieza de madrugada para ver el fuego azul, llamas de gas sulfuroso que solo se distinguen en plena oscuridad, y al amanecer, el lago ácido del cráter, de un turquesa imposible. Lo completan la cascada de Tumpak Sewu, con cientos de hilos de agua cayendo en semicírculo, y Baluran, una sabana con bantengs, ciervos y pavos reales que los holandeses llamaron «la África de Java».</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch5.m1">Amanecer sobre el mar de arena del Bromo</li>
+          <li data-i18n="ch5.m2">El fuego azul del Ijen, de madrugada</li>
+          <li data-i18n="ch5.m3">Sundowner en la sabana de Baluran</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch5.when">De abril a octubre. El acceso a los cráteres depende de la actividad volcánica de cada momento.</span></p>
+        </div>
+      </article>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/tiburones-ballena-cenderawasih.webp" width="1600" height="1101" loading="lazy" decoding="async" alt="Nadar con tiburones ballena residentes en la bahía de Cenderawasih, Papúa"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch6.label">Mar adentro</span>
+          <h3 data-i18n="ch6.h3">Wakatobi y Cenderawasih: arrecifes remotos y tiburones ballena</h3>
+          <p data-i18n-html="ch6.p">Para quien quiere el mar sin compartirlo, dos rincones fuera de cualquier ruta. A <a href="blog/wakatobi-buceo-lujo-vuelo-privado.html">Wakatobi</a>, en el sureste de Sulawesi, se llega en un vuelo chárter privado de dos horas y media desde Bali: un arrecife protegido gracias a un acuerdo con 17 aldeas, tan cerca de la orilla que se bucea o se hace snorkel sin subir a un barco, y la cultura de los bajau, los nómadas del mar. En la bahía de Cenderawasih, en Papúa, los tiburones ballena viven todo el año junto a las plataformas de los pescadores, y es posible nadar a su lado en aguas tranquilas.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch6.m1">Snorkel desde la orilla en el arrecife de Wakatobi</li>
+          <li data-i18n="ch6.m2">Una aldea bajau sobre el agua</li>
+          <li data-i18n="ch6.m3">Nadar con tiburones ballena en Cenderawasih</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch6.when">Todo el año.</span></p>
         </div>
       </article>
     </div>
     <div class="exp-more-wrap">
-      <a href="experiencias.html" class="exp-more-link" data-i18n="examples.more">Ver todas las experiencias →</a>
+      <a href="experiencias.html" class="exp-more-link" data-i18n="chapters.more">Ver todas las experiencias →</a>
     </div>
   </div>
 </section>
@@ -443,23 +562,18 @@
     <h2 class="section-title" data-i18n-html="faq.h2">Bassa Explorer, <em>en detalle</em></h2>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q1">¿Necesito ser un buceador experimentado para hacer Bassa Explorer?</summary>
-      <p data-i18n="faq.a1">No necesariamente, pero ayuda. Raja Ampat tiene puntos de buceo para todos los niveles, incluido snorkel de superficie con una visibilidad espectacular. Dicho esto, los puntos más icónicos (como Cabo Kri) se disfrutan más con cierta experiencia. Si no buceáis, adaptamos el itinerario hacia snorkel, kayak y vuelos privados.</p>
+      <summary data-i18n="faq.q1">¿Hace falta bucear para hacer Bassa Explorer?</summary>
+      <p data-i18n="faq.a1">No. El buceo es una opción, no un requisito. Gran parte del viaje se vive en tierra o en la superficie: selva, volcanes, fauna, navegación en velero, kayak y snorkel, que en lugares como Raja Ampat o Wakatobi ofrece arrecifes espectaculares a pocos metros. Si buceas, organizamos las inmersiones según tu nivel, y si quieres empezar, se puede hacer un curso de iniciación durante el viaje.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q2">¿Cuánto dura un viaje Bassa Explorer?</summary>
-      <p data-i18n="faq.a2">Entre 8 y 12 días, sin contar los vuelos de conexión hasta Papúa Occidental, que ya son un viaje en sí. El ejemplo de esta página son 10 días / 9 noches, mayormente a bordo de un liveaboard privado.</p>
+      <summary data-i18n="faq.q2">¿Cuál es la mejor época para un viaje de naturaleza por Indonesia?</summary>
+      <p data-i18n="faq.a2">Depende de la zona. Raja Ampat tiene su mejor momento de octubre a abril, mientras que Komodo, Java Oriental, Borneo y Sumatra brillan en la estación seca, aproximadamente de abril a octubre. Wakatobi y la bahía de Cenderawasih funcionan todo el año. Por eso combinamos los escenarios según tus fechas.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q3">¿Bassa Explorer es un paquete cerrado?</summary>
-      <p data-i18n="faq.a3">No. Bassa Explorer es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, el barco o resort y las actividades se ajustan contigo durante el diseño del viaje.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary data-i18n="faq.q4">¿Puedo combinar Bassa Explorer con otra línea, como Bassa Complete?</summary>
-      <p data-i18n="faq.a4">Sí. Raja Ampat es precisamente el tramo final de Bassa Complete, que añade Java y Bali antes de la expedición. Si solo tienes tiempo para una zona, Bassa Explorer se centra exclusivamente en Raja Ampat (con opción a Komodo); si quieres profundidad en todo el archipiélago, Bassa Complete es la opción.</p>
+      <summary data-i18n="faq.q3">¿Es un viaje exigente físicamente?</summary>
+      <p data-i18n="faq.a3">Se adapta a cada viajero. Algunas experiencias piden madrugar o caminar, como el ascenso al Ijen o las caminatas por la selva de Sumatra, pero siempre hay alternativas más tranquilas y el ritmo general es pausado: alojamientos cómodos, traslados privados y tiempo para descansar.</p>
     </details>
   </div>
 </section>
@@ -467,7 +581,7 @@
 <!-- CTA FINAL -->
 <section class="exp-cta">
   <h2 data-i18n-html="cta.h2">¿Diseñamos tu <em>Bassa Explorer</em>?</h2>
-  <p data-i18n="cta.p">Cuéntanos cuántos días tenéis, vuestro nivel de buceo y si preferís liveaboard o resort. A partir de ahí construimos la expedición.</p>
+  <p data-i18n="cta.p">Cuéntanos tus fechas y qué te gustaría ver: el mar, la selva, los volcanes o un poco de todo. A partir de ahí diseñamos tu expedición.</p>
   <a href="index.html#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
 </section>
 
@@ -495,114 +609,176 @@
 <script>
   const t = {
     es: {
-      'page.title': 'Bassa Explorer: Expedición de Buceo de Lujo a Raja Ampat | Bassa Travels',
+      'page.title': 'Viaje de naturaleza de lujo por Indonesia | Bassa Explorer',
       'nav.cta': 'Diseña tu viaje',
       'breadcrumb.home': 'Inicio',
       'breadcrumb.experiences': 'Experiencias',
-      'hero.h1': 'El último arrecife virgen<br>del <em>planeta</em>',
-      'hero.p': 'Bassa Explorer es una expedición de slow luxury de entre 8 y 12 días por Raja Ampat — el epicentro de la biodiversidad marina del planeta — a bordo de un liveaboard privado o desde un resort de buceo exclusivo. No es una excursión de buceo más: es ver en persona lo que los documentales solo pueden filmar. Punto de partida, no paquete cerrado.',
+      'hero.h1': 'La Indonesia<br><em>salvaje</em>',
+      'hero.p': 'Bassa Explorer es una expedición de lujo por la naturaleza de Indonesia, de 10 a 16 días: navegar entre los karst de Raja Ampat, encontrarte con los dragones de Komodo, remontar los ríos de Borneo en busca de orangutanes, cruzar el mar de arena del Bromo al amanecer o nadar junto a tiburones ballena. El buceo y el snorkel son parte del viaje, pero no lo son todo: aquí manda el paisaje, con una logística privada para llegar donde casi nadie llega.',
       'glance.tag': 'En una mirada',
       'glance.h2': '<em>Datos</em> clave',
       'glance.duracion.label': 'Duración orientativa',
-      'glance.duracion.value': '8–12 días. El ejemplo desarrollado en esta página son 10 días / 9 noches.',
+      'glance.duracion.value': '10–16 días, combinando dos o tres escenarios naturales sin prisas.',
       'glance.estilo.label': 'Estilo',
-      'glance.estilo.value': 'Expedición de slow luxury · liveaboard privado o resort de buceo exclusivo · 100% a medida.',
-      'glance.zona.label': 'Zona principal',
-      'glance.zona.value': 'Raja Ampat (Papúa Occidental), con posible extensión a Komodo y Flores.',
+      'glance.estilo.value': 'Expedición de slow luxury, 100% privada: phinisi o liveaboard solo para ti, guías naturalistas y alojamientos en plena naturaleza.',
+      'glance.zona.label': 'Escenarios',
+      'glance.zona.value': 'Raja Ampat, Komodo, Borneo, Sumatra, los volcanes de Java Oriental, Wakatobi y la bahía de Cenderawasih.',
       'glance.quien.label': 'Para quién',
-      'glance.quien.value': 'Buceadores experimentados y amantes de la naturaleza que buscan biodiversidad real, sin masificación.',
+      'glance.quien.value': 'Amantes de la naturaleza, la fauna y el mar, buceen o no, que buscan lugares remotos sin renunciar al confort.',
       'glance.epoca.label': 'Mejor época',
-      'glance.epoca.value': 'Octubre a abril, temporada seca y de mejor visibilidad en Raja Ampat.',
+      'glance.epoca.value': 'Todo el año: Raja Ampat brilla de octubre a abril, y la mayoría de los demás escenarios, de abril a octubre.',
       'concept.tag': 'El concepto',
       'concept.h2': 'Expedición, no <em>excursión</em>',
-      'concept.p1': 'Bassa Explorer parte de un dato: Raja Ampat alberga más del 75% de las especies de coral conocidas en el mundo, concentradas en un archipiélago remoto al que solo se llega con vuelos privados, barcos chárter y mucha planificación. No es un destino de turismo masivo — y eso es exactamente lo que lo hace extraordinario.',
-      'concept.p2': 'El eje del viaje es un liveaboard privado: noches a bordo de un velero phinisi navegando entre islas deshabitadas, despertando cada día frente a un punto de buceo distinto, con la tripulación organizando cada inmersión a vuestro ritmo. Quienes prefieren no pasar noches en barco pueden optar por un resort de buceo exclusivo en una isla privada, con el mismo acceso a los arrecifes.',
-      'concept.p3': 'Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Explorer — no un álbum cerrado, sino el punto de partida sobre el que diseñamos tu expedición.',
-      'examples.tag': 'Ejemplos de experiencias',
-      'examples.h2': 'Lo que puede incluir<br>tu <em>Bassa Explorer</em>',
-      'examples.intro': 'Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Explorer es distinto: estas son referencias para inspiraros, no una lista cerrada.',
-      'examples.item1.label': 'Récord mundial',
-      'examples.item1.h3': 'Buceo en Cabo Kri — 374 especies',
-      'examples.item1.sub': 'La inmersión más densa de vida marina del planeta.',
-      'examples.item2.label': 'Liveaboard de lujo',
-      'examples.item2.h3': 'El Silolona — velero phinisi privado',
-      'examples.item2.sub': 'Cada amanecer, un punto de buceo distinto — y ningún otro barco a la vista.',
-      'examples.item3.label': 'Aéreo privado',
-      'examples.item3.h3': 'Wayag desde el aire',
-      'examples.item3.sub': 'El sello visual de Raja Ampat — inalcanzable desde tierra.',
-      'examples.item4.label': 'Encuentro privado',
-      'examples.item4.h3': 'Dragones de Komodo con rangers',
-      'examples.item4.sub': 'Tres metros de prehistoria. La lengua probando el aire.',
-      'examples.more': 'Ver todas las experiencias →',
+      'concept.p1': 'Indonesia guarda algunos de los últimos grandes espacios salvajes del planeta: el mar con más especies de coral del mundo, la selva donde viven los orangutanes, islas habitadas por dragones y volcanes que siguen activos. Llegar a ellos exige vuelos, barcos y permisos que la mayoría de viajeros no sabe combinar. Bassa Explorer se ocupa de esa parte para que tú solo tengas que mirar.',
+      'concept.p2': 'No es un viaje solo de buceo. Hay días a bordo de un velero tradicional, despertando cada mañana en una bahía distinta; madrugadas al borde de un cráter; caminatas por la selva con guías naturalistas y noches en las que la única luz son las luciérnagas. El mar es protagonista, pero también se vive con snorkel, en kayak o desde cubierta, sin necesidad de certificación.',
+      'concept.p3': 'A continuación, los escenarios con los que trabajamos. Tu expedición se construye a partir de ellos, de tus fechas y de lo que más quieras ver.',
+      'chapters.tag': 'Dónde',
+      'chapters.h2': 'Los escenarios de <em>tu Bassa Explorer</em>',
+      'chapters.intro': 'Seis escenarios, de la selva al fondo del mar. Se combinan según la temporada, porque el este y el oeste del archipiélago tienen su mejor momento en épocas distintas.',
+      'chapters.when': 'Cuándo',
+      'chapters.more': 'Ver todas las experiencias →',
+      'ch1.label': 'El mar más rico del planeta',
+      'ch1.h3': 'Raja Ampat: karst, arrecifes y aves del paraíso',
+      'ch1.p': 'En el extremo oriental de Indonesia, <a href="blog/raja-ampat-lujo-expedicion.html">Raja Ampat</a> reúne alrededor del 75% de las especies de coral conocidas. Se recorre a bordo de un phinisi o un liveaboard privado, entre islas de piedra caliza cubiertas de selva que emergen de un mar turquesa. Bajo el agua están Cabo Kri, donde se llegaron a contar 374 especies de peces en una sola inmersión, y las mantas de Blue Magic; en la superficie, lagunas para recorrer en kayak, arrecifes accesibles con snorkel y, al amanecer en tierra firme, el ave del paraíso de Wilson, que solo vive en estas islas. Y la imagen que todo el mundo busca: los karst de Wayag vistos desde lo alto.',
+      'ch1.when': 'De octubre a abril, con el mar en calma.',
+      'ch1.m1': 'Los karst de Wayag desde lo alto',
+      'ch1.m2': 'Snorkel y buceo en Cabo Kri y Blue Magic',
+      'ch1.m3': 'El ave del paraíso de Wilson al amanecer',
+      'ch2.label': 'Dragones y velero',
+      'ch2.h3': 'Komodo: dragones, playas rosas y vida a bordo',
+      'ch2.p': 'El Parque Nacional de Komodo protege al dragón de Komodo, el mayor lagarto del planeta, que puede superar los tres metros. Se busca a pie por las sabanas de Rinca o Komodo, con guardaparques, y el resto del viaje transcurre en <a href="blog/komodo-yate-privado-dragones-lujo.html">un phinisi privado</a>: subir a Padar antes del alba, tener Pink Beach para ti al amanecer, nadar con mantas y fondear cada noche en una bahía distinta, con la cena servida en cubierta. Desde abril de 2026 el parque limita las visitas a 1.000 personas al día, y moverse con un operador con licencia marca la diferencia.',
+      'ch2.when': 'De abril a septiembre. En julio y agosto, los alisios pueden agitar el sur del parque.',
+      'ch2.m1': 'Dragones en Rinca, con guardaparques',
+      'ch2.m2': 'Padar y Pink Beach antes que nadie',
+      'ch2.m3': 'Snorkel con mantas en Manta Point',
+      'ch3.label': 'La selva más antigua',
+      'ch3.h3': 'Borneo: orangutanes en klotok y los gigantes de Derawan',
+      'ch3.p': 'En el sur de Borneo, el parque nacional de Tanjung Puting se recorre como hace un siglo: a bordo de un klotok, una barcaza de madera de dos pisos que remonta despacio el río Sekonyer. De día, orangutanes en los comederos de Camp Leakey y otros puntos del parque, monos narigudos en las orillas y cálaos sobrevolando la selva; de noche, caminatas con linterna en busca de animales nocturnos y una cena en cubierta mientras miles de luciérnagas iluminan las palmeras del río. En la costa este, las islas Derawan suman otro mundo: tiburones ballena al amanecer y Kakaban, un lago marino lleno de medusas que no pican.',
+      'ch3.when': 'De junio a octubre, estación seca.',
+      'ch3.m1': 'Navegación en klotok privado por el río Sekonyer',
+      'ch3.m2': 'Cena en cubierta entre luciérnagas',
+      'ch3.m3': 'Tiburones ballena al amanecer en Derawan',
+      'ch4.label': 'Orangutanes salvajes',
+      'ch4.h3': 'Sumatra: la selva de Leuser',
+      'ch4.p': 'En el norte de <a href="blog/sumatra-orangutanes-salvajes-lujo.html">Sumatra</a>, el ecosistema de Leuser es el único lugar del planeta donde conviven orangutanes, tigres, rinocerontes y elefantes, y el parque nacional Gunung Leuser es Patrimonio de la Humanidad. Aquí los orangutanes no se ven en comederos, sino en libertad, durante caminatas por la selva con guías y rastreadores locales. Según la puerta de entrada se elige el tono: Bukit Lawang para los primeros encuentros, Tangkahan para el río y los elefantes, o Ketambe para la selva más remota. Y para cerrar, el lago Toba, el mayor lago volcánico del mundo.',
+      'ch4.when': 'De mayo a septiembre, estación seca.',
+      'ch4.m1': 'Orangutanes en libertad, con rastreadores locales',
+      'ch4.m2': 'Río y elefantes en Tangkahan',
+      'ch4.m3': 'El lago Toba, el mayor lago volcánico del mundo',
+      'ch5.label': 'Volcanes y sabana',
+      'ch5.h3': 'Java Oriental: Bromo, Ijen y la sabana de Baluran',
+      'ch5.p': 'El este de Java es uno de los paisajes volcánicos más espectaculares de Asia. Al amanecer, un todoterreno privado cruza el mar de arena del Bromo hasta los miradores desde los que se ve humear el Bromo y, al fondo, el Semeru, el techo de Java. En el Ijen, la expedición empieza de madrugada para ver el fuego azul, llamas de gas sulfuroso que solo se distinguen en plena oscuridad, y al amanecer, el lago ácido del cráter, de un turquesa imposible. Lo completan la cascada de Tumpak Sewu, con cientos de hilos de agua cayendo en semicírculo, y Baluran, una sabana con bantengs, ciervos y pavos reales que los holandeses llamaron «la África de Java».',
+      'ch5.when': 'De abril a octubre. El acceso a los cráteres depende de la actividad volcánica de cada momento.',
+      'ch5.m1': 'Amanecer sobre el mar de arena del Bromo',
+      'ch5.m2': 'El fuego azul del Ijen, de madrugada',
+      'ch5.m3': 'Sundowner en la sabana de Baluran',
+      'ch6.label': 'Mar adentro',
+      'ch6.h3': 'Wakatobi y Cenderawasih: arrecifes remotos y tiburones ballena',
+      'ch6.p': 'Para quien quiere el mar sin compartirlo, dos rincones fuera de cualquier ruta. A <a href="blog/wakatobi-buceo-lujo-vuelo-privado.html">Wakatobi</a>, en el sureste de Sulawesi, se llega en un vuelo chárter privado de dos horas y media desde Bali: un arrecife protegido gracias a un acuerdo con 17 aldeas, tan cerca de la orilla que se bucea o se hace snorkel sin subir a un barco, y la cultura de los bajau, los nómadas del mar. En la bahía de Cenderawasih, en Papúa, los tiburones ballena viven todo el año junto a las plataformas de los pescadores, y es posible nadar a su lado en aguas tranquilas.',
+      'ch6.when': 'Todo el año.',
+      'ch6.m1': 'Snorkel desde la orilla en el arrecife de Wakatobi',
+      'ch6.m2': 'Una aldea bajau sobre el agua',
+      'ch6.m3': 'Nadar con tiburones ballena en Cenderawasih',
       'faq.tag': 'Preguntas frecuentes',
       'faq.h2': 'Bassa Explorer, <em>en detalle</em>',
-      'faq.q1': '¿Necesito ser un buceador experimentado para hacer Bassa Explorer?',
-      'faq.a1': 'No necesariamente, pero ayuda. Raja Ampat tiene puntos de buceo para todos los niveles, incluido snorkel de superficie con una visibilidad espectacular. Dicho esto, los puntos más icónicos (como Cabo Kri) se disfrutan más con cierta experiencia. Si no buceáis, adaptamos el itinerario hacia snorkel, kayak y vuelos privados.',
-      'faq.q2': '¿Cuánto dura un viaje Bassa Explorer?',
-      'faq.a2': 'Entre 8 y 12 días, sin contar los vuelos de conexión hasta Papúa Occidental, que ya son un viaje en sí. El ejemplo de esta página son 10 días / 9 noches, mayormente a bordo de un liveaboard privado.',
-      'faq.q3': '¿Bassa Explorer es un paquete cerrado?',
-      'faq.a3': 'No. Bassa Explorer es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, el barco o resort y las actividades se ajustan contigo durante el diseño del viaje.',
-      'faq.q4': '¿Puedo combinar Bassa Explorer con otra línea, como Bassa Complete?',
-      'faq.a4': 'Sí. Raja Ampat es precisamente el tramo final de Bassa Complete, que añade Java y Bali antes de la expedición. Si solo tienes tiempo para una zona, Bassa Explorer se centra exclusivamente en Raja Ampat (con opción a Komodo); si quieres profundidad en todo el archipiélago, Bassa Complete es la opción.',
+      'faq.q1': '¿Hace falta bucear para hacer Bassa Explorer?',
+      'faq.a1': 'No. El buceo es una opción, no un requisito. Gran parte del viaje se vive en tierra o en la superficie: selva, volcanes, fauna, navegación en velero, kayak y snorkel, que en lugares como Raja Ampat o Wakatobi ofrece arrecifes espectaculares a pocos metros. Si buceas, organizamos las inmersiones según tu nivel, y si quieres empezar, se puede hacer un curso de iniciación durante el viaje.',
+      'faq.q2': '¿Cuál es la mejor época para un viaje de naturaleza por Indonesia?',
+      'faq.a2': 'Depende de la zona. Raja Ampat tiene su mejor momento de octubre a abril, mientras que Komodo, Java Oriental, Borneo y Sumatra brillan en la estación seca, aproximadamente de abril a octubre. Wakatobi y la bahía de Cenderawasih funcionan todo el año. Por eso combinamos los escenarios según tus fechas.',
+      'faq.q3': '¿Es un viaje exigente físicamente?',
+      'faq.a3': 'Se adapta a cada viajero. Algunas experiencias piden madrugar o caminar, como el ascenso al Ijen o las caminatas por la selva de Sumatra, pero siempre hay alternativas más tranquilas y el ritmo general es pausado: alojamientos cómodos, traslados privados y tiempo para descansar.',
       'cta.h2': '¿Diseñamos tu <em>Bassa Explorer</em>?',
-      'cta.p': 'Cuéntanos cuántos días tenéis, vuestro nivel de buceo y si preferís liveaboard o resort. A partir de ahí construimos la expedición.',
+      'cta.p': 'Cuéntanos tus fechas y qué te gustaría ver: el mar, la selva, los volcanes o un poco de todo. A partir de ahí diseñamos tu expedición.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia',
-      'footer.about': 'Sobre Bassa', 'footer.experiences': 'Experiencias', 'footer.contact': 'Contacto'
+      'footer.about': 'Sobre Bassa',
+      'footer.experiences': 'Experiencias',
+      'footer.contact': 'Contacto'
     },
     en: {
-      'page.title': 'Bassa Explorer: Luxury Diving Expedition to Raja Ampat | Bassa Travels',
+      'page.title': 'Luxury Nature Expedition in Indonesia | Bassa Explorer',
       'nav.cta': 'Design your trip',
       'breadcrumb.home': 'Home',
       'breadcrumb.experiences': 'Experiences',
-      'hero.h1': 'The last pristine reef<br>on <em>Earth</em>',
-      'hero.p': 'Bassa Explorer is an 8-to-12-day slow luxury expedition through Raja Ampat — the epicentre of the planet\'s marine biodiversity — aboard a private liveaboard or from an exclusive dive resort. This isn\'t just another dive trip: it\'s seeing, in person, what documentaries can only film. A starting point, not a fixed package.',
+      'hero.h1': 'Wild<br><em>Indonesia</em>',
+      'hero.p': 'Bassa Explorer is a luxury expedition through Indonesia\'s nature, 10 to 16 days long: sailing among the karsts of Raja Ampat, meeting the Komodo dragons, travelling up Borneo\'s rivers in search of orangutans, crossing the Bromo sea of sand at sunrise or swimming alongside whale sharks. Diving and snorkelling are part of the trip, but not all of it: here the landscape leads, with private logistics to reach places almost no one gets to.',
       'glance.tag': 'At a glance',
       'glance.h2': 'Key <em>details</em>',
       'glance.duracion.label': 'Suggested duration',
-      'glance.duracion.value': '8–12 days. The example developed on this page is 10 days / 9 nights.',
+      'glance.duracion.value': '10–16 days, combining two or three natural settings without rushing.',
       'glance.estilo.label': 'Style',
-      'glance.estilo.value': 'Slow luxury expedition · private liveaboard or exclusive dive resort · 100% tailor-made.',
-      'glance.zona.label': 'Main area',
-      'glance.zona.value': 'Raja Ampat (West Papua), with an optional extension to Komodo and Flores.',
+      'glance.estilo.value': 'A slow luxury expedition, 100% private: a phinisi or liveaboard just for you, naturalist guides and places to stay in the heart of nature.',
+      'glance.zona.label': 'Settings',
+      'glance.zona.value': 'Raja Ampat, Komodo, Borneo, Sumatra, the volcanoes of East Java, Wakatobi and Cenderawasih Bay.',
       'glance.quien.label': 'Who it\'s for',
-      'glance.quien.value': 'Experienced divers and nature lovers looking for real biodiversity, without the crowds.',
+      'glance.quien.value': 'Lovers of nature, wildlife and the sea, divers or not, looking for remote places without giving up comfort.',
       'glance.epoca.label': 'Best season',
-      'glance.epoca.value': 'October to April, the dry season and best visibility window in Raja Ampat.',
+      'glance.epoca.value': 'All year round: Raja Ampat shines from October to April, and most of the other settings from April to October.',
       'concept.tag': 'The concept',
-      'concept.h2': 'An expedition, not an <em>excursion</em>',
-      'concept.p1': 'Bassa Explorer starts from a fact: Raja Ampat is home to over 75% of the world\'s known coral species, concentrated in a remote archipelago reached only by private flights, chartered boats and careful planning. It isn\'t a mass-tourism destination — and that\'s exactly what makes it extraordinary.',
-      'concept.p2': 'The heart of the trip is a private liveaboard: nights aboard a traditional phinisi sailing yacht, moving between uninhabited islands, waking up each day to a different dive site, with the crew planning every dive at your pace. Those who\'d rather not sleep aboard can opt for an exclusive dive resort on a private island, with the same access to the reefs.',
-      'concept.p3': 'The experiences below are real examples of what could be part of your Bassa Explorer — not a fixed album, but the starting point from which we design your expedition.',
-      'examples.tag': 'Example experiences',
-      'examples.h2': 'What your <em>Bassa Explorer</em><br>could include',
-      'examples.intro': 'A selection of experiences we regularly design within this line. Every Bassa Explorer is different: these are references for inspiration, not a fixed list.',
-      'examples.item1.label': 'World record',
-      'examples.item1.h3': 'Diving at Cabo Kri — 374 species',
-      'examples.item1.sub': 'The densest concentration of marine life on the planet.',
-      'examples.item2.label': 'Luxury liveaboard',
-      'examples.item2.h3': 'The Silolona — private phinisi sailing yacht',
-      'examples.item2.sub': 'A different dive site every sunrise — and no other boat in sight.',
-      'examples.item3.label': 'Private aerial',
-      'examples.item3.h3': 'Wayag from the air',
-      'examples.item3.sub': 'Raja Ampat\'s signature view — unreachable from land.',
-      'examples.item4.label': 'Private encounter',
-      'examples.item4.h3': 'Komodo dragons with park rangers',
-      'examples.item4.sub': 'Three metres of prehistory. Tongue tasting the air.',
-      'examples.more': 'See all experiences →',
+      'concept.h2': 'Expedition, not <em>excursion</em>',
+      'concept.p1': 'Indonesia holds some of the last great wild places on the planet: the sea with the most coral species in the world, the forest where orangutans live, islands inhabited by dragons and volcanoes that are still active. Reaching them takes flights, boats and permits that most travellers wouldn\'t know how to combine. Bassa Explorer takes care of that so all you have to do is look.',
+      'concept.p2': 'It isn\'t just a diving trip. There are days aboard a traditional sailing ship, waking each morning in a different bay; pre-dawn starts on the rim of a crater; jungle walks with naturalist guides and nights when the only light comes from fireflies. The sea plays a leading role, but it\'s also enjoyed snorkelling, by kayak or from the deck, with no certification needed.',
+      'concept.p3': 'Below are the settings we work with. Your expedition is built from them, from your dates and from what you most want to see.',
+      'chapters.tag': 'Where',
+      'chapters.h2': 'The settings of <em>your Bassa Explorer</em>',
+      'chapters.intro': 'Six settings, from the jungle to the seabed. They\'re combined according to the season, because the east and west of the archipelago are at their best at different times of year.',
+      'chapters.when': 'When',
+      'chapters.more': 'See all experiences →',
+      'ch1.label': 'The richest sea on Earth',
+      'ch1.h3': 'Raja Ampat: karsts, reefs and birds of paradise',
+      'ch1.p': 'At Indonesia\'s eastern edge, <a href="blog/raja-ampat-lujo-expedicion.html">Raja Ampat</a> is home to around 75% of all known coral species. It\'s explored aboard a private phinisi or liveaboard, among jungle-covered limestone islands rising from a turquoise sea. Underwater lie Cape Kri, where 374 fish species were once counted on a single dive, and the mantas of Blue Magic; on the surface, lagoons to explore by kayak, reefs within snorkelling reach and, at dawn on land, Wilson\'s bird of paradise, found only on these islands. And the image everyone is looking for: the karsts of Wayag seen from above.',
+      'ch1.when': 'October to April, when the sea is calm.',
+      'ch1.m1': 'The karsts of Wayag from above',
+      'ch1.m2': 'Snorkelling and diving at Cape Kri and Blue Magic',
+      'ch1.m3': 'Wilson\'s bird of paradise at dawn',
+      'ch2.label': 'Dragons and sail',
+      'ch2.h3': 'Komodo: dragons, pink beaches and life on board',
+      'ch2.p': 'Komodo National Park protects the Komodo dragon, the largest lizard on the planet, which can exceed three metres. You look for it on foot across the savannahs of Rinca or Komodo, with park rangers, and the rest of the trip unfolds aboard <a href="blog/komodo-yate-privado-dragones-lujo.html">a private phinisi</a>: climbing Padar before dawn, having Pink Beach to yourself at sunrise, swimming with mantas and anchoring each night in a different bay, with dinner served on deck. Since April 2026 the park has limited visits to 1,000 people a day, and travelling with a licensed operator makes all the difference.',
+      'ch2.when': 'April to September. In July and August, the trade winds can stir up the south of the park.',
+      'ch2.m1': 'Dragons on Rinca, with park rangers',
+      'ch2.m2': 'Padar and Pink Beach before anyone else',
+      'ch2.m3': 'Snorkelling with mantas at Manta Point',
+      'ch3.label': 'The oldest rainforest',
+      'ch3.h3': 'Borneo: orangutans by klotok and the giants of Derawan',
+      'ch3.p': 'In southern Borneo, Tanjung Puting National Park is explored as it was a century ago: aboard a klotok, a two-storey wooden riverboat slowly travelling up the Sekonyer River. By day, orangutans at the feeding stations of Camp Leakey and other points in the park, proboscis monkeys on the banks and hornbills flying over the forest; by night, torch-lit walks in search of nocturnal animals and dinner on deck while thousands of fireflies light up the riverside palms. On the east coast, the Derawan Islands add another world: whale sharks at sunrise and Kakaban, a marine lake full of jellyfish that don\'t sting.',
+      'ch3.when': 'June to October, the dry season.',
+      'ch3.m1': 'Private klotok journey along the Sekonyer River',
+      'ch3.m2': 'Dinner on deck among fireflies',
+      'ch3.m3': 'Whale sharks at sunrise in Derawan',
+      'ch4.label': 'Wild orangutans',
+      'ch4.h3': 'Sumatra: the Leuser rainforest',
+      'ch4.p': 'In northern <a href="blog/sumatra-orangutanes-salvajes-lujo.html">Sumatra</a>, the Leuser ecosystem is the only place on Earth where orangutans, tigers, rhinos and elephants live side by side, and Gunung Leuser National Park is a World Heritage Site. Here orangutans aren\'t seen at feeding stations but in the wild, on jungle walks with local guides and trackers. The entry point sets the tone: Bukit Lawang for first encounters, Tangkahan for the river and the elephants, or Ketambe for the most remote forest. And to finish, Lake Toba, the largest volcanic lake in the world.',
+      'ch4.when': 'May to September, the dry season.',
+      'ch4.m1': 'Orangutans in the wild, with local trackers',
+      'ch4.m2': 'River and elephants at Tangkahan',
+      'ch4.m3': 'Lake Toba, the largest volcanic lake in the world',
+      'ch5.label': 'Volcanoes and savannah',
+      'ch5.h3': 'East Java: Bromo, Ijen and the Baluran savannah',
+      'ch5.p': 'East Java is one of the most spectacular volcanic landscapes in Asia. At sunrise, a private 4x4 crosses the Bromo sea of sand to the viewpoints from which you watch Bromo smoking and, behind it, Semeru, the roof of Java. At Ijen, the expedition starts in the small hours to see the blue fire, flames of sulphurous gas visible only in total darkness, and at sunrise the crater\'s acid lake, an impossible turquoise. Tumpak Sewu waterfall, with hundreds of streams falling in a semicircle, and Baluran, a savannah with banteng, deer and peacocks that the Dutch called "the Africa of Java", complete the picture.',
+      'ch5.when': 'April to October. Access to the craters depends on volcanic activity at the time.',
+      'ch5.m1': 'Sunrise over the Bromo sea of sand',
+      'ch5.m2': 'Ijen\'s blue fire, before dawn',
+      'ch5.m3': 'Sundowner on the Baluran savannah',
+      'ch6.label': 'Out at sea',
+      'ch6.h3': 'Wakatobi and Cenderawasih: remote reefs and whale sharks',
+      'ch6.p': 'For those who want the sea without sharing it, two corners far from any route. <a href="blog/wakatobi-buceo-lujo-vuelo-privado.html">Wakatobi</a>, in southeast Sulawesi, is reached by a private charter flight of two and a half hours from Bali: a reef protected through an agreement with 17 villages, so close to shore you can dive or snorkel without boarding a boat, and the culture of the Bajau, the sea nomads. In Cenderawasih Bay, in Papua, whale sharks live year-round beside the fishermen\'s platforms, and you can swim alongside them in calm water.',
+      'ch6.when': 'All year round.',
+      'ch6.m1': 'Snorkelling from the shore on the Wakatobi reef',
+      'ch6.m2': 'A Bajau village built over the water',
+      'ch6.m3': 'Swimming with whale sharks in Cenderawasih',
       'faq.tag': 'Frequently asked questions',
       'faq.h2': 'Bassa Explorer, <em>in detail</em>',
-      'faq.q1': 'Do I need to be an experienced diver for Bassa Explorer?',
-      'faq.a1': 'Not necessarily, but it helps. Raja Ampat has dive sites for all levels, including surface snorkelling with spectacular visibility. That said, the most iconic spots (like Cabo Kri) are best enjoyed with some experience. If you don\'t dive, we shift the itinerary towards snorkelling, kayaking and private aerial flights.',
-      'faq.q2': 'How long does a Bassa Explorer trip last?',
-      'faq.a2': 'Between 8 and 12 days, not counting the connecting flights to West Papua, which are a journey in themselves. The example on this page is 10 days / 9 nights, mostly aboard a private liveaboard.',
-      'faq.q3': 'Is Bassa Explorer a fixed package?',
-      'faq.a3': 'No. Bassa Explorer is a starting point, not a fixed package. The experiences on this page are examples of what your trip could include; the final itinerary, boat or resort and activities are adjusted with you during the design process.',
-      'faq.q4': 'Can I combine Bassa Explorer with another line, like Bassa Complete?',
-      'faq.a4': 'Yes. Raja Ampat is precisely the final leg of Bassa Complete, which adds Java and Bali before the expedition. If you only have time for one area, Bassa Explorer focuses exclusively on Raja Ampat (optionally with Komodo); if you want depth across the whole archipelago, Bassa Complete is the option.',
+      'faq.q1': 'Do I need to dive to do Bassa Explorer?',
+      'faq.a1': 'No. Diving is an option, not a requirement. Much of the trip happens on land or on the surface: jungle, volcanoes, wildlife, sailing, kayaking and snorkelling, which in places like Raja Ampat or Wakatobi offers spectacular reefs just metres away. If you dive, we arrange dives to suit your level, and if you\'d like to start, an introductory course can be done during the trip.',
+      'faq.q2': 'When is the best time for a nature trip to Indonesia?',
+      'faq.a2': 'It depends on the area. Raja Ampat is at its best from October to April, while Komodo, East Java, Borneo and Sumatra shine in the dry season, roughly April to October. Wakatobi and Cenderawasih Bay work all year round. That\'s why we combine the settings according to your dates.',
+      'faq.q3': 'Is it a physically demanding trip?',
+      'faq.a3': 'It adapts to each traveller. Some experiences involve early starts or walking, like the Ijen ascent or the jungle walks in Sumatra, but there are always gentler alternatives and the overall pace is unhurried: comfortable places to stay, private transfers and time to rest.',
       'cta.h2': 'Shall we design your <em>Bassa Explorer</em>?',
-      'cta.p': 'Tell us how many days you have, your diving level, and whether you\'d prefer a liveaboard or a resort. From there we build the expedition.',
+      'cta.p': 'Tell us your dates and what you\'d like to see: the sea, the jungle, the volcanoes or a bit of everything. From there we design your expedition.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia',
-      'footer.about': 'About Bassa', 'footer.experiences': 'Experiences', 'footer.contact': 'Contact'
+      'footer.about': 'About Bassa',
+      'footer.experiences': 'Experiences',
+      'footer.contact': 'Contact'
     }
   };
 
@@ -637,7 +813,7 @@
   // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   setLanguage(localStorage.getItem('bassa_lang') || 'es');
