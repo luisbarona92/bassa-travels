@@ -6,13 +6,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bassa Complete: El Gran Viaje por Indonesia en Slow Luxury | Bassa Travels</title>
-<meta name="description" content="Bassa Complete: 18 a 21 días combinando Java, Bali y Raja Ampat o Komodo en un único viaje de slow luxury, con transiciones en chárter privado. Diseño a medida.">
+<title>Viaje de lujo a Indonesia: gran recorrido | Bassa Complete</title>
+<meta name="description" content="Bassa Complete: el gran viaje de lujo a Indonesia, de 18 a 21 días. Java, Bali, la selva de Borneo o Sumatra, Tana Toraja y el mar de Komodo o Raja Ampat.">
 <link rel="canonical" href="https://bassatravels.com/complete.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bassatravels.com/complete.html">
-<meta property="og:title" content="Bassa Complete: El Gran Viaje por Indonesia en Slow Luxury | Bassa Travels">
-<meta property="og:description" content="18 a 21 días combinando Java, Bali y Raja Ampat o Komodo en un único viaje de slow luxury, con transiciones en chárter privado. Diseño a medida.">
+<meta property="og:title" content="Viaje de lujo a Indonesia: gran recorrido | Bassa Complete">
+<meta property="og:description" content="Indonesia de principio a fin: los templos y volcanes de Java, la calma de Bali, la selva de los orangutanes, las culturas más remotas y el mar como gran final.">
 <meta property="og:image" content="https://bassatravels.com/images/raja-ampat-mirador-og.jpg">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Bassa Travels">
@@ -187,6 +187,25 @@
   .faq-section .faq-item p { margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-size: 0.95rem; max-width: 800px; }
 
   /* ── CTA ── */
+  .chapter-list { display: flex; flex-direction: column; gap: 4.5rem; margin-top: 3rem; }
+  .chapter { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; align-items: center; }
+  .chapter:nth-child(even) .chapter-img { order: 2; }
+  .chapter-img { aspect-ratio: 4 / 3; overflow: hidden; }
+  .chapter-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .chapter-label { display: block; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .chapter h3 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; line-height: 1.15; color: white; margin-bottom: 1rem; }
+  .chapter-body p { font-size: 0.95rem; }
+  .chapter-moments { list-style: none; margin: 0.4rem 0 1.2rem; padding: 0; border-top: 1px solid rgba(184,155,106,0.18); }
+  .chapter-moments li { position: relative; padding: 0.7rem 0 0.7rem 1.5rem; border-bottom: 1px solid rgba(184,155,106,0.12); font-size: 0.9rem; color: rgba(255,255,255,0.86); line-height: 1.5; }
+  .chapter-moments li::before { content: '✦'; position: absolute; left: 0; top: 0.78rem; color: var(--gold); font-size: 0.7rem; }
+  .info-section .chapter-when { font-size: 0.85rem; color: rgba(255,255,255,0.62); margin-bottom: 0; }
+  .chapter-when strong { color: var(--gold); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.7rem; }
+  .info-section p a, .faq-section .faq-item p a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .chapter { grid-template-columns: 1fr; gap: 1.6rem; }
+    .chapter:nth-child(even) .chapter-img { order: 0; }
+    .chapter-list { gap: 3.5rem; }
+  }
   .exp-cta { padding: 7rem 4rem; text-align: center; background: var(--deep); position: relative; }
   .exp-cta::before {
     content: ''; position: absolute; inset: 0;
@@ -272,8 +291,56 @@
   "@context": "https://schema.org",
   "@type": "TouristTrip",
   "name": "Bassa Complete",
-  "description": "El gran viaje de slow luxury por Indonesia: 18 a 21 días combinando Java, Bali y Raja Ampat o Komodo en un único itinerario, con transiciones en chárter privado.",
-  "touristType": ["Viajeros de larga estancia", "Quienes buscan ver Indonesia en profundidad"],
+  "description": "Bassa Complete es el gran viaje de lujo a Indonesia: entre 18 y 21 días para cruzar el archipiélago y conocer sus grandes caras en un solo viaje. Los volcanes y templos de Java, la espiritualidad de Bali, la selva de los orangutanes, las culturas más remotas y un final en el mar, en Komodo o Raja Ampat. No es un resumen apresurado, sino tiempo real en cada lugar, con el mismo ritmo pausado de todas las líneas de Bassa.",
+  "touristType": [
+    "Viajeros de larga estancia",
+    "Quienes buscan ver Indonesia en profundidad"
+  ],
+  "itinerary": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Place",
+          "name": "Java (Borobudur, Yogyakarta, Bromo e Ijen)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Place",
+          "name": "Bali"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Place",
+          "name": "Borneo (Tanjung Puting) o Sumatra (Gunung Leuser)"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Place",
+          "name": "Tana Toraja, Sumba o Flores"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Place",
+          "name": "Parque Nacional de Komodo o Raja Ampat"
+        }
+      }
+    ]
+  },
   "provider": {
     "@type": "TravelAgency",
     "name": "Bassa Travels",
@@ -288,34 +355,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Bassa Complete es literalmente la suma de Bassa Culture, Bassa Reset/Moon y Bassa Explorer?",
+      "name": "¿Bassa Complete es la suma de las otras líneas de Bassa?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En esencia sí, pero diseñado como un único viaje y no como tres viajes pegados. La estructura sigue un arco natural: Java para profundidad cultural, Bali para descanso y desconexión (o romance), y Raja Ampat o Komodo como capítulo final de expedición, con transiciones organizadas en chárter privado entre cada etapa."
+        "text": "En esencia sí, pero diseñado como un único viaje y no como varios pegados. Toma lo mejor de Culture, Reset, Moon y Explorer y lo ordena en un arco natural, de la cultura al descanso y del descanso a la expedición, con la logística resuelta entre cada región."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuánto dura un viaje Bassa Complete?",
+      "name": "¿Cuántos días hacen falta para recorrer Indonesia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Entre 18 y 21 días, sin contar los vuelos internacionales. El ejemplo de referencia de esta página son 20 días (19 noches): aproximadamente una semana en Java, una semana en Bali y el resto en Raja Ampat o Komodo."
+        "text": "Para un viaje así recomendamos entre 18 y 21 días. Con menos tiempo se puede hacer un gran viaje, pero centrado en dos o tres regiones; con tres semanas hay margen para cuatro o cinco sin sentir que se vive en el aeropuerto."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Bassa Complete es un paquete cerrado?",
+      "name": "¿Cuál es la mejor época para un gran viaje por Indonesia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Bassa Complete es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los alojamientos y el orden de las etapas se ajustan contigo durante el diseño del viaje."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es la mejor época para un viaje tan largo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Java, Bali y Raja Ampat tienen temporadas secas que no coinciden del todo (Java: mayo-septiembre; Bali: abril-octubre; Raja Ampat: octubre-abril). Las mejores ventanas para Bassa Complete suelen ser mayo-junio o septiembre-octubre, cuando la mayoría de los tramos tienen buen tiempo. Con menos margen, ajustamos el orden de las etapas según tus fechas."
+        "text": "Java, Bali, Borneo, Sumatra, Sulawesi y Komodo comparten su mejor temporada, aproximadamente de abril a octubre. Raja Ampat, en cambio, brilla de octubre a abril, así que si queréis terminar allí, abril y octubre son los meses en que todo encaja. Con otras fechas, ajustamos el orden y las regiones."
       }
     }
   ]
@@ -343,9 +402,9 @@
 <!-- HERO + RESPUESTA DIRECTA -->
 <section class="line-hero">
   <div class="line-hero-inner">
-    <span class="hero-tag">Bassa Complete · Java + Bali + Raja Ampat/Komodo</span>
-    <h1 data-i18n-html="hero.h1">Indonesia, de<br>principio a <em>fin</em></h1>
-    <p class="answer-direct" data-i18n="hero.p">Bassa Complete es el gran viaje de slow luxury por Indonesia: entre 18 y 21 días que recorren Java, Bali y Raja Ampat (o Komodo) con transiciones en chárter privado. No es un resumen apresurado de highlights, sino tiempo real en cada destino — el mismo ritmo pausado de Bassa Culture, Bassa Reset/Moon y Bassa Explorer, encadenado en un único viaje.</p>
+    <span class="hero-tag">Bassa Complete · Indonesia</span>
+    <h1 data-i18n-html="hero.h1">Indonesia, de<br><em>principio a fin</em></h1>
+    <p class="answer-direct" data-i18n="hero.p">Bassa Complete es el gran viaje de lujo a Indonesia: entre 18 y 21 días para cruzar el archipiélago y conocer sus grandes caras en un solo viaje. Los volcanes y templos de Java, la espiritualidad de Bali, la selva de los orangutanes, las culturas más remotas y un final en el mar, en Komodo o Raja Ampat. No es un resumen apresurado, sino tiempo real en cada lugar, con el mismo ritmo pausado de todas las líneas de Bassa.</p>
   </div>
 </section>
 
@@ -357,15 +416,15 @@
     <table class="data-table">
       <tr>
         <td data-i18n="glance.duracion.label">Duración orientativa</td>
-        <td data-i18n="glance.duracion.value">18–21 días. El ejemplo desarrollado en esta página son 20 días / 19 noches.</td>
+        <td data-i18n="glance.duracion.value">18–21 días. El tiempo necesario para recorrer cuatro o cinco regiones sin que el viaje se convierta en una sucesión de aeropuertos.</td>
       </tr>
       <tr>
         <td data-i18n="glance.estilo.label">Estilo</td>
-        <td data-i18n="glance.estilo.value">Slow luxury de larga duración · combina Java, Bali y Raja Ampat o Komodo · transiciones en chárter privado.</td>
+        <td data-i18n="glance.estilo.value">Slow luxury y 100% privado de principio a fin: guías especializados en cada región, traslados privados y, donde compensa, vuelos chárter.</td>
       </tr>
       <tr>
-        <td data-i18n="glance.zona.label">Zona principal</td>
-        <td data-i18n="glance.zona.value">Java + Bali + Raja Ampat o Komodo — el archipiélago indonesio de extremo a extremo.</td>
+        <td data-i18n="glance.zona.label">Regiones</td>
+        <td data-i18n="glance.zona.value">Java, Bali, Borneo o Sumatra, Tana Toraja, Sumba o Flores, y Komodo o Raja Ampat.</td>
       </tr>
       <tr>
         <td data-i18n="glance.quien.label">Para quién</td>
@@ -373,65 +432,103 @@
       </tr>
       <tr>
         <td data-i18n="glance.epoca.label">Mejor época</td>
-        <td data-i18n="glance.epoca.value">Mayo-junio o septiembre-octubre — ventanas en las que Java, Bali y Raja Ampat coinciden en buena época.</td>
+        <td data-i18n="glance.epoca.value">De abril a octubre si el final es Komodo; si es Raja Ampat, abril y octubre, cuando coinciden las buenas temporadas del este y del oeste.</td>
       </tr>
     </table>
   </div>
 </section>
 
-<!-- QUÉ ES BASSA COMPLETE -->
+<!-- CONCEPTO -->
 <section class="info-section reveal">
   <div class="inner">
     <span class="section-tag" data-i18n="concept.tag">El concepto</span>
     <h2 class="section-title" data-i18n-html="concept.h2">El viaje, no el <em>resumen</em></h2>
-    <p data-i18n="concept.p1">Bassa Complete parte de una constatación: las tres grandes regiones de Indonesia —los templos milenarios de Java, las villas de slow luxury de Bali y los arrecifes virgenes de Raja Ampat— merecen, cada una, un viaje propio. La mayoría de itinerarios de "Indonesia en dos semanas" intentan meter las tres en un borrón de traslados y medias jornadas. Bassa Complete no.</p>
-    <p data-i18n="concept.p2">La estructura sigue un arco natural: primero Java, para profundidad cultural y los templos de Borobudur; después Bali, para descanso y momentos en villas privadas; y finalmente Raja Ampat o Komodo, como capítulo final de expedición. Los vuelos chárter privados gestionan las transiciones, así que ningún día se pierde en logística de aeropuertos comerciales.</p>
-    <p data-i18n="concept.p3">Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Complete — no un álbum cerrado, sino el punto de partida sobre el que diseñamos tu viaje.</p>
+    <p data-i18n="concept.p1">Indonesia es demasiado grande para un viaje corto: más de 17.000 islas, de los templos de Java a los arrecifes de Papúa. La mayoría de itinerarios de "Indonesia en dos semanas" intentan abarcarlo todo en una sucesión de traslados y medias jornadas. Bassa Complete hace lo contrario: elige las grandes caras del país y les da el tiempo que merecen.</p>
+    <p data-i18n="concept.p2">El viaje sigue un arco natural, de la cultura al descanso y del descanso a la expedición: templos y volcanes, después la calma de Bali, luego la selva o las culturas más remotas, y al final, el mar. Cada región se vive con el mismo criterio que nuestras líneas especializadas, Culture, Reset, Moon y Explorer, encadenadas en un único viaje y con la logística resuelta para que ningún día se pierda en aeropuertos.</p>
+    <p data-i18n="concept.p3">A continuación, los escenarios con los que construimos Bassa Complete. El recorrido final depende de vuestras fechas y de lo que más os mueva.</p>
   </div>
 </section>
 
-<!-- EJEMPLOS DE EXPERIENCIAS -->
+<!-- ESCENARIOS -->
 <section class="info-section reveal">
   <div class="inner">
-    <span class="section-tag" data-i18n="examples.tag">Ejemplos de experiencias</span>
-    <h2 class="section-title" data-i18n-html="examples.h2">Lo que puede incluir<br>tu <em>Bassa Complete</em></h2>
-    <p data-i18n="examples.intro">Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Complete es distinto: estas son referencias para inspiraros, no una lista cerrada.</p>
-    <div class="exp-list">
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/java_borobudur.jpg" alt="Borobudur al amanecer desde Amanjiwo, el templo budista más grande del mundo"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item1.label">Java · Acceso desde Amanjiwo</span>
-          <h3 data-i18n="examples.item1.h3">Borobudur al amanecer en privado</h3>
-          <p class="exp-item-sub" data-i18n="examples.item1.sub">El primer capítulo del viaje: historia milenaria antes del bullicio.</p>
+    <span class="section-tag" data-i18n="chapters.tag">Dónde</span>
+    <h2 class="section-title" data-i18n-html="chapters.h2">Los escenarios de <em>vuestro Bassa Complete</em></h2>
+    <p data-i18n="chapters.intro">Cinco grandes escenarios que, juntos, cuentan Indonesia de principio a fin. En cada uno enlazamos a la línea de Bassa que lo explora en profundidad.</p>
+    <div class="chapter-list">
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/java_borobudur.jpg" width="900" height="600" loading="lazy" decoding="async" alt="Estupas de Borobudur con las montañas al fondo, en Java"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch1.label">Volcanes y templos</span>
+          <h3 data-i18n="ch1.h3">Java: Borobudur, Yogyakarta y los volcanes del este</h3>
+          <p data-i18n-html="ch1.p">El viaje empieza en el corazón histórico de Indonesia. Borobudur, el mayor templo budista del mundo, se vive con acceso privado al amanecer; Yogyakarta, la ciudad de los sultanes, guarda su palacio de agua y las artes más antiguas de Java, y muy cerca, los templos hindúes de Prambanan completan la visita. Si el viaje continúa hacia el este, el mar de arena del Bromo al amanecer y el fuego azul del Ijen ponen el contrapunto más salvaje. Lo contamos en detalle en <a href="culture.html">Bassa Culture</a>.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch1.m1">Borobudur con acceso privado al amanecer</li>
+          <li data-i18n="ch1.m2">Yogyakarta y el palacio de agua de los sultanes</li>
+          <li data-i18n="ch1.m3">El mar de arena del Bromo al alba</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch1.when">De abril a octubre, estación seca.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/bali_jatiluwih.jpg" alt="Terrazas de arroz UNESCO de Jatiluwih a los pies del Monte Batukaru"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item2.label">Bali · Patrimonio UNESCO</span>
-          <h3 data-i18n="examples.item2.h3">Arrozales y templos de agua de Jatiluwih</h3>
-          <p class="exp-item-sub" data-i18n="examples.item2.sub">El verde infinito de Bali, lejos de las rutas habituales.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/pura-ulun-danu-nubes.webp" width="1920" height="1536" loading="lazy" decoding="async" alt="Templo de Ulun Danu Beratan entre nubes, en Bali"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch2.label">Espíritu y descanso</span>
+          <h3 data-i18n="ch2.h3">Bali: el respiro en mitad del viaje</h3>
+          <p data-i18n-html="ch2.p">Después de Java, Bali es la pausa. Villas privadas sobre la selva de Ubud, arrozales en terrazas, el melukat, el ritual balinés de purificación, guiado por un sacerdote solo para vosotros, y la vida ceremonial de una isla que sigue rezando cada día. Para cambiar de paisaje, los valles rurales de Sidemen, los lagos de montaña del centro o los acantilados de Uluwatu sobre el océano. Es la etapa para recuperar el ritmo antes de la parte más remota del viaje. Más en <a href="reset.html">Bassa Reset</a>.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch2.m1">Melukat privado en los manantiales de Tirta Empul</li>
+          <li data-i18n="ch2.m2">Arrozales y lagos sagrados del centro de la isla</li>
+          <li data-i18n="ch2.m3">Atardecer sobre los acantilados de Uluwatu</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch2.when">Todo el año; de abril a octubre, estación seca.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/dragones-de-komodo-con-rangers.webp" alt="Dragón de Komodo en su hábitat natural en el Parque Nacional"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item3.label">Komodo · Encuentro privado</span>
-          <h3 data-i18n="examples.item3.h3">Dragones de Komodo con rangers</h3>
-          <p class="exp-item-sub" data-i18n="examples.item3.sub">El cierre del viaje: tres metros de prehistoria, cara a cara.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/klotok-por-tanjung-puting.webp" width="1600" height="1012" loading="lazy" decoding="async" alt="Orangután en la selva de Tanjung Puting, Borneo"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch3.label">Selva y orangutanes</span>
+          <h3 data-i18n="ch3.h3">Borneo o Sumatra: en busca de los orangutanes</h3>
+          <p data-i18n-html="ch3.p">Indonesia es, junto a Malasia, el único lugar del mundo donde viven orangutanes en libertad, y verlos es uno de los momentos que definen el viaje. En Borneo, a bordo de un klotok, la barcaza de madera que remonta despacio los ríos de Tanjung Puting, entre monos narigudos y noches de luciérnagas. En Sumatra, en la selva de Leuser, caminando con rastreadores locales para encontrarlos en libertad. Dos formas de vivir algunas de las selvas más antiguas del planeta, que elegimos según la época y el tipo de viaje. Más en nuestra <a href="blog/sumatra-orangutanes-salvajes-lujo.html">guía de Sumatra</a>.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch3.m1">Klotok privado por el río Sekonyer, en Borneo</li>
+          <li data-i18n="ch3.m2">Orangutanes en libertad en la selva de Leuser, en Sumatra</li>
+          <li data-i18n="ch3.m3">Cena en cubierta entre luciérnagas</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch3.when">De mayo a octubre, estación seca.</span></p>
         </div>
       </article>
-      <article class="exp-item">
-        <div class="exp-item-img"><img src="images/placeholder.jpg" alt="Buceo en Cabo Kri Raja Ampat, récord mundial de biodiversidad marina"></div>
-        <div class="exp-item-body">
-          <span class="exp-item-label" data-i18n="examples.item4.label">Raja Ampat · Récord mundial</span>
-          <h3 data-i18n="examples.item4.h3">Buceo en Cabo Kri — 374 especies</h3>
-          <p class="exp-item-sub" data-i18n="examples.item4.sub">Si el viaje termina en Raja Ampat en lugar de Komodo, esto os espera.</p>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/tongkonan-casas-toraja.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Casas tradicionales tongkonan en Tana Toraja, Sulawesi"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch4.label">Culturas remotas</span>
+          <h3 data-i18n="ch4.h3">Tana Toraja, Sumba o Flores: la Indonesia ancestral</h3>
+          <p data-i18n-html="ch4.p">Para entender Indonesia hay que salir de las rutas conocidas. En las tierras altas de Sulawesi, Tana Toraja celebra sus funerales como grandes ceremonias de varios días, entre casas de tejado curvado como un barco y tumbas excavadas en acantilados. En Sumba, la religión de los ancestros convive con tumbas megalíticas y tejedoras de ikat, y en las montañas de Flores, la aldea de Wae Rebo conserva sus casas cónicas tradicionales. Elegimos una de ellas según vuestras fechas, porque algunas ceremonias solo ocurren en momentos concretos del año. Más en <a href="culture.html">Bassa Culture</a>.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch4.m1">Un Rambu Solo en Tana Toraja, como invitados</li>
+          <li data-i18n="ch4.m2">Aldeas megalíticas y talleres de ikat en Sumba</li>
+          <li data-i18n="ch4.m3">Subida a Wae Rebo, en las montañas de Flores</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch4.when">Tana Toraja, de junio a septiembre; Sumba y Flores, de abril a octubre.</span></p>
+        </div>
+      </article>
+      <article class="chapter">
+        <div class="chapter-img"><img src="images/phinisi-privado-por-komodo.webp" width="1600" height="1066" loading="lazy" decoding="async" alt="Velero phinisi tradicional navegando por el Parque Nacional de Komodo"></div>
+        <div class="chapter-body">
+          <span class="chapter-label" data-i18n="ch5.label">El mar como final</span>
+          <h3 data-i18n="ch5.h3">Komodo o Raja Ampat: el gran final</h3>
+          <p data-i18n-html="ch5.p">El viaje termina donde Indonesia es más salvaje: en el mar. De abril a septiembre, a bordo de un phinisi privado por el Parque Nacional de Komodo, con los dragones en tierra, Pink Beach al amanecer y cada noche fondeados en una bahía distinta. De octubre a abril, en Raja Ampat, el ecosistema marino más rico del planeta, entre lagunas de karst, arrecifes que se recorren con snorkel y cenas en bancos de arena. Es la etapa que deja el mejor recuerdo para el final. Más en <a href="explorer.html">Bassa Explorer</a>.</p>
+          <ul class="chapter-moments">
+          <li data-i18n="ch5.m1">Phinisi privado por el Parque Nacional de Komodo</li>
+          <li data-i18n="ch5.m2">Pink Beach al amanecer, sin nadie más</li>
+          <li data-i18n="ch5.m3">Cena en un banco de arena en Raja Ampat</li>
+          </ul>
+          <p class="chapter-when"><strong data-i18n="chapters.when">Cuándo</strong><span data-i18n="ch5.when">Komodo, de abril a septiembre; Raja Ampat, de octubre a abril.</span></p>
         </div>
       </article>
     </div>
     <div class="exp-more-wrap">
-      <a href="experiencias.html" class="exp-more-link" data-i18n="examples.more">Ver todas las experiencias →</a>
+      <a href="experiencias.html" class="exp-more-link" data-i18n="chapters.more">Ver todas las experiencias →</a>
     </div>
   </div>
 </section>
@@ -443,31 +540,26 @@
     <h2 class="section-title" data-i18n-html="faq.h2">Bassa Complete, <em>en detalle</em></h2>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q1">¿Bassa Complete es literalmente la suma de Bassa Culture, Bassa Reset/Moon y Bassa Explorer?</summary>
-      <p data-i18n="faq.a1">En esencia sí, pero diseñado como un único viaje y no como tres viajes pegados. La estructura sigue un arco natural: Java para profundidad cultural, Bali para descanso y desconexión (o romance), y Raja Ampat o Komodo como capítulo final de expedición, con transiciones organizadas en chárter privado entre cada etapa.</p>
+      <summary data-i18n="faq.q1">¿Bassa Complete es la suma de las otras líneas de Bassa?</summary>
+      <p data-i18n="faq.a1">En esencia sí, pero diseñado como un único viaje y no como varios pegados. Toma lo mejor de Culture, Reset, Moon y Explorer y lo ordena en un arco natural, de la cultura al descanso y del descanso a la expedición, con la logística resuelta entre cada región.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q2">¿Cuánto dura un viaje Bassa Complete?</summary>
-      <p data-i18n="faq.a2">Entre 18 y 21 días, sin contar los vuelos internacionales. El ejemplo de referencia de esta página son 20 días (19 noches): aproximadamente una semana en Java, una semana en Bali y el resto en Raja Ampat o Komodo.</p>
+      <summary data-i18n="faq.q2">¿Cuántos días hacen falta para recorrer Indonesia?</summary>
+      <p data-i18n="faq.a2">Para un viaje así recomendamos entre 18 y 21 días. Con menos tiempo se puede hacer un gran viaje, pero centrado en dos o tres regiones; con tres semanas hay margen para cuatro o cinco sin sentir que se vive en el aeropuerto.</p>
     </details>
 
     <details class="faq-item">
-      <summary data-i18n="faq.q3">¿Bassa Complete es un paquete cerrado?</summary>
-      <p data-i18n="faq.a3">No. Bassa Complete es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los alojamientos y el orden de las etapas se ajustan contigo durante el diseño del viaje.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary data-i18n="faq.q4">¿Cuál es la mejor época para un viaje tan largo?</summary>
-      <p data-i18n="faq.a4">Java, Bali y Raja Ampat tienen temporadas secas que no coinciden del todo (Java: mayo-septiembre; Bali: abril-octubre; Raja Ampat: octubre-abril). Las mejores ventanas para Bassa Complete suelen ser mayo-junio o septiembre-octubre, cuando la mayoría de los tramos tienen buen tiempo. Con menos margen, ajustamos el orden de las etapas según tus fechas.</p>
+      <summary data-i18n="faq.q3">¿Cuál es la mejor época para un gran viaje por Indonesia?</summary>
+      <p data-i18n="faq.a3">Java, Bali, Borneo, Sumatra, Sulawesi y Komodo comparten su mejor temporada, aproximadamente de abril a octubre. Raja Ampat, en cambio, brilla de octubre a abril, así que si queréis terminar allí, abril y octubre son los meses en que todo encaja. Con otras fechas, ajustamos el orden y las regiones.</p>
     </details>
   </div>
 </section>
 
 <!-- CTA FINAL -->
 <section class="exp-cta">
-  <h2 data-i18n-html="cta.h2">¿Diseñamos tu <em>Bassa Complete</em>?</h2>
-  <p data-i18n="cta.p">Cuéntanos cuántos días tenéis disponibles y si preferís cerrar el viaje en Komodo o en Raja Ampat. A partir de ahí diseñamos el recorrido completo.</p>
+  <h2 data-i18n-html="cta.h2">¿Diseñamos vuestro <em>Bassa Complete</em>?</h2>
+  <p data-i18n="cta.p">Contadnos cuántos días tenéis y qué os mueve más: la cultura, la naturaleza, el descanso o el mar. A partir de ahí diseñamos el gran viaje.</p>
   <a href="index.html#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
 </section>
 
@@ -495,114 +587,162 @@
 <script>
   const t = {
     es: {
-      'page.title': 'Bassa Complete: El Gran Viaje por Indonesia en Slow Luxury | Bassa Travels',
+      'page.title': 'Viaje de lujo a Indonesia: gran recorrido | Bassa Complete',
       'nav.cta': 'Diseña tu viaje',
       'breadcrumb.home': 'Inicio',
       'breadcrumb.experiences': 'Experiencias',
-      'hero.h1': 'Indonesia, de<br>principio a <em>fin</em>',
-      'hero.p': 'Bassa Complete es el gran viaje de slow luxury por Indonesia: entre 18 y 21 días que recorren Java, Bali y Raja Ampat (o Komodo) con transiciones en chárter privado. No es un resumen apresurado de highlights, sino tiempo real en cada destino — el mismo ritmo pausado de Bassa Culture, Bassa Reset/Moon y Bassa Explorer, encadenado en un único viaje.',
+      'hero.h1': 'Indonesia, de<br><em>principio a fin</em>',
+      'hero.p': 'Bassa Complete es el gran viaje de lujo a Indonesia: entre 18 y 21 días para cruzar el archipiélago y conocer sus grandes caras en un solo viaje. Los volcanes y templos de Java, la espiritualidad de Bali, la selva de los orangutanes, las culturas más remotas y un final en el mar, en Komodo o Raja Ampat. No es un resumen apresurado, sino tiempo real en cada lugar, con el mismo ritmo pausado de todas las líneas de Bassa.',
       'glance.tag': 'En una mirada',
       'glance.h2': '<em>Datos</em> clave',
       'glance.duracion.label': 'Duración orientativa',
-      'glance.duracion.value': '18–21 días. El ejemplo desarrollado en esta página son 20 días / 19 noches.',
+      'glance.duracion.value': '18–21 días. El tiempo necesario para recorrer cuatro o cinco regiones sin que el viaje se convierta en una sucesión de aeropuertos.',
       'glance.estilo.label': 'Estilo',
-      'glance.estilo.value': 'Slow luxury de larga duración · combina Java, Bali y Raja Ampat o Komodo · transiciones en chárter privado.',
-      'glance.zona.label': 'Zona principal',
-      'glance.zona.value': 'Java + Bali + Raja Ampat o Komodo — el archipiélago indonesio de extremo a extremo.',
+      'glance.estilo.value': 'Slow luxury y 100% privado de principio a fin: guías especializados en cada región, traslados privados y, donde compensa, vuelos chárter.',
+      'glance.zona.label': 'Regiones',
+      'glance.zona.value': 'Java, Bali, Borneo o Sumatra, Tana Toraja, Sumba o Flores, y Komodo o Raja Ampat.',
       'glance.quien.label': 'Para quién',
       'glance.quien.value': 'Viajeros que disponen de tiempo y quieren profundidad real en cada destino, no un resumen.',
       'glance.epoca.label': 'Mejor época',
-      'glance.epoca.value': 'Mayo-junio o septiembre-octubre — ventanas en las que Java, Bali y Raja Ampat coinciden en buena época.',
+      'glance.epoca.value': 'De abril a octubre si el final es Komodo; si es Raja Ampat, abril y octubre, cuando coinciden las buenas temporadas del este y del oeste.',
       'concept.tag': 'El concepto',
       'concept.h2': 'El viaje, no el <em>resumen</em>',
-      'concept.p1': 'Bassa Complete parte de una constatación: las tres grandes regiones de Indonesia —los templos milenarios de Java, las villas de slow luxury de Bali y los arrecifes vírgenes de Raja Ampat— merecen, cada una, un viaje propio. La mayoría de itinerarios de "Indonesia en dos semanas" intentan meter las tres en un borrón de traslados y medias jornadas. Bassa Complete no.',
-      'concept.p2': 'La estructura sigue un arco natural: primero Java, para profundidad cultural y los templos de Borobudur; después Bali, para descanso y momentos en villas privadas; y finalmente Raja Ampat o Komodo, como capítulo final de expedición. Los vuelos chárter privados gestionan las transiciones, así que ningún día se pierde en logística de aeropuertos comerciales.',
-      'concept.p3': 'Las experiencias que ves a continuación son ejemplos reales de lo que puede formar parte de tu Bassa Complete — no un álbum cerrado, sino el punto de partida sobre el que diseñamos tu viaje.',
-      'examples.tag': 'Ejemplos de experiencias',
-      'examples.h2': 'Lo que puede incluir<br>tu <em>Bassa Complete</em>',
-      'examples.intro': 'Una selección de experiencias que diseñamos habitualmente dentro de esta línea. Cada Bassa Complete es distinto: estas son referencias para inspiraros, no una lista cerrada.',
-      'examples.item1.label': 'Java · Acceso desde Amanjiwo',
-      'examples.item1.h3': 'Borobudur al amanecer en privado',
-      'examples.item1.sub': 'El primer capítulo del viaje: historia milenaria antes del bullicio.',
-      'examples.item2.label': 'Bali · Patrimonio UNESCO',
-      'examples.item2.h3': 'Arrozales y templos de agua de Jatiluwih',
-      'examples.item2.sub': 'El verde infinito de Bali, lejos de las rutas habituales.',
-      'examples.item3.label': 'Komodo · Encuentro privado',
-      'examples.item3.h3': 'Dragones de Komodo con rangers',
-      'examples.item3.sub': 'El cierre del viaje: tres metros de prehistoria, cara a cara.',
-      'examples.item4.label': 'Raja Ampat · Récord mundial',
-      'examples.item4.h3': 'Buceo en Cabo Kri — 374 especies',
-      'examples.item4.sub': 'Si el viaje termina en Raja Ampat en lugar de Komodo, esto os espera.',
-      'examples.more': 'Ver todas las experiencias →',
+      'concept.p1': 'Indonesia es demasiado grande para un viaje corto: más de 17.000 islas, de los templos de Java a los arrecifes de Papúa. La mayoría de itinerarios de "Indonesia en dos semanas" intentan abarcarlo todo en una sucesión de traslados y medias jornadas. Bassa Complete hace lo contrario: elige las grandes caras del país y les da el tiempo que merecen.',
+      'concept.p2': 'El viaje sigue un arco natural, de la cultura al descanso y del descanso a la expedición: templos y volcanes, después la calma de Bali, luego la selva o las culturas más remotas, y al final, el mar. Cada región se vive con el mismo criterio que nuestras líneas especializadas, Culture, Reset, Moon y Explorer, encadenadas en un único viaje y con la logística resuelta para que ningún día se pierda en aeropuertos.',
+      'concept.p3': 'A continuación, los escenarios con los que construimos Bassa Complete. El recorrido final depende de vuestras fechas y de lo que más os mueva.',
+      'chapters.tag': 'Dónde',
+      'chapters.h2': 'Los escenarios de <em>vuestro Bassa Complete</em>',
+      'chapters.intro': 'Cinco grandes escenarios que, juntos, cuentan Indonesia de principio a fin. En cada uno enlazamos a la línea de Bassa que lo explora en profundidad.',
+      'chapters.when': 'Cuándo',
+      'chapters.more': 'Ver todas las experiencias →',
+      'ch1.label': 'Volcanes y templos',
+      'ch1.h3': 'Java: Borobudur, Yogyakarta y los volcanes del este',
+      'ch1.p': 'El viaje empieza en el corazón histórico de Indonesia. Borobudur, el mayor templo budista del mundo, se vive con acceso privado al amanecer; Yogyakarta, la ciudad de los sultanes, guarda su palacio de agua y las artes más antiguas de Java, y muy cerca, los templos hindúes de Prambanan completan la visita. Si el viaje continúa hacia el este, el mar de arena del Bromo al amanecer y el fuego azul del Ijen ponen el contrapunto más salvaje. Lo contamos en detalle en <a href="culture.html">Bassa Culture</a>.',
+      'ch1.when': 'De abril a octubre, estación seca.',
+      'ch1.m1': 'Borobudur con acceso privado al amanecer',
+      'ch1.m2': 'Yogyakarta y el palacio de agua de los sultanes',
+      'ch1.m3': 'El mar de arena del Bromo al alba',
+      'ch2.label': 'Espíritu y descanso',
+      'ch2.h3': 'Bali: el respiro en mitad del viaje',
+      'ch2.p': 'Después de Java, Bali es la pausa. Villas privadas sobre la selva de Ubud, arrozales en terrazas, el melukat, el ritual balinés de purificación, guiado por un sacerdote solo para vosotros, y la vida ceremonial de una isla que sigue rezando cada día. Para cambiar de paisaje, los valles rurales de Sidemen, los lagos de montaña del centro o los acantilados de Uluwatu sobre el océano. Es la etapa para recuperar el ritmo antes de la parte más remota del viaje. Más en <a href="reset.html">Bassa Reset</a>.',
+      'ch2.when': 'Todo el año; de abril a octubre, estación seca.',
+      'ch2.m1': 'Melukat privado en los manantiales de Tirta Empul',
+      'ch2.m2': 'Arrozales y lagos sagrados del centro de la isla',
+      'ch2.m3': 'Atardecer sobre los acantilados de Uluwatu',
+      'ch3.label': 'Selva y orangutanes',
+      'ch3.h3': 'Borneo o Sumatra: en busca de los orangutanes',
+      'ch3.p': 'Indonesia es, junto a Malasia, el único lugar del mundo donde viven orangutanes en libertad, y verlos es uno de los momentos que definen el viaje. En Borneo, a bordo de un klotok, la barcaza de madera que remonta despacio los ríos de Tanjung Puting, entre monos narigudos y noches de luciérnagas. En Sumatra, en la selva de Leuser, caminando con rastreadores locales para encontrarlos en libertad. Dos formas de vivir algunas de las selvas más antiguas del planeta, que elegimos según la época y el tipo de viaje. Más en nuestra <a href="blog/sumatra-orangutanes-salvajes-lujo.html">guía de Sumatra</a>.',
+      'ch3.when': 'De mayo a octubre, estación seca.',
+      'ch3.m1': 'Klotok privado por el río Sekonyer, en Borneo',
+      'ch3.m2': 'Orangutanes en libertad en la selva de Leuser, en Sumatra',
+      'ch3.m3': 'Cena en cubierta entre luciérnagas',
+      'ch4.label': 'Culturas remotas',
+      'ch4.h3': 'Tana Toraja, Sumba o Flores: la Indonesia ancestral',
+      'ch4.p': 'Para entender Indonesia hay que salir de las rutas conocidas. En las tierras altas de Sulawesi, Tana Toraja celebra sus funerales como grandes ceremonias de varios días, entre casas de tejado curvado como un barco y tumbas excavadas en acantilados. En Sumba, la religión de los ancestros convive con tumbas megalíticas y tejedoras de ikat, y en las montañas de Flores, la aldea de Wae Rebo conserva sus casas cónicas tradicionales. Elegimos una de ellas según vuestras fechas, porque algunas ceremonias solo ocurren en momentos concretos del año. Más en <a href="culture.html">Bassa Culture</a>.',
+      'ch4.when': 'Tana Toraja, de junio a septiembre; Sumba y Flores, de abril a octubre.',
+      'ch4.m1': 'Un Rambu Solo en Tana Toraja, como invitados',
+      'ch4.m2': 'Aldeas megalíticas y talleres de ikat en Sumba',
+      'ch4.m3': 'Subida a Wae Rebo, en las montañas de Flores',
+      'ch5.label': 'El mar como final',
+      'ch5.h3': 'Komodo o Raja Ampat: el gran final',
+      'ch5.p': 'El viaje termina donde Indonesia es más salvaje: en el mar. De abril a septiembre, a bordo de un phinisi privado por el Parque Nacional de Komodo, con los dragones en tierra, Pink Beach al amanecer y cada noche fondeados en una bahía distinta. De octubre a abril, en Raja Ampat, el ecosistema marino más rico del planeta, entre lagunas de karst, arrecifes que se recorren con snorkel y cenas en bancos de arena. Es la etapa que deja el mejor recuerdo para el final. Más en <a href="explorer.html">Bassa Explorer</a>.',
+      'ch5.when': 'Komodo, de abril a septiembre; Raja Ampat, de octubre a abril.',
+      'ch5.m1': 'Phinisi privado por el Parque Nacional de Komodo',
+      'ch5.m2': 'Pink Beach al amanecer, sin nadie más',
+      'ch5.m3': 'Cena en un banco de arena en Raja Ampat',
       'faq.tag': 'Preguntas frecuentes',
       'faq.h2': 'Bassa Complete, <em>en detalle</em>',
-      'faq.q1': '¿Bassa Complete es literalmente la suma de Bassa Culture, Bassa Reset/Moon y Bassa Explorer?',
-      'faq.a1': 'En esencia sí, pero diseñado como un único viaje y no como tres viajes pegados. La estructura sigue un arco natural: Java para profundidad cultural, Bali para descanso y desconexión (o romance), y Raja Ampat o Komodo como capítulo final de expedición, con transiciones organizadas en chárter privado entre cada etapa.',
-      'faq.q2': '¿Cuánto dura un viaje Bassa Complete?',
-      'faq.a2': 'Entre 18 y 21 días, sin contar los vuelos internacionales. El ejemplo de referencia de esta página son 20 días (19 noches): aproximadamente una semana en Java, una semana en Bali y el resto en Raja Ampat o Komodo.',
-      'faq.q3': '¿Bassa Complete es un paquete cerrado?',
-      'faq.a3': 'No. Bassa Complete es un punto de partida, no un paquete cerrado. Las experiencias de esta página son ejemplos de lo que puede incluir tu viaje; el itinerario final, los alojamientos y el orden de las etapas se ajustan contigo durante el diseño del viaje.',
-      'faq.q4': '¿Cuál es la mejor época para un viaje tan largo?',
-      'faq.a4': 'Java, Bali y Raja Ampat tienen temporadas secas que no coinciden del todo (Java: mayo-septiembre; Bali: abril-octubre; Raja Ampat: octubre-abril). Las mejores ventanas para Bassa Complete suelen ser mayo-junio o septiembre-octubre, cuando la mayoría de los tramos tienen buen tiempo. Con menos margen, ajustamos el orden de las etapas según tus fechas.',
-      'cta.h2': '¿Diseñamos tu <em>Bassa Complete</em>?',
-      'cta.p': 'Cuéntanos cuántos días tenéis disponibles y si preferís cerrar el viaje en Komodo o en Raja Ampat. A partir de ahí diseñamos el recorrido completo.',
+      'faq.q1': '¿Bassa Complete es la suma de las otras líneas de Bassa?',
+      'faq.a1': 'En esencia sí, pero diseñado como un único viaje y no como varios pegados. Toma lo mejor de Culture, Reset, Moon y Explorer y lo ordena en un arco natural, de la cultura al descanso y del descanso a la expedición, con la logística resuelta entre cada región.',
+      'faq.q2': '¿Cuántos días hacen falta para recorrer Indonesia?',
+      'faq.a2': 'Para un viaje así recomendamos entre 18 y 21 días. Con menos tiempo se puede hacer un gran viaje, pero centrado en dos o tres regiones; con tres semanas hay margen para cuatro o cinco sin sentir que se vive en el aeropuerto.',
+      'faq.q3': '¿Cuál es la mejor época para un gran viaje por Indonesia?',
+      'faq.a3': 'Java, Bali, Borneo, Sumatra, Sulawesi y Komodo comparten su mejor temporada, aproximadamente de abril a octubre. Raja Ampat, en cambio, brilla de octubre a abril, así que si queréis terminar allí, abril y octubre son los meses en que todo encaja. Con otras fechas, ajustamos el orden y las regiones.',
+      'cta.h2': '¿Diseñamos vuestro <em>Bassa Complete</em>?',
+      'cta.p': 'Contadnos cuántos días tenéis y qué os mueve más: la cultura, la naturaleza, el descanso o el mar. A partir de ahí diseñamos el gran viaje.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia',
-      'footer.about': 'Sobre Bassa', 'footer.experiences': 'Experiencias', 'footer.contact': 'Contacto'
+      'footer.about': 'Sobre Bassa',
+      'footer.experiences': 'Experiencias',
+      'footer.contact': 'Contacto'
     },
     en: {
-      'page.title': 'Bassa Complete: The Grand Indonesia Journey in Slow Luxury | Bassa Travels',
+      'page.title': 'Luxury Trip to Indonesia: the Grand Journey | Bassa Complete',
       'nav.cta': 'Design your trip',
       'breadcrumb.home': 'Home',
       'breadcrumb.experiences': 'Experiences',
-      'hero.h1': 'Indonesia,<br>start to <em>finish</em>',
-      'hero.p': 'Bassa Complete is the grand slow luxury journey through Indonesia: 18 to 21 days covering Java, Bali and Raja Ampat (or Komodo), with private charter transfers between islands. It\'s not a rushed highlights reel, but real time in each destination — the same unhurried pace of Bassa Culture, Bassa Reset/Moon and Bassa Explorer, linked into a single trip.',
+      'hero.h1': 'Indonesia, from<br><em>start to finish</em>',
+      'hero.p': 'Bassa Complete is the grand luxury trip to Indonesia: 18 to 21 days to cross the archipelago and discover its great faces in a single journey. The volcanoes and temples of Java, the spirituality of Bali, the forest of the orangutans, the most remote cultures and a finale at sea, in Komodo or Raja Ampat. It isn\'t a rushed summary, but real time in each place, with the same unhurried pace as every Bassa line.',
       'glance.tag': 'At a glance',
       'glance.h2': 'Key <em>details</em>',
       'glance.duracion.label': 'Suggested duration',
-      'glance.duracion.value': '18–21 days. The example developed on this page is 20 days / 19 nights.',
+      'glance.duracion.value': '18–21 days. The time needed to cover four or five regions without the trip becoming a string of airports.',
       'glance.estilo.label': 'Style',
-      'glance.estilo.value': 'Long-form slow luxury · combines Java, Bali and Raja Ampat or Komodo · private charter transitions.',
-      'glance.zona.label': 'Main area',
-      'glance.zona.value': 'Java + Bali + Raja Ampat or Komodo — the Indonesian archipelago from end to end.',
+      'glance.estilo.value': 'Slow luxury and 100% private from start to finish: specialist guides in each region, private transfers and, where it makes sense, charter flights.',
+      'glance.zona.label': 'Regions',
+      'glance.zona.value': 'Java, Bali, Borneo or Sumatra, Tana Toraja, Sumba or Flores, and Komodo or Raja Ampat.',
       'glance.quien.label': 'Who it\'s for',
-      'glance.quien.value': 'Travellers with time to spare who want real depth in every destination, not a summary.',
+      'glance.quien.value': 'Travellers with time to spare who want real depth in each destination, not a summary.',
       'glance.epoca.label': 'Best season',
-      'glance.epoca.value': 'May-June or September-October — windows when Java, Bali and Raja Ampat all have good weather.',
+      'glance.epoca.value': 'April to October if the finale is Komodo; if it\'s Raja Ampat, April and October, when the good seasons of east and west overlap.',
       'concept.tag': 'The concept',
-      'concept.h2': 'The journey, not the <em>highlights reel</em>',
-      'concept.p1': 'Bassa Complete starts from an observation: Indonesia\'s three great regions — Java\'s ancient temples, Bali\'s slow luxury villas and Raja Ampat\'s pristine reefs — each deserve a trip of their own. Most "Indonesia in two weeks" itineraries try to cram all three into a blur of transfers and half-days. Bassa Complete doesn\'t.',
-      'concept.p2': 'The structure follows a natural arc: Java first, for cultural depth and the temples of Borobudur; then Bali, for rest and time in private villas; and finally Raja Ampat or Komodo, as the final expedition chapter. Private charter flights handle the transitions, so no day is lost to commercial-airport logistics.',
-      'concept.p3': 'The experiences below are real examples of what could be part of your Bassa Complete — not a fixed album, but the starting point from which we design your trip.',
-      'examples.tag': 'Example experiences',
-      'examples.h2': 'What your <em>Bassa Complete</em><br>could include',
-      'examples.intro': 'A selection of experiences we regularly design within this line. Every Bassa Complete is different: these are references for inspiration, not a fixed list.',
-      'examples.item1.label': 'Java · Access via Amanjiwo',
-      'examples.item1.h3': 'Private sunrise at Borobudur',
-      'examples.item1.sub': 'The first chapter of the trip: ancient history before the crowds.',
-      'examples.item2.label': 'Bali · UNESCO heritage',
-      'examples.item2.h3': 'Jatiluwih rice terraces and water temples',
-      'examples.item2.sub': 'Bali\'s endless green, far from the usual routes.',
-      'examples.item3.label': 'Komodo · Private encounter',
-      'examples.item3.h3': 'Komodo dragons with park rangers',
-      'examples.item3.sub': 'The trip\'s finale: three metres of prehistory, face to face.',
-      'examples.item4.label': 'Raja Ampat · World record',
-      'examples.item4.h3': 'Diving at Cabo Kri — 374 species',
-      'examples.item4.sub': 'If the trip ends in Raja Ampat instead of Komodo, this awaits.',
-      'examples.more': 'See all experiences →',
+      'concept.h2': 'The journey, not the <em>summary</em>',
+      'concept.p1': 'Indonesia is too big for a short trip: more than 17,000 islands, from the temples of Java to the reefs of Papua. Most "Indonesia in two weeks" itineraries try to cover everything in a string of transfers and half days. Bassa Complete does the opposite: it chooses the country\'s great faces and gives them the time they deserve.',
+      'concept.p2': 'The journey follows a natural arc, from culture to rest and from rest to expedition: temples and volcanoes, then the calm of Bali, then the forest or the most remote cultures, and finally the sea. Each region is experienced with the same approach as our specialist lines, Culture, Reset, Moon and Explorer, linked into a single journey with the logistics solved so that no day is lost in airports.',
+      'concept.p3': 'Below are the settings from which we build Bassa Complete. The final route depends on your dates and on what moves you most.',
+      'chapters.tag': 'Where',
+      'chapters.h2': 'The settings of <em>your Bassa Complete</em>',
+      'chapters.intro': 'Five great settings that together tell the story of Indonesia from start to finish. Each one links to the Bassa line that explores it in depth.',
+      'chapters.when': 'When',
+      'chapters.more': 'See all experiences →',
+      'ch1.label': 'Volcanoes and temples',
+      'ch1.h3': 'Java: Borobudur, Yogyakarta and the eastern volcanoes',
+      'ch1.p': 'The journey begins in Indonesia\'s historic heart. Borobudur, the largest Buddhist temple in the world, is experienced with private access at sunrise; Yogyakarta, city of the sultans, keeps its water palace and Java\'s oldest arts, and close by, the Hindu temples of Prambanan complete the visit. If the trip continues east, the Bromo sea of sand at sunrise and Ijen\'s blue fire provide the wildest counterpoint. We tell it in detail in <a href="culture.html">Bassa Culture</a>.',
+      'ch1.when': 'April to October, the dry season.',
+      'ch1.m1': 'Borobudur with private access at sunrise',
+      'ch1.m2': 'Yogyakarta and the sultans\' water palace',
+      'ch1.m3': 'The Bromo sea of sand at dawn',
+      'ch2.label': 'Spirit and rest',
+      'ch2.h3': 'Bali: the pause in the middle of the journey',
+      'ch2.p': 'After Java, Bali is the pause. Private villas above the Ubud jungle, terraced rice fields, the melukat, the Balinese purification ritual, led by a priest just for you, and the ceremonial life of an island that still prays every day. For a change of scenery, the rural valleys of Sidemen, the mountain lakes of the centre or the cliffs of Uluwatu above the ocean. It\'s the stage to recover your rhythm before the most remote part of the trip. More in <a href="reset.html">Bassa Reset</a>.',
+      'ch2.when': 'All year round; April to October is the dry season.',
+      'ch2.m1': 'Private melukat at the springs of Tirta Empul',
+      'ch2.m2': 'Rice terraces and sacred lakes in the island\'s centre',
+      'ch2.m3': 'Sunset over the cliffs of Uluwatu',
+      'ch3.label': 'Forest and orangutans',
+      'ch3.h3': 'Borneo or Sumatra: in search of the orangutans',
+      'ch3.p': 'Indonesia is, together with Malaysia, the only place in the world where orangutans live in the wild, and seeing them is one of the moments that define the journey. In Borneo, aboard a klotok, the wooden riverboat that slowly travels up the rivers of Tanjung Puting, among proboscis monkeys and nights of fireflies. In Sumatra, in the Leuser rainforest, walking with local trackers to find them in the wild. Two ways to experience some of the oldest rainforests on the planet, chosen according to the season and the kind of trip. More in our <a href="blog/sumatra-orangutanes-salvajes-lujo.html">Sumatra guide</a> (in Spanish).',
+      'ch3.when': 'May to October, the dry season.',
+      'ch3.m1': 'Private klotok along the Sekonyer River, Borneo',
+      'ch3.m2': 'Orangutans in the wild in Sumatra\'s Leuser rainforest',
+      'ch3.m3': 'Dinner on deck among fireflies',
+      'ch4.label': 'Remote cultures',
+      'ch4.h3': 'Tana Toraja, Sumba or Flores: ancestral Indonesia',
+      'ch4.p': 'To understand Indonesia you have to leave the well-known routes. In the highlands of Sulawesi, Tana Toraja holds its funerals as great ceremonies lasting several days, among houses with boat-shaped roofs and tombs carved into cliffs. On Sumba, the religion of the ancestors lives alongside megalithic tombs and ikat weavers, and in the mountains of Flores, the village of Wae Rebo keeps its traditional conical houses. We choose one of them according to your dates, because some ceremonies only happen at specific times of year. More in <a href="culture.html">Bassa Culture</a>.',
+      'ch4.when': 'Tana Toraja, June to September; Sumba and Flores, April to October.',
+      'ch4.m1': 'A Rambu Solo in Tana Toraja, as guests',
+      'ch4.m2': 'Megalithic villages and ikat workshops on Sumba',
+      'ch4.m3': 'Walking up to Wae Rebo, in the mountains of Flores',
+      'ch5.label': 'The sea as a finale',
+      'ch5.h3': 'Komodo or Raja Ampat: the grand finale',
+      'ch5.p': 'The journey ends where Indonesia is at its wildest: at sea. From April to September, aboard a private phinisi through Komodo National Park, with the dragons on land, Pink Beach at sunrise and each night anchored in a different bay. From October to April, in Raja Ampat, the richest marine ecosystem on the planet, among karst lagoons, reefs explored by snorkel and dinners on sandbanks. It\'s the stage that saves the best memory for last. More in <a href="explorer.html">Bassa Explorer</a>.',
+      'ch5.when': 'Komodo, April to September; Raja Ampat, October to April.',
+      'ch5.m1': 'A private phinisi through Komodo National Park',
+      'ch5.m2': 'Pink Beach at sunrise, with no one else around',
+      'ch5.m3': 'Dinner on a sandbank in Raja Ampat',
       'faq.tag': 'Frequently asked questions',
       'faq.h2': 'Bassa Complete, <em>in detail</em>',
-      'faq.q1': 'Is Bassa Complete literally the sum of Bassa Culture, Bassa Reset/Moon and Bassa Explorer?',
-      'faq.a1': 'Essentially yes, but designed as a single trip rather than three trips stitched together. The structure follows a natural arc: Java for cultural depth, Bali for rest and disconnection (or romance), and Raja Ampat or Komodo as the final expedition chapter, with private charter transitions organised between each stage.',
-      'faq.q2': 'How long does a Bassa Complete trip last?',
-      'faq.a2': 'Between 18 and 21 days, not counting international flights. The reference example on this page is 20 days (19 nights): roughly a week in Java, a week in Bali, and the rest in Raja Ampat or Komodo.',
-      'faq.q3': 'Is Bassa Complete a fixed package?',
-      'faq.a3': 'No. Bassa Complete is a starting point, not a fixed package. The experiences on this page are examples of what your trip could include; the final itinerary, stays and order of stages are adjusted with you during the design process.',
-      'faq.q4': 'What\'s the best season for such a long trip?',
-      'faq.a4': 'Java, Bali and Raja Ampat have dry seasons that don\'t fully overlap (Java: May-September; Bali: April-October; Raja Ampat: October-April). The best windows for Bassa Complete are usually May-June or September-October, when most legs have good weather. With less flexibility, we adjust the order of the stages to your dates.',
+      'faq.q1': 'Is Bassa Complete the sum of the other Bassa lines?',
+      'faq.a1': 'Essentially yes, but designed as a single journey rather than several stuck together. It takes the best of Culture, Reset, Moon and Explorer and arranges it in a natural arc, from culture to rest and from rest to expedition, with the logistics solved between each region.',
+      'faq.q2': 'How many days do you need to travel around Indonesia?',
+      'faq.a2': 'For a trip like this we recommend 18 to 21 days. With less time you can still have a great trip, but focused on two or three regions; with three weeks there\'s room for four or five without feeling you\'re living in airports.',
+      'faq.q3': 'When is the best time for a grand journey through Indonesia?',
+      'faq.a3': 'Java, Bali, Borneo, Sumatra, Sulawesi and Komodo share their best season, roughly April to October. Raja Ampat, on the other hand, shines from October to April, so if you want to finish there, April and October are the months when everything fits. With other dates, we adjust the order and the regions.',
       'cta.h2': 'Shall we design your <em>Bassa Complete</em>?',
-      'cta.p': 'Tell us how many days you have available and whether you\'d prefer to end the trip in Komodo or Raja Ampat. From there we design the full journey.',
+      'cta.p': 'Tell us how many days you have and what moves you most: culture, nature, rest or the sea. From there we design the grand journey.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia',
-      'footer.about': 'About Bassa', 'footer.experiences': 'Experiences', 'footer.contact': 'Contact'
+      'footer.about': 'About Bassa',
+      'footer.experiences': 'Experiences',
+      'footer.contact': 'Contact'
     }
   };
 
