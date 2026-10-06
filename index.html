@@ -965,19 +965,19 @@
           </select>
         </div>
       </div>
+      <div class="form-field">
+        <label for="f-nombre" data-i18n="form.nombre.label">Nombre y apellidos</label>
+        <input id="f-nombre" type="text" name="nombre" autocomplete="name" data-i18n-ph="form.nombre.ph" placeholder="Tu nombre y apellidos" required>
+      </div>
       <div class="form-row">
         <div class="form-field">
-          <label for="f-nombre" data-i18n="form.nombre.label">Nombre</label>
-          <input id="f-nombre" type="text" name="nombre" data-i18n-ph="form.nombre.ph" placeholder="Tu nombre" required>
+          <label for="f-email" data-i18n="form.email.label">Email</label>
+          <input id="f-email" type="email" name="email" autocomplete="email" data-i18n-ph="form.email.ph" placeholder="tu@email.com" required>
         </div>
         <div class="form-field">
-          <label for="f-email" data-i18n="form.email.label">Email</label>
-          <input id="f-email" type="email" name="email" data-i18n-ph="form.email.ph" placeholder="tu@email.com" required>
+          <label for="f-telefono" data-i18n="form.tel.label">Teléfono</label>
+          <input id="f-telefono" type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+34 600 000 000" pattern="\+?[0-9\s\(\)\.\-]{7,20}" data-i18n-title="form.tel.title" title="Incluye el prefijo si no es un número de España, por ejemplo +52 55 1234 5678" required>
         </div>
-      </div>
-      <div class="form-field">
-        <label for="f-whatsapp" data-i18n-html="form.whatsapp.label">WhatsApp <span class="optional-tag">(opcional)</span></label>
-        <input id="f-whatsapp" type="tel" name="whatsapp" placeholder="+34 600 000 000">
       </div>
       <div class="form-field">
         <label for="f-imprescindibles" data-i18n="form.imprescindibles.label">Imprescindibles / preferencias</label>
@@ -1142,9 +1142,9 @@
       'form.dias.opt0': '¿Cuántos días?', 'form.dias.opt1': '7 días', 'form.dias.opt2': '10 días', 'form.dias.opt3': '12 días',
       'form.dias.opt4': '14 días', 'form.dias.opt5': '16 días', 'form.dias.opt6': '18 días',
       'form.dias.opt7': '21 días o más', 'form.dias.opt8': 'Aún no lo sé, me ayudáis',
-      'form.nombre.label': 'Nombre', 'form.nombre.ph': 'Tu nombre',
+      'form.nombre.label': 'Nombre y apellidos', 'form.nombre.ph': 'Tu nombre y apellidos',
       'form.email.label': 'Email', 'form.email.ph': 'tu@email.com',
-      'form.whatsapp.label': 'WhatsApp <span class="optional-tag">(opcional)</span>',
+      'form.tel.label': 'Teléfono', 'form.tel.title': 'Incluye el prefijo si no es un número de España, por ejemplo +52 55 1234 5678',
       'form.imprescindibles.label': 'Imprescindibles / preferencias',
       'form.imprescindibles.ph': 'Cuéntanos qué no puede faltar en tu viaje ideal...',
       'form.submit': 'Solicitar mi propuesta →', 'form.sending': 'Enviando...', 'form.error': 'Error al enviar, inténtalo de nuevo',
@@ -1238,9 +1238,9 @@
       'form.dias.opt0': 'How many days?', 'form.dias.opt1': '7 days', 'form.dias.opt2': '10 days', 'form.dias.opt3': '12 days',
       'form.dias.opt4': '14 days', 'form.dias.opt5': '16 days', 'form.dias.opt6': '18 days',
       'form.dias.opt7': '21 days or more', 'form.dias.opt8': 'Not sure yet, help me',
-      'form.nombre.label': 'Name', 'form.nombre.ph': 'Your name',
+      'form.nombre.label': 'Full name', 'form.nombre.ph': 'Your full name',
       'form.email.label': 'Email', 'form.email.ph': 'your@email.com',
-      'form.whatsapp.label': 'WhatsApp <span class="optional-tag">(optional)</span>',
+      'form.tel.label': 'Phone', 'form.tel.title': 'Include your country code, e.g. +44 20 7946 0958',
       'form.imprescindibles.label': 'Must-haves / preferences',
       'form.imprescindibles.ph': 'Tell us what your ideal trip can\'t be without...',
       'form.submit': 'Request my proposal \u2192', 'form.sending': 'Sending...', 'form.error': 'Error sending, please try again',
@@ -1278,6 +1278,10 @@
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
       const key = el.dataset.i18nHtml;
       if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.dataset.i18nTitle;
+      if (t[lang][key] !== undefined) el.title = t[lang][key];
     });
     document.querySelectorAll('[data-i18n-ph]').forEach(el => {
       const key = el.dataset.i18nPh;
