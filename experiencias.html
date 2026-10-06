@@ -63,9 +63,6 @@
 
   /* ── LANG TOGGLE ── */
   .nav-right { display: flex; align-items: center; gap: 0.8rem; }
-  .fi { display: inline-block; width: 1.333em; height: 1em; background-size: cover; background-position: 50%; border-radius: 1px; }
-  .fi-es { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23AA151B' d='M0 0h3v2H0z'/%3E%3Cpath fill='%23F1BF00' d='M0 .5h3v1H0z'/%3E%3C/svg%3E"); }
-  .fi-gb { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cpath fill='%23012169' d='M0 0h60v30H0z'/%3E%3Cpath stroke='%23fff' stroke-width='6' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23C8102E' stroke-width='4' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23fff' stroke-width='10' d='M30 0v30M0 15h60'/%3E%3Cpath stroke='%23C8102E' stroke-width='6' d='M30 0v30M0 15h60'/%3E%3C/svg%3E"); }
   .lang-toggle {
     display: flex; align-items: center; gap: 0.4rem;
     background: none; border: 1px solid rgba(255,255,255,0.35);
@@ -76,7 +73,6 @@
     transition: border-color 0.3s, color 0.3s;
     font-family: var(--font-body); font-weight: 400; white-space: nowrap;
   }
-  .lang-toggle .fi { font-size: 1rem; letter-spacing: 0; }
   .lang-toggle:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
   /* ── HERO ── */
@@ -283,7 +279,7 @@
     <img src="Logo_white_crop.svg" alt="Bassa Travels">
   </a>
   <div class="nav-right">
-    <button class="lang-toggle" id="lang-toggle"><span class="fi fi-gb"></span> EN</button>
+    <button class="lang-toggle" id="lang-toggle">EN</button>
     <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a>
   </div>
 </nav>
@@ -1008,7 +1004,7 @@
       if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
     });
 
-    const btnLabel = lang === 'es' ? '<span class="fi fi-gb"></span> EN' : '<span class="fi fi-es"></span> ES';
+    const btnLabel = lang === 'es' ? 'EN' : 'ES';
     document.getElementById('lang-toggle').innerHTML = btnLabel;
   }
 
