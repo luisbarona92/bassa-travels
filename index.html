@@ -666,7 +666,7 @@
     <li><a href="#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a></li>
   </ul>
   <div class="nav-right">
-    <button class="lang-toggle" id="lang-toggle">EN</button>
+    <button class="lang-toggle" id="lang-toggle" title="Switch to English" aria-label="Switch to English">ES</button>
     <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
@@ -681,7 +681,7 @@
   <a href="#how" class="drawer-link" data-i18n="nav.how">Cómo funciona</a>
   <a href="#faq" class="drawer-link">FAQ</a>
   <a href="#contact" class="drawer-cta" data-i18n="nav.cta">Diseña tu viaje</a>
-  <button class="drawer-lang" id="drawer-lang-toggle">EN</button>
+  <button class="drawer-lang" id="drawer-lang-toggle" title="Switch to English" aria-label="Switch to English">ES</button>
 </div>
 
 <!-- HERO -->
@@ -1285,11 +1285,14 @@
       if (t[lang][key] !== undefined) el.placeholder = t[lang][key];
     });
 
-    const btnLabel = lang === 'es' ? 'EN' : 'ES';
-    const drawerLabel = lang === 'es' ? 'EN' : 'ES';
+    const btnLabel = lang === 'es' ? 'ES' : 'EN';
+    const btnHint = lang === 'es' ? 'Switch to English' : 'Cambiar a español';
+    const drawerLabel = lang === 'es' ? 'ES' : 'EN';
     document.getElementById('lang-toggle').innerHTML = btnLabel;
+    document.getElementById('lang-toggle').title = btnHint;
+    document.getElementById('lang-toggle').setAttribute('aria-label', btnHint);
     const drawerBtn = document.getElementById('drawer-lang-toggle');
-    if (drawerBtn) drawerBtn.innerHTML = drawerLabel;
+    if (drawerBtn) { drawerBtn.innerHTML = drawerLabel; drawerBtn.title = btnHint; drawerBtn.setAttribute('aria-label', btnHint); }
   }
 
 

@@ -383,7 +383,7 @@
     <img src="Logo_white_crop.svg" alt="Bassa Travels">
   </a>
   <div class="nav-right">
-    <button class="lang-toggle" id="lang-toggle">EN</button>
+    <button class="lang-toggle" id="lang-toggle" title="Switch to English" aria-label="Switch to English">ES</button>
     <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a>
   </div>
 </nav>
@@ -757,8 +757,11 @@
       if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
     });
 
-    const btnLabel = lang === 'es' ? 'EN' : 'ES';
+    const btnLabel = lang === 'es' ? 'ES' : 'EN';
+    const btnHint = lang === 'es' ? 'Switch to English' : 'Cambiar a español';
     document.getElementById('lang-toggle').innerHTML = btnLabel;
+    document.getElementById('lang-toggle').title = btnHint;
+    document.getElementById('lang-toggle').setAttribute('aria-label', btnHint);
   }
 
   document.getElementById('lang-toggle').addEventListener('click', () => setLanguage(currentLang === 'es' ? 'en' : 'es'));
