@@ -1390,14 +1390,20 @@
       whatsapp: form.whatsapp.value, imprescindibles: form.imprescindibles.value,
       sid: formSid
     };
-    // Confirmación inmediata; el envío sigue en segundo plano
+    // El envío arranca ya; la confirmación se muestra tras una breve espera
+    // visual (un "Recibido" instantáneo parece que no ha hecho nada)
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = t[currentLang]['form.sending'];
+    btn.disabled = true;
     guardarPendiente(data);
-    form.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
     enviarLead(data).then(borrarPendiente).catch(() => {
       const warn = document.getElementById('form-success-warn');
       if (warn) warn.style.display = 'block';
     });
+    setTimeout(() => {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }, 1800);
   });
 
   // ── INIT LANGUAGE ──
