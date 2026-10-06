@@ -991,6 +991,7 @@
     <div id="form-success" style="display:none; text-align:center; padding:2.5rem 0;">
       <p style="color:var(--gold); font-family:var(--font-display); font-size:1.3rem; font-weight:300; margin-bottom:0.5rem;" data-i18n="form.success.title">Recibido</p>
       <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; line-height:1.6;" data-i18n-html="form.success.p">Hemos recibido tu solicitud. Te contactaremos personalmente en 24–48 h para empezar a diseñar tu viaje.</p>
+      <p id="form-success-warn" style="display:none; color:rgba(255,255,255,0.65); font-size:0.8rem; line-height:1.6; margin-top:1rem;" data-i18n-html="form.success.warn">Parece que hay un problema de conexión y no hemos podido confirmar tu solicitud. Lo reintentaremos automáticamente la próxima vez que entres en la web; si prefieres asegurarte, escríbenos a <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>.</p>
     </div>
   </div>
 </section>
@@ -1151,6 +1152,7 @@
       'form.fallback': 'Si el problema persiste, escríbenos a <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>',
       'form.disclaimer': 'El envío de este formulario no constituye contratación de servicios ni oferta vinculante. Tus datos se tratarán conforme al RGPD únicamente para atender tu solicitud y preparar tu propuesta de viaje.',
       'form.success.title': 'Recibido', 'form.success.p': 'Hemos recibido tu solicitud. Te contactaremos personalmente en 24–48 h para empezar a diseñar tu viaje.',
+      'form.success.warn': 'Parece que hay un problema de conexión y no hemos podido confirmar tu solicitud. Lo reintentaremos automáticamente la próxima vez que entres en la web; si prefieres asegurarte, escríbenos a <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>.',
       'faq.tag': 'FAQ', 'faq.h2': 'Preguntas<br><em>frecuentes</em>',
       'faq.q1': '¿Qué tipo de viajes hace Bassa Travels?', 'faq.a1': 'Viajes slow luxury en Indonesia: itinerarios privados, hoteles con criterio, experiencias bien trabajadas. Todo a medida, sin paquetes cerrados ni grupos.',
       'faq.q2': '¿Cómo se diseña el viaje tras el formulario?', 'faq.a2': 'Formulario → llamada breve → propuesta con ruta y hoteles → ajustes → reservas y soporte. Un proceso premium e iterativo.',
@@ -1247,6 +1249,7 @@
       'form.fallback': 'If the problem persists, email us at <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>',
       'form.disclaimer': 'Submitting this form does not constitute a service contract or binding offer. Your data will be processed in accordance with the GDPR solely to handle your request and prepare your travel proposal.',
       'form.success.title': 'Received', 'form.success.p': 'We\'ve got your request. We\'ll contact you personally within 24–48 h to start designing your trip.',
+      'form.success.warn': 'There seems to be a connection problem and we couldn\'t confirm your request. We\'ll retry automatically next time you visit the site; to be sure, email us at <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>.',
       'faq.tag': 'FAQ', 'faq.h2': 'Frequently<br><em>asked questions</em>',
       'faq.q1': 'What kind of trips does Bassa Travels offer?', 'faq.a1': 'Slow luxury trips to Indonesia: private itineraries, curated hotels, well-crafted experiences. All bespoke, no fixed packages or groups.',
       'faq.q2': 'How is the trip designed after the form?', 'faq.a2': 'Form \u2192 brief call \u2192 proposal with route and hotels \u2192 adjustments \u2192 bookings and support. A premium, iterative process.',
@@ -1344,7 +1347,34 @@
   const formSid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(36).slice(2));
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcfTp2D0nffltJOC0ypMWQgw8SCS7KTKpsSxP3fJWgxU8_lxfy36Lx93C1TTjAZ2Cq/exec";
   const formLoadTime = Date.now();
-  document.getElementById('bassa-form').addEventListener('submit', async function(e) {
+  // Copia local de un envío sin confirmar: se reenvía en la próxima visita.
+  // 6 h = lo que el Apps Script recuerda cada sid para ignorar duplicados.
+  const OUTBOX_KEY = 'bassa_lead_pendiente';
+  const OUTBOX_MAX_MS = 6 * 3600 * 1000;
+
+  // keepalive: el navegador termina el envío aunque se cierre la página
+  function enviarLead(data) {
+    return fetch(SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data),
+      keepalive: true
+    }).then(res => res.json().then(out => {
+      if (!res.ok || !out || out.status !== 'ok') throw new Error('respuesta no valida');
+    }));
+  }
+  function guardarPendiente(data) { try { localStorage.setItem(OUTBOX_KEY, JSON.stringify({ data: data, ts: Date.now() })); } catch (e) {} }
+  function borrarPendiente() { try { localStorage.removeItem(OUTBOX_KEY); } catch (e) {} }
+
+  (function reenviarPendiente() {
+    let p = null;
+    try { p = JSON.parse(localStorage.getItem(OUTBOX_KEY) || 'null'); } catch (e) {}
+    if (!p || !p.data) return;
+    if (Date.now() - (p.ts || 0) > OUTBOX_MAX_MS) { borrarPendiente(); return; }
+    enviarLead(p.data).then(borrarPendiente).catch(() => {});
+  })();
+
+  document.getElementById('bassa-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const form = e.target;
 
@@ -1353,9 +1383,6 @@
     // Anti-spam: time check (bots submit instantly)
     if (Date.now() - formLoadTime < 3000) return;
 
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = t[currentLang]['form.sending'];
-    btn.disabled = true;
     const data = {
       companion: form.companion.value,
       salida: form.salida.value, dias: form.dias.value,
@@ -1363,27 +1390,14 @@
       whatsapp: form.whatsapp.value, imprescindibles: form.imprescindibles.value,
       sid: formSid
     };
-    try {
-      // POST: el navegador no lo reintenta solo; el sid permite al script ignorar duplicados
-      const ctrl = new AbortController();
-      const timer = setTimeout(() => ctrl.abort(), 45000);
-      const res = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(data),
-        signal: ctrl.signal
-      });
-      clearTimeout(timer);
-      const out = await res.json();
-      if (!res.ok || !out || out.status !== 'ok') throw new Error('respuesta no valida');
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    } catch (err) {
-      btn.textContent = t[currentLang]['form.error'];
-      btn.disabled = false;
-      const fb = document.getElementById('form-fallback');
-      if (fb) fb.style.display = 'block';
-    }
+    // Confirmación inmediata; el envío sigue en segundo plano
+    guardarPendiente(data);
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    enviarLead(data).then(borrarPendiente).catch(() => {
+      const warn = document.getElementById('form-success-warn');
+      if (warn) warn.style.display = 'block';
+    });
   });
 
   // ── INIT LANGUAGE ──
