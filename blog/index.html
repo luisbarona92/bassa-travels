@@ -137,6 +137,10 @@
     .post-card .post-thumb { aspect-ratio: 16/9; }
     footer.legal { padding: 2rem 1.5rem; }
   }
+  .post-card .post-thumb.bromo {
+    background: linear-gradient(180deg, rgba(28,26,23,0.15), rgba(28,26,23,0.55)),
+                url('https://images.unsplash.com/photo-1689249550071-a7921fbb69e3?w=800&q=75&auto=format&fit=crop') center/cover;
+  }
   .post-card .post-thumb.wakatobi {
     background: linear-gradient(180deg, rgba(28,26,23,0.15), rgba(28,26,23,0.55)),
                 url('../images/arrecife-wakatobi-sm.webp') center/cover;
@@ -182,16 +186,17 @@
   "@type": "ItemList",
   "name": "Blog de Bassa Travels — Guías de viaje a Indonesia",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "url": "https://bassatravels.com/blog/wakatobi-buceo-lujo-vuelo-privado.html", "name": "Wakatobi: buceo de lujo con vuelo privado desde Bali al arrecife más protegido de Indonesia" },
-    { "@type": "ListItem", "position": 2, "url": "https://bassatravels.com/blog/komodo-yate-privado-dragones-lujo.html", "name": "Komodo en yate privado: cómo ver los dragones de Komodo con acceso exclusivo" },
-    { "@type": "ListItem", "position": 3, "url": "https://bassatravels.com/blog/tana-toraja-sulawesi-funeral-lujo-privado.html", "name": "Tana Toraja: cómo vivir un funeral Rambu Solo con acceso privado en Sulawesi" },
-    { "@type": "ListItem", "position": 4, "url": "https://bassatravels.com/blog/sumba-lujo-privado-indonesia.html", "name": "Sumba: la isla de Indonesia donde está el hotel mejor valorado del mundo" },
-    { "@type": "ListItem", "position": 5, "url": "https://bassatravels.com/blog/islas-banda-maluku-lujo-phinisi.html", "name": "Islas Banda: cómo visitar las Islas de las Especias de Indonesia en yate privado" },
-    { "@type": "ListItem", "position": 6, "url": "https://bassatravels.com/blog/sumatra-orangutanes-salvajes-lujo.html", "name": "Sumatra: cómo ver orangutanes salvajes en un viaje de lujo por Indonesia" },
-    { "@type": "ListItem", "position": 7, "url": "https://bassatravels.com/blog/borobudur-amanecer-privado-java-lujo.html", "name": "Borobudur al amanecer: acceso privado al templo más sagrado de Java" },
-    { "@type": "ListItem", "position": 8, "url": "https://bassatravels.com/blog/raja-ampat-lujo-expedicion.html", "name": "Raja Ampat: la expedición de lujo más remota de Indonesia" },
-    { "@type": "ListItem", "position": 9, "url": "https://bassatravels.com/blog/indonesia-mas-alla-de-bali-lujo.html", "name": "Más allá de Bali: las islas que prefieren los viajeros de lujo" },
-    { "@type": "ListItem", "position": 10, "url": "https://bassatravels.com/blog/mejor-epoca-para-ir-a-bali.html", "name": "Mejor época para ir a Bali: guía mes a mes" }
+    { "@type": "ListItem", "position": 1, "url": "https://bassatravels.com/blog/bromo-ijen-amanecer-privado-java-lujo.html", "name": "Bromo en privado: cómo ver el amanecer del volcán más famoso de Java tras la reapertura de 2026" },
+    { "@type": "ListItem", "position": 2, "url": "https://bassatravels.com/blog/wakatobi-buceo-lujo-vuelo-privado.html", "name": "Wakatobi: buceo de lujo con vuelo privado desde Bali al arrecife más protegido de Indonesia" },
+    { "@type": "ListItem", "position": 3, "url": "https://bassatravels.com/blog/komodo-yate-privado-dragones-lujo.html", "name": "Komodo en yate privado: cómo ver los dragones de Komodo con acceso exclusivo" },
+    { "@type": "ListItem", "position": 4, "url": "https://bassatravels.com/blog/tana-toraja-sulawesi-funeral-lujo-privado.html", "name": "Tana Toraja: cómo vivir un funeral Rambu Solo con acceso privado en Sulawesi" },
+    { "@type": "ListItem", "position": 5, "url": "https://bassatravels.com/blog/sumba-lujo-privado-indonesia.html", "name": "Sumba: la isla de Indonesia donde está el hotel mejor valorado del mundo" },
+    { "@type": "ListItem", "position": 6, "url": "https://bassatravels.com/blog/islas-banda-maluku-lujo-phinisi.html", "name": "Islas Banda: cómo visitar las Islas de las Especias de Indonesia en yate privado" },
+    { "@type": "ListItem", "position": 7, "url": "https://bassatravels.com/blog/sumatra-orangutanes-salvajes-lujo.html", "name": "Sumatra: cómo ver orangutanes salvajes en un viaje de lujo por Indonesia" },
+    { "@type": "ListItem", "position": 8, "url": "https://bassatravels.com/blog/borobudur-amanecer-privado-java-lujo.html", "name": "Borobudur al amanecer: acceso privado al templo más sagrado de Java" },
+    { "@type": "ListItem", "position": 9, "url": "https://bassatravels.com/blog/raja-ampat-lujo-expedicion.html", "name": "Raja Ampat: la expedición de lujo más remota de Indonesia" },
+    { "@type": "ListItem", "position": 10, "url": "https://bassatravels.com/blog/indonesia-mas-alla-de-bali-lujo.html", "name": "Más allá de Bali: las islas que prefieren los viajeros de lujo" },
+    { "@type": "ListItem", "position": 11, "url": "https://bassatravels.com/blog/mejor-epoca-para-ir-a-bali.html", "name": "Mejor época para ir a Bali: guía mes a mes" }
   ]
 }
 </script>
@@ -214,6 +219,22 @@
 </section>
 
 <section class="post-list">
+
+  <article class="post-card">
+    <a href="/blog/bromo-ijen-amanecer-privado-java-lujo.html" class="post-thumb bromo" aria-label="Bromo en privado, amanecer en Java Oriental">
+      <span>Bromo · Java Oriental</span>
+    </a>
+    <div>
+      <div class="post-meta">
+        <span>15 octubre 2026</span>
+        <span class="dot">•</span>
+        <span>7 min de lectura</span>
+      </div>
+      <h2><a href="/blog/bromo-ijen-amanecer-privado-java-lujo.html">Bromo en privado: cómo ver el amanecer del volcán más famoso de Java tras la reapertura de 2026</a></h2>
+      <p>El incendio de agosto cerró Bromo 13 días y reabrió con un cupo de 2.752 visitantes diarios y entrada online nominativa: cómo organizar un amanecer privado en jeep con guía, dónde dormir y cómo sumar la llama azul del Ijen.</p>
+      <a href="/blog/bromo-ijen-amanecer-privado-java-lujo.html" class="read-more">Leer artículo →</a>
+    </div>
+  </article>
 
   <article class="post-card">
     <a href="/blog/wakatobi-buceo-lujo-vuelo-privado.html" class="post-thumb wakatobi" aria-label="Wakatobi, buceo de lujo con vuelo privado">
