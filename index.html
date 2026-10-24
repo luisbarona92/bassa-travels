@@ -1403,7 +1403,11 @@
     });
     setTimeout(() => {
       form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
+      const success = document.getElementById('form-success');
+      success.style.display = 'block';
+      // El aviso es mucho más corto que el formulario: sin esto, en móvil
+      // queda por encima de la pantalla y se ve la sección siguiente
+      success.scrollIntoView({ block: 'center', behavior: 'instant' });
     }, 1800);
   });
 
