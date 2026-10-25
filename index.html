@@ -319,6 +319,8 @@
   /* ── ABOUT ── */
   .about { background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   .about-text p { color: var(--muted); line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem; }
+  .about-more { display: inline-block; color: var(--terracotta); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase; border-bottom: 1px solid rgba(196,114,74,0.4); padding-bottom: 3px; transition: border-color 0.3s; }
+  .about-more:hover { border-bottom-color: var(--terracotta); }
   .about-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 3rem; }
   .pillar { padding: 0.75rem; border-top: 2px solid var(--terracotta); background: var(--cream); }
   .pillar h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.35rem; }
@@ -708,9 +710,10 @@
 <section class="about" id="about">
   <div class="about-text reveal">
     <span class="section-tag" data-i18n="about.tag">Sobre nosotros</span>
-    <h2 class="section-title" data-i18n-html="about.h2">No somos una agencia<br><em>cualquiera</em></h2>
-    <p data-i18n="about.p1">Bassa Travels es una agencia boutique especializada en slow luxury en Indonesia. Diseñamos itinerarios a medida, con criterio de selección de hoteles y soporte cercano en español antes y durante el viaje.</p>
+    <h2 class="section-title" data-i18n-html="about.h2">Agencia boutique<br><em>especializada en Indonesia</em></h2>
+    <p data-i18n="about.p1">En Bassa Travels diseñamos viajes de slow luxury a medida, con hoteles elegidos con criterio y soporte cercano en español antes y durante el viaje.</p>
     <p data-i18n="about.p2">Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.</p>
+    <a href="nosotros.html" class="about-more" data-i18n-html="about.more">Conoce cómo trabajamos <span>&rarr;</span></a>
     <div class="about-pillars">
       <div class="pillar"><h3 data-i18n-html="about.pillar1.h4">Lujo<br>Personalizado</h3><p data-i18n="about.pillar1.p">Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p></div>
       <div class="pillar"><h3 data-i18n-html="about.pillar2.h4">Agenda<br>Selectiva</h3><p data-i18n="about.pillar2.p">Trabajamos con un número limitado de viajeros al año para dedicarle a cada viaje la atención que merece.</p></div>
@@ -1059,7 +1062,7 @@
   </a>
   <span class="footer-copy"><span data-i18n="footer.copy">© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia</span><br>Avda. Guadalix 82BIS, 28120 Algete (Madrid) · CIF B88960307 · CICMA 5061</span>
   <nav class="footer-nav">
-    <a href="#about" data-i18n="footer.about">Qué es Bassa</a>
+    <a href="nosotros.html" data-i18n="footer.about">Nosotros</a>
     <a href="#experiences" data-i18n="footer.experiences">Experiencias</a>
     <a href="#how" data-i18n="footer.how">Cómo funciona</a>
     <a href="/blog/" data-i18n="footer.blog">Blog</a>
@@ -1087,9 +1090,10 @@
       'hero.p': 'Itinerarios slow, hoteles con criterio y soporte cercano en español — antes y durante el viaje.',
       'hero.discover': 'Descubre más',
       'about.tag': 'Sobre nosotros',
-      'about.h2': 'No somos una agencia<br><em>cualquiera</em>',
-      'about.p1': 'Bassa Travels es una agencia boutique especializada en slow luxury en Indonesia. Diseñamos itinerarios a medida, con criterio de selección de hoteles y soporte cercano en español antes y durante el viaje.',
+      'about.h2': 'Agencia boutique<br><em>especializada en Indonesia</em>',
+      'about.p1': 'En Bassa Travels diseñamos viajes de slow luxury a medida, con hoteles elegidos con criterio y soporte cercano en español antes y durante el viaje.',
       'about.p2': 'Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.',
+      'about.more': 'Conoce cómo trabajamos <span>&rarr;</span>',
       'about.pillar1.h4': 'Lujo<br>Personalizado', 'about.pillar1.p': 'Itinerarios 100% a medida, adaptados a tu ritmo y estilo.',
       'about.pillar2.h4': 'Agenda<br>Selectiva', 'about.pillar2.p': 'Trabajamos con un número limitado de viajeros al año para dedicarle a cada viaje la atención que merece.',
       'about.pillar3.h4': 'Criterio<br>de Selección', 'about.pillar3.p': 'Solo hoteles que conocemos. Solo experiencias que tienen sentido para ti.',
@@ -1175,7 +1179,7 @@
       'faq.q9': '¿Cuánto cuesta un viaje a Indonesia con Bassa Travels?', 'faq.a9': 'Cada viaje se diseña a medida, así que el presupuesto depende del itinerario, la temporada, los hoteles y las experiencias que elijamos juntos. Trabajamos en el segmento del lujo personalizado y ajustamos la propuesta a tu presupuesto desde la primera conversación. Diseñar tu propuesta no tiene coste ni compromiso.',
       'faq.q10': '¿Es seguro viajar a Indonesia?', 'faq.a10': 'Sí. Bali, Java, Komodo o Raja Ampat reciben viajeros de todo el mundo con total normalidad y la infraestructura de lujo cumple estándares internacionales. Además, viajas con itinerario verificado, partners locales de confianza y nuestro soporte en español 24/7 durante todo el viaje.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia',
-      'footer.about': 'Qué es Bassa', 'footer.experiences': 'Experiencias', 'footer.how': 'Cómo funciona', 'footer.blog': 'Blog', 'footer.contact': 'Contacto',
+      'footer.about': 'Nosotros', 'footer.experiences': 'Experiencias', 'footer.how': 'Cómo funciona', 'footer.blog': 'Blog', 'footer.contact': 'Contacto',
     },
     en: {
       'page.title': 'Luxury tailor-made travel to Indonesia | Bassa Travels',
@@ -1185,9 +1189,10 @@
       'hero.p': 'Slow itineraries, curated hotels and close support in English — before and during your trip.',
       'hero.discover': 'Discover more',
       'about.tag': 'About us',
-      'about.h2': 'We are not<br>just another<br><em>agency</em>',
-      'about.p1': 'Bassa Travels is a boutique agency specializing in slow luxury in Indonesia. We design bespoke itineraries with curated hotel selection and close support in English before and during your trip.',
+      'about.h2': 'Boutique agency<br><em>specializing in Indonesia</em>',
+      'about.p1': 'At Bassa Travels we design tailor-made slow luxury trips, with carefully chosen hotels and close support in English before and during your trip.',
       'about.p2': 'No mass tours. No fixed packages. Only experiences designed for you.',
+      'about.more': 'See how we work <span>&rarr;</span>',
       'about.pillar1.h4': 'Personalized<br>Luxury', 'about.pillar1.p': '100% bespoke itineraries, tailored to your pace and style.',
       'about.pillar2.h4': 'Selective<br>Agenda', 'about.pillar2.p': 'We work with a limited number of travelers each year to give every trip the attention it deserves.',
       'about.pillar3.h4': 'Curated<br>Selection', 'about.pillar3.p': 'Only hotels we know personally. Only experiences that make sense for you.',
@@ -1273,7 +1278,7 @@
       'faq.q9': 'How much does a trip to Indonesia with Bassa Travels cost?', 'faq.a9': 'Every trip is designed from scratch, so the budget depends on the itinerary, the season, the hotels and the experiences we choose together. We work in personalized luxury and tailor each proposal to your budget from the very first conversation. Designing your proposal is free of charge and commitment.',
       'faq.q10': 'Is it safe to travel to Indonesia?', 'faq.a10': 'Yes. Bali, Java, Komodo and Raja Ampat welcome travelers from all over the world as a matter of course, and the luxury infrastructure meets international standards. You also travel with a verified itinerary, trusted local partners and our 24/7 support throughout your trip.',
       'footer.copy': '© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia',
-      'footer.about': 'About Bassa', 'footer.experiences': 'Experiences', 'footer.how': 'How it works', 'footer.blog': 'Blog', 'footer.contact': 'Contact',
+      'footer.about': 'About us', 'footer.experiences': 'Experiences', 'footer.how': 'How it works', 'footer.blog': 'Blog', 'footer.contact': 'Contact',
     }
   };
 

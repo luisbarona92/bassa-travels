@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Consentimiento de cookies + Google Analytics (se carga solo tras aceptar) -->
+  <script src="/consent.js" defer></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiénes somos | Bassa Travels, viajes de lujo a Indonesia</title>
+<meta name="description" content="Bassa Travels es una agencia boutique de Madrid dedicada solo a Indonesia: cómo trabajamos, quién hay detrás, nuestra red local y nuestras garantías.">
+<link rel="canonical" href="https://bassatravels.com/nosotros.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bassatravels.com/nosotros.html">
+<meta property="og:title" content="Quiénes somos | Bassa Travels, viajes de lujo a Indonesia">
+<meta property="og:description" content="Bassa Travels es una agencia boutique de Madrid dedicada solo a Indonesia: cómo trabajamos, quién hay detrás, nuestra red local y nuestras garantías.">
+<meta property="og:image" content="https://bassatravels.com/images/pura-ulun-danu-nubes-og.jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Bassa Travels">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --sand: #E8DDD0;
+    --terracotta: #C4724A;
+    --deep: #1C1A17;
+    --gold: #B89B6A;
+    --warm-white: #FAF8F4;
+    --muted: #7A7068;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--deep); color: white; font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+
+
+  /* ── NAV ── */
+  #main-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(28,26,23,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(184,155,106,0.12);
+    transition: background 0.4s, top 0.4s;
+  }
+  #main-nav.scrolled { background: rgba(28,26,23,0.96); }
+  .nav-logo img { height: 42px; width: auto; }
+  .nav-cta {
+    display: inline-block;
+    background: var(--terracotta); color: white !important;
+    padding: 0.55rem 1.3rem; border-radius: 2px;
+    font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 500; text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: #b35e38; transform: translateY(-1px); }
+
+  /* ── LANG TOGGLE ── */
+  .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+  .lang-toggle {
+    display: flex; align-items: center; gap: 0.4rem;
+    background: none; border: 1px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+    padding: 0.38rem 0.75rem; font-size: 0.7rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: border-color 0.3s, color 0.3s;
+    font-family: var(--font-body); font-weight: 400; white-space: nowrap;
+  }
+  .lang-toggle:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    padding: 7.5rem 4rem 0; font-size: 0.7rem; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+  .breadcrumb a:hover { color: var(--gold); }
+  .breadcrumb span.sep { margin: 0 0.5rem; color: rgba(255,255,255,0.2); }
+  .breadcrumb span.current { color: var(--gold); }
+
+  /* ── HERO ── */
+  .line-hero {
+    position: relative; min-height: 70vh;
+    display: flex; align-items: flex-end;
+    padding: 4rem 4rem 4rem;
+    overflow: hidden;
+  }
+  .line-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('images/pura-ulun-danu-nubes.webp') center 40%/cover no-repeat;
+    z-index: -2;
+  }
+  .line-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(28,26,23,0.55) 0%, rgba(28,26,23,0.55) 40%, rgba(28,26,23,0.97) 100%);
+    z-index: -1;
+  }
+  .line-hero-inner { max-width: 1000px; }
+  .hero-tag {
+    display: inline-block; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    border-left: 2px solid var(--terracotta); padding-left: 0.8rem;
+  }
+  .line-hero h1 {
+    font-family: var(--font-display); font-size: clamp(2.6rem, 6vw, 4.6rem);
+    font-weight: 300; line-height: 1.08; margin-bottom: 1.8rem;
+  }
+  .line-hero h1 em { font-style: italic; color: var(--gold); }
+  .answer-direct {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.4rem; max-width: 760px;
+    color: rgba(255,255,255,0.88); font-size: 1.05rem; line-height: 1.85;
+  }
+
+  /* ── INFO SECTIONS ── */
+  .info-section { padding: 5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .info-section:nth-of-type(even) { background: #16140F; max-width: none; }
+  .info-section .inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: block; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300; line-height: 1.1; margin-bottom: 2rem; color: white;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .info-section p { color: rgba(255,255,255,0.78); line-height: 1.85; font-size: 0.97rem; max-width: 800px; margin-bottom: 1.2rem; }
+
+  /* ── DATA TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+  .data-table tr { border-bottom: 1px solid rgba(184,155,106,0.14); }
+  .data-table tr:last-child { border-bottom: none; }
+  .data-table td { padding: 1.15rem 0; vertical-align: top; }
+  .data-table td:first-child {
+    color: var(--gold); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+    width: 240px; padding-right: 2rem; padding-top: 1.3rem;
+  }
+  .data-table td:last-child { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; }
+  .table-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 1.2rem; line-height: 1.7; font-style: italic; }
+
+  /* ── EXPERIENCE GRID (reusa estilo experiencias.html) ── */
+  .exp-list {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .exp-item {
+    position: relative; overflow: hidden; background: var(--deep);
+    border: 1px solid rgba(184,155,106,0.1);
+    transition: border-color 0.4s, transform 0.4s;
+  }
+  .exp-item:hover { border-color: rgba(184,155,106,0.45); transform: translateY(-4px); }
+  .exp-item-img { width: 100%; aspect-ratio: 4/5; overflow: hidden; position: relative; }
+  .exp-item-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+  .exp-item:hover .exp-item-img img { transform: scale(1.06); }
+  .exp-item-body { padding: 1.2rem 1.2rem 1.5rem; }
+  .exp-item-label { display: inline-block; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .exp-item h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; line-height: 1.2; margin-bottom: 0.5rem; color: white; }
+  .exp-item-sub { font-family: var(--font-display); font-style: italic; font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
+  .exp-more-wrap { text-align: center; margin-top: 2.5rem; }
+  .exp-more-link { color: var(--gold); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; border-bottom: 1px solid rgba(184,155,106,0.4); padding-bottom: 4px; transition: opacity 0.3s; }
+  .exp-more-link:hover { opacity: 0.7; }
+
+  /* ── FAQ ── */
+  .faq-section .faq-item { border-bottom: 1px solid rgba(184,155,106,0.12); padding: 1.6rem 0; }
+  .faq-section .faq-item:first-of-type { border-top: 1px solid rgba(184,155,106,0.12); }
+  .faq-section summary {
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 400;
+    cursor: pointer; color: white; list-style: none; display: flex;
+    justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  .faq-section summary::-webkit-details-marker { display: none; }
+  .faq-section summary::after { content: '+'; color: var(--gold); font-size: 1.4rem; flex-shrink: 0; transition: transform 0.3s; }
+  .faq-section details[open] summary::after { content: '\2212'; }
+  .faq-section .faq-item p { margin-top: 1rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-size: 0.95rem; max-width: 800px; }
+
+  /* ── CTA ── */
+  .chapter-list { display: flex; flex-direction: column; gap: 4.5rem; margin-top: 3rem; }
+  .chapter { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; align-items: center; }
+  .chapter:nth-child(even) .chapter-img { order: 2; }
+  .chapter-img { aspect-ratio: 4 / 3; overflow: hidden; }
+  .chapter-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .chapter-label { display: block; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .chapter h3 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; line-height: 1.15; color: white; margin-bottom: 1rem; }
+  .chapter-body p { font-size: 0.95rem; }
+  .chapter-moments { list-style: none; margin: 0.4rem 0 1.2rem; padding: 0; border-top: 1px solid rgba(184,155,106,0.18); }
+  .chapter-moments li { position: relative; padding: 0.7rem 0 0.7rem 1.5rem; border-bottom: 1px solid rgba(184,155,106,0.12); font-size: 0.9rem; color: rgba(255,255,255,0.86); line-height: 1.5; }
+  .chapter-moments li::before { content: '✦'; position: absolute; left: 0; top: 0.78rem; color: var(--gold); font-size: 0.7rem; }
+  .info-section .chapter-when { font-size: 0.85rem; color: rgba(255,255,255,0.62); margin-bottom: 0; }
+  .chapter-when strong { color: var(--gold); font-weight: 400; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.7rem; }
+  .info-section p a, .faq-section .faq-item p a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .chapter { grid-template-columns: 1fr; gap: 1.6rem; }
+    .chapter:nth-child(even) .chapter-img { order: 0; }
+    .chapter-list { gap: 3.5rem; }
+  }
+  .exp-cta { padding: 7rem 4rem; text-align: center; background: var(--deep); position: relative; }
+  .exp-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background: url('images/bali_jatiluwih.jpg') center/cover no-repeat;
+    opacity: 0.16; z-index: 0;
+  }
+  .exp-cta > * { position: relative; z-index: 1; }
+  .exp-cta h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem; }
+  .exp-cta h2 em { font-style: italic; color: var(--gold); }
+  .exp-cta p { color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75; }
+  .btn-primary {
+    display: inline-block; background: var(--terracotta); color: white; text-decoration: none;
+    padding: 1rem 2.4rem; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase;
+    font-weight: 500; transition: background 0.3s, transform 0.2s; border-radius: 2px;
+  }
+  .btn-primary:hover { background: #b35e38; transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0F0D0A; color: rgba(255,255,255,0.5);
+    padding: 3rem 4rem; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-logo img { height: 34px; width: auto; opacity: 0.72; }
+  .footer-nav a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; margin-left: 2rem; transition: color 0.3s; }
+  .footer-nav a:hover { color: white; }
+  .footer-copy { font-size: 0.75rem; }
+  .footer-legal {
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 1.2rem;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem;
+  }
+  .footer-legal a {
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 0.06em;
+    padding: 0.4rem 0; display: inline-block;
+    transition: color 0.3s;
+  }
+  .footer-legal a:hover { color: rgba(255,255,255,0.9); }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .exp-list { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    #main-nav { padding: 1rem 1.5rem; }
+    .nav-logo img { height: 36px; }
+    .nav-cta { padding: 0.5rem 1rem; font-size: 0.7rem; }
+    .lang-toggle { padding: 0.3rem 0.55rem; font-size: 0.62rem; gap: 0.3rem; }
+    .nav-right { gap: 0.5rem; }
+    .breadcrumb { padding: 6rem 1.5rem 0; }
+    .line-hero { padding: 2.5rem 1.5rem 2.5rem; min-height: 60vh; }
+    .info-section { padding: 3.5rem 1.5rem; }
+    .data-table td:first-child { width: 150px; }
+    .exp-list { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .exp-cta { padding: 4rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .footer-nav { text-align: center; }
+    .footer-nav a { margin: 0 0.8rem; }
+  }
+  @media (max-width: 560px) {
+    .exp-list { grid-template-columns: 1fr; }
+  }
+
+  /* ── NOSOTROS ── */
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+  .step-card { border-top: 1px solid rgba(184,155,106,0.35); padding-top: 1.4rem; }
+  .step-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--gold); line-height: 1; margin-bottom: 0.8rem; }
+  .step-card h3, .pillar-card h3, .role-card h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 400; color: white; margin-bottom: 0.6rem; line-height: 1.2; }
+  .info-section .step-card p, .info-section .pillar-card p, .info-section .role-card p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 0; }
+  .pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; margin-top: 2.5rem; }
+  .pillar-card { border: 1px solid rgba(184,155,106,0.16); padding: 1.8rem; }
+  .pillar-card::before { content: '✦'; display: block; color: var(--gold); font-size: 0.8rem; margin-bottom: 0.9rem; }
+  .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.5rem; }
+  .role-card { border-left: 2px solid var(--terracotta); padding: 0.4rem 0 0.4rem 1.3rem; }
+  .role-where { display: block; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .guarantee-list { list-style: none; margin-top: 2rem; padding: 0; border-top: 1px solid rgba(184,155,106,0.18); max-width: 800px; }
+  .guarantee-list li { position: relative; padding: 1rem 0 1rem 1.6rem; border-bottom: 1px solid rgba(184,155,106,0.12); color: rgba(255,255,255,0.86); font-size: 0.95rem; line-height: 1.7; }
+  .guarantee-list li::before { content: '✦'; position: absolute; left: 0; top: 1.1rem; color: var(--gold); font-size: 0.7rem; }
+  .guarantee-list a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .steps-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem 1.2rem; }
+    .pillar-grid, .role-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) { .steps-grid { grid-template-columns: 1fr; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://bassatravels.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Nosotros",
+      "item": "https://bassatravels.com/nosotros.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Quiénes somos | Bassa Travels, viajes de lujo a Indonesia",
+  "url": "https://bassatravels.com/nosotros.html",
+  "inLanguage": "es",
+  "description": "Bassa Travels es una agencia boutique de Madrid dedicada solo a Indonesia: cómo trabajamos, quién hay detrás, nuestra red local y nuestras garantías.",
+  "mainEntity": {
+    "@type": "TravelAgency",
+    "name": "Bassa Travels",
+    "legalName": "Bassa Luxury Travel, S.L.",
+    "url": "https://bassatravels.com/",
+    "email": "concierge@bassatravels.com",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Indonesia"
+    },
+    "knowsLanguage": [
+      "es",
+      "en"
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Volver a la portada">
+    <img src="Logo_white_crop.svg" alt="Bassa Travels">
+  </a>
+  <div class="nav-right">
+    <button class="lang-toggle" id="lang-toggle" title="Switch to English" aria-label="Switch to English">ES</button>
+    <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html" data-i18n="breadcrumb.home">Inicio</a><span class="sep">/</span><span class="current" data-i18n="breadcrumb.current">Nosotros</span>
+</div>
+
+<!-- HERO -->
+<section class="line-hero">
+  <div class="line-hero-inner">
+    <span class="hero-tag" data-i18n="hero.tag">Nosotros</span>
+    <h1 data-i18n-html="hero.h1">Solo Indonesia,<br><em>a tu medida</em></h1>
+    <p class="answer-direct" data-i18n="hero.p">Bassa Travels es una agencia boutique con sede en Madrid que diseña viajes de lujo a medida por Indonesia para viajeros de habla hispana. No vendemos paquetes ni salidas en grupo: cada viaje se piensa desde cero, con tiempo, con criterio y con una red de partners locales en cada isla.</p>
+  </div>
+</section>
+
+<!-- POR QUÉ INDONESIA -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="why.tag">Por qué Indonesia</span>
+    <h2 class="section-title" data-i18n-html="why.h2">Un solo país, <em>bien conocido</em></h2>
+    <p data-i18n="why.p1">Indonesia son más de 17.000 islas y culturas que cambian de una a otra: los templos de Java, la vida ritual de Bali, los poblados de Sumba y Tana Toraja, el mar de Komodo y Raja Ampat. Es uno de los destinos más extraordinarios del mundo y también uno de los más difíciles de organizar bien, con vuelos internos, distancias largas y temporadas que no coinciden de una isla a otra.</p>
+    <p data-i18n="why.p2">Por eso decidimos dedicarnos solo a Indonesia. Conocer a fondo un país permite elegir mejor cada isla, cada hotel y cada momento del viaje, y también decirte que no cuando algo no encaja con lo que buscas.</p>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="how.tag">Cómo trabajamos</span>
+    <h2 class="section-title" data-i18n-html="how.h2">Un proceso <em>sencillo</em> y cercano</h2>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">01</div><h3 data-i18n="s1.h3">Una conversación</h3><p data-i18n="s1.p">Una llamada de 15 a 20 minutos para entender cómo quieres viajar: ritmo, intereses, fechas y presupuesto.</p></div>
+      <div class="step-card"><div class="step-num">02</div><h3 data-i18n="s2.h3">Una propuesta solo para ti</h3><p data-i18n="s2.p">Recibes tu viaje en una web privada, con el itinerario día a día, los hoteles y las experiencias, para verlo con calma y compartirlo.</p></div>
+      <div class="step-card"><div class="step-num">03</div><h3 data-i18n="s3.h3">Ajustes hasta que encaje</h3><p data-i18n="s3.p">Cambiamos lo que haga falta hasta que el viaje sea exactamente el tuyo. Diseñar la propuesta no tiene coste.</p></div>
+      <div class="step-card"><div class="step-num">04</div><h3 data-i18n="s4.h3">Reserva y acompañamiento</h3><p data-i18n="s4.p">Nos ocupamos de reservas, vuelos internos, traslados y guías, y te acompañamos antes, durante y después del viaje.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUE NOS DIFERENCIA -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="diff.tag">Nuestra forma de viajar</span>
+    <h2 class="section-title" data-i18n-html="diff.h2">Lo que nos <em>diferencia</em></h2>
+    <div class="pillar-grid">
+      <div class="pillar-card"><h3 data-i18n="d1.h3">Solo Indonesia, solo a medida</h3><p data-i18n="d1.p">Un único destino y ningún paquete cerrado. Cada itinerario se diseña desde cero, y trabajamos con un número limitado de viajeros al año para dar a cada viaje la atención que merece.</p></div>
+      <div class="pillar-card"><h3 data-i18n="d2.h3">Red local en cada isla</h3><p data-i18n="d2.p">Partners locales de confianza que conocen el terreno: guías, chóferes, tripulaciones, permisos y acceso a experiencias que no aparecen en ninguna guía.</p></div>
+      <div class="pillar-card"><h3 data-i18n="d3.h3">Hoteles que conocemos</h3><p data-i18n="d3.p">Solo proponemos hoteles que conocemos nosotros o nuestros partners de primera mano, y elegimos cada uno por cómo encaja contigo, no por catálogo.</p></div>
+      <div class="pillar-card"><h3 data-i18n="d4.h3">Soporte en español 24/7</h3><p data-i18n="d4.p">Entre nuestro equipo y nuestros partners en destino, siempre hay alguien disponible durante tu viaje, a cualquier hora.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="team.tag">El equipo</span>
+    <h2 class="section-title" data-i18n-html="team.h2">Quién hay <em>detrás</em></h2>
+    <p data-i18n="team.p">Un equipo pequeño en Madrid y una red de partners en Indonesia, coordinados para que tú solo tengas que disfrutar del viaje.</p>
+    <div class="role-grid">
+      <div class="role-card"><span class="role-where" data-i18n="r1.where">Madrid</span><h3 data-i18n="r1.h3">Diseño de viajes</h3><p data-i18n="r1.p">Escucha lo que buscas, diseña tu propuesta y es tu interlocutor de principio a fin.</p></div>
+      <div class="role-card"><span class="role-where" data-i18n="r2.where">Madrid e Indonesia</span><h3 data-i18n="r2.h3">Atención al viajero</h3><p data-i18n="r2.p">Te acompaña antes y durante el viaje, en español y a cualquier hora.</p></div>
+      <div class="role-card"><span class="role-where" data-i18n="r3.where">Indonesia</span><h3 data-i18n="r3.h3">Partners en destino</h3><p data-i18n="r3.p">Guías, chóferes, tripulaciones y coordinadores locales en cada isla.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTÍAS -->
+<section class="info-section reveal">
+  <div class="inner">
+    <span class="section-tag" data-i18n="gar.tag">Garantías</span>
+    <h2 class="section-title" data-i18n-html="gar.h2">Viajar <em>con garantías</em></h2>
+    <ul class="guarantee-list">
+      <li data-i18n-html="g1">Agencia de viajes registrada en la Comunidad de Madrid con el número CICMA 5061.</li>
+      <li data-i18n-html="g2">Garantía de protección frente a la insolvencia de 100.000 €, contratada con Markel Insurance, tal y como exige la normativa de viajes combinados.</li>
+      <li data-i18n-html="g3">Contrato y <a href="condiciones.html">condiciones generales</a> claras, con el calendario de pagos y las condiciones de cancelación por escrito.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="exp-cta">
+  <h2 data-i18n-html="cta.h2">¿Empezamos a diseñar <em>tu viaje</em>?</h2>
+  <p data-i18n="cta.p">Cuéntanos cómo lo imaginas y te preparamos una propuesta a medida, sin coste ni compromiso.</p>
+  <a href="index.html#contact" class="btn-primary" data-i18n="nav.cta">Diseña tu viaje</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <a href="index.html"><img src="Logo_white_crop.svg" alt="Bassa Travels"></a>
+  </div>
+  <div class="footer-copy"><span data-i18n="footer.copy">© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia</span><br>Avda. Guadalix 82BIS, 28120 Algete (Madrid) · CIF B88960307 · CICMA 5061</div>
+  <div class="footer-nav">
+    <a href="nosotros.html" data-i18n="footer.about">Nosotros</a>
+    <a href="experiencias.html" data-i18n="footer.experiences">Experiencias</a>
+    <a href="index.html#contact" data-i18n="footer.contact">Contacto</a>
+    <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>
+    <a href="https://www.instagram.com/bassa_travels/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <div class="footer-legal">
+    <a href="privacidad.html">Política de Privacidad</a>
+    <a href="datos.html">Protección de Datos</a>
+    <a href="legal.html">Aviso Legal</a>
+    <a href="cookies.html">Política de Cookies</a>
+    <a href="condiciones.html">Condiciones Generales</a>
+  </div>
+</footer>
+
+<script>
+  const t = {
+    es: {
+      "page.title": "Quiénes somos | Bassa Travels, viajes de lujo a Indonesia",
+      "nav.cta": "Diseña tu viaje",
+      "breadcrumb.home": "Inicio",
+      "breadcrumb.current": "Nosotros",
+      "hero.tag": "Nosotros",
+      "hero.h1": "Solo Indonesia,<br><em>a tu medida</em>",
+      "hero.p": "Bassa Travels es una agencia boutique con sede en Madrid que diseña viajes de lujo a medida por Indonesia para viajeros de habla hispana. No vendemos paquetes ni salidas en grupo: cada viaje se piensa desde cero, con tiempo, con criterio y con una red de partners locales en cada isla.",
+      "why.tag": "Por qué Indonesia",
+      "why.h2": "Un solo país, <em>bien conocido</em>",
+      "why.p1": "Indonesia son más de 17.000 islas y culturas que cambian de una a otra: los templos de Java, la vida ritual de Bali, los poblados de Sumba y Tana Toraja, el mar de Komodo y Raja Ampat. Es uno de los destinos más extraordinarios del mundo y también uno de los más difíciles de organizar bien, con vuelos internos, distancias largas y temporadas que no coinciden de una isla a otra.",
+      "why.p2": "Por eso decidimos dedicarnos solo a Indonesia. Conocer a fondo un país permite elegir mejor cada isla, cada hotel y cada momento del viaje, y también decirte que no cuando algo no encaja con lo que buscas.",
+      "how.tag": "Cómo trabajamos",
+      "how.h2": "Un proceso <em>sencillo</em> y cercano",
+      "s1.h3": "Una conversación",
+      "s1.p": "Una llamada de 15 a 20 minutos para entender cómo quieres viajar: ritmo, intereses, fechas y presupuesto.",
+      "s2.h3": "Una propuesta solo para ti",
+      "s2.p": "Recibes tu viaje en una web privada, con el itinerario día a día, los hoteles y las experiencias, para verlo con calma y compartirlo.",
+      "s3.h3": "Ajustes hasta que encaje",
+      "s3.p": "Cambiamos lo que haga falta hasta que el viaje sea exactamente el tuyo. Diseñar la propuesta no tiene coste.",
+      "s4.h3": "Reserva y acompañamiento",
+      "s4.p": "Nos ocupamos de reservas, vuelos internos, traslados y guías, y te acompañamos antes, durante y después del viaje.",
+      "diff.tag": "Nuestra forma de viajar",
+      "diff.h2": "Lo que nos <em>diferencia</em>",
+      "d1.h3": "Solo Indonesia, solo a medida",
+      "d1.p": "Un único destino y ningún paquete cerrado. Cada itinerario se diseña desde cero, y trabajamos con un número limitado de viajeros al año para dar a cada viaje la atención que merece.",
+      "d2.h3": "Red local en cada isla",
+      "d2.p": "Partners locales de confianza que conocen el terreno: guías, chóferes, tripulaciones, permisos y acceso a experiencias que no aparecen en ninguna guía.",
+      "d3.h3": "Hoteles que conocemos",
+      "d3.p": "Solo proponemos hoteles que conocemos nosotros o nuestros partners de primera mano, y elegimos cada uno por cómo encaja contigo, no por catálogo.",
+      "d4.h3": "Soporte en español 24/7",
+      "d4.p": "Entre nuestro equipo y nuestros partners en destino, siempre hay alguien disponible durante tu viaje, a cualquier hora.",
+      "team.tag": "El equipo",
+      "team.h2": "Quién hay <em>detrás</em>",
+      "team.p": "Un equipo pequeño en Madrid y una red de partners en Indonesia, coordinados para que tú solo tengas que disfrutar del viaje.",
+      "r1.where": "Madrid",
+      "r1.h3": "Diseño de viajes",
+      "r1.p": "Escucha lo que buscas, diseña tu propuesta y es tu interlocutor de principio a fin.",
+      "r2.where": "Madrid e Indonesia",
+      "r2.h3": "Atención al viajero",
+      "r2.p": "Te acompaña antes y durante el viaje, en español y a cualquier hora.",
+      "r3.where": "Indonesia",
+      "r3.h3": "Partners en destino",
+      "r3.p": "Guías, chóferes, tripulaciones y coordinadores locales en cada isla.",
+      "gar.tag": "Garantías",
+      "gar.h2": "Viajar <em>con garantías</em>",
+      "g1": "Agencia de viajes registrada en la Comunidad de Madrid con el número CICMA 5061.",
+      "g2": "Garantía de protección frente a la insolvencia de 100.000 €, contratada con Markel Insurance, tal y como exige la normativa de viajes combinados.",
+      "g3": "Contrato y <a href=\"condiciones.html\">condiciones generales</a> claras, con el calendario de pagos y las condiciones de cancelación por escrito.",
+      "cta.h2": "¿Empezamos a diseñar <em>tu viaje</em>?",
+      "cta.p": "Cuéntanos cómo lo imaginas y te preparamos una propuesta a medida, sin coste ni compromiso.",
+      "footer.copy": "© 2026 Bassa Luxury Travel, S.L. · Agencia boutique de slow luxury en Indonesia",
+      "footer.about": "Nosotros",
+      "footer.experiences": "Experiencias",
+      "footer.contact": "Contacto"
+    },
+    en: {
+      "page.title": "About us | Bassa Travels, luxury travel to Indonesia",
+      "nav.cta": "Design your trip",
+      "breadcrumb.home": "Home",
+      "breadcrumb.current": "About us",
+      "hero.tag": "About us",
+      "hero.h1": "Only Indonesia,<br><em>designed for you</em>",
+      "hero.p": "Bassa Travels is a boutique agency based in Madrid that designs tailor-made luxury trips to Indonesia. We don't sell packages or group departures: every trip is built from scratch, with time, with judgment and with a network of local partners on every island.",
+      "why.tag": "Why Indonesia",
+      "why.h2": "One country, <em>known well</em>",
+      "why.p1": "Indonesia is more than 17,000 islands, with cultures that change from one to the next: the temples of Java, the ritual life of Bali, the villages of Sumba and Tana Toraja, the seas of Komodo and Raja Ampat. It is one of the most extraordinary destinations in the world, and also one of the hardest to plan well, with domestic flights, long distances and seasons that differ from island to island.",
+      "why.p2": "That is why we chose to focus on Indonesia alone. Knowing one country in depth lets us choose every island, every hotel and every moment of the trip more carefully, and also tell you no when something doesn't fit what you are looking for.",
+      "how.tag": "How we work",
+      "how.h2": "A <em>simple</em>, personal process",
+      "s1.h3": "A conversation",
+      "s1.p": "A 15 to 20 minute call to understand how you like to travel: pace, interests, dates and budget.",
+      "s2.h3": "A proposal just for you",
+      "s2.p": "You receive your trip on a private website, with the day-by-day itinerary, hotels and experiences, to review at your own pace and share.",
+      "s3.h3": "Adjustments until it fits",
+      "s3.p": "We change whatever is needed until the trip is exactly yours. Designing your proposal is free of charge.",
+      "s4.h3": "Booking and support",
+      "s4.p": "We handle bookings, domestic flights, transfers and guides, and we support you before, during and after your trip.",
+      "diff.tag": "Our way of traveling",
+      "diff.h2": "What sets us <em>apart</em>",
+      "d1.h3": "Only Indonesia, only tailor-made",
+      "d1.p": "A single destination and no fixed packages. Every itinerary is designed from scratch, and we work with a limited number of travelers each year to give every trip the attention it deserves.",
+      "d2.h3": "A local network on every island",
+      "d2.p": "Trusted local partners who know the ground: guides, drivers, crews, permits and access to experiences you won't find in any guidebook.",
+      "d3.h3": "Hotels we know",
+      "d3.p": "We only suggest hotels that we or our partners know firsthand, and we choose each one for how well it fits you, not from a catalog.",
+      "d4.h3": "24/7 support",
+      "d4.p": "Between our team and our partners on the ground, there is always someone available during your trip, at any hour.",
+      "team.tag": "The team",
+      "team.h2": "Who is <em>behind it</em>",
+      "team.p": "A small team in Madrid and a network of partners in Indonesia, working together so that all you have to do is enjoy the trip.",
+      "r1.where": "Madrid",
+      "r1.h3": "Trip design",
+      "r1.p": "Listens to what you are looking for, designs your proposal and is your point of contact from start to finish.",
+      "r2.where": "Madrid and Indonesia",
+      "r2.h3": "Traveler support",
+      "r2.p": "Looks after you before and during the trip, at any hour.",
+      "r3.where": "Indonesia",
+      "r3.h3": "Partners on the ground",
+      "r3.p": "Guides, drivers, crews and local coordinators on every island.",
+      "gar.tag": "Guarantees",
+      "gar.h2": "Travel <em>with peace of mind</em>",
+      "g1": "Travel agency registered in the Community of Madrid under license number CICMA 5061.",
+      "g2": "Insolvency protection of €100,000, underwritten by Markel Insurance, as required by Spanish package travel regulations.",
+      "g3": "A clear contract and <a href=\"condiciones.html\">general terms</a> (in Spanish), with the payment schedule and cancellation terms in writing.",
+      "cta.h2": "Shall we start designing <em>your trip</em>?",
+      "cta.p": "Tell us how you imagine it and we will prepare a tailor-made proposal, free of charge and with no commitment.",
+      "footer.copy": "© 2026 Bassa Luxury Travel, S.L. · Slow luxury boutique agency in Indonesia",
+      "footer.about": "About us",
+      "footer.experiences": "Experiences",
+      "footer.contact": "Contact"
+    }
+  };
+  let currentLang = 'es';
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('bassa_lang', lang);
+    document.documentElement.lang = lang;
+    document.title = t[lang]['page.title'];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[lang][key] !== undefined) el.textContent = t[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
+    });
+
+    const btnLabel = lang === 'es' ? 'ES' : 'EN';
+    const btnHint = lang === 'es' ? 'Switch to English' : 'Cambiar a español';
+    document.getElementById('lang-toggle').innerHTML = btnLabel;
+    document.getElementById('lang-toggle').title = btnHint;
+    document.getElementById('lang-toggle').setAttribute('aria-label', btnHint);
+  }
+
+  document.getElementById('lang-toggle').addEventListener('click', () => setLanguage(currentLang === 'es' ? 'en' : 'es'));
+
+
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  setLanguage(localStorage.getItem('bassa_lang') || 'es');
+</script>
+
+</body>
+</html>
