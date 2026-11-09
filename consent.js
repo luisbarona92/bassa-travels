@@ -134,7 +134,8 @@
   var consent = getConsent();
   if (consent === 'granted') {
     loadGA();
-  } else if (consent === null) {
+  } else if (consent === null && !/[?&]embed=1/.test(location.search)) {
+    /* Dentro de la ventana «Diseña tu ruta» (?embed=1) no se repite el aviso: ya lo muestra la página de fuera */
     onReady(showBanner);
   }
 })();

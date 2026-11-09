@@ -262,13 +262,46 @@ footer{border-top:1px solid var(--line);padding-block:1.6rem 2.2rem;font-size:.8
 .loading small{color:var(--muted);font-size:.9rem}
 @media (prefers-reduced-motion:reduce){.loading.run .ring .fill{animation:none}}
 @media (prefers-reduced-motion:no-preference){.fade{animation:fade .2s ease-out both}@keyframes fade{from{opacity:.35}to{opacity:1}}}
+
+/* «¿Cómo te gusta viajar?»: cuadrícula 3×3 con iconos */
+.opts.imp{grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+.opts.imp .opt{flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.5rem;min-height:6.4rem;padding:.8rem .45rem;font-size:.86rem;line-height:1.25}
+.opts.imp .opt svg{width:28px;height:28px;flex:none;color:var(--terracotta-dk)}
+.opts.imp .opt[aria-pressed="true"] svg{color:var(--terracotta)}
+@media (max-width:380px){.opts.imp .opt{font-size:.78rem;min-height:5.8rem;padding:.7rem .3rem}.opts.imp .opt svg{width:24px;height:24px}}
+/* Modo ventana (?embed=1): el planificador dentro del botón «Diseña tu ruta» de la web */
+html.embed .top, html.embed footer, html.embed .nota-ruta, html.embed .testband, html.embed header.site-header, html.embed footer.legal{display:none!important}
+html.embed body{background:var(--cream)}
+html.embed #intro{display:none!important}
+</style>
+<style>
+header.site-header{background:#1C1A17;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+header.site-header img{height:34px;width:auto;opacity:.85;display:block}
+header.site-header nav{white-space:nowrap}
+header.site-header nav a{color:rgba(255,255,255,.6);text-decoration:none;font-family:var(--body);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s;margin-left:1.8rem}
+header.site-header nav a:hover,header.site-header nav a.active{color:#fff}
+header.site-header nav a.active{border-bottom:1px solid #B89B6A;padding-bottom:3px}
+.nota-ruta{border-top:1px solid var(--line);padding-block:1.4rem;font-size:.8rem;color:var(--muted)}
+footer.legal{background:#1C1A17;color:rgba(255,255,255,.55);padding:2.5rem 4rem;text-align:center;font-size:.78rem;line-height:1.9;font-family:var(--body)}
+footer.legal a{color:rgba(255,255,255,.7);text-decoration:none;margin:0 .6rem}
+@media (max-width:900px){header.site-header{padding:1.2rem 1.5rem}header.site-header nav a{margin-left:1rem}footer.legal{padding:2rem 1.5rem calc(6rem + env(safe-area-inset-bottom,0px))}}
+@media (max-width:480px){header.site-header{gap:.8rem}header.site-header img{height:28px}header.site-header nav a{margin-left:.7rem;font-size:.64rem;letter-spacing:.06em}}
 </style>
 </head>
 <body>
 
+<script>if(/[?&]embed=1/.test(location.search)) document.documentElement.classList.add('embed');</script>
 
 <div class="testband" id="testband">Versión de prueba · no se envía nada a Bassa</div>
-<header class="top"><div class="wrap wide"><a class="brand" href="/">Bassa</a><small>Diseña tu Indonesia</small></div></header>
+<header class="site-header">
+  <a href="/"><img src="/Logo_white_crop.svg" alt="Bassa Travels"></a>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="/experiencias.html">Experiencias</a>
+    <a href="/disena-tu-indonesia.html" class="active" aria-current="page">Tu ruta</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
 
 <main>
   <!-- PORTADA -->
@@ -319,9 +352,20 @@ footer{border-top:1px solid var(--line);padding-block:1.6rem 2.2rem;font-size:.8
 </main>
 
 <div class="bar" id="bar" hidden><button class="btn" type="button" data-alform>Preparar mi ruta completa</button></div>
-<footer><div class="wrap wide">Bassa Luxury Travel, S.L. · Viajes de lujo a medida en Indonesia · concierge@bassatravels.com<br>Rutas orientativas: tiempos de traslado y temporadas aproximados. Cada viaje se diseña a medida.</div></footer>
+<div class="wrap wide nota-ruta">Rutas orientativas: tiempos de traslado y temporadas aproximados. Cada viaje se diseña a medida.</div>
+<footer class="legal">
+  © 2026 Bassa Luxury Travel, S.L. · Avda. Guadalix 82BIS, 28120 Algete (Madrid) · CIF B88960307 · CICMA 5061<br>
+  <a href="/nosotros.html">Nosotros</a> ·
+  <a href="/legal.html">Aviso legal</a> ·
+  <a href="/privacidad.html">Privacidad</a> ·
+  <a href="/cookies.html">Cookies</a> ·
+  <a href="/condiciones.html">Condiciones</a> ·
+  <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a> ·
+  <a href="https://www.instagram.com/bassa_travels/" target="_blank" rel="noopener">Instagram</a>
+</footer>
 
 <script>
+const ICONO_IMP = {"bali": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21V11\"/><path d=\"M12 11c-1-3-4-4-7-3 2 1 3 2 3 4\"/><path d=\"M12 11c1-3 4-4 7-3-2 1-3 2-3 4\"/><path d=\"M12 11c-2-2-2-5 0-7 2 2 2 5 0 7\"/><path d=\"M8 21h8\"/></svg>", "lento": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 8v4l2.5 2.5\"/></svg>", "intenso": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"m15.5 8.5-2 5-5 2 2-5z\"/></svg>", "traslados": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 13.5 21 7l-2.2 4.5L9.5 14l-1 4-2-.5.3-3.4z\"/><path d=\"M4 20 20 4\"/></svg>", "mareo": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 16c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0\"/><path d=\"M5 12h14l-2 3\"/><path d=\"M12 12V5l5 4\"/></svg>", "madrugones": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 17h16\"/><path d=\"M7 17a5 5 0 0 1 10 0\"/><path d=\"M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11\"/><path d=\"M4 20h16\"/></svg>", "indo": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z\"/><circle cx=\"12\" cy=\"11\" r=\"2.2\"/></svg>", "lujo": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 4h12l3 5-9 11L3 9z\"/><path d=\"M3 9h18M9 4l3 16 3-16\"/></svg>", "movilidad": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m3 19 6-10 4 6 2-3 6 7z\"/><path d=\"M3 19h18\"/></svg>"};
 /* ===== Configuración ===== */
 const MODO_PRUEBA = false;   // true: no envía nada y enseña lo que llegaría al CRM
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwcfTp2D0nffltJOC0ypMWQgw8SCS7KTKpsSxP3fJWgxU8_lxfy36Lx93C1TTjAZ2Cq/exec';
@@ -1391,7 +1435,7 @@ const PASOS = [
   {t:'¿Qué te apetece?', hint:'Elige de 1 a 3, por orden: lo primero que marques pesa más.', ok:() => S.gustos.length > 0, html:() => `
     <div class="opts">${GUSTOS.map(([k, l, sub]) => { const i = S.gustos.indexOf(k); return opt('gustos', k, i >= 0, l, sub, `<span class="ord" aria-hidden="true">${i >= 0 ? i + 1 : ''}</span>`); }).join('')}</div>`},
   {t:'¿Cómo te gusta viajar?', hint:'Opcional. Marca lo que vaya contigo: cambia cuántas paradas y qué destinos te proponemos.', ok:() => true, html:() => `
-    <div class="opts">${IMPRES.map(([k, l]) => opt('imp', k, S.imp.includes(k), l)).join('')}</div>`}
+    <div class="opts imp">${IMPRES.map(([k, l]) => opt('imp', k, S.imp.includes(k), l, '', ICONO_IMP[k] || '')).join('')}</div>`}
 ];
 function renderStep(){
   const P = PASOS[paso];
@@ -1444,9 +1488,11 @@ function cargando(){
   setTimeout(() => { show('result'); renderResult(); window.scrollTo({top:0}); }, ms);
 }
 $('#next').onclick = go;
-$('#back').onclick = () => { if(paso === 0){ show('intro'); return; } paso--; renderStep(); };
+$('#back').onclick = () => { if(paso === 0){ if(!EMBED) show('intro'); return; } paso--; renderStep(); };
 $('#bar button').onclick = alFormulario;
 $('#start').onclick = () => { paso = 0; show('steps'); renderStep(); window.scrollTo({top:0}); };
+// Modo ventana: empieza directamente en la primera pregunta y «Atrás» no vuelve a la portada
+const EMBED = document.documentElement.classList.contains('embed');
 
 function show(id){ ['intro', 'steps', 'loading', 'result', 'thanks'].forEach(x => $('#' + x).hidden = x !== id); if(id !== 'result') $('#bar').hidden = true; }
 function alFormulario(){ const suave = !matchMedia('(prefers-reduced-motion: reduce)').matches; window.scrollTo({top:$('#lead').getBoundingClientRect().top + scrollY - 16, behavior:suave ? 'smooth' : 'auto'}); setTimeout(() => $('#f-nombre').focus({preventScroll:true}), suave ? 500 : 0); }
@@ -1542,6 +1588,7 @@ function enviar(e){
 }
 
 if(!MODO_PRUEBA) $('#testband').hidden = true;
+if(EMBED) $('#start').click();
 })();
 </script>
 
