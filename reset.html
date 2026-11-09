@@ -60,6 +60,9 @@
   }
   .nav-cta:hover { background: #b35e38; transform: translateY(-1px); }
 
+  .nav-ruta { color: rgba(255,255,255,0.85); font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: color 0.3s; }
+  .nav-ruta:hover { color: var(--terracotta); }
+  @media (max-width: 420px) { .nav-ruta { font-size: 0.62rem; letter-spacing: 0.08em; } #main-nav .nav-cta { letter-spacing: 0.06em; padding: 0.5rem 0.7rem; } }
   /* ── LANG TOGGLE ── */
   .nav-right { display: flex; align-items: center; gap: 0.8rem; }
   .lang-toggle {
@@ -385,6 +388,7 @@
     <img src="Logo_white_crop.svg" alt="Bassa Travels">
   </a>
   <div class="nav-right">
+    <a href="/disena-tu-indonesia.html" class="nav-ruta" data-i18n="nav.ruta">Tu ruta</a>
     <button class="lang-toggle" id="lang-toggle" title="Switch to English" aria-label="Switch to English">ES</button>
     <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a>
   </div>
@@ -585,7 +589,7 @@
   const t = {
     es: {
       'page.title': 'Viaje de lujo a Bali: desconexión y bienestar | Bassa Reset',
-      'nav.cta': 'Diseña tu viaje',
+      'nav.cta': 'Diseña tu viaje', 'nav.ruta': 'Tu ruta',
       'breadcrumb.home': 'Inicio',
       'breadcrumb.experiences': 'Experiencias',
       'hero.h1': 'Desconectar en Bali,<br><em>de verdad</em>',
@@ -664,7 +668,7 @@
     },
     en: {
       'page.title': 'Slow Luxury Wellness Escape in Bali | Bassa Reset',
-      'nav.cta': 'Design your trip',
+      'nav.cta': 'Design your trip', 'nav.ruta': 'Your route',
       'breadcrumb.home': 'Home',
       'breadcrumb.experiences': 'Experiences',
       'hero.h1': 'Switching off in Bali,<br><em>for real</em>',

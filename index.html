@@ -137,14 +137,6 @@
     },
     {
       "@type": "Question",
-      "name": "¿Cómo se diseña el viaje tras el formulario?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Formulario → llamada breve → propuesta con ruta y hoteles → ajustes → reservas y soporte. Un proceso premium e iterativo."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "¿Con cuánta antelación conviene reservar?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -672,6 +664,7 @@
     <li><a href="#experiences" data-i18n="nav.experiences">Experiencias</a></li>
     <li><a href="#how" data-i18n="nav.how">Cómo funciona</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="/disena-tu-indonesia.html" data-i18n="nav.ruta">Tu ruta</a></li>
     <li><a href="#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a></li>
   </ul>
   <div class="nav-right">
@@ -689,6 +682,7 @@
   <a href="#experiences" class="drawer-link" data-i18n="nav.experiences">Experiencias</a>
   <a href="#how" class="drawer-link" data-i18n="nav.how">Cómo funciona</a>
   <a href="#faq" class="drawer-link">FAQ</a>
+  <a href="/disena-tu-indonesia.html" class="drawer-link" data-i18n="nav.ruta">Tu ruta</a>
   <a href="#contact" class="drawer-cta" data-i18n="nav.cta">Diseña tu viaje</a>
   <button class="drawer-lang" id="drawer-lang-toggle" title="Switch to English" aria-label="Switch to English">ES</button>
 </div>
@@ -711,14 +705,9 @@
   <div class="about-text reveal">
     <span class="section-tag" data-i18n="about.tag">Sobre nosotros</span>
     <h2 class="section-title" data-i18n-html="about.h2">Agencia boutique<br><em>especializada en Indonesia</em></h2>
-    <p data-i18n="about.p1">En Bassa Travels diseñamos viajes de slow luxury a medida, con hoteles elegidos con criterio y soporte cercano en español antes y durante el viaje.</p>
+    <p data-i18n="about.p1">En Bassa Travels diseñamos cada viaje a medida y con pocos viajeros al año, para dar a cada uno la atención que merece.</p>
     <p data-i18n="about.p2">Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.</p>
     <a href="nosotros.html" class="about-more" data-i18n-html="about.more">Conoce cómo trabajamos <span>&rarr;</span></a>
-    <div class="about-pillars">
-      <div class="pillar"><h3 data-i18n-html="about.pillar1.h4">Lujo<br>Personalizado</h3><p data-i18n="about.pillar1.p">Itinerarios 100% a medida, adaptados a tu ritmo y estilo.</p></div>
-      <div class="pillar"><h3 data-i18n-html="about.pillar2.h4">Agenda<br>Selectiva</h3><p data-i18n="about.pillar2.p">Trabajamos con un número limitado de viajeros al año para dedicarle a cada viaje la atención que merece.</p></div>
-      <div class="pillar"><h3 data-i18n-html="about.pillar3.h4">Criterio<br>de Selección</h3><p data-i18n="about.pillar3.p">Solo hoteles que conocemos. Solo experiencias que tienen sentido para ti.</p></div>
-    </div>
   </div>
   <div class="about-visual reveal" style="transition-delay:0.2s">
     <video id="bassa-hero-video" autoplay muted loop playsinline poster="images/bassa-video-poster.webp" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
@@ -742,7 +731,6 @@
         } else { v.src = src; tryPlay(); }
       })();
     </script>
-    <div class="about-visual-badge" data-i18n="about.badge">"Cada viaje es tan único como la persona que lo vive"</div>
   </div>
 </section>
 
@@ -758,7 +746,7 @@
         <span class="exp-num">Reset</span>
         <h3>Bassa Reset</h3>
         <span class="exp-tagline" data-i18n="exp.reset.tag">El slow luxury más puro de Bali</span>
-        <p data-i18n-html="exp.reset.p">· Rituales balineses privados, lejos del bullicio<br>· Comidas con vistas a arrozales infinitos<br>· Atardeceres en el mar, solo para vosotros<br><span class="exp-dur">7–12 días</span></p>
+        <p data-i18n-html="exp.reset.p">Rituales balineses privados, lejos del bullicio<br><span class="exp-dur">7–12 días</span></p>
       </div>
     </a>
     <a class="exp-card" href="moon.html">
@@ -767,7 +755,7 @@
         <span class="exp-num">Moon</span>
         <h3>Bassa Moon</h3>
         <span class="exp-tagline" data-i18n="exp.moon.tag">Luna de miel de isla en isla</span>
-        <p data-i18n-html="exp.moon.p">· Bali, Sumba, Komodo o Raja Ampat: islas muy distintas, una sola historia<br>· Phinisi privado, islas sin nadie y cenas solo para dos<br>· Diseñada según la fecha de vuestra boda<br><span class="exp-dur">14–18 días</span></p>
+        <p data-i18n-html="exp.moon.p">Phinisi privado, islas sin nadie y cenas solo para dos<br><span class="exp-dur">14–18 días</span></p>
       </div>
     </a>
     <a class="exp-card" href="explorer.html">
@@ -776,7 +764,7 @@
         <span class="exp-num">Explorer</span>
         <h3>Bassa Explorer</h3>
         <span class="exp-tagline" data-i18n="exp.explorer.tag">La Indonesia salvaje</span>
-        <p data-i18n-html="exp.explorer.p">· Raja Ampat, Komodo y los orangutanes de Borneo y Sumatra<br>· Días en velero privado, volcanes al amanecer y selva<br>· Nadar con tiburones ballena y mantas, sin otro barco a la vista<br><span class="exp-dur">10–16 días</span></p>
+        <p data-i18n-html="exp.explorer.p">Nadar con tiburones ballena y mantas, sin otro barco a la vista<br><span class="exp-dur">10–16 días</span></p>
       </div>
     </a>
     <a class="exp-card" href="culture.html">
@@ -785,7 +773,7 @@
         <span class="exp-num">Culture</span>
         <h3>Bassa Culture</h3>
         <span class="exp-tagline" data-i18n="exp.culture.tag">Las culturas vivas de Indonesia</span>
-        <p data-i18n-html="exp.culture.p">· Borobudur al amanecer y la corte de Bali, desde dentro<br>· Tana Toraja, Sumba y la Ruta de las Especias<br>· Guías especializados y accesos fuera de horario<br><span class="exp-dur">10–14 días</span></p>
+        <p data-i18n-html="exp.culture.p">Borobudur al amanecer y la corte de Bali, desde dentro<br><span class="exp-dur">10–14 días</span></p>
       </div>
     </a>
     <a class="exp-card" href="complete.html">
@@ -794,7 +782,7 @@
         <span class="exp-num">Complete</span>
         <h3>Bassa Complete</h3>
         <span class="exp-tagline" data-i18n="exp.complete.tag">El gran viaje definitivo</span>
-        <p data-i18n-html="exp.complete.p">· Java, Bali y los confines del archipiélago en un solo viaje<br>· Templos, arrozales y naturaleza virgen, sin prisas<br>· Orangutanes, culturas ancestrales y el mar como gran final<br><span class="exp-dur">18–21 días</span></p>
+        <p data-i18n-html="exp.complete.p">Java, Bali y los confines del archipiélago en un solo viaje<br><span class="exp-dur">18–21 días</span></p>
       </div>
     </a>
   </div>
@@ -810,11 +798,11 @@
   <div class="destinos-inner">
     <div class="destinos-left reveal">
       <p data-i18n="dest.p">Indonesia es enorme. Para un viaje Bassa priorizamos calidad, calma y pocos cambios. Te ayudamos a elegir las islas que mejor encajan con tu estilo y ritmo.</p>
-      <a href="#contact" class="btn-primary" data-i18n="dest.cta">Cuéntanos tu viaje</a>
+      <a href="/disena-tu-indonesia.html" class="btn-primary" data-i18n="dest.cta">Descubre tu ruta</a>
     </div>
     <div class="destinos-tabs reveal" style="transition-delay:0.15s">
 
-      <div class="dtab open">
+      <div class="dtab">
         <div class="dtab-header">
           <span class="dtab-title" data-i18n="dest.tab1.title">Zonas favoritas</span>
           <div class="dtab-icon">+</div>
@@ -822,12 +810,12 @@
         <div class="dtab-body">
           <div class="dtab-content">
             <ul>
-              <li data-i18n-html="dest.tab1.bali"><a class="dest-link" href="/blog/mejor-epoca-para-ir-a-bali.html"><strong style="color:white">Bali</strong></a> — Interior verde y costa tranquila. Spa, gastronomía excepcional, villas privadas. La opción más versátil para un primer viaje o quienes buscan plenitud sensorial.</li>
-              <li data-i18n-html="dest.tab1.java"><a class="dest-link" href="/blog/borobudur-amanecer-privado-java-lujo.html"><strong style="color:white">Java</strong></a> — Cultura e historia icónica. Borobudur y Prambanan, dos de los templos más impresionantes del mundo, volcanes activos y paisajes que no se olvidan.</li>
-              <li data-i18n-html="dest.tab1.komodo"><a class="dest-link" href="/blog/komodo-yate-privado-dragones-lujo.html"><strong style="color:white">Komodo &amp; Flores</strong></a> — Dragones, volcanes y el azul imposible del lago Kelimutu. Buceo entre mantas gigantes y los arrecifes más ricos del planeta.</li>
-              <li data-i18n-html="dest.tab1.borneo"><strong style="color:white">Kalimantan (Borneo)</strong> — Selva primaria, orangutanes salvajes y ríos sin fondo. Para quienes buscan Indonesia en estado absolutamente puro.</li>
-              <li data-i18n-html="dest.tab1.raja"><a class="dest-link" href="/blog/raja-ampat-lujo-expedicion.html"><strong style="color:white">Raja Ampat</strong></a> — Remoto y exclusivo. Snorkel y buceo de primer nivel mundial, privacidad total y naturaleza pristina.</li>
-              <li data-i18n-html="dest.tab1.lombok"><a class="dest-link" href="/blog/sumba-lujo-privado-indonesia.html"><strong style="color:white">Lombok &amp; Sumba</strong></a> — La Indonesia sin masificar. Playas desiertas, tradición viva y un ritmo que Bali ya no tiene.</li>
+              <li data-i18n-html="dest.tab1.bali"><a class="dest-link" href="/blog/mejor-epoca-para-ir-a-bali.html"><strong style="color:white">Bali</strong></a> — Interior verde, costa tranquila y villas privadas.</li>
+              <li data-i18n-html="dest.tab1.java"><a class="dest-link" href="/blog/borobudur-amanecer-privado-java-lujo.html"><strong style="color:white">Java</strong></a> — Borobudur, Prambanan y volcanes activos.</li>
+              <li data-i18n-html="dest.tab1.komodo"><a class="dest-link" href="/blog/komodo-yate-privado-dragones-lujo.html"><strong style="color:white">Komodo &amp; Flores</strong></a> — Dragones, mantas y el lago Kelimutu.</li>
+              <li data-i18n-html="dest.tab1.borneo"><strong style="color:white">Kalimantan (Borneo)</strong> — Selva primaria y orangutanes salvajes.</li>
+              <li data-i18n-html="dest.tab1.raja"><a class="dest-link" href="/blog/raja-ampat-lujo-expedicion.html"><strong style="color:white">Raja Ampat</strong></a> — Remoto, privado y con el mejor buceo del mundo.</li>
+              <li data-i18n-html="dest.tab1.lombok"><a class="dest-link" href="/blog/sumba-lujo-privado-indonesia.html"><strong style="color:white">Lombok &amp; Sumba</strong></a> — Playas desiertas y tradición viva.</li>
             </ul>
           </div>
         </div>
@@ -848,23 +836,7 @@
           </div>
         </div>
       </div>
-
-      <div class="dtab">
-        <div class="dtab-header">
-          <span class="dtab-title" data-i18n="dest.tab3.title">Datos útiles</span>
-          <div class="dtab-icon">+</div>
-        </div>
-        <div class="dtab-body">
-          <div class="dtab-content">
-            <ul>
-              <li data-i18n-html="dest.tab3.li1"><strong style="color:white">Visado</strong> — e-VOA a la llegada u online: tasa oficial IDR 500.000 (octubre de 2026).</li>
-              <li data-i18n-html="dest.tab3.li2"><strong style="color:white">Tasa turística Bali</strong> — IDR 150.000 por visitante, en la web oficial Love Bali o a la llegada (octubre de 2026).</li>
-              <li data-i18n-html="dest.tab3.li3"><strong style="color:white">Llegada</strong> — Formulario digital «All Indonesia» (inmigración, aduanas y salud), en los 3 días previos a la llegada (octubre de 2026).</li>
-              <li data-i18n-html="dest.tab3.li4"><strong style="color:white">Recomendaciones</strong> — Consulta siempre el MAEC antes de viajar.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <p data-i18n-html="dest.visa" style="margin:1.4rem 0 0;font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.75)">¿Visado, tasas o trámites de llegada? Te los dejamos resueltos al preparar tu viaje. <a href="#contact" style="color:var(--gold)">Escríbenos</a></p>
 
     </div>
   </div>
@@ -876,7 +848,7 @@
   <div class="how-inner">
     <div class="how-left">
       <h2 class="section-title reveal" data-i18n-html="how.h2">Un proceso <em>simple</em><br>y acompañado</h2>
-      <p style="color:var(--muted);line-height:1.8;margin-bottom:0" class="reveal" data-i18n="how.p">En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.</p>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:0" class="reveal" data-i18n="how.p">En una llamada breve entendemos tu estilo y preparamos una propuesta clara.</p>
       <div class="steps">
         <div class="step reveal">
           <div class="step-num">01</div>
@@ -910,11 +882,6 @@
   </div>
 </section>
 
-<!-- PARTNER STRIP -->
-<div class="partner-strip">
-  <p data-i18n="partner.strip">En Indonesia, contamos con receptivos locales de confianza, seleccionados por su acceso a experiencias exclusivas, su conocimiento profundo del país y sus personas.</p>
-</div>
-
 <!-- CONTACTO -->
 <section class="contact" id="contact">
   <div class="contact-left reveal">
@@ -922,20 +889,6 @@
     <h2 class="section-title" data-i18n-html="contact.h2">¿Te ayudamos a<br><em>diseñar tu viaje</em><br>a Indonesia?</h2>
     <p class="contact-intro" data-i18n-html="contact.intro"><strong style="color:white; font-weight:400">Cuéntanos cómo imaginas tu viaje.</strong><br>Diseñaremos contigo una propuesta a medida, sin coste ni compromiso.</p>
     <p class="contact-note" data-nosnippet data-i18n="contact.note">Nuestros viajes parten desde 5.000 € por persona, para itinerarios de 10 noches o más. Incluye alojamiento, traslados privados, guías, experiencias y vuelos nacionales en Indonesia. Vuelos internacionales no incluidos.</p>
-    <div class="contact-promise">
-      <div class="promise-item">
-        <span class="promise-icon">✦</span>
-        <div class="promise-text"><h3 data-i18n="contact.p1.h5">Sin compromiso</h3><p data-i18n="contact.p1.p">La consulta inicial es completamente gratuita y sin ningún tipo de compromiso.</p></div>
-      </div>
-      <div class="promise-item">
-        <span class="promise-icon">✦</span>
-        <div class="promise-text"><h3 data-i18n="contact.p2.h5">Red local en Indonesia</h3><p data-i18n="contact.p2.p">Trabajamos con partners de confianza en cada isla para que traslados, guías y experiencias funcionen sin fricciones.</p></div>
-      </div>
-      <div class="promise-item">
-        <span class="promise-icon">✦</span>
-        <div class="promise-text"><h3 data-i18n="contact.p3.h5">Soporte cercano</h3><p data-i18n="contact.p3.p">Te acompañamos antes, durante y después del viaje con atención directa y personalizada.</p></div>
-      </div>
-    </div>
   </div>
   <div class="contact-form reveal" style="transition-delay:0.2s">
     <form id="bassa-form">
@@ -1017,10 +970,6 @@
       <div class="faq-a"><p data-i18n="faq.a1">Viajes slow luxury en Indonesia: itinerarios privados, hoteles con criterio, experiencias bien trabajadas. Todo a medida, sin paquetes cerrados ni grupos.</p></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span data-i18n="faq.q2">¿Cómo se diseña el viaje tras el formulario?</span><div class="faq-toggle">+</div></div>
-      <div class="faq-a"><p data-i18n="faq.a2">Formulario → llamada breve → propuesta con ruta y hoteles → ajustes → reservas y soporte. Un proceso premium e iterativo.</p></div>
-    </div>
-    <div class="faq-item">
       <div class="faq-q"><span data-i18n="faq.q3">¿Con cuánta antelación conviene reservar?</span><div class="faq-toggle">+</div></div>
       <div class="faq-a"><p data-i18n="faq.a3">Para asegurar disponibilidad premium: 4–6 meses en temporada baja y 8–10 meses en temporada alta. Algunos alojamientos exclusivos requieren más.</p></div>
     </div>
@@ -1084,14 +1033,14 @@
   const t = {
     es: {
       'page.title': 'Viajes de lujo a medida en Indonesia | Bassa Travels',
-      'nav.about': 'Qué es Bassa', 'nav.experiences': 'Experiencias', 'nav.how': 'Cómo funciona', 'nav.cta': 'Diseña tu viaje',
+      'nav.about': 'Qué es Bassa', 'nav.experiences': 'Experiencias', 'nav.how': 'Cómo funciona', 'nav.cta': 'Diseña tu viaje', 'nav.ruta': 'Tu ruta',
       'hero.tag': 'Agencia boutique · Indonesia',
       'hero.h1': 'Slow luxury en<br>Indonesia, <em>diseñado<br>a tu medida</em>',
       'hero.p': 'Itinerarios slow, hoteles con criterio y soporte cercano en español — antes y durante el viaje.',
       'hero.discover': 'Descubre más',
       'about.tag': 'Sobre nosotros',
       'about.h2': 'Agencia boutique<br><em>especializada en Indonesia</em>',
-      'about.p1': 'En Bassa Travels diseñamos viajes de slow luxury a medida, con hoteles elegidos con criterio y soporte cercano en español antes y durante el viaje.',
+      'about.p1': 'En Bassa Travels diseñamos cada viaje a medida y con pocos viajeros al año, para dar a cada uno la atención que merece.',
       'about.p2': 'Nada de tours masivos. Nada de paquetes cerrados. Solo experiencias pensadas para ti.',
       'about.more': 'Conoce cómo trabajamos <span>&rarr;</span>',
       'about.pillar1.h4': 'Lujo<br>Personalizado', 'about.pillar1.p': 'Itinerarios 100% a medida, adaptados a tu ritmo y estilo.',
@@ -1102,36 +1051,37 @@
       'exp.intro': '5 ideas para inspirarte con Indonesia. Tu viaje Bassa lo construiremos contigo, a medida y sin límites.',
       'exp.more': 'Ver todas las experiencias <span class="arrow">&rarr;</span>',
       'exp.reset.tag': 'El slow luxury más puro de Bali',
-      'exp.reset.p': '· Rituales balineses privados, lejos del bullicio<br>· Comidas con vistas a arrozales infinitos<br>· Atardeceres en el mar, solo para vosotros<br><span class="exp-dur">7–12 días</span>',
+      'exp.reset.p': 'Rituales balineses privados, lejos del bullicio<br><span class=\"exp-dur\">7–12 días</span>',
       'exp.moon.tag': 'Luna de miel de isla en isla',
-      'exp.moon.p': '· Bali, Sumba, Komodo o Raja Ampat: islas muy distintas, una sola historia<br>· Phinisi privado, islas sin nadie y cenas solo para dos<br>· Diseñada según la fecha de vuestra boda<br><span class="exp-dur">14–18 días</span>',
+      'exp.moon.p': 'Phinisi privado, islas sin nadie y cenas solo para dos<br><span class=\"exp-dur\">14–18 días</span>',
       'exp.explorer.tag': 'La Indonesia salvaje',
-      'exp.explorer.p': '· Raja Ampat, Komodo y los orangutanes de Borneo y Sumatra<br>· Días en velero privado, volcanes al amanecer y selva<br>· Nadar con tiburones ballena y mantas, sin otro barco a la vista<br><span class="exp-dur">10–16 días</span>',
+      'exp.explorer.p': 'Nadar con tiburones ballena y mantas, sin otro barco a la vista<br><span class=\"exp-dur\">10–16 días</span>',
       'exp.culture.tag': 'Las culturas vivas de Indonesia',
-      'exp.culture.p': '· Borobudur al amanecer y la corte de Bali, desde dentro<br>· Tana Toraja, Sumba y la Ruta de las Especias<br>· Guías especializados y accesos fuera de horario<br><span class="exp-dur">10–14 días</span>',
+      'exp.culture.p': 'Borobudur al amanecer y la corte de Bali, desde dentro<br><span class=\"exp-dur\">10–14 días</span>',
       'exp.complete.tag': 'El gran viaje definitivo',
-      'exp.complete.p': '· Java, Bali y los confines del archipiélago en un solo viaje<br>· Templos, arrozales y naturaleza virgen, sin prisas<br>· Orangutanes, culturas ancestrales y el mar como gran final<br><span class="exp-dur">18–21 días</span>',
+      'exp.complete.p': 'Java, Bali y los confines del archipiélago en un solo viaje<br><span class=\"exp-dur\">18–21 días</span>',
       'dest.tag': 'Destinos', 'dest.h2': 'Indonesia,<br><em>bien elegida</em>',
       'dest.p': 'Indonesia es enorme. Para un viaje Bassa priorizamos calidad, calma y pocos cambios. Te ayudamos a elegir las islas que mejor encajan con tu estilo y ritmo.',
-      'dest.cta': 'Cuéntanos tu viaje',
+      'dest.cta': 'Descubre tu ruta',
       'dest.tab1.title': 'Zonas favoritas',
-      'dest.tab1.bali': '<a class="dest-link" href="/blog/mejor-epoca-para-ir-a-bali.html"><strong style="color:white">Bali</strong></a> — Interior verde y costa tranquila. Spa, gastronomía excepcional, villas privadas. La opción más versátil para un primer viaje o quienes buscan plenitud sensorial.',
-      'dest.tab1.raja': '<a class="dest-link" href="/blog/raja-ampat-lujo-expedicion.html"><strong style="color:white">Raja Ampat</strong></a> — Remoto y exclusivo. Snorkel y buceo de primer nivel mundial, privacidad total y naturaleza pristina.',
-      'dest.tab1.java': '<a class="dest-link" href="/blog/borobudur-amanecer-privado-java-lujo.html"><strong style="color:white">Java</strong></a> — Cultura e historia icónica. Borobudur y Prambanan, dos de los templos más impresionantes del mundo, volcanes activos y paisajes que no se olvidan.',
-      'dest.tab1.komodo': '<a class="dest-link" href="/blog/komodo-yate-privado-dragones-lujo.html"><strong style="color:white">Komodo &amp; Flores</strong></a> — Dragones, volcanes y el azul imposible del lago Kelimutu. Buceo entre mantas gigantes y los arrecifes más ricos del planeta.',
-      'dest.tab1.borneo': '<strong style="color:white">Kalimantan (Borneo)</strong> — Selva primaria, orangutanes salvajes y ríos sin fondo. Para quienes buscan Indonesia en estado absolutamente puro.',
-      'dest.tab1.lombok': '<a class="dest-link" href="/blog/sumba-lujo-privado-indonesia.html"><strong style="color:white">Lombok &amp; Sumba</strong></a> — La Indonesia sin masificar. Playas desiertas, tradición viva y un ritmo que Bali ya no tiene.',
+      'dest.tab1.bali': '<a class="dest-link" href="/blog/mejor-epoca-para-ir-a-bali.html"><strong style="color:white">Bali</strong></a> — Interior verde, costa tranquila y villas privadas.',
+      'dest.tab1.raja': '<a class="dest-link" href="/blog/raja-ampat-lujo-expedicion.html"><strong style="color:white">Raja Ampat</strong></a> — Remoto, privado y con el mejor buceo del mundo.',
+      'dest.tab1.java': '<a class="dest-link" href="/blog/borobudur-amanecer-privado-java-lujo.html"><strong style="color:white">Java</strong></a> — Borobudur, Prambanan y volcanes activos.',
+      'dest.tab1.komodo': '<a class="dest-link" href="/blog/komodo-yate-privado-dragones-lujo.html"><strong style="color:white">Komodo &amp; Flores</strong></a> — Dragones, mantas y el lago Kelimutu.',
+      'dest.tab1.borneo': '<strong style="color:white">Kalimantan (Borneo)</strong> — Selva primaria y orangutanes salvajes.',
+      'dest.tab1.lombok': '<a class="dest-link" href="/blog/sumba-lujo-privado-indonesia.html"><strong style="color:white">Lombok &amp; Sumba</strong></a> — Playas desiertas y tradición viva.',
       'dest.tab2.title': 'Cuándo ir',
       'dest.tab2.li1': 'Para <strong style="color:white">Bali y Java</strong> la referencia general es la estación seca, de abril a octubre. Menos lluvia, mejor luz y condiciones ideales.',
       'dest.tab2.li2': 'Para <strong style="color:white">Raja Ampat</strong> la mejor ventana suele ser entre octubre y abril, aunque con matices según el tipo de experiencia.',
       'dest.tab2.li3': 'Ajustamos islas y experiencias para que el clima siempre juegue a tu favor.',
+      'dest.visa': '¿Visado, tasas o trámites de llegada? Te los dejamos resueltos al preparar tu viaje. <a href="#contact" style="color:var(--gold)">Escríbenos</a>',
       'dest.tab3.title': 'Datos útiles',
       'dest.tab3.li1': '<strong style="color:white">Visado</strong> — e-VOA a la llegada u online: tasa oficial IDR 500.000 (octubre de 2026).',
       'dest.tab3.li2': '<strong style="color:white">Tasa turística Bali</strong> — IDR 150.000 por visitante, en la web oficial Love Bali o a la llegada (octubre de 2026).',
       'dest.tab3.li3': '<strong style="color:white">Llegada</strong> — Formulario digital «All Indonesia» (inmigración, aduanas y salud), en los 3 días previos a la llegada (octubre de 2026).',
       'dest.tab3.li4': '<strong style="color:white">Recomendaciones</strong> — Consulta siempre el MAEC antes de viajar.',
       'how.tag': 'Cómo funciona', 'how.h2': 'Un proceso <em>simple</em><br>y acompañado',
-      'how.p': 'En una llamada breve entendemos tu estilo y preparamos una propuesta clara, premium y sin complicaciones. Sin formularios eternos, sin esperas innecesarias.',
+      'how.p': 'En una llamada breve entendemos tu estilo y preparamos una propuesta clara.',
       'how.step1.time': '60 segundos', 'how.step1.h4': 'Formulario', 'how.step1.p': 'Fechas, estilo y tipo de viaje. Lo justo para empezar.',
       'how.step2.time': '15–20 min', 'how.step2.h4': 'Llamada breve', 'how.step2.p': 'Aterrizamos ritmo, islas, hoteles y los imprescindibles de tu viaje.',
       'how.step3.time': 'A medida', 'how.step3.h4': 'Propuesta', 'how.step3.p': 'Itinerario visual con hoteles concretos, experiencias nombradas y opciones premium.',
@@ -1183,14 +1133,14 @@
     },
     en: {
       'page.title': 'Luxury tailor-made travel to Indonesia | Bassa Travels',
-      'nav.about': 'About Bassa', 'nav.experiences': 'Experiences', 'nav.how': 'How it works', 'nav.cta': 'Design your trip',
+      'nav.about': 'About Bassa', 'nav.experiences': 'Experiences', 'nav.how': 'How it works', 'nav.cta': 'Design your trip', 'nav.ruta': 'Your route',
       'hero.tag': 'Boutique agency · Indonesia',
       'hero.h1': 'Slow luxury in<br>Indonesia, <em>designed<br>for you</em>',
       'hero.p': 'Slow itineraries, curated hotels and close support in English — before and during your trip.',
       'hero.discover': 'Discover more',
       'about.tag': 'About us',
       'about.h2': 'Boutique agency<br><em>specializing in Indonesia</em>',
-      'about.p1': 'At Bassa Travels we design tailor-made slow luxury trips, with carefully chosen hotels and close support in English before and during your trip.',
+      'about.p1': 'At Bassa Travels we design every trip to measure, with only a few travelers a year, so each one gets the attention it deserves.',
       'about.p2': 'No mass tours. No fixed packages. Only experiences designed for you.',
       'about.more': 'See how we work <span>&rarr;</span>',
       'about.pillar1.h4': 'Personalized<br>Luxury', 'about.pillar1.p': '100% bespoke itineraries, tailored to your pace and style.',
@@ -1201,36 +1151,37 @@
       'exp.intro': '5 ideas to inspire your Indonesia. Your Bassa trip will be built with you, bespoke and without limits.',
       'exp.more': 'See all experiences <span class="arrow">&rarr;</span>',
       'exp.reset.tag': 'The purest slow luxury in Bali',
-      'exp.reset.p': '· Private Balinese rituals, away from the crowds<br>· Meals overlooking endless rice terraces<br>· Sunsets at sea, just for you<br><span class="exp-dur">7–12 days</span>',
+      'exp.reset.p': 'Private Balinese rituals, away from the crowds<br><span class=\"exp-dur\">7–12 days</span>',
       'exp.moon.tag': 'A honeymoon, island by island',
-      'exp.moon.p': '· Bali, Sumba, Komodo or Raja Ampat: very different islands, one single story<br>· A private phinisi, empty islands and dinners just for two<br>· Designed around your wedding date<br><span class="exp-dur">14–18 days</span>',
+      'exp.moon.p': 'A private phinisi, empty islands and dinners just for two<br><span class=\"exp-dur\">14–18 days</span>',
       'exp.explorer.tag': 'Wild Indonesia',
-      'exp.explorer.p': '· Raja Ampat, Komodo and the orangutans of Borneo and Sumatra<br>· Days on a private sailing yacht, volcanoes at sunrise and jungle<br>· Swimming with whale sharks and mantas, with no other boat in sight<br><span class="exp-dur">10–16 days</span>',
+      'exp.explorer.p': 'Swimming with whale sharks and mantas, with no other boat in sight<br><span class=\"exp-dur\">10–16 days</span>',
       'exp.culture.tag': 'The living cultures of Indonesia',
-      'exp.culture.p': '· Borobudur at sunrise and the court of Bali, from the inside<br>· Tana Toraja, Sumba and the Spice Route<br>· Specialist guides and out-of-hours access<br><span class="exp-dur">10–14 days</span>',
+      'exp.culture.p': 'Borobudur at sunrise and the court of Bali, from the inside<br><span class=\"exp-dur\">10–14 days</span>',
       'exp.complete.tag': 'The ultimate Indonesia journey',
-      'exp.complete.p': '· Java, Bali and the far reaches of the archipelago in one trip<br>· Temples, rice terraces and untouched nature, at a slow pace<br>· Orangutans, ancestral cultures and the sea as a grand finale<br><span class="exp-dur">18–21 days</span>',
+      'exp.complete.p': 'Java, Bali and the far reaches of the archipelago in one trip<br><span class=\"exp-dur\">18–21 days</span>',
       'dest.tag': 'Destinations', 'dest.h2': 'Indonesia,<br><em>well chosen</em>',
       'dest.p': 'Indonesia is vast. For a Bassa trip we prioritize quality, calm and few connections. We help you choose the islands that best match your style and pace.',
-      'dest.cta': 'Tell us about your trip',
+      'dest.cta': 'Discover your route',
       'dest.tab1.title': 'Favorite areas',
-      'dest.tab1.bali': '<a class="dest-link" href="/blog/mejor-epoca-para-ir-a-bali.html"><strong style="color:white">Bali</strong></a> — Lush interior and quiet coast. Spa, exceptional cuisine, private villas. The most versatile option for a first trip or those seeking sensory fullness.',
-      'dest.tab1.raja': '<a class="dest-link" href="/blog/raja-ampat-lujo-expedicion.html"><strong style="color:white">Raja Ampat</strong></a> — Remote and exclusive. World-class snorkeling and diving, total privacy and pristine nature.',
-      'dest.tab1.java': '<a class="dest-link" href="/blog/borobudur-amanecer-privado-java-lujo.html"><strong style="color:white">Java</strong></a> — Iconic culture and history. Borobudur and Prambanan, two of the world\'s most breathtaking temples, active volcanoes and unforgettable landscapes.',
-      'dest.tab1.komodo': '<a class="dest-link" href="/blog/komodo-yate-privado-dragones-lujo.html"><strong style="color:white">Komodo &amp; Flores</strong></a> — Dragons, volcanoes and the impossible blue of Lake Kelimutu. Diving among manta rays and the richest reefs on the planet.',
-      'dest.tab1.borneo': '<strong style="color:white">Kalimantan (Borneo)</strong> — Ancient rainforest, wild orangutans and endless rivers. For those who seek Indonesia in its most untouched form.',
-      'dest.tab1.lombok': '<a class="dest-link" href="/blog/sumba-lujo-privado-indonesia.html"><strong style="color:white">Lombok &amp; Sumba</strong></a> — Indonesia without the crowds. Deserted beaches, living traditions and the pace Bali has lost.',
+      'dest.tab1.bali': '<a class="dest-link" href="/blog/mejor-epoca-para-ir-a-bali.html"><strong style="color:white">Bali</strong></a> — Lush interior, quiet coast and private villas.',
+      'dest.tab1.raja': '<a class="dest-link" href="/blog/raja-ampat-lujo-expedicion.html"><strong style="color:white">Raja Ampat</strong></a> — Remote, private and with the best diving in the world.',
+      'dest.tab1.java': '<a class="dest-link" href="/blog/borobudur-amanecer-privado-java-lujo.html"><strong style="color:white">Java</strong></a> — Borobudur, Prambanan and active volcanoes.',
+      'dest.tab1.komodo': '<a class="dest-link" href="/blog/komodo-yate-privado-dragones-lujo.html"><strong style="color:white">Komodo &amp; Flores</strong></a> — Dragons, manta rays and Lake Kelimutu.',
+      'dest.tab1.borneo': '<strong style="color:white">Kalimantan (Borneo)</strong> — Ancient rainforest and wild orangutans.',
+      'dest.tab1.lombok': '<a class="dest-link" href="/blog/sumba-lujo-privado-indonesia.html"><strong style="color:white">Lombok &amp; Sumba</strong></a> — Deserted beaches and living traditions.',
       'dest.tab2.title': 'When to go',
       'dest.tab2.li1': 'For <strong style="color:white">Bali and Java</strong> the general reference is the dry season, from April to October. Less rain, better light and ideal conditions.',
       'dest.tab2.li2': 'For <strong style="color:white">Raja Ampat</strong> the best window is usually between October and April, though it varies by experience type.',
       'dest.tab2.li3': 'We adjust islands and experiences so the weather always works in your favor.',
+      'dest.visa': 'Visa, fees or arrival paperwork? We take care of it all when we plan your trip. <a href="#contact" style="color:var(--gold)">Write to us</a>',
       'dest.tab3.title': 'Useful info',
       'dest.tab3.li1': '<strong style="color:white">Visa</strong> — e-VOA on arrival or online: official fee IDR 500,000 (October 2026).',
       'dest.tab3.li2': '<strong style="color:white">Bali tourism tax</strong> — IDR 150,000 per visitor, via the official Love Bali website or on arrival (October 2026).',
       'dest.tab3.li3': '<strong style="color:white">Arrival</strong> — Digital “All Indonesia” form (immigration, customs and health), within 3 days before arrival (October 2026).',
       'dest.tab3.li4': '<strong style="color:white">Advice</strong> — Always check your government\'s travel advice before traveling.',
       'how.tag': 'How it works', 'how.h2': 'A <em>simple</em><br>guided process',
-      'how.p': 'In a brief call we understand your style and prepare a clear, premium proposal with no fuss. No endless forms, no unnecessary waits.',
+      'how.p': 'In a brief call we get to know your style and prepare a clear proposal.',
       'how.step1.time': '60 seconds', 'how.step1.h4': 'Form', 'how.step1.p': 'Dates, style and type of trip. Just enough to get started.',
       'how.step2.time': '15–20 min', 'how.step2.h4': 'Brief call', 'how.step2.p': 'We pin down pace, islands, hotels and your must-haves.',
       'how.step3.time': 'Bespoke', 'how.step3.h4': 'Proposal', 'how.step3.p': 'Visual itinerary with specific hotels, named experiences and premium options.',

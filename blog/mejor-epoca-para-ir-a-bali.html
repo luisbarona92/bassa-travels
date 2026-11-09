@@ -232,6 +232,14 @@
     .end-cta { padding: 3rem 1.5rem; }
     footer.legal { padding: 2rem 1.5rem; }
   }
+.plan-box{margin-top:3.5rem;background:var(--deep);color:#fff;padding:0 2.2rem 2.4rem;border-radius:2px;overflow:visible}
+.plan-img{display:block;width:calc(100% + 4.4rem);max-width:none;margin:0 -2.2rem 2rem;height:220px;object-fit:cover;border-radius:2px 2px 0 0}
+.plan-box .plan-eyebrow{display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+article.post .plan-box h2{font-family:var(--font-display);font-weight:300;font-size:2.1rem;line-height:1.1;margin:0 0 .6rem;padding:0;border:0;color:#fff}
+article.post .plan-box p{color:rgba(255,255,255,.82);opacity:1;font-size:1rem;margin:0 0 1.6rem;line-height:1.6}
+.plan-btn{display:inline-block;background:var(--terracotta);color:#fff;text-decoration:none;padding:.9rem 2rem;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;font-weight:500;border-radius:2px}
+@media (max-width:600px){.plan-box{padding:0 1.4rem 2rem}.plan-img{width:calc(100% + 2.8rem);margin:0 -1.4rem 1.6rem;height:180px}.plan-btn{display:block;text-align:center}}
+  @media (max-width: 480px) { header.site-header { gap: .8rem; } header.site-header img { height: 28px; } header.site-header nav { white-space: nowrap; } header.site-header nav a { margin-left: .7rem; font-size: .64rem; letter-spacing: .06em; } }
 </style>
 <script type="application/ld+json">
 {
@@ -267,6 +275,7 @@
   <nav>
     <a href="/">Inicio</a>
     <a href="/experiencias.html">Experiencias</a>
+    <a href="/disena-tu-indonesia.html">Tu ruta</a>
     <a href="/blog/" class="active">Blog</a>
   </nav>
 </header>
@@ -481,6 +490,14 @@
       <p>El <strong>lunes 8 de marzo de 2027</strong>. Durante 24 horas, de las 6:00 de ese día a las 6:00 del siguiente, Bali se detiene por completo: no se sale del alojamiento, no circulan vehículos y el aeropuerto cierra. Conviene tenerlo en cuenta al reservar los vuelos.</p>
     </details>
   </div>
+
+  <aside class="plan-box">
+    <img class="plan-img" src="/images/rio-ayung-ubud.webp" width="1000" height="563" loading="lazy" alt="El río Ayung entre la selva, en Ubud (Bali)" style="object-position:35% center">
+    <span class="plan-eyebrow">Planificador de rutas</span>
+    <h2>Diseña tu Indonesia</h2>
+    <p>Cinco preguntas. Tu ruta, al momento: qué islas encajan contigo y si es buena época para ir.</p>
+    <a href="/disena-tu-indonesia.html" class="plan-btn">Empezar</a>
+  </aside>
 
   <a href="/blog/" class="back-link">← Volver al blog</a>
 

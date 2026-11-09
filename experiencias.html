@@ -61,6 +61,9 @@
   }
   .nav-cta:hover { background: #b35e38; transform: translateY(-1px); }
 
+  .nav-ruta { color: rgba(255,255,255,0.85); font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: color 0.3s; }
+  .nav-ruta:hover { color: var(--terracotta); }
+  @media (max-width: 420px) { .nav-ruta { font-size: 0.62rem; letter-spacing: 0.08em; } #main-nav .nav-cta { letter-spacing: 0.06em; padding: 0.5rem 0.7rem; } }
   /* ── LANG TOGGLE ── */
   .nav-right { display: flex; align-items: center; gap: 0.8rem; }
   .lang-toggle {
@@ -279,6 +282,7 @@
     <img src="Logo_white_crop.svg" alt="Bassa Travels">
   </a>
   <div class="nav-right">
+    <a href="/disena-tu-indonesia.html" class="nav-ruta" data-i18n="nav.ruta">Tu ruta</a>
     <button class="lang-toggle" id="lang-toggle" title="Switch to English" aria-label="Switch to English">ES</button>
     <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Diseña tu viaje</a>
   </div>
@@ -722,7 +726,7 @@
   const t = {
     es: {
       'page.title': 'Experiencias irrepetibles en Indonesia — Bassa Travels',
-      'nav.cta': 'Diseña tu viaje',
+      'nav.cta': 'Diseña tu viaje', 'nav.ruta': 'Tu ruta',
       'hero.tag': 'Experiencias curadas',
       'hero.h1': 'Lo que nadie<br>te ha <em>contado</em>',
       'hero.p': 'Una selección de las experiencias más extraordinarias que Indonesia puede ofrecer. Acceso privado, ceremonias reales, islas descubiertas por nuestros partners locales, encuentros que no aparecen en ninguna guía. Para quienes ya han estado en todas partes y aún buscan algo irrepetible.',
@@ -855,7 +859,7 @@
     },
     en: {
       'page.title': 'Unforgettable Experiences in Indonesia — Bassa Travels',
-      'nav.cta': 'Design your trip',
+      'nav.cta': 'Design your trip', 'nav.ruta': 'Your route',
       'hero.tag': 'Curated experiences',
       'hero.h1': 'What no one<br>has <em>told you</em>',
       'hero.p': 'A selection of the most extraordinary experiences Indonesia has to offer. Private access, real ceremonies, islands discovered by our local partners, encounters that appear in no guidebook. For those who have already been everywhere and are still looking for something unrepeatable.',
