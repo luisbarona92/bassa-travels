@@ -170,6 +170,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 form{display:grid;gap:.9rem}
 .field{display:grid;gap:.3rem;min-width:0}
 .field label,.field .flab{font-size:.82rem;font-weight:400;letter-spacing:.02em}
+@media (max-width:560px){.field .flab .opc{display:block}}
 .field input,.field textarea{width:100%;font:inherit;font-weight:400;font-size:1rem;color:var(--deep);background:var(--paper);border:1px solid rgba(28,26,23,.22);border-radius:2px;padding:.75rem .85rem}
 .field textarea{min-height:5.5rem;resize:vertical}
 .field input:focus,.field textarea:focus{outline:2px solid var(--terracotta);outline-offset:0;border-color:transparent}
@@ -1352,7 +1353,7 @@ function renderResult(){
           <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="tu@email.com" required><p class="err" hidden></p></div>
           <div class="field"><label for="f-tel">Teléfono</label><input id="f-tel" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+34 600 000 000" required><p class="err" hidden></p></div>
         </div>
-        <div class="field"><span class="flab" id="lab-pres">Presupuesto aproximado por persona <span class="muted">(opcional)</span></span><div class="chips" role="group" aria-labelledby="lab-pres">${PRESUPUESTOS.map(x => `<button type="button" class="chip" data-pres="${esc(x)}" aria-pressed="false">${esc(x)}</button>`).join('')}</div></div>
+        <div class="field"><span class="flab" id="lab-pres">Presupuesto aproximado por persona, sin contar los vuelos internacionales <span class="muted opc">(opcional)</span></span><div class="chips" role="group" aria-labelledby="lab-pres">${PRESUPUESTOS.map(x => `<button type="button" class="chip" data-pres="${esc(x)}" aria-pressed="false">${esc(x)}</button>`).join('')}</div></div>
         <div class="field"><label for="f-msg">¿Algo más que debamos saber? <span class="muted">(opcional)</span></label><textarea id="f-msg" name="mensaje" placeholder="Una celebración, fechas concretas, algo que no puede faltar…"></textarea></div>
         <label class="check" for="f-priv"><input type="checkbox" id="f-priv" name="privacidad" required><span>He leído y acepto la <a href="${WEB}privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
         <p class="err" id="err-priv" hidden>Marca la casilla para que podamos escribirte.</p>
@@ -1509,7 +1510,7 @@ function datosLead(f){
   return {
     origen:'Planificador', companion:q ? q[1] : '', salida:flex ? '' : `${MESES[S.mes].y}-${String(MESES[S.mes].m).padStart(2, '0')}`,
     dias:S.dias + ' días', nombre:f.nombre.value.trim(), email:f.email.value.trim(), whatsapp:f.whatsapp.value.trim(),
-    imprescindibles:partes.join(' · '), presupuesto:presupuesto(), notas:(presupuesto() ? 'Presupuesto aproximado por persona: ' + presupuesto() + ' · ' : '') + 'Ruta del planificador: ' + ruta + (av.length ? ' · Avisos: ' + av.join(' ') : ''), sid
+    imprescindibles:partes.join(' · '), presupuesto:presupuesto(), notas:(presupuesto() ? 'Presupuesto aproximado por persona (sin vuelos internacionales): ' + presupuesto() + ' · ' : '') + 'Ruta del planificador: ' + ruta + (av.length ? ' · Avisos: ' + av.join(' ') : ''), sid
   };
 }
 function enviar(e){
