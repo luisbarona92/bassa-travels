@@ -1422,13 +1422,18 @@
   setLanguage(localStorage.getItem('bassa_lang') || 'es');
 </script>
 <script>
-/* Anclas del menú (#contact, #faq, #how…): deja el principio de cada sección a la vista bajo la cabecera fija.
+/* Anclas del menú (#contact, #faq, #how…): colocan cada sección bajo la cabecera fija, con aire.
    Tras el desplazamiento suave se recoloca una vez, por si imágenes o fuentes han movido la página mientras bajaba. */
 (function(){
   function navH(){ var n=document.getElementById('main-nav'); return n ? n.getBoundingClientRect().bottom : 0; }
+  /* Si el contenido de la sección cabe con aire, queda centrado bajo la cabecera; si no cabe, empieza 48 px por debajo */
   function destino(el){
-    var pad=parseFloat(getComputedStyle(el).paddingTop)||0, hueco=navH()+16;
-    return Math.max(0, el.getBoundingClientRect().top + scrollY - Math.max(0, hueco - pad));
+    var cs=getComputedStyle(el), pt=parseFloat(cs.paddingTop)||0, pb=parseFloat(cs.paddingBottom)||0;
+    var r=el.getBoundingClientRect(), arriba=r.top+scrollY+pt, alto=r.height-pt-pb;
+    var nh=navH(), libre=innerHeight-nh, y;
+    if(alto <= libre-2*64) y = arriba - (nh + (libre-alto)/2);
+    else y = arriba - (nh + 48);
+    return Math.max(0, Math.min(y, document.documentElement.scrollHeight-innerHeight));
   }
   function ir(el, suave){
     window.scrollTo({top:destino(el), behavior:suave?'smooth':'instant'});
