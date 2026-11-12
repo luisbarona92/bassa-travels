@@ -19,7 +19,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"WebApplication","name":"Diseña tu Indonesia","url":"https://bassatravels.com/disena-tu-indonesia.html","description":"Contesta cinco preguntas y ve al momento una ruta orientativa por Indonesia: islas, noches y la mejor época para tu viaje.","applicationCategory":"TravelApplication","operatingSystem":"Web","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"provider":{"@type":"TravelAgency","name":"Bassa Travels","url":"https://bassatravels.com/"}},
- {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://bassatravels.com/"},{"@type":"ListItem","position":2,"name":"Diseña tu Indonesia","item":"https://bassatravels.com/disena-tu-indonesia.html"}]}
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://bassatravels.com/"},{"@type":"ListItem","position":2,"name":"Diseña tu Indonesia","item":"https://bassatravels.com/disena-tu-indonesia.html"}]},
+ {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuántos días necesito para Indonesia?", "acceptedAnswer": {"@type": "Answer", "text": "Para un primer viaje recomendamos entre 12 y 16 días: dan para Bali y una o dos islas más sin prisas. Con 8–10 días, mejor centrarse en Bali y una isla cercana, como Lombok o Sumba. A partir de 18–21 días se pueden sumar destinos remotos como Raja Ampat o Borneo. Cuenta siempre con dos días para los vuelos de ida y vuelta."}}, {"@type": "Question", "name": "¿Qué islas combinar en un primer viaje?", "acceptedAnswer": {"@type": "Answer", "text": "Lo más habitual es empezar por Bali, entre Ubud y la costa, y añadir una isla según lo que busques: Komodo y Flores para el mar y los dragones, Sumba para desconectar del todo, Lombok y las Gilis para playas tranquilas o Java para Borobudur y los volcanes. Mejor pocas paradas bien elegidas que muchas a la carrera."}}, {"@type": "Question", "name": "¿La ruta del planificador es definitiva?", "acceptedAnswer": {"@type": "Answer", "text": "No. Es un punto de partida: una ruta orientativa con islas, noches y temporada. Después nuestro equipo la afina contigo, con hoteles, experiencias privadas, vuelos internos y el ritmo de cada día, hasta que el viaje sea exactamente como lo quieres."}}, {"@type": "Question", "name": "¿Cuánto cuesta un viaje a medida?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de los hoteles, los días, la época y las experiencias que elijas. Por eso no damos precios cerrados: ajustamos cada propuesta al presupuesto de cada viajero desde la primera conversación, y diseñarla no tiene coste ni compromiso."}}]}
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -288,6 +289,17 @@ header.site-header nav a{color:rgba(255,255,255,.6);text-decoration:none;font-fa
 header.site-header nav a:hover,header.site-header nav a.active{color:#fff}
 header.site-header nav a.active{border-bottom:1px solid #B89B6A;padding-bottom:3px}
 .nota-ruta{border-top:1px solid var(--line);padding-block:1.4rem;font-size:.8rem;color:var(--muted)}
+.seo-plan{padding-block:3.5rem 2.5rem;border-top:1px solid var(--line)}
+.seo-plan h2{font-family:var(--display);font-weight:300;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:0 0 1rem}
+.seo-plan .seo-intro{max-width:46rem;color:var(--muted);line-height:1.75;margin:0 0 2rem}
+.seo-faq{max-width:46rem;border-bottom:1px solid var(--line)}
+.seo-faq details{border-top:1px solid var(--line)}
+.seo-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.4rem 0;font-family:var(--display);font-size:1.15rem;line-height:1.4}
+.seo-faq summary::-webkit-details-marker{display:none}
+.seo-faq summary::after{content:"+";flex:none;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-family:var(--body);font-size:1rem;color:var(--terracotta);transition:transform .3s,background .3s,color .3s}
+.seo-faq details[open] summary::after{transform:rotate(45deg);background:var(--terracotta);color:#fff;border-color:var(--terracotta)}
+.seo-faq details p{color:var(--muted);line-height:1.7;font-size:.92rem;margin:0;padding:0 0 1.4rem}
+html.embed .seo-plan{display:none!important}
 footer.legal{background:#1C1A17;color:rgba(255,255,255,.55);padding:2.5rem 4rem;text-align:center;font-size:.78rem;line-height:1.9;font-family:var(--body)}
 footer.legal a{color:rgba(255,255,255,.7);text-decoration:none;margin:0 .6rem}
 @media (max-width:900px){header.site-header{padding:1.2rem 1.5rem}header.site-header nav a{margin-left:1rem}footer.legal{padding:2rem 1.5rem calc(6rem + env(safe-area-inset-bottom,0px))}}
@@ -358,6 +370,16 @@ footer.legal a{color:rgba(255,255,255,.7);text-decoration:none;margin:0 .6rem}
 </main>
 
 <div class="bar" id="bar" hidden><button class="btn" type="button" data-alform>Preparar mi ruta completa</button></div>
+<section class="wrap wide seo-plan" aria-labelledby="seo-plan-h">
+  <h2 id="seo-plan-h">Tu ruta por Indonesia, en dos minutos</h2>
+  <p class="seo-intro">Diseña tu ruta por Indonesia en dos minutos: cuéntanos cómo viajas y te proponemos una ruta pensada por nuestro equipo, que después afinamos contigo. Verás qué islas encajan con tu viaje, cuántas noches dedicar a cada una y si es buena época para ir.</p>
+  <div class="seo-faq">
+    <details><summary>¿Cuántos días necesito para Indonesia?</summary><p>Para un primer viaje recomendamos entre 12 y 16 días: dan para Bali y una o dos islas más sin prisas. Con 8–10 días, mejor centrarse en Bali y una isla cercana, como Lombok o Sumba. A partir de 18–21 días se pueden sumar destinos remotos como Raja Ampat o Borneo. Cuenta siempre con dos días para los vuelos de ida y vuelta.</p></details>
+    <details><summary>¿Qué islas combinar en un primer viaje?</summary><p>Lo más habitual es empezar por Bali, entre Ubud y la costa, y añadir una isla según lo que busques: Komodo y Flores para el mar y los dragones, Sumba para desconectar del todo, Lombok y las Gilis para playas tranquilas o Java para Borobudur y los volcanes. Mejor pocas paradas bien elegidas que muchas a la carrera.</p></details>
+    <details><summary>¿La ruta del planificador es definitiva?</summary><p>No. Es un punto de partida: una ruta orientativa con islas, noches y temporada. Después nuestro equipo la afina contigo, con hoteles, experiencias privadas, vuelos internos y el ritmo de cada día, hasta que el viaje sea exactamente como lo quieres.</p></details>
+    <details><summary>¿Cuánto cuesta un viaje a medida?</summary><p>Depende de los hoteles, los días, la época y las experiencias que elijas. Por eso no damos precios cerrados: ajustamos cada propuesta al presupuesto de cada viajero desde la primera conversación, y diseñarla no tiene coste ni compromiso.</p></details>
+  </div>
+</section>
 <div class="wrap wide nota-ruta">Rutas orientativas: tiempos de traslado y temporadas aproximados. Cada viaje se diseña a medida.</div>
 <footer class="legal">
   © 2026 Bassa Luxury Travel, S.L. · Avda. Guadalix 82BIS, 28120 Algete (Madrid) · CIF B88960307 · CICMA 5061<br>
