@@ -1421,6 +1421,36 @@
   // ── INIT LANGUAGE ──
   setLanguage(localStorage.getItem('bassa_lang') || 'es');
 </script>
+<script>
+/* Anclas del menú (#contact, #faq, #how…): deja el principio de cada sección a la vista bajo la cabecera fija.
+   Tras el desplazamiento suave se recoloca una vez, por si imágenes o fuentes han movido la página mientras bajaba. */
+(function(){
+  function navH(){ var n=document.getElementById('main-nav'); return n ? n.getBoundingClientRect().bottom : 0; }
+  function destino(el){
+    var pad=parseFloat(getComputedStyle(el).paddingTop)||0, hueco=navH()+16;
+    return Math.max(0, el.getBoundingClientRect().top + scrollY - Math.max(0, hueco - pad));
+  }
+  function ir(el, suave){
+    window.scrollTo({top:destino(el), behavior:suave?'smooth':'instant'});
+    var t=setTimeout(fin, 1200), hecho=false;
+    function fin(){ if(hecho) return; hecho=true; clearTimeout(t); var d=destino(el); if(Math.abs(scrollY-d)>4) window.scrollTo({top:d, behavior:'instant'}); }
+    if('onscrollend' in window) window.addEventListener('scrollend', fin, {once:true});
+  }
+  document.addEventListener('click', function(e){
+    var a=e.target.closest ? e.target.closest('a[href^="#"]') : null; if(!a) return;
+    var id=a.getAttribute('href').slice(1); if(!id) return;
+    var el=document.getElementById(id); if(!el) return;
+    e.preventDefault();
+    var suave=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+    ir(el, suave);
+    if(history.replaceState) history.replaceState(null,'','#'+id);
+  });
+  window.addEventListener('load', function(){
+    var id=location.hash.slice(1), el=id && document.getElementById(id);
+    if(el) setTimeout(function(){ ir(el, false); }, 50);
+  });
+})();
+</script>
 <script src="/ruta-widget.js" defer></script>
 </body>
 </html>
