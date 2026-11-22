@@ -468,6 +468,14 @@
     cursor: pointer; transition: background 0.3s; border-radius: 2px; margin-top: 0.5rem;
   }
   .btn-form:hover { background: #b35e38; }
+  .pres-label { font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .pres-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .pres-opt { position: relative; display: block; cursor: pointer; text-transform: none; letter-spacing: 0; font-size: 0.9rem; color: white; }
+  .pres-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; padding: 0; border: 0; pointer-events: none; }
+  .pres-opt span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 3rem; padding: 0.6rem 0.8rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; font-weight: 300; transition: border-color 0.2s, background 0.2s; }
+  .pres-opt:hover span { border-color: rgba(184,155,106,0.6); }
+  .pres-opt input:checked + span { border-color: var(--gold); background: rgba(184,155,106,0.16); }
+  .pres-opt input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
   .optional-tag { color: rgba(255,255,255,0.4); font-weight: 300; font-size: 0.78em; margin-left: 4px; letter-spacing: normal; text-transform: none; }
   .form-disclaimer { color: rgba(255,255,255,0.4); font-size: 0.7rem; line-height: 1.55; margin-top: 1rem; font-weight: 300; font-style: italic; }
 
@@ -956,6 +964,15 @@
         </div>
       </div>
       <div class="form-field">
+        <span class="pres-label" id="lab-pres" data-i18n="form.pres.label">Presupuesto aproximado por persona, sin vuelos internacionales</span>
+        <div class="pres-opts" role="radiogroup" aria-labelledby="lab-pres">
+          <label class="pres-opt"><input type="radio" name="presupuesto" value="&lt; 3.000 €" required><span data-i18n="form.pres.opt1">&lt; 3.000 €</span></label>
+          <label class="pres-opt"><input type="radio" name="presupuesto" value="Entre 3.000 y 6.000 €" required><span data-i18n="form.pres.opt2">Entre 3.000 y 6.000 €</span></label>
+          <label class="pres-opt"><input type="radio" name="presupuesto" value="&gt; 6.000 €" required><span data-i18n="form.pres.opt3">&gt; 6.000 €</span></label>
+          <label class="pres-opt"><input type="radio" name="presupuesto" value="Necesito orientación" required><span data-i18n="form.pres.opt4">Necesito orientación</span></label>
+        </div>
+      </div>
+      <div class="form-field">
         <label for="f-nombre" data-i18n="form.nombre.label">Nombre y apellidos</label>
         <input id="f-nombre" type="text" name="nombre" autocomplete="name" data-i18n-ph="form.nombre.ph" placeholder="Tu nombre y apellidos" required>
       </div>
@@ -1146,6 +1163,7 @@
       'form.tel.label': 'Teléfono', 'form.tel.title': 'Incluye el prefijo si no es un número de España, por ejemplo +52 55 1234 5678',
       'form.imprescindibles.label': 'Imprescindibles / preferencias',
       'form.imprescindibles.ph': 'Cuéntanos qué no puede faltar en tu viaje ideal...',
+      'form.pres.label': 'Presupuesto aproximado por persona, sin vuelos internacionales', 'form.pres.opt1': '< 3.000 €', 'form.pres.opt2': 'Entre 3.000 y 6.000 €', 'form.pres.opt3': '> 6.000 €', 'form.pres.opt4': 'Necesito orientación',
       'form.submit': 'Solicitar mi propuesta →', 'form.sending': 'Enviando...', 'form.error': 'Error al enviar, inténtalo de nuevo',
       'form.fallback': 'Si el problema persiste, escríbenos a <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>',
       'form.disclaimer': 'El envío de este formulario no constituye contratación de servicios ni oferta vinculante. Tus datos se tratarán conforme al RGPD únicamente para atender tu solicitud y preparar tu propuesta de viaje.',
@@ -1248,6 +1266,7 @@
       'form.tel.label': 'Phone', 'form.tel.title': 'Include your country code, e.g. +44 20 7946 0958',
       'form.imprescindibles.label': 'Must-haves / preferences',
       'form.imprescindibles.ph': 'Tell us what your ideal trip can\'t be without...',
+      'form.pres.label': 'Approximate budget per person, excluding international flights', 'form.pres.opt1': '< €3,000', 'form.pres.opt2': '€3,000–6,000', 'form.pres.opt3': '> €6,000', 'form.pres.opt4': 'I need guidance',
       'form.submit': 'Request my proposal \u2192', 'form.sending': 'Sending...', 'form.error': 'Error sending, please try again',
       'form.fallback': 'If the problem persists, email us at <a href="mailto:concierge@bassatravels.com">concierge@bassatravels.com</a>',
       'form.disclaimer': 'Submitting this form does not constitute a service contract or binding offer. Your data will be processed in accordance with the GDPR solely to handle your request and prepare your travel proposal.',
@@ -1395,6 +1414,8 @@
     const data = {
       companion: form.companion.value,
       salida: form.salida.value, dias: form.dias.value,
+      presupuesto: (form.querySelector('input[name="presupuesto"]:checked') || {}).value || '',
+      notas: 'Presupuesto aproximado por persona (sin vuelos internacionales): ' + ((form.querySelector('input[name="presupuesto"]:checked') || {}).value || '—'),
       nombre: form.nombre.value, email: form.email.value,
       whatsapp: form.whatsapp.value, imprescindibles: form.imprescindibles.value,
       sid: formSid

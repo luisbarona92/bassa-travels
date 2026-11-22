@@ -1428,7 +1428,7 @@ function renderResult(){
           <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="tu@email.com" required><p class="err" hidden></p></div>
           <div class="field"><label for="f-tel">Teléfono</label><input id="f-tel" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+34 600 000 000" required><p class="err" hidden></p></div>
         </div>
-        <div class="field"><span class="flab" id="lab-pres">Presupuesto aproximado por persona, sin contar los vuelos internacionales <span class="muted opc">(opcional)</span></span><div class="chips pres" role="group" aria-labelledby="lab-pres">${PRESUPUESTOS.map(x => `<button type="button" class="chip" data-pres="${esc(x)}" aria-pressed="false">${esc(x)}</button>`).join('')}</div></div>
+        <div class="field"><span class="flab" id="lab-pres">Presupuesto aproximado por persona, sin contar los vuelos internacionales</span><div class="chips pres" role="group" aria-labelledby="lab-pres">${PRESUPUESTOS.map(x => `<button type="button" class="chip" data-pres="${esc(x)}" aria-pressed="false">${esc(x)}</button>`).join('')}</div><p class="err" id="err-pres" hidden>Elige un presupuesto aproximado; nos ayuda a proponerte la ruta adecuada.</p></div>
         <div class="field"><label for="f-msg">¿Algo más que debamos saber? <span class="muted">(opcional)</span></label><textarea id="f-msg" name="mensaje" placeholder="Una celebración, fechas concretas, algo que no puede faltar…"></textarea></div>
         <label class="check" for="f-priv"><input type="checkbox" id="f-priv" name="privacidad" required><span>He leído y acepto la <a href="${WEB}privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
         <p class="err" id="err-priv" hidden>Marca la casilla para que podamos escribirte.</p>
@@ -1559,13 +1559,13 @@ function marcar(input, msg){
   if(p){ p.textContent = msg || ''; p.hidden = !msg; }
   return !msg;
 }
-// Presupuesto (opcional, sin preselección; no cambia la ruta). Un toque elige, otro toque lo quita.
+// Presupuesto (obligatorio, sin preselección; no cambia la ruta). Un toque elige; otro toque en otra opción la cambia.
 const PRESUPUESTOS = ['< 3.000 €', 'Entre 3.000 y 6.000 €', '> 6.000 €'];   // esc() los pinta como &lt; y &gt;
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-pres]'); if(!b) return;
-  const on = b.getAttribute('aria-pressed') !== 'true';
   document.querySelectorAll('[data-pres]').forEach(x => x.setAttribute('aria-pressed', 'false'));
-  b.setAttribute('aria-pressed', String(on));
+  b.setAttribute('aria-pressed', 'true');
+  const ep = document.getElementById('err-pres'); if(ep) ep.hidden = true;
 });
 const presupuesto = () => { const b = document.querySelector('[data-pres][aria-pressed="true"]'); return b ? b.dataset.pres : ''; };
 function datosLead(f){
@@ -1598,8 +1598,9 @@ function enviar(e){
   const em = f.email.value.trim(), tl = f.whatsapp.value.trim();
   ok = marcar(f.email, !em ? 'Escribe tu email.' : MAIL.test(em) ? '' : 'Revisa el email: falta algo (ejemplo: nombre@gmail.com).') && ok;
   ok = marcar(f.whatsapp, !tl ? 'Escribe tu teléfono; si no es de España, con su prefijo.' : TEL.test(tl) ? '' : 'Revisa el teléfono: solo números, con prefijo si no es de España (ejemplo: +34 600 000 000).') && ok;
+  const hayPres = !!presupuesto(); $('#err-pres').hidden = hayPres; ok = hayPres && ok;
   $('#err-priv').hidden = f.privacidad.checked; ok = f.privacidad.checked && ok;
-  if(!ok){ const bad = f.querySelector('[aria-invalid="true"]') || f.privacidad; bad.focus(); return; }
+  if(!ok){ const bad = f.querySelector('[aria-invalid="true"]') || (hayPres ? f.privacidad : f.querySelector('[data-pres]')); bad.focus(); return; }
   if(Date.now() - loadTime < 3000) return;
   const data = datosLead(f);
   const btn = $('#send'); btn.disabled = true; btn.textContent = 'Enviando…';
