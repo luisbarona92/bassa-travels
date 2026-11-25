@@ -50,9 +50,15 @@
   </url>
   <url>
     <loc>https://bassatravels.com/blog/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bassatravels.com/blog/indonesia-en-familia.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bassatravels.com/blog/luna-de-miel-en-bali.html</loc>
@@ -68,7 +74,7 @@
   </url>
   <url>
     <loc>https://bassatravels.com/blog/mejor-epoca-para-viajar-a-indonesia.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -98,7 +104,7 @@
   </url>
   <url>
     <loc>https://bassatravels.com/blog/komodo-yate-privado-dragones-lujo.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
